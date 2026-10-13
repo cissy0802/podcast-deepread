@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Peterman Pod × Ethan Evans — Same Numbers, Two Stories</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(255,138,101,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#8c7f87;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(255,138,101,.22),rgba(217,107,168,.18));color:#ecdfe6;box-shadow:inset 0 0 0 1px rgba(217,107,168,.3)}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="amazon-vp-stack-ranking-pips-working-pod1.html">中文 →</a></div>
+<header>
+<div class="kicker">The Peterman Pod · 2025</div>
+<h1>The same 700 code reviews can make you a star or a liability</h1>
+<p class="sub">Ethan Evans × Ryan Peterman · <i>Amazon VP: Stack Ranking &amp; PIPs, Working With Bezos, His Promotions</i></p>
+<div class="modebar"><button class="on" id="btn-pop">Short</button><button id="btn-deep">Full</button></div>
+</header>
+<div class="mode-pop" id="mode-pop">
+<p>Near the end of the interview, Ethan Evans shows host Ryan Peterman a small trick. Say you did 700 pull-request reviews this quarter. A manager can write: Ryan makes everyone's code better and is lifting the whole team. Or: Ryan barely writes code himself, spends his days nitpicking other people's PRs, and **the impressive number is itself the symptom**. Not one fact changes; both reviews hold together <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2883s">[00:48:03]</a>.</p>
+<p>Evans spent about fifteen years at Amazon and left as a VP with 800 people under him. Bezos, in the title, gets about five of these 53 minutes. The real spine of the episode is a sentence he knows people won't like:</p>
+<blockquote><span class="en">As a manager I could get rid of any one employee I wanted but I can't get rid of every employee.</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2793s">[00:46:33]</a></cite></blockquote>
+<p>Why "any one"? Because software performance has no objective readout, and whoever tells the story first wins. By the time you walk into HR to protest, your manager has already put you on the list. And HR hears "my boss hates me" every day from people who really are underperforming, so your true story sounds exactly like their excuse. Why not "every"? Because the company watches each manager's turnover, and one who keeps driving people out eventually gets caught.</p>
+<p>The machine has a throttle. Evans says Amazon gives managers a yearly "unregretted attrition" goal, usually somewhere between 4% and 7%: a polite name for people it wants gone. He also describes an internal experiment. About ten years ago, after years of bad press, Amazon dropped the goal. Managers immediately stopped having hard conversations with struggling performers, because nobody wants to be the bad guy, and the goal came back the next year. Hence his cold read on performance improvement plans:</p>
+<blockquote><span class="en">I think most PIPs are a combination of dishonest and or psychologically unrealistic.</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2570s">[00:42:50]</a></cite></blockquote>
+<p>By the time a manager writes the PIP, the verdict is in. HR and the manager's boss keep asking when the person will be exited, because they need the number; pull someone off a PIP and you have to find a replacement. So his advice to anyone put on one: spend the time looking for your next job.</p>
+<p>It's harsh, but he isn't speaking for the machine. As a young man he was the one the story got told about: pushed out of two startups, the second time in "a layoff of one." Later an interviewer asked him: if you were that valuable, wouldn't those companies have found a way to keep you? He admitted the man had a point, and from then on he studied how to work with people as a serious subject. Every promotion story in the episode, from the TiVo deal to pressing his boss for a director slot, applies that study: **make the pressure polite, and make the credit read "without him, this wouldn't exist."**</p>
+<p>What the fact-check found: the unregretted-attrition goal is real. Internal documents the Seattle Times saw in 2021 put it at 6%, inside his range, and an anonymous AWS director said the company had "resumed" tracking it, which fits his dropped-and-restored story. "Almost no one survives a PIP" is not established: his sample is about six people who came to him for coaching, and Amazon's own documents only say it expects more than a third to fail. His "Amazon grew 100-fold while I was there" holds up, and is if anything an understatement. His "revenue grew like 80 times" overshoots: the annual reports give 45 to 56 times.</p>
+</div>
+<div class="mode-deep" hidden="" id="mode-deep">
+<div class="meta-card"><b>Show</b> The Peterman Pod · 2025-08-01 · <b>Length</b> 53 min · <b>Guest</b> Ethan Evans · <b>Host</b> Ryan Peterman · <b>Episode</b> <a href="https://www.youtube.com/watch?v=40-ENZmqcz0">YouTube</a></div>
+<h2>The moment</h2>
+<p>The dot-com bubble had burst and 9/11 had just happened when Evans found himself out of work. It was the second time he had left a startup. On paper it was a layoff, but he was the only person laid off <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=470s">[00:07:50]</a>; he calls it being fired. At an interview he walked through his accomplishments, and the interviewer said it all sounded fine, but he struggled to believe that if Evans were that valuable, those companies wouldn't have found a way to keep him <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=752s">[00:12:32]</a>.</p>
+<blockquote><span class="en">After it happened twice, I damn sure looked at like, who's the common element in this? It's me.</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=470s">[00:07:50]</a></cite></blockquote>
+<p>That is the key to the whole episode. Everything he says later about promotions, PIPs and HR comes from **someone who was burned by the story told about him and later sat in the chair that tells the story**.</p>
+<h2>Who's talking, and when</h2>
+<p>Evans grew up in Ohio and, as a kid, mailed Apple a physical letter asking how to work there; the answer was that Apple hired engineers from only five universities. He went to Carnegie Mellon, then moved through startups in high-speed networking, search and audio streaming, and Amazon hired him on the strength of the music-streaming work to build Prime Video. By his own public bio he spent about fifteen years at Amazon, ran the 800-person Appstore, retired as a VP in 2020, and now teaches people how to clear the promotion hurdle. At the end he says plainly that if this straight-talk style works for you, that is what he sells <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=3154s">[00:52:34]</a>. **Keep that in view**: "I'll say what others won't" is itself his brand.</p>
+<p>Ryan Peterman was an engineer at Meta (Instagram) who also climbed quickly, and his show keeps coming back to three questions: what each level demands, how you get promoted, and what you regret. When the episode went up, the Amazon Appstore that Evans mentions had already announced in February that its Android version would close on August 20, so his "I saw that coming ten years ago" landed right on schedule.</p>
+<h2>Glossary</h2>
+<div class="glossary"><ul>
+<li><b>SDE1 / SDE2</b>: the first two software-engineer levels at Amazon; new graduates start at SDE1.</li>
+<li><b>PIP (Performance Improvement Plan)</b>: a written, time-boxed "improve or else." Nominally a rescue, often the last step before an exit.</li>
+<li><b>URA (unregretted attrition)</b>: departures the company doesn't mind, whether people are nudged out or fired.</li>
+<li><b>Stack ranking</b>: sorting employees into fixed-percentage tiers and removing the bottom one. Amazon publicly denies doing it.</li>
+</ul></div>
+<h2>The episode, worked through</h2>
+<h3>1. Soft skills aren't softness; they're a different way to fight</h3>
+<p>Young Evans's problem was concrete. His very first performance review said his solution to problems was sometimes to knock people's heads together <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=316s">[00:05:16]</a>. Both exits came from the same kind of conflict. A product lead said the plan couldn't be built in time; Evans thought he wasn't committed, but he was right. A sales VP was selling features that didn't exist yet; Evans fought him, missing that without that contract the company would go under <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=356s">[00:05:56]</a>.</p>
+<p>He draws two mechanisms from this, both sharper than "have more EQ." First, push too hard and the people who disagree don't keep arguing; they **stop talking to you and start talking to others about you**. Second, he hadn't built relationships with B, C and D, so when A went to them, nobody came back to tell him; they just nodded that yes, he's a problem <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=645s">[00:10:45]</a>. Engineers think being right is enough; in practice people will pick a worse solution that feels more comfortable.</p>
+<p>He isn't arguing for being a pushover. He likes a phrase someone taught him, "strategically annoying" <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=591s">[00:09:51]</a>: have an opinion and fight for it; what matters is how you fight. His best demonstration is what he told his boss when he wanted the director promotion:</p>
+<blockquote><span class="en">My career is very important to me, and I need to know if it's as important to Amazon, because if it's not as important to Amazon as it is to me, I have to think about that.</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=1117s">[00:18:37]</a></cite></blockquote>
+<p>It means "promote me or I'm leaving," yet no word of it can be held up as a threat. It worked because his VP was about to leave, and if both of them went the project would fall apart. He then switches to the manager's side for the episode's first "people won't like this": with two roughly equal people, one agitating and threatening to quit and one patiently waiting, he often promoted the agitator, because he could only push one promotion through per quarter or year, and promoting the quiet one meant losing the loud one.</p>
+<blockquote><span class="en">I'm actually willing to tell you the truth and tell you that almost everyone's doing what I'm doing. They're just not telling you.</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=1209s">[00:20:09]</a></cite></blockquote>
+<p>Peterman doesn't ask how he knows about "almost everyone," so the line rests on his own observation. His later choice pushes the same skill to its limit: he voluntarily gave up the 800-person Appstore to become the integration liaison for Twitch. Amazon paid about $970 million for it and left CEO Emmett Shear in charge, a man in his early thirties, fifteen or sixteen years younger than Evans. He had no team and could give Shear no orders <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=1775s">[00:29:35]</a>. That was the point: practising influence without authority.</p>
+<h3>2. A promotion is a deal that has to settle through the process</h3>
+<p>Evans splits promotions into "lifetime achievement awards," where the process eventually grinds you up, and outsized events. His director promotion was the second kind. He told his SVP that unless he was ordered not to, he would do the project; the reply was "Great. Hang yourself." <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=1055s">[00:17:35]</a> The project was a partnership with TiVo, the DVR company. It worked, and the key line in his promotion document was that without Ethan there would have been no TiVo. Peterman draws the lesson about credit: you don't need to hoard it, you need the narrative "take him out and this doesn't happen" to be obvious.</p>
+<p>VP took two and a half years. He calls the method the "magic loop": find out what your manager needs, do all of it, and in exchange your manager does one thing, which is make sure you're rewarded <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=1423s">[00:23:43]</a>. He also credits luck: his VP stayed in the role for two and a half to three years and was reorganized away within six months of the promotion. Six months later and he would have started over.</p>
+<p>The most useful counterexample is his own failure. Early at Amazon he made a deal with a star new-grad engineer: help me ship our first version and I'll get you from SDE1 to SDE2. Used to startups, where you just told your boss, he didn't know Amazon ran promotions twice a year with deadlines. The launch was a mess and the cycle passed <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=1616s">[00:26:56]</a>. The engineer left for another big tech company, and it cost him a year. Evans reaches for Scrum's chickens and pigs: in ham and eggs, the chicken is involved and the pig is committed; the manager is the chicken, you are the pig. So **learn the process yourself**. Ask your manager whether the document will be done by September 15; if they ask why September 15 matters, that's a warning sign.</p>
+<h3>3. The evaluation machine: measures of people and of projects both get gamed</h3>
+<p>Evans's account of Amazon's performance system starts with the goal: a yearly unregretted-attrition target, usually around 7% and as low as 4% in some years, as he tells it. Managers put people on a list, and each one either improves, quits or is fired <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2489s">[00:41:29]</a>. His argument rests on a contrast: the year the goal was removed, managers stopped talking to weak performers. The hardest case is often the mediocre but well-liked person who brings donuts and runs the parties; move against them and the whole team asks why you're trying to get rid of them.</p>
+<p>The flip side of a goal is a quota. Once there's a list, HR and your boss keep asking when the person will be gone, and taking someone off a PIP means finding a replacement <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2665s">[00:44:25]</a>. He names the machine's real lever: **the first move**. Software performance has no objective readout, and the same numbers support opposite stories:</p>
+<blockquote><span class="en">Nothing about software engineering performance is so objective.</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2883s">[00:48:03]</a></cite></blockquote>
+<p>His conclusion: don't expect HR to investigate and rescue you. Fighting a vindictive boss is bringing a knife to a gunfight; either find a way to get along or find a different manager <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2970s">[00:49:30]</a>.</p>
+<p>The same game is played with business goals. Just before leaving the Appstore he told a peer that this year he would hit every goal and it would be meaningless <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2213s">[00:36:53]</a>. The goal that mattered was competing on Android against Google's pre-installed store; he had no idea how, so he fought not to be measured on it. Bezos's vision for Prime Gaming was to be as big as Tencent; they hit a pile of interim goals without ever being on that path. He was rated well every year.</p>
+<blockquote><span class="en">For my review and my pay, I want goals I know I can nail. And for the good of the company, I actually want goals that I have no idea how to do.</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2426s">[00:40:26]</a></cite></blockquote>
+<p>Put side by side, the two are one structure: **the numbers used to judge people and the numbers used to judge projects both sit some distance from what they are supposed to represent, and whoever controls the narrative operates in that gap.** That is why big companies carry so many "zombie products": nobody wants to kill them, since that's an admission of failure, and nobody knows how to make them big.</p>
+<p>The Bezos-versus-Jassy comparison in the middle lands on the same line. He had roughly 50 meetings with each. When CFO Tom warned Bezos that there was only so much money in the bank, Bezos asked how much that was, because he might want to spend it <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2047s">[00:34:07]</a>. A founder can take the company to Vegas; a hired CEO answers to the board.</p>
+<h2>Fact-check</h2>
+<div class="claim">
+<p class="said">Amazon sets a yearly unregretted-attrition goal, usually around 7% and as low as 4%; about ten years ago it was dropped for a year, managers stopped dealing with weak performers, and it was put back. <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2489s">[00:41:29]</a></p>
+<p class="verdict">Supported</p>
+<p>Internal training materials and evaluation documents seen by the Seattle Times in 2021 show Amazon aims each year to have **6%** of its office workforce leave as unregretted attrition, and advise managers of teams over 50 to rate 20% top tier and 5% "least effective." 6% sits inside his range. The dropped-and-restored part has one corroborating source: an anonymous AWS director said the company "resumed" tracking how many low-ranked employees left, partly to push managers to address underperformance, with no year given. Amazon responded that it has never stack-ranked and that some documents were not written by central HR and use outdated terms.</p>
+</div>
+<div class="claim">
+<p class="said">He has coached about six Amazon employees on PIPs and all were fired; people he didn't coach were fired too; "very few people ever dig out." <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2665s">[00:44:25]</a></p>
+<p class="verdict">Insufficient evidence</p>
+<p>No outcome data on Amazon PIPs is public. The same internal documents give **expectations**: more than a third of employees on PIPs are expected to fail, and 35% of those placed in the "Focus" stage are expected to leave. "More than a third" is a floor and doesn't contradict "nearly all," but it shows Amazon's own planning doesn't assume everyone goes. The documents also describe the final stage, "Pivot," as a choice: take a payout and leave, or stay and fight; lose and the payout shrinks, lose an appeal and it shrinks again. That structure supports his "use the time to job-hunt" advice. But his sample is about six people who sought out a coach, which is heavily skewed.</p>
+</div>
+<div class="claim">
+<p class="said">While he was there, Amazon grew from 10,000 people to a million, 100-fold, and revenue grew about 80 times. <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=3060s">[00:51:00]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>Amazon's 10-K filings: about 9,000 employees at the end of 2004, about 12,000 at the end of 2005, about 1,298,000 at the end of 2020. That is 108 to 144 times, so **he undersold the headcount**. Revenue: $6.92 billion in 2004, $8.49 billion in 2005, $386.1 billion in 2020, which is **45 to 56 times**, not 80. More important is what the "escalator" was made of: headcount rose by about 500,000 in 2020 alone, and the 10-K says over 400,000 of those hired since February went to expand the fulfillment network. The filings don't break out corporate staff, so they can't say how many times the management ranks grew.</p>
+</div>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Economics / AI · Goodhart's law and specification gaming</b>: "hit every goal and it's meaningless" is a measure ceasing to be a good measure once it becomes a target; an RL agent exploiting a reward function has the same shape. The difference is that Evans chose the exploit with open eyes, because the reward was his paycheck.</li>
+<li><b>Statistics · base rates</b>: when HR hears "my boss hates me," most people saying it really are underperforming, so the sentence carries almost no information. A wrongly accused employee sends a signal identical to the noise. The first move matters because it sets the prior.</li>
+<li><b>Quantitative genetics · truncation selection</b>: breeders cull the bottom slice each generation, and progress depends on the trait's heritability. Forced ranking is the same operation, with rating validity playing the role of heritability. In Scullen and colleagues' 2005 simulation, gains averaged about 16% a year in the first two years and fell to about 1% by year ten.</li>
+<li><b>Psychology · the Pygmalion effect</b>: Rosenthal and Jacobson's 1968 classroom study argued that teachers' expectations change student performance. Evans's claim that a PIP becomes self-fulfilling once written points the same way, though later replications found much smaller effects, so discount the analogy too.</li>
+<li><b>Chinese philosophy · seek it in yourself</b>: Mencius (<i>Li Lou</i> I): when your actions fail to get results, turn and look for the cause in yourself. Same shape as "the common element is me." Mencius lands on cultivating virtue; Evans lands on building alliances and managing how others tell your story. What he examined was not only his character but his place in other people's narratives.</li>
+</ul></div>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=40-ENZmqcz0">Amazon VP: Stack Ranking &amp; PIPs, Working With Bezos, His Promotions | Ethan Evans</a></span><span class="d">The episode. Every timestamp on this page points here.</span></li>
+<li><span class="t"><a href="https://www.adn.com/nation-world/2021/06/22/internal-amazon-documents-shed-light-on-how-company-pressures-out-6-of-office-workers-each-year/">Internal Amazon documents shed light on how company pressures out 6% of office workers each year</a></span><span class="d">Katherine Anne Long's 2021 Seattle Times report (republished by ADN). Source for the 6% target, the 20/5 rating curve, expected PIP and Focus failure rates, Pivot's payout structure, and the AWS director's "resumed tracking."</span></li>
+<li><span class="t"><a href="https://www.sec.gov/Archives/edgar/data/1018724/000119312505047032/d10k.htm">Amazon.com 2004 annual report (10-K)</a></span><span class="d">About 9,000 employees at end of 2004; 2003–2004 net sales.</span></li>
+<li><span class="t"><a href="https://www.sec.gov/Archives/edgar/data/1018724/000119312506034166/d10k.htm">Amazon.com 2005 annual report (10-K)</a></span><span class="d">About 12,000 employees at end of 2005; 2005 net sales of $8.49 billion.</span></li>
+<li><span class="t"><a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872421000004/amzn-20201231.htm">Amazon.com 2020 annual report (10-K)</a></span><span class="d">About 1,298,000 employees at end of 2020, $386.1 billion in net sales, over 400,000 fulfillment hires since February 2020.</span></li>
+<li><span class="t"><a href="https://press.aboutamazon.com/2014/8/amazon-com-to-acquire-twitch">Amazon.com to Acquire Twitch</a></span><span class="d">Amazon's August 25, 2014 release: approximately $970 million in cash, matching the figure in the episode.</span></li>
+<li><span class="t"><a href="https://9to5google.com/2025/02/20/amazon-appstore-android-shutting-down-2025/">Amazon Appstore for Android is shutting down in 2025</a></span><span class="d">Android version closes August 20, 2025; Fire devices keep it. Backs "Amazon has shut down its app store."</span></li>
+<li><span class="t"><a href="https://www.newswise.com/articles/rank-and-yank-systems-could-improve-organizational-performance">"Rank and Yank" Systems Could Improve Organizational Performance</a></span><span class="d">Release on Scullen et al.'s 2005 forced-distribution simulation: about 16% average yearly gain in the first two years, about 1% by year ten. Supports the truncation-selection crossover.</span></li>
+</ul>
+</div>
+<footer>Podcast Deep-Read · one long episode, its main lines worked through · written 2026-10-13</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
