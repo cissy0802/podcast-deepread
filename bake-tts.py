@@ -439,8 +439,14 @@ def collect_groups(soup) -> list[tuple]:
                 elif not any(getattr(c, "name", None) in _BLOCK_TAGS
                              for c in parent.children):
                     continue
-            # Skip elements explicitly tagged as the opposite language
-            if lang == "zh" and "en" in classes:
+            # Skip elements explicitly tagged as the opposite language — except
+            # the English original of a quote on a Chinese page. This site's
+            # quotes are a guest's own words; hearing only the translation
+            # loses the voice of the source, and the zh voice is a Multilingual
+            # one that reads English natively. So the listener gets the
+            # original, then the 中译 in the next span.
+            in_quote = getattr(node.parent, "name", None) == "blockquote"
+            if lang == "zh" and "en" in classes and not in_quote:
                 continue
             if lang == "en" and "zh" in classes:
                 continue
