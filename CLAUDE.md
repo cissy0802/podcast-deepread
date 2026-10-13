@@ -163,17 +163,18 @@
 ## 7. 文件约定 / 发布
 
 - 文件放仓库根目录：`{slug}-pod{N}.html` + `{slug}-pod{N}.en.html`。
-- **每次运行开头先「对齐」灰行**：扫 `TOPICS.md`，凡是 slug 没有对应页、且 index 里没有灰行的，按清单顺序补一条 `<div class="entry todo" data-slug="{slug}">`，插在 `<div class="group" data-todo>` 之后。两个 index 都要补。
-- 发布前更新 `index.html`：找到本期的灰色占位行（`data-slug` 匹配），**原地**改成链接、去掉 `todo` 类；**绝不在末尾 append**。`index.en.html` 同样处理。形状：
+- **index 按节目分组**：每个节目一个 `<div class="group" data-show="{节目名}">` 分区，分区里按 `TOPICS.md` 顺序排该节目的各期。每行都带 `data-show` 和 `data-slug`。分区标题里的「已写 N」由页尾脚本自动数，**不要手改**。
+- **每次运行开头先「对齐」灰行**：扫 `TOPICS.md`，凡是 slug 没有对应页、且 index 里没有灰行的，补一条 `<div class="entry todo" data-show="{节目名}" data-slug="{slug}">`，放进**该节目的分区**、按清单顺序插到对应位置。两个 index 都要补。
+- 发布前更新 `index.html`：找到本期的灰色占位行（`data-slug` 匹配），**原地**改成链接、去掉 `todo` 类，`data-show` 保留；**绝不移到别的分区、绝不在末尾 append**。`index.en.html` 同样处理。形状：
 
   ```html
   <!-- 之前 -->
-  <div class="entry todo" data-slug="turing-award-winner-thinking-clearly-paxos"><span class="date">—</span><span class="title">Turing Award Winner: Thinking Clearly, Paxos vs Raft, Working With Dijkstra | Leslie Lamport</span><span class="meta">The Peterman Pod · 2026</span></div>
+  <div class="entry todo" data-show="The Peterman Pod" data-slug="turing-award-winner-thinking-clearly-paxos"><span class="date">—</span><span class="title">Turing Award Winner: Thinking Clearly, Paxos vs Raft, Working With Dijkstra | Leslie Lamport</span><span class="meta">2026</span></div>
   <!-- 之后 -->
-  <a class="entry" href="turing-award-winner-thinking-clearly-paxos-pod7.html" data-slug="turing-award-winner-thinking-clearly-paxos" data-updated="2026-10-20"><span class="date">2026-10-20</span><span class="title">Leslie Lamport — 一句钩子</span><span class="meta">The Peterman Pod · 2026</span></a>
+  <a class="entry" data-show="The Peterman Pod" href="turing-award-winner-thinking-clearly-paxos-pod7.html" data-slug="turing-award-winner-thinking-clearly-paxos" data-updated="2026-10-20"><span class="date">2026-10-20</span><span class="title">Leslie Lamport — 一句钩子</span><span class="meta">2026</span></a>
   ```
 
-  `data-updated` 和 `.date` 都填今天的日期。排序由 index 页尾脚本管，你不用排。
+  `data-updated` 和 `.date` 都填今天的日期。
 - **index 的 `.title` 是钩子不是题目**：`嘉宾（或节目）— 一个 clause 点出这期最值得知道的东西（可以带上核查的结论）`，中文 ≤ 约 50 字。英文 index 同理写英文钩子。
 - **不要**手动加 `comments.js` / `search.js` / `index-button.js` / `i18n-tts.js` / `lightbox.js`（GitHub Action 自动注入），也别硬写 `← Hub`。
 - 用 `./publish.sh` 发布。它会检查：新文件存在且不是空壳、两个 index 都引用了新文件、`TOPICS.md` 没被改、没有手写共享脚本、`<div>` 配平、中文页汉字数不超过 `.maxchars`。**报错就按提示修，修完再跑；不要绕过。** git：`user.name=BigCat` / `user.email=chengchen0802@gmail.com`。
