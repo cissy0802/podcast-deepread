@@ -175,7 +175,7 @@
   ```
 
   `data-updated` 和 `.date` 都填今天的日期。
-- **index 的 `.title` 是钩子不是题目**：`嘉宾（或节目）— 一个 clause 点出这期最值得知道的东西（可以带上核查的结论）`，中文 ≤ 约 50 字。英文 index 同理写英文钩子。
+- **index 的 `.title` 是钩子不是题目**：`嘉宾（或节目）— 一个 clause 点出这期最值得知道的东西`，中文 ≤ 约 40 字。**不写核查结论**（「核查：……属实」这类留在正文里）。英文 index 同理写英文钩子。
 - **不要**手动加 `comments.js` / `search.js` / `index-button.js` / `i18n-tts.js` / `lightbox.js`（GitHub Action 自动注入），也别硬写 `← Hub`。
 - 用 `./publish.sh` 发布。它会检查：新文件存在且不是空壳、两个 index 都引用了新文件、`TOPICS.md` 没被改、没有手写共享脚本、`<div>` 配平、中文页汉字数不超过 `.maxchars`。**报错就按提示修，修完再跑；不要绕过。** git：`user.name=BigCat` / `user.email=chengchen0802@gmail.com`。
 
