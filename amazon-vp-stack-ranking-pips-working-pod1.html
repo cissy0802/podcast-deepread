@@ -13,9 +13,6 @@ header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
 header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
 header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
-.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(255,138,101,.14);border-radius:24px;width:fit-content}
-.modebar button{background:none;border:none;color:#8c7f87;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
-.modebar button.on{background:linear-gradient(135deg,rgba(255,138,101,.22),rgba(217,107,168,.18));color:#ecdfe6;box-shadow:inset 0 0 0 1px rgba(217,107,168,.3)}
 h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
 h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
 p{margin:15px 0}
@@ -60,20 +57,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <div class="kicker">The Peterman Pod · 2025</div>
 <h1 data-tts="f201bad8474765e0">同一份 700 次代码评审，能写成明星，也能写成累赘</h1>
 <p class="sub">Ethan Evans × Ryan Peterman ·《Amazon VP: Stack Ranking &amp; PIPs, Working With Bezos, His Promotions》</p>
-<div class="modebar"><button class="on" id="btn-pop">精华版</button><button id="btn-deep">完整版</button></div>
 </header>
-<div class="mode-pop" id="mode-pop">
-<p>访谈快结束时，Ethan Evans 给主持人 Ryan Peterman 演示了一个小把戏。假设你这个季度做了 700 次代码评审（pull request review）。经理可以写：Ryan 让所有人的代码变好，他在带着整个团队往上走。也可以写：Ryan 自己几乎不写代码，整天在别人的 PR 里挑刺，数字好看，<strong>数字本身就是问题的症状</strong>。事实一个字没变，两份评语都说得通 <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2883s">[00:48:03]</a>。</p>
-<p>Evans 在 Amazon 干了约十五年，最后是带 800 人的 VP。这期 53 分钟，标题里的贝索斯只占五分钟，真正的主线是一句他自己也知道不好听的话：</p>
-<blockquote><span class="en">As a manager I could get rid of any one employee I wanted but I can't get rid of every employee.</span><span class="zh">作为经理，我想赶走哪一个员工都能做到，但我没法把每个人都赶走。</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2793s">[00:46:33]</a></cite></blockquote>
-<p>为什么是「哪一个都行」？因为软件工程的绩效没有客观读数，谁先讲故事谁赢。等你跑去找 HR 喊冤，经理早已把你列进名单；而 HR 每天都听到真正表现差的人说同一句「我老板针对我」，你的真话和他们的托词听起来一模一样。为什么「不能每个都赶」？因为公司会看一个经理的人员流失率，连续赶人的经理迟早被抓。</p>
-<p>这台机器有个油门。Evans 说 Amazon 每年给经理定一个「无憾流失」（unregretted attrition）指标，通常在 4% 到 7% 之间，说白了就是希望离开的人。他还讲了一个内部实验：大约十年前，被媒体骂了几年之后，Amazon 撤掉过这个指标。结果经理们立刻不再跟表现差的人谈话了，谁都不想当坏人；第二年指标又回来了。所以他对绩效改进计划（PIP）的判断很冷：</p>
-<blockquote><span class="en">I think most PIPs are a combination of dishonest and or psychologically unrealistic.</span><span class="zh">我认为大多数 PIP 要么不诚实，要么在心理上不现实，或者两者兼有。</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2570s">[00:42:50]</a></cite></blockquote>
-<p>经理决定写 PIP 的那一刻，心里已经判了。HR 和上级还会追问「什么时候让他走？我要凑名额」，你想把一个人从 PIP 上拿下来，就得另找一个人顶上去。所以他给被 PIP 的人的建议是：用这段时间找下一份工作。</p>
-<p>这番话狠，但他不是站在机器那边。他自己年轻时就是被「讲了故事」的那个人：创业公司里两次被裁，第二次是「只裁一个人的裁员」。后来一个面试官问他：你要是真那么有价值，那些公司再难也会想办法留你吧？他承认对方说得对，从此把「怎么跟人打交道」当成正经学问来学。整期的晋升故事，从 TiVo 合作到逼上级给自己升总监，都是这门学问的应用：<strong>把压力说得礼貌，把功劳写成「没有他就没有这件事」。</strong></p>
-<p>核查的结论：「无憾流失」指标确有其事。《西雅图时报》2021 年看到的内部文件写的是 6%，正落在他说的区间里；一位匿名 AWS 总监也说过公司「恢复」了这项追踪，跟他讲的撤掉又放回对得上。「PIP 上几乎没人翻身」则证据不足：他的样本是找上门的约六个学员，而 Amazon 自己的文件只写了「预计超过三分之一会失败」。他说「Amazon 在我任内人数涨了 100 倍」，财报数字支持，甚至还说少了；「营收涨了约 80 倍」则说多了，财报算出来是 45 到 56 倍。</p>
-</div>
-<div class="mode-deep" hidden="" id="mode-deep">
 <div class="meta-card" data-tts="ae6b7dc1dd711038"><b>节目</b> The Peterman Pod · 2025-08-01 · <b>时长</b> 53 分钟 · <b>嘉宾</b> Ethan Evans · <b>主持</b> Ryan Peterman · <b>原片</b> <a href="https://www.youtube.com/watch?v=40-ENZmqcz0">YouTube</a></div>
 <h2 data-tts="fedef3fd1659c65e">那一段</h2>
 <p>互联网泡沫破裂、九一一刚过，Evans 失业了。这是他第二次离开一家创业公司，名义上是裁员，可那次裁员只裁了他一个人，<a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=470s">[00:07:50]</a>「我管这叫被开除」。他去面试，一条条讲自己的战绩，面试官听完说：你说的都挺好，但我很难相信，你要真那么有价值，那些公司再困难也不会想办法留你？<a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=752s">[00:12:32]</a></p>
@@ -146,25 +130,8 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li><span class="t"><a href="https://9to5google.com/2025/02/20/amazon-appstore-android-shutting-down-2025/">Amazon Appstore for Android is shutting down in 2025</a></span><span class="d">2025 年 8 月 20 日关闭 Android 端，Fire 设备保留，对应「Appstore 已经关了」。</span></li>
 <li><span class="t"><a href="https://www.newswise.com/articles/rank-and-yank-systems-could-improve-organizational-performance">"Rank and Yank" Systems Could Improve Organizational Performance</a></span><span class="d">Scullen 等人 2005 年强制分布模拟研究的发布稿：头两年年均改进约 16%，第十年约 1%。支撑越界里的截断选择一条。</span></li>
 </ul>
-</div>
 <footer>播客精读 · 一期长播客，挑出主线讲透 · 写于 2026-10-13</footer>
 </div>
-<script>
-(function(){
-  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
-  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
-  function set(m){
-    var isDeep=(m==='deep');
-    pop.hidden=isDeep; deep.hidden=!isDeep;
-    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
-    try{localStorage.setItem('ll-mode',m);}catch(e){}
-  }
-  bp.addEventListener('click',function(){set('pop');});
-  bd.addEventListener('click',function(){set('deep');});
-  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
-  set(saved==='deep'?'deep':'pop');
-})();
-</script>
 <script defer="" src="https://hub.cissychen.com/comments.js"></script>
 <script defer="" src="https://hub.cissychen.com/search.js"></script>
 <script defer="" src="https://hub.cissychen.com/index-button.js"></script>

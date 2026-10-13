@@ -13,9 +13,6 @@ header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
 header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
 header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
-.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(255,138,101,.14);border-radius:24px;width:fit-content}
-.modebar button{background:none;border:none;color:#8c7f87;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
-.modebar button.on{background:linear-gradient(135deg,rgba(255,138,101,.22),rgba(217,107,168,.18));color:#ecdfe6;box-shadow:inset 0 0 0 1px rgba(217,107,168,.3)}
 h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
 h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
 p{margin:15px 0}
@@ -60,20 +57,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <div class="kicker">The Peterman Pod · 2025</div>
 <h1>The same 700 code reviews can make you a star or a liability</h1>
 <p class="sub">Ethan Evans × Ryan Peterman · <i>Amazon VP: Stack Ranking &amp; PIPs, Working With Bezos, His Promotions</i></p>
-<div class="modebar"><button class="on" id="btn-pop">Short</button><button id="btn-deep">Full</button></div>
 </header>
-<div class="mode-pop" id="mode-pop">
-<p>Near the end of the interview, Ethan Evans shows host Ryan Peterman a small trick. Say you did 700 pull-request reviews this quarter. A manager can write: Ryan makes everyone's code better and is lifting the whole team. Or: Ryan barely writes code himself, spends his days nitpicking other people's PRs, and <strong>the impressive number is itself the symptom</strong>. Not one fact changes; both reviews hold together <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2883s">[00:48:03]</a>.</p>
-<p>Evans spent about fifteen years at Amazon and left as a VP with 800 people under him. Bezos, in the title, gets about five of these 53 minutes. The real spine of the episode is a sentence he knows people won't like:</p>
-<blockquote><span class="en">As a manager I could get rid of any one employee I wanted but I can't get rid of every employee.</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2793s">[00:46:33]</a></cite></blockquote>
-<p>Why "any one"? Because software performance has no objective readout, and whoever tells the story first wins. By the time you walk into HR to protest, your manager has already put you on the list. And HR hears "my boss hates me" every day from people who really are underperforming, so your true story sounds exactly like their excuse. Why not "every"? Because the company watches each manager's turnover, and one who keeps driving people out eventually gets caught.</p>
-<p>The machine has a throttle. Evans says Amazon gives managers a yearly "unregretted attrition" goal, usually somewhere between 4% and 7%: a polite name for people it wants gone. He also describes an internal experiment. About ten years ago, after years of bad press, Amazon dropped the goal. Managers immediately stopped having hard conversations with struggling performers, because nobody wants to be the bad guy, and the goal came back the next year. Hence his cold read on performance improvement plans:</p>
-<blockquote><span class="en">I think most PIPs are a combination of dishonest and or psychologically unrealistic.</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=2570s">[00:42:50]</a></cite></blockquote>
-<p>By the time a manager writes the PIP, the verdict is in. HR and the manager's boss keep asking when the person will be exited, because they need the number; pull someone off a PIP and you have to find a replacement. So his advice to anyone put on one: spend the time looking for your next job.</p>
-<p>It's harsh, but he isn't speaking for the machine. As a young man he was the one the story got told about: pushed out of two startups, the second time in "a layoff of one." Later an interviewer asked him: if you were that valuable, wouldn't those companies have found a way to keep you? He admitted the man had a point, and from then on he studied how to work with people as a serious subject. Every promotion story in the episode, from the TiVo deal to pressing his boss for a director slot, applies that study: <strong>make the pressure polite, and make the credit read "without him, this wouldn't exist."</strong></p>
-<p>What the fact-check found: the unregretted-attrition goal is real. Internal documents the Seattle Times saw in 2021 put it at 6%, inside his range, and an anonymous AWS director said the company had "resumed" tracking it, which fits his dropped-and-restored story. "Almost no one survives a PIP" is not established: his sample is about six people who came to him for coaching, and Amazon's own documents only say it expects more than a third to fail. His "Amazon grew 100-fold while I was there" holds up, and is if anything an understatement. His "revenue grew like 80 times" overshoots: the annual reports give 45 to 56 times.</p>
-</div>
-<div class="mode-deep" hidden="" id="mode-deep">
 <div class="meta-card"><b>Show</b> The Peterman Pod · 2025-08-01 · <b>Length</b> 53 min · <b>Guest</b> Ethan Evans · <b>Host</b> Ryan Peterman · <b>Episode</b> <a href="https://www.youtube.com/watch?v=40-ENZmqcz0">YouTube</a></div>
 <h2>The moment</h2>
 <p>The dot-com bubble had burst and 9/11 had just happened when Evans found himself out of work. It was the second time he had left a startup. On paper it was a layoff, but he was the only person laid off <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=470s">[00:07:50]</a>; he calls it being fired. At an interview he walked through his accomplishments, and the interviewer said it all sounded fine, but he struggled to believe that if Evans were that valuable, those companies wouldn't have found a way to keep him <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=752s">[00:12:32]</a>.</p>
@@ -146,25 +130,8 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li><span class="t"><a href="https://9to5google.com/2025/02/20/amazon-appstore-android-shutting-down-2025/">Amazon Appstore for Android is shutting down in 2025</a></span><span class="d">Android version closes August 20, 2025; Fire devices keep it. Backs "Amazon has shut down its app store."</span></li>
 <li><span class="t"><a href="https://www.newswise.com/articles/rank-and-yank-systems-could-improve-organizational-performance">"Rank and Yank" Systems Could Improve Organizational Performance</a></span><span class="d">Release on Scullen et al.'s 2005 forced-distribution simulation: about 16% average yearly gain in the first two years, about 1% by year ten. Supports the truncation-selection crossover.</span></li>
 </ul>
-</div>
 <footer>Podcast Deep-Read · one long episode, its main lines worked through · written 2026-10-13</footer>
 </div>
-<script>
-(function(){
-  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
-  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
-  function set(m){
-    var isDeep=(m==='deep');
-    pop.hidden=isDeep; deep.hidden=!isDeep;
-    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
-    try{localStorage.setItem('ll-mode',m);}catch(e){}
-  }
-  bp.addEventListener('click',function(){set('pop');});
-  bd.addEventListener('click',function(){set('deep');});
-  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
-  set(saved==='deep'?'deep':'pop');
-})();
-</script>
 <script src="https://hub.cissychen.com/comments.js" defer></script>
 <script src="https://hub.cissychen.com/search.js" defer></script>
 <script src="https://hub.cissychen.com/index-button.js" defer></script>
