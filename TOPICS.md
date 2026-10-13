@@ -30,17 +30,23 @@ The Peterman Pod 不按播放量取，按嘉宾级别人工挑：图灵奖得主
   - transcript: `transcripts/amazon-vp-stack-ranking-pips-working.txt`
   - slug: `amazon-vp-stack-ranking-pips-working`
 
-- **Huberman Lab** — How to Build Immense Inner Strength | David Goggins
-  - 2024 · 157 分钟 · 22,785,766 播放 · 健康 / 体能
-  - source: <https://www.youtube.com/watch?v=nDLb8_wgX50>
-  - transcript: `transcripts/build-immense-inner-strength-david-goggins.txt`
-  - slug: `build-immense-inner-strength-david-goggins`
-
 - **The Peterman Pod** — Amazon VP: How Corporate Politics Work And How To Win | Ethan Evans
   - 2026 · 170 分钟 · 562,847 播放 · 职业 / 管理
   - source: <https://www.youtube.com/watch?v=6WaeGfLnRvc>
   - transcript: `transcripts/amazon-vp-corporate-politics-work-win.txt`
   - slug: `amazon-vp-corporate-politics-work-win`
+
+- **The Peterman Pod** — Amazon VP: Questions On Corporate Politics But They Get Increasingly Darker | Ethan Evans
+  - 2026 · 187 分钟 · 141,049 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=KhjhRRz3VJw>
+  - transcript: `transcripts/amazon-vp-questions-corporate-politics-but.txt`
+  - slug: `amazon-vp-questions-corporate-politics-but`
+
+- **Huberman Lab** — How to Build Immense Inner Strength | David Goggins
+  - 2024 · 157 分钟 · 22,785,766 播放 · 健康 / 体能
+  - source: <https://www.youtube.com/watch?v=nDLb8_wgX50>
+  - transcript: `transcripts/build-immense-inner-strength-david-goggins.txt`
+  - slug: `build-immense-inner-strength-david-goggins`
 
 - **Mindscape (Sean Carroll)** — The Biggest Ideas in the Universe | 16. Gravity
   - 2020 · 109 分钟 · 875,494 播放 · 物理 / 宇宙学
@@ -239,12 +245,6 @@ The Peterman Pod 不按播放量取，按嘉宾级别人工挑：图灵奖得主
   - source: <https://www.youtube.com/watch?v=IAnhFUUCq6c>
   - transcript: `transcripts/andy-galpin-build-strength-muscle-size.txt`
   - slug: `andy-galpin-build-strength-muscle-size`
-
-- **The Peterman Pod** — Amazon VP: Questions On Corporate Politics But They Get Increasingly Darker | Ethan Evans
-  - 2026 · 187 分钟 · 141,049 播放 · 职业 / 管理
-  - source: <https://www.youtube.com/watch?v=KhjhRRz3VJw>
-  - transcript: `transcripts/amazon-vp-questions-corporate-politics-but.txt`
-  - slug: `amazon-vp-questions-corporate-politics-but`
 
 - **Lex Fridman Podcast** — Elon Musk: War, AI, Aliens, Politics, Physics, Video Games, and Humanity | Lex Fridman Podcast #400
   - 2023 · 136 分钟 · 14,289,006 播放 · 思想 / 访谈
