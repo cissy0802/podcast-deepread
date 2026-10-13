@@ -20,6 +20,12 @@ header .subtitle{font-size:0.85rem;color:#ff8a65;margin-top:6px;font-family:"SF 
 .entry.todo .date{color:#584a52}
 .entry.todo .title{color:#7a6c74;font-weight:600}
 @media(max-width:640px){.entry{flex-wrap:wrap;gap:6px}.entry .meta{margin-left:0;width:100%;text-align:left;padding-left:0}}
+.group[data-show]{cursor:pointer;user-select:none;display:flex;align-items:center;gap:8px}
+.group[data-show]::before{content:"▾";display:inline-block;width:1em;transition:transform .15s}
+.group[data-show].closed::before{transform:rotate(-90deg)}
+.group[data-show]:hover{color:#ff8a65}
+.group[data-show]:focus-visible{outline:1px solid #ff8a65;outline-offset:4px}
+[hidden]{display:none!important}
 </style>
 </head><body>
 <div class="container">
@@ -178,6 +184,42 @@ header .subtitle{font-size:0.85rem;color:#ff8a65;margin-top:6px;font-family:"SF 
       if (r.getAttribute('data-show') === show && !r.classList.contains('todo')) n++;
     });
     var el = g.querySelector('.n'); if (el) el.textContent = n;
+  });
+})();
+</script>
+<script>
+/* Collapsible shows. Rows are siblings of their header, matched by data-show,
+   so publishing an episode (turning a gray row into a link in place) needs no
+   change here. Default: open if the show has anything published, else closed;
+   a viewer's own toggles are remembered. */
+(function () {
+  var KEY = 'pd-closed', saved = null;
+  try { saved = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
+  function rows(show) {
+    return [].filter.call(document.querySelectorAll('.entry[data-show]'),
+      function (r) { return r.getAttribute('data-show') === show; });
+  }
+  function set(g, closed) {
+    g.classList.toggle('closed', closed);
+    g.setAttribute('aria-expanded', String(!closed));
+    rows(g.getAttribute('data-show')).forEach(function (r) { r.hidden = closed; });
+  }
+  function store() {
+    var c = [].filter.call(document.querySelectorAll('.group[data-show]'),
+      function (g) { return g.classList.contains('closed'); })
+      .map(function (g) { return g.getAttribute('data-show'); });
+    try { localStorage.setItem(KEY, JSON.stringify(c)); } catch (e) {}
+  }
+  [].forEach.call(document.querySelectorAll('.group[data-show]'), function (g) {
+    var show = g.getAttribute('data-show');
+    var published = rows(show).some(function (r) { return !r.classList.contains('todo'); });
+    g.setAttribute('role', 'button'); g.setAttribute('tabindex', '0');
+    set(g, saved ? saved.indexOf(show) >= 0 : !published);
+    function toggle() { set(g, !g.classList.contains('closed')); store(); }
+    g.addEventListener('click', toggle);
+    g.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
   });
 })();
 </script>
