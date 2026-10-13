@@ -83,6 +83,15 @@ for F in $NEW_FILES; do
   done
   grep -q "← Hub" "$F" && echo "WARN: $F hardcodes ← Hub button (will be deduped, consider removing)"
 
+  # Markdown leaking into HTML: **bold** renders as literal asterisks.
+  # Issue #1 shipped 11 of them per page before this guard existed.
+  MD_BOLD=$(python3 -c 'import sys,re;h=sys.stdin.read();h=re.sub(r"<(script|style).*?</\1>","",h,flags=re.S);print(len(re.findall(r"\*\*[^*\n]+\*\*",h)))' < "$F")
+  if [ "$MD_BOLD" -gt 0 ]; then
+    echo "ERROR: $F has $MD_BOLD Markdown **bold** run(s) — HTML shows the asterisks."
+    echo "       Use <strong>…</strong> instead."
+    exit 1
+  fi
+
   # <div> balance
   OPENS=$(grep -oE '<div[ >]' "$F" | wc -l | tr -d ' ')
   CLOSES=$(grep -oE '</div>' "$F" | wc -l | tr -d ' ')

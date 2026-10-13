@@ -596,6 +596,11 @@ def process_page(
                 skipped_lang += 1
                 continue
             text = lang_texts.get(lang, "")
+            # Episode timestamps ("[00:48:03]") are jump links for readers, not
+            # prose: read aloud they are a string of digits mid-sentence. Strip
+            # them BEFORE hashing, unlike the normalisation rules below, so a
+            # segment that carried one gets a new hash and is re-baked once.
+            text = re.sub(r"\s*\[\d{1,2}:\d{2}(?::\d{2})?\]", "", text).strip()
             if not text:
                 continue
             voice = voice_zh if lang == "zh" else voice_en
