@@ -49,6 +49,10 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
 </style>
 </head><body>
 <div class="wrap">
@@ -119,6 +123,19 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li><b>心理学 · 皮格马利翁效应（Pygmalion effect）</b>：Rosenthal 与 Jacobson 1968 年的课堂实验认为，老师的期待会改变学生表现。Evans 说 PIP 一写下判决就会自我实现，是同一个方向；不过那项研究后来的复现效应要小得多，这个类比最好也打个折。</li>
 <li><b>中国哲学 · 反求诸己</b>：《孟子·离娄上》「行有不得者，皆反求诸己」，跟「共同因素是我」同构。孟子的落点是修身，Evans 的落点是学会建立同盟、管理别人怎么讲你。他反省的对象不只有德行，还有自己在别人叙事里的位置。</li>
 </ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Ethan Evans 两次被创业公司「裁员」后反省，发现两次失败的共同因素是他自己。</li>
+<li>推得太狠时，反对你的人不会继续跟你争，而是转身去跟别人议论你。</li>
+<li>Evans 主张「有策略地烦人」：要有主张、要为它争，讲究的是争的方式。</li>
+<li>能力相近时，经理常先升那个闹着要升、扬言要走的人，因为一次只推得动一个。</li>
+<li>晋升有两种：熬资历的「终身成就奖」，和一件「没有你就做不成」的超常事件。</li>
+<li>Evans 的「魔法循环」：问清上级需要什么、全部做到，再请上级确保你得到回报。</li>
+<li>晋升要按公司流程交割：自己弄清评审周期和截止日期，别只靠经理的口头承诺。</li>
+<li>软件工程的绩效没有客观读数，同一组数字能讲成两个故事，先开口的人掌握叙事。</li>
+<li>考人和考事的指标都会被钻空子：Evans 在 Appstore 达成了每个目标，却没走在真正的方向上。</li>
+<li>核查结论：Amazon 每年约 6% 的「无憾流失」目标属实；「被 PIP 的人几乎都会被开除」证据不足。</li>
+</ol>
 <h2 data-tts="3aec623957460c50">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=40-ENZmqcz0">Amazon VP: Stack Ranking &amp; PIPs, Working With Bezos, His Promotions | Ethan Evans</a></span><span class="d">原片，时间戳都指向这里。</span></li>

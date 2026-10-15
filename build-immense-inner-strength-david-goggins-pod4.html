@@ -49,6 +49,10 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
 </style>
 </head><body>
 <div class="wrap">
@@ -116,6 +120,19 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li><b>心理学 · 习得性无助的反转</b>：Maier 和 Seligman 在 <a href="https://pubmed.ncbi.nlm.nih.gov/27337390/">2016 年</a>回顾了五十年的研究（大多是动物电击实验），修正了原来的理论：面对持续的坏事，被动其实是大脑的默认反应，需要后天学会的反而是「我能掌控」。Goggins 说的「先学会失败」，正是在一连串失败里一点点攒出这种掌控感。</li>
 <li><b>分布式系统 · 租约（lease）</b>：分布式系统里的租约不续就会过期，持有者必须定时发心跳去续约。Goggins 说意志力很容易过期；Huberman 提到一位戒酒三十年的朋友，对方常说成瘾是有解药的，只是每次只管用一天，所以每天都得重新续上。两者是同一种设计：没有永久的锁，只有需要不断续约的租约。</li>
 </ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>David Goggins 说自己「只有棍子，没有胡萝卜」，其实也靠每晚两分钟的自我肯定和一柜子过去的证据撑着。</li>
+<li>Goggins 在海豹训练的地狱周里给自己造了第二个声音，专门跟说「你不行」的那个声音对着干。</li>
+<li>Goggins 先学的是怎么失败：可以难受，但不能难受太久，这其实是给失败留了余地。</li>
+<li>Andrew Huberman 把前扣带中部皮层（aMCC）描述为意志力的来源，关键在于去做不想做的事。</li>
+<li>支撑 aMCC 说法最有力的电刺激实验，受试者只有两位癫痫病人。</li>
+<li>Goggins 用 aMCC 解释自己的一生，等于给早已成形的人生故事配上了一张解剖图。</li>
+<li>Goggins 刻意「给成功封顶」，放弃收入和社交媒体，因为他认为意志力极容易过期。</li>
+<li>核查结论：「aMCC 只在做不想做的事时才会长大」证据不足，现有研究比较的是运动种类，不是意愿。</li>
+<li>核查结论：善待自己并不会让人停下，Breines 和 Chen 的实验里，善待失败的人反而更努力改进。</li>
+<li>Huberman 自己也说 Goggins 是 n of one，这是一个人的系统，不能直接照搬。</li>
+</ol>
 <h2 data-tts="acb9ac3092fc546e">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=nDLb8_wgX50">How to Build Immense Inner Strength | David Goggins</a></span><span class="d">原片，时间戳都指向这里。</span></li>

@@ -48,6 +48,10 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
 </style>
 </head><body>
 <div class="wrap">
@@ -116,6 +120,19 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li><b>Psychology · learned helplessness, reversed</b>: reviewing fifty years of work (mostly animal shock experiments), Maier and Seligman <a href="https://pubmed.ncbi.nlm.nih.gov/27337390/">rewrote the theory in 2016</a>: under prolonged bad events, passivity is the brain's default; what must be learned is "I have control." Goggins learning to fail first reads like that step: building a sense of control, bit by bit, out of a run of failures.</li>
 <li><b>Distributed systems · leases</b>: a lease expires unless renewed, so the holder must keep sending heartbeats. Goggins's "perishable skill" and Huberman's sober friend, who says the cure for addiction works only one day at a time, both describe a design with no permanent lock, only leases.</li>
 </ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>David Goggins says he runs on "only a stick, no carrot," yet he also leans on a two-minute nightly self-affirmation and a cabinet of past evidence.</li>
+<li>During Hell Week, Goggins built a second inner voice whose only job is to argue with the one saying "you can't."</li>
+<li>Goggins learned how to fail before he learned how to win: hurt, but not for long, which leaves room for failure.</li>
+<li>Andrew Huberman describes the anterior midcingulate cortex (aMCC) as a seat of willpower, driven by doing what you don't want to do.</li>
+<li>The strongest evidence cited for the aMCC, an electrical-stimulation study, involved only two epilepsy patients.</li>
+<li>Goggins uses the aMCC to explain his whole life, which pins an anatomy chart onto a story that was already written.</li>
+<li>Goggins deliberately caps his success, giving up income and social media, because he believes willpower expires quickly.</li>
+<li>Checked: "the aMCC grows only when you do what you don't want to" lacks evidence; studies compare types of exercise, not willingness.</li>
+<li>Checked: self-compassion doesn't make people quit; in Breines and Chen's experiments, people kind to their failures tried harder to improve.</li>
+<li>Huberman himself calls Goggins an "n of one": this is one person's system, not a recipe to copy.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=nDLb8_wgX50">How to Build Immense Inner Strength | David Goggins</a></span><span class="d">The episode. Every timestamp on this page points here.</span></li>

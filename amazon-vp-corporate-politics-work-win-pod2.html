@@ -49,6 +49,10 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
 </style>
 </head><body>
 <div class="wrap">
@@ -116,6 +120,19 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li><b>社会学 · 窓際族</b>：Evans 提到的日本「靠窗座位」确有其词，<a href="https://ja.wikipedia.org/wiki/%E7%AA%93%E9%9A%9B%E6%97%8F">窓際族</a>，1970 年代末见报。但它出现的原因正相反：终身雇用下不能开除，只好给闲职养着；Evans 的「其他组」是为了让人自己辞职。同样的座位，一个是养，一个是送。</li>
 <li><b>软件工程 · 康威定律</b>：<a href="https://en.wikipedia.org/wiki/Conway%27s_law">康威定律</a>说系统结构复刻组织的沟通结构。这期反过来看：组织图本身也是被晋升门槛、留人和人头指标塑出来的，Evans 说它和上线时的架构图一样，靠胶带粘着。</li>
 </ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Ethan Evans 换岗时没说「不放我就走」，只摆出另一份 offer 请上级拿主意，一个字没撒谎就拿到了想要的岗位。</li>
+<li>经理的影响力难以比较，带多少人却一目了然，所以人头成了晋升的代用指标，催生了帝国建设。</li>
+<li>公司高速增长时各组各招各的人；增长停下后，地盘只能从同事那里抢，Evans 称之为同类相食。</li>
+<li>「礼貌的虚构」：把同一个诉求说得像无私的话，比如「重组需要人顶上的话，我在」。</li>
+<li>关键的话要提前写好，说的时候做到人际上温暖、专业上坚定。</li>
+<li>《领导与自欺》的核心区分是把对方当成人还是当成挡路的物；Evans 说工程师常把人当成 API。</li>
+<li>好的背后沟通是会前私下请教决策者「你哪里不放心」，对方被咨询过，就更愿意支持你。</li>
+<li>想越级告经理，最好几个人一起去：一个人去，上级信你就多出三个麻烦，不信你就没有麻烦。</li>
+<li>核查结论：Amazon 领导力准则明写扩充人手没有加分，「总监门槛 90 人」找不到文件依据。</li>
+<li>核查结论：背调时只确认入离职日期是安全的沉默，但推荐信隐瞒已知的不当行为可能要担法律责任。</li>
+</ol>
 <h2 data-tts="b58d4446b0ea0ca9">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=6WaeGfLnRvc">Amazon VP: How Corporate Politics Work And How To Win | Ethan Evans</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>

@@ -92,6 +92,14 @@ for F in $NEW_FILES; do
     exit 1
   fi
 
+  # Ten takeaways, exactly — BigCat takes notes from this list (2026-10-15).
+  TK=$(python3 -c 'import sys,re;h=sys.stdin.read();m=re.search(r"<ol class=\"takeaways\">(.*?)</ol>",h,re.S);print(len(re.findall(r"<li[ >]",m.group(1))) if m else -1)' < "$F")
+  if [ "$TK" -ne 10 ]; then
+    [ "$TK" -lt 0 ] && echo "ERROR: $F has no <ol class=\"takeaways\"> (the 十条要点 section)." \
+                    || echo "ERROR: $F has $TK takeaways; it must be exactly 10."
+    exit 1
+  fi
+
   # Timestamp density (Chinese page only). Issues 1–5 hung a [hh:mm:ss] link on
   # nearly every sentence — up to 30 on one page — and the prose read as chopped
   # notes. Quotes and fact-checks carry them; narration gets one or two at most.

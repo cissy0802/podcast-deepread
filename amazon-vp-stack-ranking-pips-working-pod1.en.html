@@ -49,6 +49,10 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
 </style>
 </head><body>
 <div class="wrap">
@@ -119,6 +123,19 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li><b>Psychology · the Pygmalion effect</b>: Rosenthal and Jacobson's 1968 classroom study argued that teachers' expectations change student performance. Evans's claim that a PIP becomes self-fulfilling once written points the same way, though later replications found much smaller effects, so discount the analogy too.</li>
 <li><b>Chinese philosophy · seek it in yourself</b>: Mencius (<i>Li Lou</i> I): when your actions fail to get results, turn and look for the cause in yourself. Same shape as "the common element is me." Mencius lands on cultivating virtue; Evans lands on building alliances and managing how others tell your story. What he examined was not only his character but his place in other people's narratives.</li>
 </ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>After two "layoffs" from startups, Ethan Evans concluded that the common factor in both failures was himself.</li>
+<li>Push too hard and your opponents stop arguing with you; they start talking to others about you instead.</li>
+<li>Evans recommends being "strategically annoying": have a position and fight for it, but choose how you fight.</li>
+<li>Between two similar performers, managers often promote the one pushing hard and threatening to leave first.</li>
+<li>Promotions come in two kinds: a tenure-based "lifetime achievement award," or one exceptional result that would not exist without you.</li>
+<li>Evans's "magic loop": learn what your manager needs, deliver all of it, then ask them to make sure you are rewarded.</li>
+<li>A promotion has to clear the company's process: learn the review cycle and deadlines yourself instead of relying on a verbal promise.</li>
+<li>Software engineering performance has no objective reading; the same numbers can tell two stories, and whoever speaks first sets the narrative.</li>
+<li>Metrics for people and for products both get gamed: Evans hit every Appstore goal while never heading the right way.</li>
+<li>Checked: Amazon's roughly 6% unregretted-attrition goal is real; "almost everyone on a PIP gets fired" lacks evidence.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=40-ENZmqcz0">Amazon VP: Stack Ranking &amp; PIPs, Working With Bezos, His Promotions | Ethan Evans</a></span><span class="d">The episode; every timestamp points here.</span></li>

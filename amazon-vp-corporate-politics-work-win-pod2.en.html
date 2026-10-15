@@ -48,6 +48,10 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
 </style>
 </head>
 <body>
@@ -125,6 +129,19 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li><b>Software engineering · Conway's law</b>: <a href="https://en.wikipedia.org/wiki/Conway%27s_law">Conway's law</a> says systems mirror the communication structure of the org that builds them. This episode shows the reverse pressure: the org chart is itself shaped by promotion bars, retention deals and headcount, and Evans says it ends up like a shipped architecture, held together with duct tape.</li>
 </ul></div>
 
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>When Ethan Evans wanted a transfer, he never said "let me go or I quit"; he laid out the other offer, asked his boss what to do, and got the job without a single lie.</li>
+<li>Managers' impact is hard to compare but headcount is easy to count, so headcount became the stand-in for promotion and fed empire building.</li>
+<li>In fast growth every team hires its own people; once growth stops, territory can only come from peers, which Evans calls cannibalism.</li>
+<li>A "polite fiction" states the same ask in selfless terms, such as "if the reorg needs someone to step up, I'm here."</li>
+<li>Script the key sentences in advance, and deliver them interpersonally warm and professionally firm.</li>
+<li>Leadership and Self-Deception turns on seeing others as people or as objects in your way; Evans says engineers often treat people as APIs.</li>
+<li>Good backchanneling means asking the decision-maker privately before the meeting what worries them; people who feel consulted back you.</li>
+<li>If you go over your manager's head, go with others: alone, a skip-level who believes you gains three problems, and one who doesn't gains none.</li>
+<li>Checked: Amazon's leadership principles say headcount earns no extra points; the "90-person director bar" has no document behind it.</li>
+<li>Checked: confirming only dates in a reference check is safe silence, but a reference that hides known misconduct can carry legal liability.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=6WaeGfLnRvc">Amazon VP: How Corporate Politics Work And How To Win | Ethan Evans</a></span><span class="d">The episode. All timestamps point here.</span></li>
