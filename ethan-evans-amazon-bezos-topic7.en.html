@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethan Evans Series · Amazon and Bezos</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="ethan-evans-amazon-bezos-topic7.html">中文 →</a></div>
+<header>
+<div class="kicker">Ethan Evans Series · No. 7</div>
+<h1>Amazon and Bezos: a language, a procedure, and the man who speaks last</h1>
+<p class="sub">When Evans talks about Amazon, he is describing how principles survive through mechanisms, how argument gets turned into procedure, and how Bezos made calls. He also admits the machine guards against the worst outcomes but cannot manufacture the best leaders</p>
+</header>
+<div class="meta-card"><b>Topic</b> Amazon and Bezos · <b>Articles</b> 12 free Level Up articles read in full, 2023–2025 · <b>Interviews</b> BigDeal (hosted by Codie Sanchez, 2026) · Level Up live conversation with Dave Anderson (2024)</div>
+
+<h2>His Claims</h2>
+<h3>1. Principles live in mechanisms, not on the wall</h3>
+<p>Evans has a closer relationship with Amazon's Leadership Principles (LPs; the official site lists 17 today) than most employees. In the 2011 revision the Ownership principle was briefly dropped; he helped draft its return, and the line "an owner never says that's not my job" is his (covered in <a href="ethan-evans-who-topic1.en.html">No. 1</a>). In 2023, in <a href="https://levelupwithethanevans.substack.com/p/thats-not-my-job-how-i-wrote-a-part">"That's not my job"</a>, he gave its origin: early in his career he asked someone to do something valuable and was told, in effect, it's not in my job description, would you like to see it? The line stayed with him for fifteen years.</p>
+<p>But when he talks about LPs, the emphasis quickly moves from wording to mechanism. In a 2024 conversation with his former report Dave Anderson, the write-up <a href="https://levelupwithethanevans.substack.com/p/dissecting-amazon-leadership-principles">Dissecting Amazon Leadership Principles</a> traces how the LPs were pushed into the company through three channels: each interviewer is assigned two or three principles to probe; in annual reviews, peers name which principles you do best and which need work; and promotion documents use LP language, more so the higher you go. He compares LPs to software design patterns, a few keywords that stand for a whole concept. The same write-up draws a line:</p>
+<blockquote><span class="en">The LP can retroactively define why we care about things but it should not be the thing that makes the choice.</span><cite>— Ethan Evans · Dissecting Amazon Leadership Principles, 2024</cite></blockquote>
+<p>He later used that line to test the LPs themselves. In 2021 Amazon added "Strive to be Earth's Best Employer" and "Success and Scale Bring Broad Responsibility." In the conversation, Anderson says he asked directors with hundreds of people under them, and the two new principles never came up in performance discussions; Evans adds that he is equally cynical and believes both were written by PR rather than driven by Bezos himself <a class="ts" href="https://www.youtube.com/watch?v=WtWKwh3g4yQ&amp;t=3223s">[00:53:43]</a>. A principle that is not wired into hiring, reviews and promotions is, in his view, an advertisement.</p>
+
+<h3>2. Argue with evidence, then commit fully</h3>
+<p>The official text of "Have Backbone; Disagree and Commit" asks leaders to challenge decisions they disagree with even when it is uncomfortable or exhausting, not to compromise for the sake of social cohesion, and to commit wholly once a decision is made. His favorite example is the Prime Attribution Model, which decided how the Prime membership fee was split among business units; his Prime Gaming business got almost nothing. When he was a director, his VP argued with Bezos about it for years. Once the debate ran so long that the CFO offered to shut it down. On BigDeal in 2026, Evans recounted Bezos's answer:</p>
+<blockquote><span class="en">No, this is how we learn.</span><cite>— Ethan Evans quoting Bezos · BigDeal <a class="ts" href="https://www.youtube.com/watch?v=8JQUjpBf3Ig&amp;t=2986s">[00:49:46]</a></cite></blockquote>
+<p>The model never changed; Bezos still won. Evans's point is not who was right but the rhythm. His 2025 piece <a href="https://levelupwithethanevans.substack.com/p/dont-compromise-for-the-sake-of-social">Don't compromise for the sake of social cohesion</a> puts it this way:</p>
+<blockquote><span class="en">The time for debate is when you have evidence; the time for commitment is when that evidence has been thoroughly heard, analyzed, and accepted or rejected.</span><cite>— Ethan Evans · Don't compromise for the sake of social cohesion, 2025</cite></blockquote>
+<p>So they reopened the argument only when they had new evidence, and in between they used the model they thought was wrong, without sulking. The 2024 write-up offers a harsher example. Each year teams report "unregretted attrition," the people the company would like to see leave. A manager may lay out every piece of data to argue that the whole team is strong, but when the boss says "I still need to know who your weakest person is," the list gets handed over.</p>
+<p>The tool that turns argument into procedure is the famous six-page memo. On BigDeal he described the meetings: in an hour-long session, the first twenty or twenty-five minutes are silent reading, Bezos marking up the paper with a pen, then the group works through the document paragraph by paragraph. He says Bezos once told him how he reads:</p>
+<blockquote><span class="en">Whenever I read one of these documents, I stop on every sentence and ask, do I believe that?</span><cite>— Ethan Evans quoting Bezos · BigDeal <a class="ts" href="https://www.youtube.com/watch?v=8JQUjpBf3Ig&amp;t=4402s">[01:13:22]</a></cite></blockquote>
+<p>Not every meeting ran this way, which he says would kill you; it was for annual plans and proposals for new businesses. The T-shirt printing business he helped start began as a six-pager written by three people. The companion rule is that Bezos spoke last, because once he spoke the room lined up behind him. Evans tells this detail two different ways: his 2025 article says Bezos had the most junior person speak first and then went up by seniority, while the 2026 interview says there was no particular speaking order.</p>
+
+<h3>3. How Bezos judged: what won't change, and can we win</h3>
+<p>The third claim is about how Bezos himself made calls, which Evans breaks into rules you can borrow. In his 2023 piece on controllable inputs (<a href="ethan-evans-promotion-topic2.en.html">No. 2</a>) he had already used price, selection and convenience; on BigDeal in 2026 he gave their origin. Bezos preferred not to answer what will be new next year and asked instead what will not change in ten years, because only stable ground is safe to build on. In the same episode he says Bezos liked to be strategically patient but tactically impatient: AWS took more than a decade to grow, yet its teams were asked every day how far they had moved <a class="ts" href="https://www.youtube.com/watch?v=8JQUjpBf3Ig&amp;t=3898s">[01:04:58]</a>.</p>
+<p>Another lesson he took from Bezos is to watch the customer, not the competition. Others chased what Microsoft or Google were doing and launched hype projects in response; Bezos asked what customers needed. His example is the Kindle: music had become MP3s, movies were moving online, books would go digital too, and nobody wanted to read on a computer, so Amazon had to invent the next book itself.</p>
+<p>For proposals, he relays Bezos's three questions: Is it real? Is it worth it? Can we win? In 2024 and 2025 he used finance as the example. It is real and worth it, but heavily regulated and already well served, and Bezos did not believe Amazon could win. When a reader asked why Amazon then went into healthcare, he conceded that Bezos had long avoided healthcare for the same regulatory reason, then decided the mess there had to be addressed. In other words, there is judgment above the three questions.</p>
+<p>On organization, he tells of a VP hired from Microsoft who urged Bezos to build a central platform team so small teams would stop duplicating work. Bezos thought about it at length and wrote "2 &gt; 0" on the whiteboard:</p>
+<blockquote><span class="en">And so I'd rather pay for two than get zero.</span><cite>— Ethan Evans quoting Bezos · BigDeal <a class="ts" href="https://www.youtube.com/watch?v=8JQUjpBf3Ig&amp;t=3443s">[00:57:23]</a></cite></blockquote>
+<p>The reasoning: force people to collaborate too early and they gridlock over priorities. That is the arithmetic behind two-pizza teams, tolerating duplication to buy speed. He also breaks Bezos-style Think Big into three exercises: learn a field well enough, block real time to think, and use a deck of prompts called the Creative Whack Pack to shift perspective. He credits the method with his seventy-plus US patents.</p>
+<p>On how Bezos treated failure, he has two stories. The 2011 Appstore launch appears in earlier pieces; the earlier one is this. Shortly after joining Amazon, he demoed the video service that became Prime Video for Bezos at a company all-hands, and the movie played upside down. At the presenters' lunch afterward he headed for the farthest seat and was called over to sit next to Bezos:</p>
+<blockquote><span class="en">I just want you to know I'm not worried about this problem because clearly you are.</span><cite>— Ethan Evans quoting Bezos · BigDeal <a class="ts" href="https://www.youtube.com/watch?v=8JQUjpBf3Ig&amp;t=2318s">[00:38:38]</a></cite></blockquote>
+
+<h2>How the Claims Fit Together</h2>
+<p>The three claims are three layers of one machine. The LPs are the language that lets more than a million people discuss trade-offs in the same words. The six-pager and disagree-and-commit are the procedure: when to argue, how to argue, and what happens after. Bezos sits at the top of the procedure, speaking last and asking of every sentence whether he believes it. Evans keeps saying the first two layers can be learned; the third he can only report. In 2025 he named the machine's ceiling himself:</p>
+<blockquote><span class="en">Unfortunately, systems (rules) are generally aimed at preventing low end outcomes and mistakes. It is hard to "systematize" your way to greatness.</span><cite>— Ethan Evans · Don't compromise for the sake of social cohesion, 2025</cite></blockquote>
+<p>Amazon did better than most with the LPs, he says, but it does not have ninety percent good leaders. That sentence explains the two-sidedness of his writing over the years. He recommends the LPs to every company as design patterns, and he writes about how they get weaponized or degraded into never spending a cent (<a href="ethan-evans-org-reality-topic6.en.html">No. 6</a>). He praises Bezos for tolerating debate, and he admits that many Amazon leaders lacked that patience, too insecure or in too much of a rush to execute.</p>
+<p>Within the series, this piece is the source code for the others. The promotion documents of No. 2, the rules for meeting CEOs and the three questions in <a href="ethan-evans-managing-up-topic4.en.html">No. 4</a>, and the weaponized LPs of No. 6 all grow on this machine. The machine has another face, which he and Anderson call "the Amazon deal": do well and you get more work and more pay, until you yourself say no. On BigDeal he is blunter: a big company is a machine, and if you will work seventy hours it will let you, until you drive yourself off a cliff. One more thing to keep in mind is that he is deliberately restrained when he talks about Amazon:</p>
+<blockquote><span class="en">Whenever I speak about things Amazon doesn't do well, I'm very diplomatic about it.</span><cite>— Ethan Evans · BigDeal <a class="ts" href="https://www.youtube.com/watch?v=8JQUjpBf3Ig&amp;t=5334s">[01:28:54]</a></cite></blockquote>
+<p>His reason is that Amazon made his life. Read his Bezos stories with that sentence attached.</p>
+
+<h2>Limits</h2>
+<div class="claim">
+<p class="said">"Bezos hated PowerPoint because after the Challenger disaster, people found the slide had buried the risk of explosion in the smallest-font bullet." — BigDeal <a class="ts" href="https://www.youtube.com/watch?v=8JQUjpBf3Ig&amp;t=4231s">[01:10:31]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>The slide that buried the risk is real, but it belongs to Columbia in 2003, not Challenger in 1986. The accident board's report criticizes NASA's use of slides in place of technical papers on page 191, and Tufte's analysis is of that slide. We found no primary source that this is why Bezos dropped slides; his 2017 shareholder letter explains the six-pager without mentioning it.</p>
+</div>
+<div class="claim">
+<p class="said">"Subtly listed in Disagree and Commit is: or please resign." — Dissecting Amazon Leadership Principles, 2024</p>
+<p class="verdict">Opinion, not fact</p>
+<p>The official text asks for challenge, no compromise for social cohesion, and full commitment once decided; it says nothing about leaving. When Bezos discussed the principle in his 2016 shareholder letter, his emphasis was that bosses must do it too: he doubted an Amazon Studios original and still wrote back "I disagree and commit." The resignation reading is the view from the executing side.</p>
+</div>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Social psychology · Janis's groupthink</b>: In 1972 Irving Janis used cases like the Bay of Pigs to describe groupthink, in which a cohesive decision group suppresses dissent to preserve agreement. One of his remedies is that the leader not state a preference at the outset. Bezos speaking last and refusing to compromise for social cohesion line up almost point for point. The difference: Janis distrusted agreement itself, while Amazon demands full commitment after the argument, moving agreement to after the decision.</li>
+<li><b>Software engineering · Conway's law</b>: In 1968 Melvin Conway observed that organizations produce designs that copy their own communication structures. "2 &gt; 0" exploits the law on purpose: give each small team a clean boundary and the system grows into parts that evolve independently. The cost is duplication; Bezos's bet was that duplication is cheaper than coordination.</li>
+<li><b>Economics · Goodhart's law</b>: When a measure becomes a target, it ceases to be a good measure. Once LPs are written into promotion documents, people learn to narrate everything as an LP story. Evans's rule that LPs should explain after the fact rather than make the choice guards against exactly this inversion.</li>
+<li><b>Buddhism · the Kalama Sutta</b>: The Buddha tells the Kalamas not to believe on the strength of reports, scripture or "this is our teacher," but to test for themselves. Bezos asking "do I believe that?" of every sentence, and speaking last so no one believes something because of his rank, is the same discipline. The difference is that the Buddha leaves responsibility with each person; Bezos still makes the final call.</li>
+</ul></div>
+
+<h2>Ten Takeaways</h2>
+<ol class="takeaways">
+<li>Ethan Evans helped draft the restoration of Amazon's Ownership principle and wrote the line "an owner never says that's not my job."</li>
+<li>Evans argues Amazon's Leadership Principles work because they are wired into interviews, annual reviews and promotion documents, not hung on a wall.</li>
+<li>Evans holds that a Leadership Principle can explain after the fact why we care about something but should not make the choice.</li>
+<li>Evans believes the two principles Amazon added in 2021, including "Earth's Best Employer," were written by PR rather than driven by Bezos and wired into mechanisms.</li>
+<li>Evans tells how Bezos refused the CFO's offer to end a years-long argument over the Prime Attribution Model, saying "this is how we learn."</li>
+<li>Evans describes the rhythm of disagree-and-commit: reopen a debate only with new evidence, and once the evidence is heard, commit fully without sulking.</li>
+<li>Evans describes Amazon six-page memo meetings as twenty-plus minutes of silent reading followed by line-by-line discussion, with Bezos asking "do I believe that?" of each sentence and speaking last.</li>
+<li>Evans relays Bezos's three questions for proposals: is it real, is it worth it, can Amazon win, and uses them to explain why Amazon stayed out of finance.</li>
+<li>Evans recounts Bezos rejecting a central platform team with "2 &gt; 0": better to pay for duplication than let teams forced to collaborate early produce nothing.</li>
+<li>Evans concedes that rules only prevent the worst outcomes, that you cannot systematize your way to greatness, and that Amazon is far from ninety percent good leaders.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://levelupwithethanevans.substack.com/p/dissecting-amazon-leadership-principles">Dissecting Amazon Leadership Principles</a> (<a href="https://www.youtube.com/watch?v=WtWKwh3g4yQ">video</a>)</span><span class="d">Evans and Dave Anderson, 2024. The first claim, and the statement tested in the second limit.</span></li>
+<li><span class="t"><a href="https://levelupwithethanevans.substack.com/p/dont-compromise-for-the-sake-of-social">Don't compromise for the sake of social cohesion</a> · <a href="https://levelupwithethanevans.substack.com/p/how-to-win-buy-in-from-ceos">How to win buy-in from CEOs</a> · <a href="https://levelupwithethanevans.substack.com/p/layoffs-career-progression-working">Podcast with Rajdeep Saha</a></span><span class="d">Evans, 2024–2025. Main sources for the debate claim and Bezos's three questions.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=8JQUjpBf3Ig">Ex-Amazon VP: Lessons from Working with Jeff Bezos that Changed My Life</a></span><span class="d">BigDeal, 2026. Most timestamps on this page point here.</span></li>
+<li><span class="t"><a href="https://www.edwardtufte.com/notebook/columbia-accident-investigation-board-the-boeing-powerpoint-slide/">Tufte: Columbia Accident Investigation Board and the Boeing PowerPoint slide</a></span><span class="d">Basis for the first limit.</span></li>
+<li><span class="t"><a href="https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders">Bezos's 2016 letter to shareholders</a> · <a href="https://www.amazon.jobs/content/en/our-workplace/leadership-principles">Amazon Leadership Principles</a></span><span class="d">Basis for the second limit.</span></li>
+</ul>
+<footer>Ethan Evans Series · his articles and interviews organized by theme · written 2026-10-15</footer>
+</div>
+</body></html>
