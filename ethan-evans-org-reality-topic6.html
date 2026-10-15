@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethan Evans 专题 · 组织真实的运行方式</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="ethan-evans-org-reality-topic6.en.html">English →</a></div>
+<header>
+<div class="kicker">Ethan Evans 专题 · 第 6 篇</div>
+<h1>组织真实的运行方式：每件大事都有两套理由</h1>
+<p class="sub">裁员、重组、HR 和 PIP 在他笔下是同一种结构：公开的理由讲给所有人听，真实的理由只在决定的人之间流通。他教你读懂后一套，也承认自己写过前一套</p>
+</header>
+<div class="meta-card"><b>主题</b> 组织真实的运行方式：政治、重组、裁员、PIP · <b>文章</b>《Level Up》免费文章通读 17 篇（含一篇座谈纪要），2023–2026 · <b>访谈</b> The Peterman Pod 三期（2025–2026 年），已有单独精读：<a href="amazon-vp-stack-ranking-pips-working-pod1.html">第一期</a> · <a href="amazon-vp-corporate-politics-work-win-pod2.html">第二期</a> · <a href="amazon-vp-questions-corporate-politics-but-pod3.html">第三期</a></div>
+
+<h2>他的主张</h2>
+
+<h3>一、每件组织大事都有两套理由</h3>
+<p>Evans 写组织，最常用的一个动作是把公开的理由和真实的理由拆开。2023 年 5 月，裁员潮正盛，他写了一篇读者不太爱听的《<a href="https://levelupwithethanevans.substack.com/p/straight-truth-layoffs-are-a-relief">Layoffs are a relief for some managers</a>》。他的观察是，很多经理不擅长、也不敢当面处理表现有问题的人：谈得好对方会难过，谈崩了会吵架，说错话还可能吃官司。裁员把这些麻烦一并免掉了。名单上可能有那个能干但难相处的人，有经理怕告的人，也有经理只是一直不喜欢的人。对这些经理来说，裁员</p>
+<blockquote><span class="en">represents a chance to take action from behind a cloak of "it's not my decision, don't be mad at me, this came down from corporate."</span><span class="zh">是一个机会，可以躲在一件斗篷后面动手：「不是我决定的，别怪我，这是上面的意思。」</span><cite>— Ethan Evans ·《Layoffs are a relief for some managers》，2023</cite></blockquote>
+<p>所以他劝被裁的人别只听经理给的那套说法，去找自己被选中的其他原因。</p>
+<p>重组也有两套理由，但他前后几次讲的「真实理由」不完全一样。2024 年 4 月的《<a href="https://levelupwithethanevans.substack.com/p/why-reorgs-happen-and-why-the-true">Why reorgs happen</a>》给普通员工一个简单解释：重组是因为领导完不成目标，比如广告收入该涨 30% 却只涨了 12%，你看不懂这次调整，是因为你没看见他哪里不灵。到 2026 年上 Peterman 的节目，主持人追问重组背后是不是另有动机，他答得更彻底：</p>
+<blockquote><span class="en">I would say there's always something else going on.</span><span class="zh">我会说，背后总是还有别的事。</span><cite>— Ethan Evans · The Peterman Pod <a class="ts" href="https://www.youtube.com/watch?v=6WaeGfLnRvc&amp;t=616s">[00:10:16]</a></cite></blockquote>
+<p>他接着说，他自己做过的重组「很大程度上是为了留人」：给想留住的人更好的位置，给想送走的人少一点。<a href="amazon-vp-corporate-politics-work-win-pod2.html">那期的精读</a>讲过他「离港的船」的比喻，这里不重复。值得对照的是一个细节。2023 年 12 月，他写过一篇短文《<a href="https://levelupwithethanevans.substack.com/p/other-on-the-org-chart">"Other" on the org chart</a>》，说组织图上那种名字很长的杂项组（比如「质量、数据与服务」）其实就是「其他」，管理难度大，建议当事人争取聚焦。在访谈里，同一个「其他」组换了一个用途：想送走一个过分强势的人，就把「其他」交给他，六周以后那个位置就空出来了。文章里是一个管理问题，访谈里成了一件工具。</p>
+
+<h3>二、HR 和 PIP：一台替公司写档案的机器</h3>
+<p>第二条主张是第一条在制度上的落点。2023 年 6 月，一位读者讲了自己的遭遇：她被告知要等男同事赶上来才能一起升职，去找 HR，没有得到任何帮助。Evans 的回答很干脆：</p>
+<blockquote><span class="en">The Straight Truth is that HR has a main duty of managing costs and legal risks for the company.</span><span class="zh">直说吧：HR 的首要职责，是替公司管控成本和法律风险。</span><cite>— Ethan Evans ·《<a href="https://levelupwithethanevans.substack.com/p/straight-truth-hr-is-not-there-to">HR is not there to help you</a>》，2023</cite></blockquote>
+<p>他讲了自己的一次经历。有一天 HR 请他过去谈谈，调查员开始问他和一位同事吃饭的事，问到一半他才明白自己被指控了。对方告诉他，不提前说明谈话内容是故意的，为的是让人来不及「准备说法」。他碰巧有书面证据，才脱了身。他的建议因此很务实：最好的 HR 互动是没有互动；万一要找，先把材料备齐，抢先去讲，因为先讲的版本听起来更像真相。</p>
+<p>绩效改进计划（Performance Improvement Plan，PIP）是这台机器最锋利的部件。2025 年 3 月的《<a href="https://levelupwithethanevans.substack.com/p/are-pips-designed-to-fail">Are PIPs designed to fail?</a>》给 PIP 的结局找了一套心理学解释。经理如果知道怎么帮你，早就帮了；你如果知道怎么做好，也早就做好了。更关键的是，</p>
+<blockquote><span class="en">By the time your manager decides you need to be put on a formal performance plan, they have burned up all their optimism for you.</span><span class="zh">等到经理决定给你上正式的绩效计划，他对你的乐观早就耗尽了。</span><cite>— Ethan Evans ·《Are PIPs designed to fail?》，2025</cite></blockquote>
+<p>从那一刻起，经理的心态变成「处理一个问题」，开始留意并记下更多缺点；HR 的流程又要求把能证明「不胜任」的材料写全。所以他给员工的建议是绝不要走到这一步，一旦开始，就趁还在领薪水赶紧找下一份工作。文后一位读者提到 Amazon 的「无憾流失」（unregretted attrition，公司希望表现差的人离开的年度比例）配额，他的回应两头都说：配额有用处，因为停掉的那一年很多经理干脆不管绩效了；但它也是一把钝锤，</p>
+<blockquote><span class="en">managers above me were more likely to ask me when I was going to "wrap up" performance management and "hit my number" than how it was going rehabilitating an employee (a question I was simply never asked).</span><span class="zh">我的上级更常问的是我什么时候「收尾」、什么时候「完成指标」，而不是帮一个员工重新站起来进展如何（这个问题从来没人问过我）。</span><cite>— Ethan Evans ·《Are PIPs designed to fail?》读者回应，2025</cite></blockquote>
+<p>配额的具体数字和他辅导 PIP 员工的经历，<a href="amazon-vp-stack-ranking-pips-working-pod1.html">Peterman 第一期的精读</a>已经核查过。</p>
+
+<h3>三、裁员名单：在你听说之前就列好了</h3>
+<p>关于裁员，Evans 的说法三年来分成两层：怎么不上名单，以及上了怎么办。2024 年 2 月的《<a href="https://levelupwithethanevans.substack.com/p/how-to-stay-off-the-layoff-lists">How to stay off the layoff lists</a>》给了四条：早点要反馈、补短板，练一门稀缺或必不可少的本事，靠近赚钱的业务，离开前景不明的研究项目和亏损部门。他强调，裁员当天你几乎做不了什么，提前几个月却能做很多。2026 年在 Peterman 的节目上，他补上了名单是谁写的：</p>
+<blockquote><span class="en">The layoff key is the decision is often not made by your manager, it's made by your skip or a couple levels up.</span><span class="zh">裁员的关键在于，决定往往不是你的经理做的，而是你上司的上司，或者再往上一两级。</span><cite>— Ethan Evans · The Peterman Pod <a class="ts" href="https://www.youtube.com/watch?v=KhjhRRz3VJw&amp;t=8242s">[02:17:22]</a></cite></blockquote>
+<p>所以他要的不只是好评级，还要「被上面认识」：一项带你名字的成果，或者一门只有你懂的手艺。同一期里他也讲了更难看的一面：他见过一场裁员讨论，有位领导说「那个人要养家，这个人没有」，他说这在法律上根本不允许，但事情就是这么定的。</p>
+<p>他对裁员大势的看法则跟着形势在变。2024 年 4 月，他把 Amazon 两年里至少十几轮的小规模裁员称为「令人困惑」，因为常规建议是要裁就一次裁到位，他自己 2023 年主持的一场<a href="https://levelupwithethanevans.substack.com/p/how-to-lead-in-tough-times-ethan">座谈</a>纪要里也写着这一条。他的猜测是，公司太大，没法一次规划清楚，只能一个组一个组地审下去。到 2026 年 2 月，他已经不再困惑，文章标题就是《<a href="https://levelupwithethanevans.substack.com/p/layoffs-will-continue-all-year">Layoffs will continue all year</a>》，理由之一是「AI 带来的效率」。</p>
+<p>最有意思的变化在他讲自己被裁的方式上。2023 年 8 月的《<a href="https://levelupwithethanevans.substack.com/p/my-layoff-story">My layoff story</a>》是一个纯粹的逆境故事：领养女儿回国三天后被裁，全家没有收入，他每天找工作、学 SQL，三个月后找到一份不太好的工作。文中没有一句说是他自己的问题。2025 年在 Peterman 那里，他说第二次被裁其实是只裁了他一个人的「裁员」，起因是他跟同事冲突不断。到 2026 年，文章里也写进了这一层：</p>
+<blockquote><span class="en">When I was let go, it was personal and it was my fault.</span><span class="zh">我被裁的时候，那是冲着我个人的，而且是我的错。</span><cite>— Ethan Evans ·《Layoffs will continue all year》，2026</cite></blockquote>
+<p>他用这句话安慰今天的读者：成千上万人一起被裁，谁都知道跟你个人无关。这和他 2023 年那篇《<a href="https://levelupwithethanevans.substack.com/p/straight-truth-how-do-you-best-explain">How do you best explain that you were laid off</a>》是同一个判断：只裁一部分人时，别家的招聘经理怀疑你是低绩效者，是合理的；整个团队被裁，是最好讲的故事。</p>
+
+<h3>四、政治：先认出这家公司的货币</h3>
+<p>前三条说的都是组织怎样说一套做一套，第四条讲人在其中怎么说话。2023 年 7 月，他连写两篇谈 Amazon 领导力准则（Leadership Principles，LP，Amazon 用来评判一切行为的十几条信条）怎样被滥用。一种是「武器化」：拿准则去羞辱人、逼人就范，比如你不帮我的组干活，我就说你「没有赢得信任」。</p>
+<blockquote><span class="en">The 16 LPs cover enough ground that I can find a way to claim that one of them supports my position or desire.</span><span class="zh">16 条 LP 覆盖的范围足够广，我总能找到一条来证明我的立场或心愿。</span><cite>— Ethan Evans ·《<a href="https://levelupwithethanevans.substack.com/p/weaponizing-amazon-leadership-principles">Weaponizing Amazon Leadership Principles</a>》，2023</cite></blockquote>
+<p>另一种是「退化」：图省事，把准则用成最简单的形式。他举的是「节俭」被用成「一分钱不花」，内部有个外号叫 Frupidity（节俭加愚蠢）。他一位很尊敬的上司，想给一起干了两年多的团队买几个咖啡杯，最后只好自掏腰包。两种情况他给的解法相同：别跟对方争准则的字面意思，看清他真正想要什么，再用一句「要满足什么条件，你才会同意？」把对话拉回问题本身（见《<a href="https://levelupwithethanevans.substack.com/p/degenerate-leadership-principles">Degenerate Leadership Principles</a>》）。</p>
+<p>2024 年 5 月，他借一位带三千人的 EVP 朋友的话，把这层意思推到公司之间：每家公司都有政治，但通行的「货币」不一样，有的看技术深度，有的看财务，有的看拆解问题和讲故事的本事（《<a href="https://levelupwithethanevans.substack.com/p/executive-advice-on-corporate-politics">Executive advice on corporate politics</a>》）。办法是看每一级谁被奖励、CEO 盯哪几个指标、争议最大的决策最后谁赢。他自己的心法是：重要的不是我想说什么，而是对方听得进什么。</p>
+
+<h2>这些主张怎么咬合</h2>
+<p>四条连起来，是一个关于信息的模型。组织做决定的人很少，承受决定的人很多，于是每个决定都要配一套能对多数人讲的理由。裁员说是「大环境」，重组说是「业务需要」，PIP 说是「帮你改进」，LP 说是「公司价值观」。这些说法不一定是假的，但都不是全部。第一条教你识别两套理由的存在，第二条指出 HR 和 PIP 是把公开理由写成档案的机器，第三条说名单由离你两级以上的人决定，第四条说你能影响他们的语言因公司而异。所以他的处方始终指向同一处：在决定做出之前，让做决定的人认识你、需要你。</p>
+<p>放进整个专题里看，这一篇是前几篇的背面。<a href="ethan-evans-promotion-topic2.html">第 2 篇</a>讲重组可以是新的晋升，这一篇讲同一次重组也可以把人送走；<a href="ethan-evans-managing-up-topic4.html">第 4 篇</a>讲争取上司，这一篇解释为什么光争取上司不够，裁员名单在更上面一级写成。<a href="ethan-evans-who-topic1.html">第 1 篇</a>说的「位置折扣」在这里最明显：他讲 HR 和 PIP 的许多细节，来自坐在写名单那一侧的经验。</p>
+
+<h2>边界</h2>
+<div class="claim">
+<p class="said">「只裁一部分人时，公司会顺手清理低绩效者，所以别家招聘经理怀疑你是合理的；整个团队被裁，是最好讲的故事。」——《How do you best explain that you were laid off》，2023</p>
+<p class="verdict">有据</p>
+<p>Gibbons 与 Katz 1991 年的经典研究正是这个推理：公司能挑人裁时，市场就推断被裁的人能力偏低。美国 1984、1986 年的离职工人调查数据显示，被裁员工再就业的工资低于工厂整体关闭的人，失业也更久，雇主挑人余地越大差距越明显。这是平均意义上的市场推断，不说明对每个人都成立。</p>
+</div>
+<div class="claim">
+<p class="said">「大多数工作（80%！！）来自人脉。」——《Layoffs will continue all year》，2026</p>
+<p class="verdict">有据，但说宽了</p>
+<p>方向对，数字大了。Lester、Rivers 与 Topa 2023 年的综述写道，多数求职者调查里有 50% 到 60% 的人报告用过推荐；企业调查里，经推荐入职的从不到 40% 到超过 50% 不等。而且「用过推荐」并不等于「工作来自人脉」。80% 这个数在研究文献里找不到出处。</p>
+</div>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>分布式系统 · 故障检测器（failure detector）</b>：Chandra 与 Toueg 1996 年把故障检测器形式化为「不可靠的」：一个节点被判定失效，不是因为它真的挂了，而是监视它的节点在超时内没收到心跳。Evans 说裁员名单由上两级写，等于说你的心跳必须送到那一级，否则你会被「怀疑」。像在这里；不像在于，系统里的超时没有偏好，而人做的检测器会挑它想听到的心跳。</li>
+<li><b>法学 · Holmes 的「坏人」视角</b>：Oliver Wendell Holmes 1897 年在《法律的道路》里说，想看清法律，就站在一个只关心后果的「坏人」位置上，看法院实际会怎样对待你，而不是看法律宣称的道德。Evans 读 HR 和 PIP 用的正是这一招：不看流程说自己为了什么，只看它会对你做什么。不同的是，Holmes 在描述法律，Evans 在教你趁流程启动之前行动。</li>
+<li><b>佛学 · 依义不依语</b>：佛教「四依」里有一条「依义不依语」，读经要依循意思，不执着字面。Evans 说的「退化的 LP」就是依语不依义，把「节俭」读成「不花钱」；「武器化」更进一步，是拿经文去压人。他那句「要满足什么条件你才同意」，等于把对话从字面拉回到义。</li>
+<li><b>生态学 · 计划烧除（prescribed burn）</b>：林业上常用小规模的计划火烧掉林下积累的可燃物，以免日后烧成一场大火。Amazon 的滚动式小裁员很像这种做法：一次烧一小片，从不让「冗余」积到需要一次大裁的地步。不像的地方恰好是常规建议担心的地方：树不会预期下一把火，员工会，于是每一把小火都让留下的人一直处在等待里。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Ethan Evans 认为，对不敢当面处理绩效问题的经理来说，裁员是一个借「上面的决定」送走难处的人的机会。</li>
+<li>Evans 劝被裁的人别只听经理给的理由，去找自己被选中的其他原因，从中学到东西。</li>
+<li>Evans 2024 年说重组源于领导完不成目标；2026 年在访谈里说，重组背后总还有留人、送人等别的考虑。</li>
+<li>Evans 认为 HR 的首要职责是替公司管控成本和法律风险，最好的 HR 互动是没有互动，万一要找就带着材料抢先去讲。</li>
+<li>Evans 认为 PIP 几乎注定以离职收场，因为经理上 PIP 时已耗尽对员工的乐观，HR 流程又要求把缺点写成档案。</li>
+<li>Evans 承认 Amazon 的「无憾流失」配额能逼经理处理绩效，但他的上级只问他何时完成指标，从没问过员工有没有被救回来。</li>
+<li>Evans 说裁员名单常由上司的上司或更高层决定，所以想不上名单，除了好评级，还要被上两级认识、手里有稀缺本事。</li>
+<li>Evans 讲自己 2003 年被裁的故事，2023 年只讲逆境，2026 年才写明那次是冲着他个人、是他自己的错。</li>
+<li>Evans 把滥用 Amazon 领导力准则分成两种：拿准则压人的「武器化」，和图省事、只取字面的「退化」，比如把节俭用成一分钱不花。</li>
+<li>Evans 主张先认出一家公司通行的「货币」，是技术、财务还是讲故事，再用对方听得进的语言说话。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://levelupwithethanevans.substack.com/p/straight-truth-layoffs-are-a-relief">Layoffs are a relief for some managers</a> · <a href="https://levelupwithethanevans.substack.com/p/straight-truth-hr-is-not-there-to">HR is not there to help you</a> · <a href="https://levelupwithethanevans.substack.com/p/are-pips-designed-to-fail">Are PIPs designed to fail?</a></span><span class="d">Evans，2023–2025。前两条主张的主要来源。</span></li>
+<li><span class="t"><a href="https://levelupwithethanevans.substack.com/p/how-to-stay-off-the-layoff-lists">How to stay off the layoff lists</a> · <a href="https://levelupwithethanevans.substack.com/p/straight-truth-how-do-you-best-explain">How do you best explain that you were laid off</a> · <a href="https://levelupwithethanevans.substack.com/p/layoffs-will-continue-all-year">Layoffs will continue all year</a></span><span class="d">Evans，2023–2026。裁员一条，以及两条边界里被检验的原话。</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=6WaeGfLnRvc">Amazon VP: How Corporate Politics Work And How To Win</a> · <a href="https://www.youtube.com/watch?v=KhjhRRz3VJw">Amazon VP: Questions On Corporate Politics But They Get Increasingly Darker</a></span><span class="d">The Peterman Pod，2026。本页时间戳指向这两期。</span></li>
+<li><span class="t"><a href="https://www.nber.org/papers/w2968">Gibbons &amp; Katz, Layoffs and Lemons（Journal of Labor Economics, 1991）</a></span><span class="d">第一条边界的依据。</span></li>
+<li><span class="t"><a href="https://publish.uwo.ca/~drivers2/research/LRT_Nov_2023.pdf">Lester, Rivers &amp; Topa, The Heterogeneous Impact of Referrals on Labor Market Outcomes（2023）</a></span><span class="d">第二条边界的依据。</span></li>
+</ul>
+<footer>Ethan Evans 专题 · 按主题把他的文章和访谈理成体系 · 写于 2026-10-15</footer>
+</div>
+</body></html>

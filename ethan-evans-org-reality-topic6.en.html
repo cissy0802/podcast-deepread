@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethan Evans Series · How Organizations Really Work</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="ethan-evans-org-reality-topic6.html">中文 →</a></div>
+<header>
+<div class="kicker">Ethan Evans Series · No. 6</div>
+<h1>How Organizations Really Work: Every Big Decision Has Two Reasons</h1>
+<p class="sub">Layoffs, reorgs, HR and PIPs share one structure in his writing: a public reason told to everyone, and a real one that circulates only among the people deciding. He teaches you to read the second, and admits he has written the first</p>
+</header>
+<div class="meta-card"><b>Topic</b> How organizations really work: politics, reorgs, layoffs, PIPs · <b>Articles</b> 17 free Level Up posts read in full (including one panel recap), 2023–2026 · <b>Interviews</b> Three episodes of The Peterman Pod (2025–2026), each with its own deep-read: <a href="amazon-vp-stack-ranking-pips-working-pod1.en.html">one</a> · <a href="amazon-vp-corporate-politics-work-win-pod2.en.html">two</a> · <a href="amazon-vp-questions-corporate-politics-but-pod3.en.html">three</a></div>
+
+<h2>His claims</h2>
+
+<h3>1. Every big organizational decision has two reasons</h3>
+<p>Evans's favorite move when he writes about organizations is to separate the stated reason from the real one. In May 2023, at the height of the layoff wave, he wrote a post readers did not enjoy, <a href="https://levelupwithethanevans.substack.com/p/straight-truth-layoffs-are-a-relief">Layoffs are a relief for some managers</a>. Many managers, he observed, are bad at confronting poor performance and afraid to try: a good conversation still leaves sadness, a bad one leaves anger, and a careless one can end in a lawsuit. A layoff removes all of that. The list may include the strong performer who is hard to work with, the person the manager fears will sue, or simply the person the manager never liked. For such a manager, a layoff</p>
+<blockquote><span class="en">represents a chance to take action from behind a cloak of "it's not my decision, don't be mad at me, this came down from corporate."</span><cite>— Ethan Evans · Layoffs are a relief for some managers, 2023</cite></blockquote>
+<p>So he tells people who were cut not to take the manager's story at face value, and to look for the other reasons they were chosen.</p>
+<p>Reorgs have two reasons too, though his account of the real one shifts. His April 2024 post <a href="https://levelupwithethanevans.substack.com/p/why-reorgs-happen-and-why-the-true">Why reorgs happen</a> gives employees a simple explanation: reorgs happen because a leader is missing a goal, say ad revenue was supposed to grow 30% and grew 12%. If the change makes no sense to you, you are not seeing what the leader felt was broken. On The Peterman Pod in 2026, asked whether reorgs hide other motives, he went further:</p>
+<blockquote><span class="en">I would say there's always something else going on.</span><cite>— Ethan Evans · The Peterman Pod <a class="ts" href="https://www.youtube.com/watch?v=6WaeGfLnRvc&amp;t=616s">[00:10:16]</a></cite></blockquote>
+<p>The reorgs he ran, he said, were "very much about retention": better seats for the people he wanted to keep, less for those he would not mind losing. <a href="amazon-vp-corporate-politics-work-win-pod2.en.html">That episode's deep-read</a> covers his "ship leaving the dock" image, so it is not repeated here. One detail is worth setting side by side. In December 2023 he wrote a short post, <a href="https://levelupwithethanevans.substack.com/p/other-on-the-org-chart">"Other" on the org chart</a>, about the grab-bag groups with long names ("Quality, Data, and Services") that really mean "other". They are hard to manage, he wrote, so push for focus. In the interview the same "other" group has a different use: to get rid of a pushy, overly ambitious leader, hand them "other", and six weeks later the seat is open. In the article it is a management problem; in the interview it is a tool.</p>
+
+<h3>2. HR and PIPs: a machine that writes the company's file</h3>
+<p>The second claim is where the first one lands in policy. In June 2023 a reader described being told she could not be promoted until a male colleague caught up so they could go up together. HR gave her nothing. Evans answered bluntly:</p>
+<blockquote><span class="en">The Straight Truth is that HR has a main duty of managing costs and legal risks for the company.</span><cite>— Ethan Evans · <a href="https://levelupwithethanevans.substack.com/p/straight-truth-hr-is-not-there-to">HR is not there to help you</a>, 2023</cite></blockquote>
+<p>He told his own story. HR once asked him to stop by; an investigator began asking about a dinner with a colleague, and only halfway through did he realize he had been accused of something. Not telling him the topic in advance was deliberate, he was told, so he could not prepare a story. He happened to have written proof. His advice is accordingly practical: the best interaction with HR is none, and if you must go, go first with your documents, because the first story tends to sound like the truth.</p>
+<p>The Performance Improvement Plan (PIP) is the sharpest part of this machine. His March 2025 post <a href="https://levelupwithethanevans.substack.com/p/are-pips-designed-to-fail">Are PIPs designed to fail?</a> offers a psychological account of why they end the way they do. If your manager knew how to help you, they would have already; if you knew how to succeed, you would have already. More to the point:</p>
+<blockquote><span class="en">By the time your manager decides you need to be put on a formal performance plan, they have burned up all their optimism for you.</span><cite>— Ethan Evans · Are PIPs designed to fail?, 2025</cite></blockquote>
+<p>From then on the manager is "managing a problem" and notices and records more faults, while HR's process demands a complete file showing non-performance. So his advice to employees is never to get there, and if it starts, to look for the next job while the paycheck lasts. When a reader raised Amazon's "unregretted attrition" quota (a yearly share of weak performers the company wants to see leave), he answered both ways: the quota does something, because when it was paused for a year many managers simply stopped managing performance, but it is a blunt hammer, and</p>
+<blockquote><span class="en">managers above me were more likely to ask me when I was going to "wrap up" performance management and "hit my number" than how it was going rehabilitating an employee (a question I was simply never asked).</span><cite>— Ethan Evans · reply to readers, Are PIPs designed to fail?, 2025</cite></blockquote>
+<p>The quota numbers and his experience coaching people on PIPs were fact-checked in <a href="amazon-vp-stack-ranking-pips-working-pod1.en.html">the deep-read of the first Peterman episode</a>.</p>
+
+<h3>3. The layoff list is written before you hear about it</h3>
+<p>On layoffs, his writing over three years has two layers: how to stay off the list, and what to do if you are on it. His February 2024 post <a href="https://levelupwithethanevans.substack.com/p/how-to-stay-off-the-layoff-lists">How to stay off the layoff lists</a> gives four moves: ask for feedback early and fix the gaps, build a rare or essential skill, get close to the money, and leave speculative research projects and failing units. There is little you can do on the day, he stresses, but a lot you can do a couple of months ahead. On The Peterman Pod in 2026 he added who writes the list:</p>
+<blockquote><span class="en">The layoff key is the decision is often not made by your manager, it's made by your skip or a couple levels up.</span><cite>— Ethan Evans · The Peterman Pod <a class="ts" href="https://www.youtube.com/watch?v=KhjhRRz3VJw&amp;t=8242s">[02:17:22]</a></cite></blockquote>
+<p>So good ratings are not enough; you need to be known higher up, through an accomplishment with your name on it or a skill only you have. In the same episode he described the uglier side: in one layoff discussion he witnessed, a leader argued that one man had a family to support and another did not. That is not a legal criterion, he said, but it is how the decision was made.</p>
+<p>His view of the broader trend moved with events. In April 2024 he called Amazon's dozen-plus rounds of small cuts in two years "puzzling", since the standard advice is to cut once and deeply; a <a href="https://levelupwithethanevans.substack.com/p/how-to-lead-in-tough-times-ethan">panel</a> he moderated in 2023 says the same in its recap. His guess was that the company is too large to plan one cut and is auditing group by group. By February 2026 the puzzlement was gone; the post is titled <a href="https://levelupwithethanevans.substack.com/p/layoffs-will-continue-all-year">Layoffs will continue all year</a>, and one reason he gives is "AI-driven efficiency".</p>
+<p>The most interesting change is in how he tells his own layoff. <a href="https://levelupwithethanevans.substack.com/p/my-layoff-story">My layoff story</a> (August 2023) is pure adversity: laid off three days after returning from adopting his daughter, no income in the house, job hunting every day and learning SQL, then a bad job three months later. It never says the problem was him. On Peterman's show in 2025 he said his second layoff was really a layoff of one, driven by his constant conflicts with colleagues. By 2026 his writing said so too:</p>
+<blockquote><span class="en">When I was let go, it was personal and it was my fault.</span><cite>— Ethan Evans · Layoffs will continue all year, 2026</cite></blockquote>
+<p>He uses the line to reassure today's readers: when thousands go at once, everyone knows it is not about you. It is the same judgment as his 2023 post <a href="https://levelupwithethanevans.substack.com/p/straight-truth-how-do-you-best-explain">How do you best explain that you were laid off</a>: when only part of a team is cut, other hiring managers are right to wonder whether you were a low performer, and a whole-team cut is the strongest story.</p>
+
+<h3>4. Politics: learn the company's currency first</h3>
+<p>The first three claims are about how organizations say one thing and do another; the fourth is about how to talk inside them. In July 2023 he wrote two posts on how Amazon's Leadership Principles (LPs, the dozen-plus tenets Amazon uses to judge all behavior) get abused. One is weaponizing: using a principle to shame someone into compliance, as in "you are not Earning Trust" when you will not do work for my team.</p>
+<blockquote><span class="en">The 16 LPs cover enough ground that I can find a way to claim that one of them supports my position or desire.</span><cite>— Ethan Evans · <a href="https://levelupwithethanevans.substack.com/p/weaponizing-amazon-leadership-principles">Weaponizing Amazon Leadership Principles</a>, 2023</cite></blockquote>
+<p>The other is degeneration: applying a principle in its laziest form. His example is Frugality turned into "spend nothing", nicknamed "Frupidity" inside Amazon. A boss he deeply respected wanted coffee mugs for a team that had shipped together for two years, and ended up buying them with his own money. His fix is the same in both cases: do not argue the letter of the principle, find what the person actually wants, and ask "What would need to be true for you to approve this?" (<a href="https://levelupwithethanevans.substack.com/p/degenerate-leadership-principles">Degenerate Leadership Principles</a>).</p>
+<p>In May 2024, quoting an EVP friend with a 3,000-person organization, he extended the point across companies: every company has politics, but the currency differs; some prize technical depth, some finance, some problem decomposition and storytelling (<a href="https://levelupwithethanevans.substack.com/p/executive-advice-on-corporate-politics">Executive advice on corporate politics</a>). To find it, watch who gets rewarded at each level, which metrics the CEO tracks, and who wins the most contested decisions. His own rule: it does not matter what I want to say, it matters what they can hear.</p>
+
+<h2>How the claims fit together</h2>
+<p>Taken together, the four claims form a model of information. Few people make decisions in an organization and many live with them, so every decision needs a reason that can be told to the many. Layoffs are "the environment", reorgs are "business needs", PIPs are "helping you improve", LPs are "our values". None of these is necessarily false, but none is the whole story. The first claim teaches you to see the two reasons, the second shows HR and PIPs as machines that turn the public reason into a file, the third says the list is written two levels above you, and the fourth says the language that moves those people varies by company. His prescription therefore always points to the same place: before the decision is made, make sure the people making it know you and need you.</p>
+<p>Within the series, this is the reverse side of earlier entries. <a href="ethan-evans-promotion-topic2.en.html">No. 2</a> treats a reorg as the new promotion; this one shows the same reorg can push someone out. <a href="ethan-evans-managing-up-topic4.en.html">No. 4</a> is about winning over your boss; this one explains why that is not enough when the layoff list is drafted a level higher. The "seat" discount from <a href="ethan-evans-who-topic1.en.html">No. 1</a> is clearest here: much of what he knows about HR and PIPs comes from sitting on the side that writes the list.</p>
+
+<h2>Boundaries</h2>
+<div class="claim">
+<p class="said">"When only part of a team is cut, companies clean house of perceived low performers, so other hiring managers are reasonable to wonder; a whole-team cut is the strongest story." — How do you best explain that you were laid off, 2023</p>
+<p class="verdict">Supported</p>
+<p>Gibbons and Katz (1991) is exactly this argument: when firms choose whom to lay off, the market infers the laid-off are less able. In the US Displaced Worker Surveys of 1984 and 1986, laid-off workers earned less after displacement than plant-closing workers and stayed unemployed longer, more so where employers had discretion. It is an average market inference, not a verdict on each individual.</p>
+</div>
+<div class="claim">
+<p class="said">"Most jobs (80% !!) come through networking connections." — Layoffs will continue all year, 2026</p>
+<p class="verdict">Supported, but overstated</p>
+<p>Right direction, inflated number. Lester, Rivers and Topa's 2023 review notes that most job-seeker surveys find 50 to 60 percent of workers report using a referral; firm surveys range from just under 40 to over 50 percent of hires. And "used a referral" is not "got the job through contacts". The 80% figure has no source in the research literature.</p>
+</div>
+
+<h2>Cross-disciplinary connections</h2>
+<div class="crossx"><ul>
+<li><b>Distributed systems · Failure detectors</b>: Chandra and Toueg (1996) formalized failure detectors as unreliable: a node is suspected not because it crashed but because its monitor heard no heartbeat within the timeout. Evans's point that the list is written two levels up amounts to saying your heartbeat must reach that level or you will be suspected. The difference: a timeout has no preferences, while a human detector chooses which heartbeats it wants to hear.</li>
+<li><b>Law · Holmes's "bad man"</b>: In The Path of the Law (1897), Oliver Wendell Holmes said that to see the law clearly, take the view of a bad man who cares only about consequences, what courts will actually do to him, not the morality the law professes. Evans reads HR and PIPs the same way: ignore what the process says it is for and watch what it will do to you. Holmes was describing law; Evans is telling you to act before the process starts.</li>
+<li><b>Buddhism · Rely on the meaning, not the words</b>: One of the Buddhist "four reliances" is to rely on the meaning rather than the letter of a teaching. A degenerate LP relies on the letter, reading Frugality as "spend nothing"; a weaponized one goes further and uses scripture as a club. His question, "What would need to be true?", pulls the conversation from the letter back to the meaning.</li>
+<li><b>Ecology · Prescribed burns</b>: Foresters set small planned fires to clear accumulated fuel so it never feeds one catastrophic blaze. Amazon's rolling micro-layoffs look like this: burn a small patch at a time and never let slack build up to the point of one huge cut. The disanalogy is exactly what the standard advice worries about: trees do not anticipate the next fire, employees do, so every small fire keeps the survivors waiting for the next one.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Ethan Evans argues that for managers afraid to confront poor performance, a layoff is a chance to remove difficult people behind the cover of "corporate's decision."</li>
+<li>Evans advises laid-off people not to accept the manager's explanation at face value and to look for the other reasons they were chosen.</li>
+<li>In 2024 Evans said reorgs happen because a leader is missing goals; in a 2026 interview he said there is always something else going on, such as retaining or easing out people.</li>
+<li>Evans holds that HR's main duty is managing the company's costs and legal risk, so the best HR interaction is none, and if needed you should go first with documents.</li>
+<li>Evans argues PIPs almost always end in departure because the manager's optimism is already spent and the HR process demands a written case of non-performance.</li>
+<li>Evans grants that Amazon's unregretted-attrition quota forces managers to act, but says his own bosses asked when he would hit his number, never whether an employee was rehabilitated.</li>
+<li>Evans says layoff lists are often decided by the skip-level manager or higher, so staying off them takes visibility two levels up and a rare skill, not just good ratings.</li>
+<li>Evans told his 2003 layoff story in 2023 as pure adversity, and only by 2026 wrote that it was personal and his own fault.</li>
+<li>Evans splits abuse of Amazon's Leadership Principles into weaponizing them to pressure people and degenerate, letter-only use, such as Frugality as never spending anything.</li>
+<li>Evans advises learning a company's dominant currency, whether technology, finance or storytelling, and speaking in terms the listener can hear.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://levelupwithethanevans.substack.com/p/straight-truth-layoffs-are-a-relief">Layoffs are a relief for some managers</a> · <a href="https://levelupwithethanevans.substack.com/p/straight-truth-hr-is-not-there-to">HR is not there to help you</a> · <a href="https://levelupwithethanevans.substack.com/p/are-pips-designed-to-fail">Are PIPs designed to fail?</a></span><span class="d">Evans, 2023–2025. Main sources for the first two claims.</span></li>
+<li><span class="t"><a href="https://levelupwithethanevans.substack.com/p/how-to-stay-off-the-layoff-lists">How to stay off the layoff lists</a> · <a href="https://levelupwithethanevans.substack.com/p/straight-truth-how-do-you-best-explain">How do you best explain that you were laid off</a> · <a href="https://levelupwithethanevans.substack.com/p/layoffs-will-continue-all-year">Layoffs will continue all year</a></span><span class="d">Evans, 2023–2026. The layoff claim and the two statements tested under Boundaries.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=6WaeGfLnRvc">Amazon VP: How Corporate Politics Work And How To Win</a> · <a href="https://www.youtube.com/watch?v=KhjhRRz3VJw">Amazon VP: Questions On Corporate Politics But They Get Increasingly Darker</a></span><span class="d">The Peterman Pod, 2026. Timestamps on this page point here.</span></li>
+<li><span class="t"><a href="https://www.nber.org/papers/w2968">Gibbons &amp; Katz, Layoffs and Lemons (Journal of Labor Economics, 1991)</a></span><span class="d">Basis for the first boundary.</span></li>
+<li><span class="t"><a href="https://publish.uwo.ca/~drivers2/research/LRT_Nov_2023.pdf">Lester, Rivers &amp; Topa, The Heterogeneous Impact of Referrals on Labor Market Outcomes (2023)</a></span><span class="d">Basis for the second boundary.</span></li>
+</ul>
+<footer>Ethan Evans Series · his articles and interviews, organized by theme · written 2026-10-15</footer>
+</div>
+</body></html>
