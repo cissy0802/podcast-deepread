@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethan Evans Series · Managing Up and Influence</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="ethan-evans-managing-up-topic4.html">中文 →</a></div>
+<header>
+<div class="kicker">Ethan Evans Series · No. 4</div>
+<h1>Managing up: your boss is practicing on you, so the relationship is your job</h1>
+<p class="sub">An untrained manager, three ways to read one, "easy to get along with, firm on the work," and a skip-level door that almost never opens</p>
+</header>
+<div class="meta-card"><b>Topic</b> Managing up and influence · <b>Articles</b> 12 free <i>Level Up</i> posts read (11 by Evans, 1 summary of a chat with Wes Kao), 2023–2025 · <b>Interviews</b> Ella Irwin's The Cry Room (Aug 2024), The Peterman Pod, second and third episodes (2026)</div>
+
+<h2>Glossary</h2>
+<div class="glossary"><ul>
+<li><b>Managing up</b>: Evans defines it as building a relationship with your manager that makes it easier for you both to work together, specifically by helping them succeed and making their job easier. He explicitly rules out the flattery reading.</li>
+<li><b>Skip (skip-level)</b>: your manager's manager. "Going over your boss's head" means taking a problem to this person.</li>
+<li><b>Magic Loop</b>: Evans's promotion framework: do your job well, ask your manager what else would help, do that well, ask again. Covered in <a href="ethan-evans-promotion-topic2.en.html">No. 2</a>; here it is only background.</li>
+</ul></div>
+
+<h2>His claims</h2>
+<h3>1. Your manager was probably never trained, so this work lands on you</h3>
+<p>Evans does not start from "your manager matters." He starts from a colder premise. In June 2023, <a href="https://levelupwithethanevans.substack.com/p/surviving-bad-managers-learn-to-manage">Surviving Bad Managers</a> opens by saying your manager is probably untrained. They studied engineering, law or accounting, got promoted for being good at it, and even an MBA teaches little about managing people.</p>
+<blockquote><span class="en">The result is, managers learn on the job — they learn by practicing on you.</span><cite>— Ethan Evans · Surviving Bad Managers, 2023</cite></blockquote>
+<p>The conclusion follows: since you cannot count on your manager to manage, your only choice is to get very good at managing up. He concedes this is not fair and says he is not excusing poor management, but he specializes in "what is" rather than "what should be." It is the stance of his whole "Straight Truth" reader-question series.</p>
+<p>A year later, talking with Ella Irwin, he recast the survival kit as a partnership. People get bosses wrong, he says, because our first two models of a boss are parents and teachers, both steep hierarchies with no partnership in them, so we arrive at work with a twenty-year "parental and academic hangover." Then he adds the line that frames the whole topic:</p>
+<blockquote><span class="en">You need the strongest managing up skills when your manager is the weakest at managing down.</span><cite>— Ethan Evans · The Cry Room <a class="ts" href="https://www.youtube.com/watch?v=amj3BtBSp9A&amp;t=503s">[00:08:23]</a></cite></blockquote>
+<p>A great manager is a chameleon who adapts to you; a weaker one has preferences they will not drop. If each side moves halfway, nobody's rubber band is stretched to the limit. In the same conversation he widens the definition: managing up is emotional intelligence applied in one direction, with one very important person.</p>
+
+<h3>2. Read your manager first, then negotiate your autonomy</h3>
+<p>To adapt to someone, you have to know who they are. Evans gives three routes: ask them, watch them, and ask people who have worked for them. The questions are concrete: what does great performance look like to you, what makes your job easy, what are your pet peeves, how and how often do you want information. He is an email person who finds "just give me a call" a stretch, but he will do it. And watch them under pressure, because most people's compensating skills cover their real style when things are calm and fall away when the heat comes.</p>
+<p>The 2025 post <a href="https://levelupwithethanevans.substack.com/p/how-to-decode-your-manager">How to decode your manager</a> turns that conversation into a checklist. The most useful item is the four "limits of authority" questions: what can I decide now, what can I decide as long as I inform you, what needs your sign-off, and what would you need to see to give me more room. <a class="ts" href="https://www.youtube.com/watch?v=amj3BtBSp9A&amp;t=1426s">[00:23:46]</a> Here he pushes back on his host: managing up does not mean doing everything the manager prefers. You can say that a relationship where you must run most daily decisions past them will not work for you. The price is that you have to be ready to leave.</p>
+<p>He once did leave. Roughly ten years ago he interviewed to be VP of software at SpaceX. Recruiters told him they wanted a large-group leader; in Elon Musk's office he was told he would be expected to code at least ten percent of the time. Within about two minutes they agreed to disagree. He says he considered nodding along, but that would have meant committing to something he did not intend to do. <a class="ts" href="https://www.youtube.com/watch?v=amj3BtBSp9A&amp;t=1740s">[00:29:00]</a> Adapting has limits, and Irwin names the clearest one: you never flex to an abusive leader.</p>
+
+<h3>3. Saying the hard thing upward: personally easy, professionally firm</h3>
+<p>Reading your manager is for working together, but working together includes pushing back. On this Evans has been consistent for three years, and in August 2024 he put it most plainly:</p>
+<blockquote><span class="en">Be personally easy to get along with while professionally firm when needed.</span><cite>— Ethan Evans · <a href="https://levelupwithethanevans.substack.com/p/handling-demanding-leaders">Handling demanding leaders</a>, 2024</cite></blockquote>
+<p>His example is Jeff Wilke, then CEO of Amazon's retail business. After Evans's team botched a launch, Wilke started doubting every part of the product. Evans finally told him: we screwed up a button on a web page, punish us if you want, but the technology behind the button works, so don't throw it out. Wilke paused and called it a pretty good argument. What works, Evans explains, is the contrast: if you are calm in tone and firm in substance, someone who lashes out at you looks out of control, and strong leaders never want to look out of control. His trick is to decide in advance that if things escalate, he will get quieter, calmer and firmer.</p>
+<p>The hard thing is not only pushback. In <a href="https://levelupwithethanevans.substack.com/p/saying-the-hard-thing">Saying the hard thing</a> (2024) he recalls getting a project green-lit as a Senior Manager by telling his boss he would build it unless ordered not to, and being promoted as a result. In 2025 he ran a live session aiming to practice twelve extremely hard messages in an hour, such as telling a colleague they have strong body odor. The goal he set for it was the same line: personally polite, calm and friendly, professionally firm and direct.</p>
+<p>The hardest hard thing is admitting you blew it. He tells of the failed launch that left Jeff Bezos waking up to ask where the product was. His response was a short email every hour: where we are, what we will do in the next hour, when the next update comes. Bezos did not have to trust him for a day, only for an hour.</p>
+<blockquote><span class="en">Leaders can forgive a mistake if it appears like you're going to learn from it and not do it again.</span><cite>— Ethan Evans · The Cry Room <a class="ts" href="https://www.youtube.com/watch?v=amj3BtBSp9A&amp;t=2766s">[00:46:06]</a></cite></blockquote>
+<p>With people further up, the rules tighten. In 2024 and again in 2025 he wrote "<a href="https://levelupwithethanevans.substack.com/p/manage-up-to-executives">Be bright, be quick, be gone</a>": come prepared, say it fast, then leave; bring options and a recommendation, because executives pay you to solve problems, not to bring them. In his 2025 talk on <a href="https://levelupwithethanevans.substack.com/p/how-to-win-buy-in-from-ceos">winning buy-in from CEOs</a>, he relays Bezos's three questions for a proposal: Is it real? Is it worth it? Can we win? His example is finance: real and worth it, but he thinks Bezos never believed Amazon could win in such a crowded, regulated industry.</p>
+<p>All of this rests on reputation. <a href="https://levelupwithethanevans.substack.com/p/perception-dictates-reality">Perception dictates reality</a> (June 2024) describes reputations that reinforce themselves: if people think you are always late, they hand you their part late too, and the project really is late. And the further people are from you, the less they check.</p>
+<blockquote><span class="en">the shallowest parts of your reputation will travel the farthest.</span><cite>— Ethan Evans · Perception dictates reality, 2024</cite></blockquote>
+
+<h3>4. Going over your boss's head almost never works: win them over or leave</h3>
+<p>What if your manager simply will not support you? In May 2023 a reader complained that their boss took every travel opportunity for himself and asked whether to go to the skip. Evans called his answer an unpleasant straight truth: bring a problem to a skip and they can either accept that their direct report is a big problem, or deny what you say and possibly tell your manager. The second is far easier.</p>
+<blockquote><span class="en">The risk is high and the chance of help is low.</span><cite>— Ethan Evans · <a href="https://levelupwithethanevans.substack.com/p/straight-truth-my-boss-isnt-supporting">My Boss Isn't Supporting Me</a>, 2023</cite></blockquote>
+<p>His alternative is to go around the side: send those leaders short, frequent status notes, and help your boss win something before asking for support. If nothing works in three to six months, you may have a bad boss. <a href="https://levelupwithethanevans.substack.com/p/when-to-quit-your-manager">When to quit your manager?</a> (November 2023) sets the clock at three months minimum and six to nine months to be fair, after a genuine attempt, because if you sit back waiting to judge them, they will feel it.</p>
+<p>The position later softened a little but never flipped. Asked in 2025 how to tell a skip that your boss is not good, he listed preconditions: an existing good relationship with the skip, being a top performer, at least three specific examples, and allies who agree to be named. On The Peterman Pod in 2026 he gave the other side: as a skip he did fire managers based on what employees reported, but only when several people over time added up to the facts. And he says he has never seen anyone promoted over their manager's objection, because the big boss would be overruling the manager and creating a mess. <a class="ts" href="https://www.youtube.com/watch?v=6WaeGfLnRvc&amp;t=9640s">[02:40:40]</a> The landing point is the same as in 2023: get your manager on board or get out from under them.</p>
+<p>What remains is to talk early. In the same episode he advises someone pushed into weekend work to raise it on a Tuesday or Wednesday, after one crisis and before the next, to make clear that their tolerance is limited, and to be ready to hear "if you don't like it, quit." <a class="ts" href="https://www.youtube.com/watch?v=6WaeGfLnRvc&amp;t=6132s">[01:42:12]</a> The HR and politics side is covered in the <a href="amazon-vp-questions-corporate-politics-but-pod3.en.html">deep read of the third Peterman episode</a> and is not repeated here.</p>
+
+<h2>How the claims fit together</h2>
+<p>Together the four claims describe a model in which your manager is the only interface. Claim one says the interface is poor: your manager is probably untrained and you cannot change them. Claim two says that since you cannot change it, read its documentation: what format of information it wants, how often, and where your authority ends. Claim three says you still have to disagree, but separate the person from the work: yield on tone, not on substance, and after a failure earn trust back in small, frequent increments. Claim four says there is no fallback route, since going over your boss's head rarely works, so the only options left are to cultivate the interface or replace it.</p>
+<p>Across the series, this piece is the other half of the Magic Loop in <a href="ethan-evans-promotion-topic2.en.html">No. 2</a>. The Magic Loop says your manager is the only person who can start a promotion; this piece is about how to work with that person. The "gatekeeper" of <a href="ethan-evans-l7-topic3.en.html">No. 3</a> connects here too: when the manager fails, Evans offers no institutional remedy, only a personal exit. The "position discount" from <a href="ethan-evans-who-topic1.en.html">No. 1</a> is sharpest in this piece: "going to the skip doesn't work" is said by someone who spent years as the skip, describing how he himself would have reacted.</p>
+
+<h2>Boundaries</h2>
+<div class="claim">
+<p class="said">"70% of people when they leave a job leave fundamentally because of the relationship with their direct manager." — Evans <a class="ts" href="https://www.youtube.com/watch?v=amj3BtBSp9A&amp;t=2346s">[00:39:06]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>The best-known figure of this kind comes from a <a href="https://www.gallup.com/workplace/236570/employees-lot-managers.aspx">2015 Gallup report</a>, but its 70% is the share of variance in team engagement attributable to the manager, not a reason for quitting. The quitting number in the same report: of 7,272 US adults, half had at some point left a job to get away from a manager. Right direction, borrowed number.</p>
+</div>
+<div class="claim">
+<p class="said">"Escalating to a skip level with a problem almost never works… The risk is high and the chance of help is low." — My Boss Isn't Supporting Me, 2023</p>
+<p class="verdict">Opinion, not fact</p>
+<p>No data measure how often skip-level escalation succeeds. The closest primary study is <a href="https://pure.psu.edu/en/publications/speaking-up-to-higher-ups-how-supervisors-and-skip-level-leaders-/">Detert and Treviño (2010)</a>, 89 interviews at a multinational tech firm: employees cited leaders two to five levels up as reasons speaking up felt risky or futile almost as often as their direct boss. That shows the belief is widespread, not that escalation fails; Evans himself admits firing managers on employee reports.</p>
+</div>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Political economy · Hirschman, Exit, Voice, and Loyalty</b>: In 1970 Albert Hirschman distinguished two responses to decline: exit (buy elsewhere, quit) and voice (speak up inside to demand change), and argued that loyalty delays exit and gives voice more tries. Evans bets almost everything on exit: upward voice is high risk, low reward, and the final option is always "win them over or leave." The resemblance is obvious; the difference is that Hirschman worried precisely that when exit is easy, organizations stop receiving the signal to improve. Evans's own story of a manager whose people quit one after another while that manager's boss watched for eighteen months is that worry in action.</li>
+<li><b>Sociology · Merton's self-fulfilling prophecy</b>: In 1948 Robert K. Merton used a bank run to show how an initially false belief triggers behavior that makes it true. "Perception dictates reality" is the same loop: people assume you will be late, hand you their work late, and the project is late.</li>
+<li><b>Social psychology · actor–observer asymmetry</b>: Edward Jones and Richard Nisbett (1971) observed that people explain their own behavior by circumstance and others' by disposition. Evans's line in the Irwin conversation, that we judge others by their actions and ourselves by our intentions, is the workplace version, and his reason for owning a failure rather than explaining it.</li>
+<li><b>Distributed systems · leases</b>: Gray and Cheriton (1989) proposed time-limited leases in place of indefinite locks, renewed before they expire. The four limits-of-authority questions work like a lease: which decisions you may make on your own and for how long, with renewal based on what the other side has seen. Hourly updates after a failure shrink the lease to one hour and renew it each time.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Ethan Evans argues most managers were never trained to manage; they were promoted for their craft, so they learn by practicing on their reports.</li>
+<li>Evans defines managing up as helping your manager succeed and making the work easier for both, and calls it emotional intelligence aimed at your boss.</li>
+<li>Evans says the weaker your manager is at managing down, the stronger your managing-up skills need to be.</li>
+<li>Evans offers three ways to read a manager: ask about preferences and pet peeves, watch them under pressure, and ask people who worked for them.</li>
+<li>Evans recommends agreeing on limits of authority with a new manager: what you decide alone, what you decide and report, what needs sign-off.</li>
+<li>Evans turned down Elon Musk's requirement that a SpaceX software VP code ten percent of the time, showing that adapting upward has limits.</li>
+<li>Evans's rule for demanding leaders is to be personally easy and professionally firm, and to decide in advance to get quieter and firmer if things escalate.</li>
+<li>After a major failure, Evans rebuilt trust with hourly status updates, arguing that leaders forgive people who show they have learned.</li>
+<li>Evans relays Jeff Bezos's three questions for any proposal: Is it real? Is it worth it? Can Amazon win?</li>
+<li>Evans holds that escalating to a skip-level is high risk and low reward; if your manager will not support you, win them over or leave.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://levelupwithethanevans.substack.com/p/straight-truth-my-boss-isnt-supporting">Straight Truth: My Boss Isn't Supporting Me</a> · <a href="https://levelupwithethanevans.substack.com/p/surviving-bad-managers-learn-to-manage">Surviving Bad Managers</a></span><span class="d">Evans, 2023. The quote tested in the second boundary, and the "untrained manager" starting point.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=amj3BtBSp9A">Managing Up with Ethan Evans &amp; Ella Irwin</a> · <a href="https://www.youtube.com/watch?v=6WaeGfLnRvc">Amazon VP: How Corporate Politics Work And How To Win</a></span><span class="d">The Cry Room, 2024; The Peterman Pod, 2026. Timestamps on this page point to these two.</span></li>
+<li><span class="t"><a href="https://www.gallup.com/workplace/236570/employees-lot-managers.aspx">Gallup, Employees Want a Lot More From Their Managers (2015)</a></span><span class="d">Basis for the first boundary.</span></li>
+<li><span class="t"><a href="https://pure.psu.edu/en/publications/speaking-up-to-higher-ups-how-supervisors-and-skip-level-leaders-/">Detert &amp; Treviño, Speaking Up to Higher-Ups (Organization Science, 2010)</a></span><span class="d">Basis for the second boundary.</span></li>
+</ul>
+<footer>Ethan Evans Series · his articles and interviews organized by topic · written 2026-10-15</footer>
+</div>
+</body></html>
