@@ -92,6 +92,23 @@ for F in $NEW_FILES; do
     exit 1
   fi
 
+  # Timestamp density (Chinese page only). Issues 1–5 hung a [hh:mm:ss] link on
+  # nearly every sentence — up to 30 on one page — and the prose read as chopped
+  # notes. Quotes and fact-checks carry them; narration gets one or two at most.
+  # Colon density is a judgment call, so it only warns.
+  if ! echo "$F" | grep -q '\.en\.html$'; then
+    read TS COLON CJK < <(python3 -c 'import sys,re;h=sys.stdin.read();h=re.sub(r"<(script|style).*?</\1>","",h,flags=re.S);b=h.split("<h2",1)[-1];t=re.sub(r"<[^>]+>","",b);print(len(re.findall(r"class=\"ts\"",b)),t.count("："),len(re.findall(r"[一-鿿]",t)))' < "$F")
+    if [ "$TS" -gt 12 ]; then
+      echo "ERROR: $F has $TS timestamp links (limit 12)."
+      echo "       Keep them on quotes and fact-checks; drop the ones in running narration."
+      exit 1
+    fi
+    if [ "$CJK" -gt 0 ] && [ $((COLON * 1000 / CJK)) -gt 10 ]; then
+      echo "WARN: $F uses $COLON full-width colons in $CJK chars ($((COLON * 1000 / CJK)) per 1000)."
+      echo "      Many are probably 'X：Y' reveals; rewrite some as plain sentences (CLAUDE.md 5.1)."
+    fi
+  fi
+
   # <div> balance
   OPENS=$(grep -oE '<div[ >]' "$F" | wc -l | tr -d ' ')
   CLOSES=$(grep -oE '</div>' "$F" | wc -l | tr -d ' ')
