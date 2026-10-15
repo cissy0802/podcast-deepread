@@ -35,15 +35,14 @@ Ethan Evans 在 Amazon 做了约十五年，2020 年以 VP 身份退休，现在
 
 从 `TEMPLATE.html` 复制起步，删掉所有 `TEMPLATE` 注释。**header 的 kicker 写「Ethan Evans 专题 · 第 N 篇」**，meta-card 写：主题 · 用到的文章篇数和年份跨度 · 用到的访谈（节目名）。
 
-七节：
+六节（2026-10-15 起不写开场场景，直接进正题）：
 
-1. **那一幕** — 从他讲过的某个具体故事开场（一次会议、一次被拒、一句老板的话），带出这个主题。不要从「Ethan Evans 是前 Amazon VP」开场。
-2. **他的主张**（主体之一）— 2–4 个核心观点，每个一个 `<h3>`。每个观点讲清：他怎么说、他用什么经历或例子撑、他在不同文章里怎么反复或修正这个说法。**把几篇文章合成一条线讲，不要一篇一篇地复述。** 引用文章时把链接挂在正文那个词上。
-3. **这些主张怎么咬合** — 一两段，说清这个主题下的几个观点之间是什么关系，以及它跟专题里其他主题（晋升、向上管理、组织政治……）怎么连起来。这是「系统地学」的那一部分。
-4. **边界** — 1–2 个 `.claim` 框，判词沿用 `CLAUDE.md` 的五档。挑他在这个主题上**最有影响、最可能被读者照做**的说法，问：这是有证据的规律，还是一个 VP 的幸存者视角？换一家公司、一个不同的人还成立吗？他自己有没有承认过例外或合理化？每框约 100 字。
-5. **越界 · 跨学科的联想**（`.crossx`，3–5 条）— 照 `CLAUDE.md`。
-6. **十条要点**（`<ol class="takeaways">`，正好 10 条）— 照 `CLAUDE.md`：每条单独抄进笔记也能看懂，**不放边界一节的判词**。
-7. **出处** — 本页用到的**最重要的** 3–6 篇文章 / 访谈，每条一句短说明。其余文章在正文里挂链接即可。
+1. **他的主张**（主体之一）— 2–4 个核心观点，每个一个 `<h3>`。每个观点讲清：他怎么说、他用什么经历或例子撑、他在不同文章里怎么反复或修正这个说法。**把几篇文章合成一条线讲，不要一篇一篇地复述。** 引用文章时把链接挂在正文那个词上。
+2. **这些主张怎么咬合** — 一两段，说清这个主题下的几个观点之间是什么关系，以及它跟专题里其他主题（晋升、向上管理、组织政治……）怎么连起来。这是「系统地学」的那一部分。
+3. **边界** — 1–2 个 `.claim` 框，判词沿用 `CLAUDE.md` 的五档。挑他在这个主题上**最有影响、最可能被读者照做**的说法，问：这是有证据的规律，还是一个 VP 的幸存者视角？换一家公司、一个不同的人还成立吗？他自己有没有承认过例外或合理化？每框约 100 字。
+4. **越界 · 跨学科的联想**（`.crossx`，3–5 条）— 照 `CLAUDE.md`。
+5. **十条要点**（`<ol class="takeaways">`，正好 10 条）— 照 `CLAUDE.md`：每条单独抄进笔记也能看懂，**不放边界一节的判词**。
+6. **出处** — 本页用到的**最重要的** 3–6 篇文章 / 访谈，每条一句短说明。其余文章在正文里挂链接即可。
 
 ## 4. 写作要求
 
@@ -64,8 +63,13 @@ index 最下面是「Ethan Evans 专题」分区（`data-show="Ethan Evans 专�
 
 ## 主题清单（按顺序写）
 
-1. **ethan-evans-who · 他是谁：从工程师到 VP，再到巅峰时离开**
-   职业时间线和每一段学到的东西。代表文章：My path to Amazon Vice President · Being "unreasonable" drove me to Amazon VP · From an 800-person team to IC · Why I Left Amazon at My Peak · My layoff story · Origins of a Billion Dollar Business: Amazon Prime Video · I pursued my VP role without fully understanding the job。
+1. **ethan-evans-who · 读他之前：四个折扣**
+   **这不是人物小传。** 这一篇回答「他的建议是站在什么位置上说的」，好让读者读后面七篇时知道每条建议要打多少折扣。按四个折扣组织，职业经历只当证据用：
+   - **时代**：他在 Amazon 的十五年正赶上公司从一万多人涨到一百多万人；他自己也说今天已经没有那样的速通。哪些建议依赖那个增长期？
+   - **位置**：他的观察大多来自 VP 那把椅子，即决定谁升谁走的一侧。从那里看得清什么、看不见什么？
+   - **公司**：Amazon 的领导力准则、绩效曲线、一年两次的评审周期。哪些招数离开 Amazon 就未必灵？
+   - **动机**：他现在靠卖晋升课和高管教练谋生，「敢说真话」是他的品牌。这会怎样影响他说话的方式？
+   「他的主张」一节在这一篇里换成「四个折扣」四个小节；其余各节照常。代表文章：My path to Amazon Vice President · Being "unreasonable" drove me to Amazon VP · From an 800-person team to IC · Why I Left Amazon at My Peak · My layoff story · Origins of a Billion Dollar Business: Amazon Prime Video · I pursued my VP role without fully understanding the job。
 2. **ethan-evans-promotion · 晋升的机制**
    代表文章：The Magic Loop · Relationships Drive Promotion · "Formula" to build the relationships and trust that drive promotions · Who managers promote and why · Path to Promotion: Patience, Opportunism, A Plan · Make the case for your promotion · "Klingon Promotions" · The Amazon "secret" of controllable inputs · Speedrunning Guide: Junior to Staff Engineer in 3 years。
 3. **ethan-evans-l7 · 卡在 L7：从经理到高管**
