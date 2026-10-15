@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethan Evans Series · Stuck at L7</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="ethan-evans-l7-topic3.html">中文 →</a></div>
+<header>
+<div class="kicker">Ethan Evans Series · No. 3</div>
+<h1>Stuck at L7: You Didn't Get Worse, the Test Changed</h1>
+<p class="sub">A supply-and-demand sum, a second job change, one sharp strength, and a boss who kept someone waiting twelve years</p>
+</header>
+<div class="meta-card"><b>Topic</b> Stuck at L7: from manager to executive · <b>Articles</b> 13 free <i>Level Up</i> posts read (12 by Evans, 1 guest post), 2023–2026 · <b>Interviews</b> Lenny's Podcast (Jan 2024), The Peterman Pod, second episode (Mar 2026)</div>
+
+<h2>Glossary</h2>
+<div class="glossary"><ul>
+<li><b>L6 / L7 / L8</b>: Amazon levels. L6 is a first-line manager of a small team; L7 is Senior Manager, the first level that manages through other managers, usually 20 to 80 people; L8 is Director, where Evans says "executive" begins. Google L7, Meta M2 and Microsoft 66 roughly match L7.</li>
+<li><b>Skip (skip-level)</b>: your boss's boss.</li>
+<li><b>Scope</b>: how many people, how much budget and how big a problem you own. Big companies often use it as the yardstick for level.</li>
+</ul></div>
+
+<h2>His claims</h2>
+<h3>1. First it's arithmetic, only then is it you</h3>
+<p>Evans says more people come to him for the Senior Manager to Director jump than for any other. In the June 2023 post <a href="https://levelupwithethanevans.substack.com/p/the-l7-problem-stuck-at-senior-manager">The "L7" Problem</a> he did the math for them: Amazon then had more than 3,000 Directors, which implies perhaps 15,000 to 20,000+ Senior Managers. A Director typically has five to eight Senior Managers, so even if one Director slot opened per year, already a fast rate in many places, the wait could be five to eight years.</p>
+<p>Two months later, in <a href="https://levelupwithethanevans.substack.com/p/too-damn-many-senior-managers-why">Too damn many Senior Managers</a>, he tied the sum to the business cycle. With 20% growth and 10% attrition, a Director needed two or three new Senior Managers a year; with 10% layoffs and nobody leaving, maybe one. He put the difference between this level and the ones below bluntly:</p>
+<blockquote><span class="en">Up to your current level, promotions were more about "Do you have the skills" than "Is there an open slot, a need?"</span><cite>— Ethan Evans · Too damn many Senior Managers, 2023</cite></blockquote>
+<p>On Lenny's Podcast in early 2024 he compressed it into a formula: senior promotions have two components, whether you can do the job, and whether the company has such a job that needs filling. <a class="ts" href="https://www.youtube.com/watch?v=GB0P0_nFPTA&amp;t=1545s">[00:25:45]</a> You mostly don't control the second, so he admits some patience is required at this level. By 2025 the sum had a new term: Jensen Huang running NVIDIA with sixty direct reports and no one-on-ones, "Founder Mode" in fashion, organizations flattening, and fewer slots than ever.</p>
+
+<h3>2. This level is a second job change</h3>
+<p>The arithmetic explains why the line is long, not why some people leave it first. Evans's answer is that going from L7 to L8 is not doing your current job better; it is changing jobs again, the way you did when you went from engineer to manager.</p>
+<p>In October 2023 he and former colleague Dave Glick merged the talks each used to give new Senior Managers into <a href="https://levelupwithethanevans.substack.com/p/the-senior-manager-l7-talk">The Senior Manager (L7) Talk</a>. Line managers look inward, getting their own team to deliver; executives look outward, working across organizations toward company goals. Senior Managers sit at the turn: hire managers who can run teams on their own, actually let go, spend the freed time understanding the larger strategy, then steer your teams toward it even when that makes their lives harder.</p>
+<blockquote><span class="en">You are now optimizing for the larger world, not your own ease.</span><cite>— Ethan Evans · The Senior Manager (L7) Talk, 2023</cite></blockquote>
+<p>The harder half is people. You must work with colleagues whose interests differ and whose time and performance you don't control. Many at this level write other teams off as "dumb" or impossible to work with; Evans's prescription is almost embarrassingly plain: don't be a jerk. Success starts with your own attitude and emotions when others don't share your priorities.</p>
+<p>The claim hasn't moved in three years, only the packaging. On both Lenny's and Peterman's shows he names the same book, Marshall Goldsmith's <i>What Got You Here Won't Get You There</i>, and says the title alone tells the story. With Peterman he added a practical step: ask people one or two levels up who made the jump what they had to let go of, what they had to learn, and what they see holding you back, and ask for advice rather than feedback, because criticizing you is hard while everyone has advice to give. <a class="ts" href="https://www.youtube.com/watch?v=6WaeGfLnRvc&amp;t=8726s">[02:25:26]</a></p>
+<p>He also draws a line: you can't skip this step. Asked whether someone could jump straight to executive without managing first, he said a startup can give you a Director title with zero reports that you grow into, but in an established company there is <a href="https://levelupwithethanevans.substack.com/p/skip-first-line-management-and-go">no way to skip</a> Director responsibilities, which is why Amazon has Senior Managers who were SVPs at small companies.</p>
+
+<h3>3. Break out on one strength, but don't grab territory</h3>
+<p>With few slots and a field of smart, hard-working rivals, what gets you picked? Evans's answer barely changed from 2023 to 2025:</p>
+<blockquote><span class="en">people are promoted for standing out positively for what they do best, not for an absence of flaws.</span><cite>— Ethan Evans · The "L7" Problem, 2023</cite></blockquote>
+<p>Weaknesses only need fixing until they stop being crippling. In 2023 he listed kinds of strength: invention, revenue creation, simplification, presence, adding that being the best at one thing beats being very good across the board. The 2025 version reads more like a business case: strengths that make a lot of money, beat competitors or save a lot of money, with no crippling weaknesses.</p>
+<p>What's easy to miss is that standing out is not the same as expanding. In <a href="https://levelupwithethanevans.substack.com/p/struggles-scaling-as-a-director-at">Struggles scaling as a Director</a>, Evans uses himself as the cautionary tale: newly a Director and hungry for VP, he took on everything offered: digital games, software downloads, the first Appstore, an acquired game studio, and a business selling bulk printer paper to companies.</p>
+<blockquote><span class="en">But I was empire building, focused on what might get me to the next level.</span><cite>— Ethan Evans · Struggles scaling as a Director, 2023</cite></blockquote>
+<p>He struggled to lead about two hundred people across all that, then led several times as many once he focused on the Appstore alone. When a reader suggested that hiring good leaders for each unit would have solved it, he disagreed: with no economies of scale between businesses, the cost of fragmentation can be reduced but not eliminated.</p>
+<p>That same year he wrote that <a href="https://levelupwithethanevans.substack.com/p/how-to-get-scope-in-a-flat-or-downsizing">scope</a> largely shouldn't matter, calling it a lazy proxy for job complexity. Yet in the 2026 Peterman interview he describes the opposite reality: after he left, some Amazon orgs wrote down a 90-person threshold for Director, and people got shuffled under a candidate for six months to clear the bar (covered in our <a href="amazon-vp-corporate-politics-work-win-pod2.en.html">Peterman episode 2 page</a>). He criticizes the headcount rule, and he also admits his own empire building; the rules push people exactly that way.</p>
+
+<h3>4. Sometimes what's stuck is the gatekeeper</h3>
+<p>The first three claims are about what you can do. The fourth is a rare moment where Evans aims at the boss. In 2024 he hosted Kristi Coulter, who joined Amazon at L7 around the same time he did and stayed at that level for twelve years, later writing the memoir <i>Exit Interview</i>. In the <a href="https://levelupwithethanevans.substack.com/p/stuck-at-senior-manager-for-12-years">post</a> she says she was told at least six or seven times that she was "one year away," and each time the goalposts moved; had someone simply said L7 was a respectable place to stay for a whole career, that would have been one thing, but dangling a promotion and withdrawing it again and again was another.</p>
+<p>The scene from the book that Evans retells: just as she is up for promotion, a new boss reorganizes her under a same-level peer further from promotion, doubts her when told, and defends the choice once he confirms it. Evans says he can defend bosses with high standards, bosses with genuinely no opening, even overworked ones, but not this:</p>
+<blockquote><span class="en">But you are the gatekeeper. And if you slam the gate in someone's face, you are not doing your job.</span><cite>— Ethan Evans · Stuck at Senior Manager for 12 years!, 2024</cite></blockquote>
+<p>This sits awkwardly next to his usual line. On Lenny's show he argued bosses have selfish reasons to promote you:</p>
+<blockquote><span class="en">why wouldn't I want stronger, more capable direct reports? Why wouldn't I want people under me who could do more of my job?</span><cite>— Ethan Evans · Lenny's Podcast <a class="ts" href="https://www.youtube.com/watch?v=GB0P0_nFPTA&amp;t=1648s">[00:27:28]</a></cite></blockquote>
+<p>Coulter's story shows that reasoning doesn't always hold. Evans's own conclusion leans toward self-help: in 2025 he wrote that if you are truly stuck there is a reason, and you must fix something or change something, because doing the same thing keeps you where you are. Coulter chose the second. She left Amazon.</p>
+
+<h2>How the claims fit together</h2>
+<p>The four claims are layers of a single sieve. The first says the holes got smaller: at L7, promotion shifts from "pass when ready" to "pass when there's a slot," and growth rates, not you, set the number of slots. The second says the sieve changed shape: below L7 it filters for getting things done, at L8 for cross-organization judgment and influence, so you must grow into the new shape first. The third says that when many fit the shape, the sieve keeps the most distinctive one, so you need a strength, but it must be depth in one thing, not territory spread wide. The fourth reminds you that a person shakes the sieve, and that person can fail.</p>
+<p>Within the series, this is where the machinery of <a href="ethan-evans-promotion-topic2.en.html">No. 2</a> stops working. The Magic Loop and the "tweet" can carry you through the lower levels; at L7 they are only the entry ticket. The rest depends on the slots thread from No. 2 and on the influence that the later managing-up and politics pieces cover. The era discount from <a href="ethan-evans-who-topic1.en.html">No. 1</a> is sharpest here: on Lenny's show Evans described his own climb from Senior Manager to VP as riding an elevator that was going up, while the sum he hands today's readers is an elevator that has nearly stopped.</p>
+
+<h2>Boundaries</h2>
+<div class="claim">
+<p class="said">"This same transition is a bottleneck everywhere in the tech industry… the wait for the spot could still be 5 to 8 years." — The "L7" Problem, 2023</p>
+<p class="verdict">Supported, but overstated</p>
+<p>The direction has primary support: Andy Jassy's September 2024 memo asked each S-team org to raise the ratio of individual contributors to managers by at least 15% by the end of Q1 2025, citing added layers. But "5 to 8 years" is single-queue arithmetic that assumes nobody leaves, no outsider takes the slot and no lateral moves happen, and Evans himself notes outside hires often get these jobs. No company publishes its real L7-to-L8 rates.</p>
+</div>
+<div class="claim">
+<p class="said">"People are promoted for standing out positively for what they do best, not for an absence of flaws." — same post</p>
+<p class="verdict">Supported, but overstated</p>
+<p>Zenger Folkman's 360-degree data on 6,000+ leaders: those with a fatal flaw were rated at the 18th percentile, those with no strengths or weaknesses at the 50th, those with one or more strengths at the 81st. The shape matches Evans, down to "fix fatal flaws first." But it measures perceived effectiveness, not promotion, and comes from a firm that sells strengths-based training, without peer review.</p>
+</div>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Queueing theory · Little's law</b>: in steady state, the average number in a queue equals the arrival rate times the average wait. Treat a Director's five to eight candidates as the queue length and one opening a year as the throughput, and a five-to-eight-year wait falls straight out. The mismatch: promotion is not first-come-first-served but a priority queue with cutting, and an outside hire is someone taking the server from outside the line.</li>
+<li><b>Management · The Peter principle</b>: Laurence Peter argued in 1969 that in a hierarchy people rise until they reach a level they can't handle, because promotion rewards performance in the current role while the next level tests different skills. Evans's "change jobs again" is a response: since reviews can't tell whether you'll handle the next level, show next-level work from where you are. That is also where it differs: the Peter principle describes a systemic blind spot in organizations, and Evans turns it into personal homework; the organization's blind spot doesn't go away.</li>
+<li><b>Evolutionary biology · Sewall Wright's fitness landscape</b>: in 1932 Wright pictured populations climbing hills on a rugged landscape, easily trapped on a local peak; reaching a higher one means first crossing a valley of lower fitness. L7 execution skill is a local peak, and the first year or two of shifting to strategy and influence often looks worse, not better.</li>
+<li><b>Distributed systems · Retry storms and backpressure</b>: a client that only cares about its own latency retries hard on failure, locally sensible and globally ruinous for the service downstream; a good citizen backs off and respects backpressure. The L7 Talk's "optimize for the larger world even when it makes your team's life harder" asks Senior Managers to become the second kind of client.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Ethan Evans says the Senior Manager (L7) to Director (L8) jump is what most people ask him for help with, and the most common bottleneck in tech.</li>
+<li>Evans's arithmetic: a Director has five to eight Senior Managers, so even one opening a year means a five-to-eight-year wait.</li>
+<li>Evans argues that below L7 promotion asks "do you have the skills," while above it also asks "is there an open slot."</li>
+<li>Slower growth and flatter organizations cut Director slots further; in 2025 Evans added flattening as a new cause.</li>
+<li>Going from L7 to L8 is a second job change, like engineer to manager: attention shifts from your own team to cross-organization company goals.</li>
+<li>Evans cites Marshall Goldsmith's What Got You Here Won't Get You There and advises asking people a level or two up for advice, not feedback.</li>
+<li>Evans says you break out on one standout strength and fix weaknesses only until they stop being crippling.</li>
+<li>As a Director, Evans took on every business offered to reach VP, and calls the resulting fragmentation and launch failure his empire-building lesson.</li>
+<li>Kristi Coulter spent twelve years at L7 at Amazon, was repeatedly told she was "one year away," and eventually left.</li>
+<li>Evans calls the boss the gatekeeper of promotion who can fail at the job, yet tells stuck employees to fix something or change something.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://levelupwithethanevans.substack.com/p/the-l7-problem-stuck-at-senior-manager">The "L7" Problem</a> · <a href="https://levelupwithethanevans.substack.com/p/3-reasons-why-people-get-stuck-at">4 reasons why people get stuck at Senior Manager</a></span><span class="d">Evans, 2023 and 2025. The claims tested under Boundaries, and the early and late versions of his argument.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=GB0P0_nFPTA">Taking control of your career | Ethan Evans</a> · <a href="https://www.youtube.com/watch?v=6WaeGfLnRvc">Amazon VP: How Corporate Politics Work And How To Win</a></span><span class="d">Lenny's Podcast, 2024; The Peterman Pod, 2026. All timestamps on this page point here.</span></li>
+<li><span class="t"><a href="https://www.aboutamazon.com/news/company-news/ceo-andy-jassy-latest-update-on-amazon-return-to-office-manager-team-ratio">Andy Jassy's memo to employees (Sep 2024)</a></span><span class="d">Basis for the first boundary.</span></li>
+<li><span class="t"><a href="https://zengerfolkman.com/wp-content/uploads/2019/04/White-Paper_-Developing-Strengths-or-Weaknesses.pdf">Zenger Folkman, Developing Strengths or Weaknesses (white paper)</a></span><span class="d">Basis for the second boundary.</span></li>
+</ul>
+<footer>Ethan Evans Series · his articles and interviews, organized by topic · written 2026-10-15</footer>
+</div>
+</body></html>
