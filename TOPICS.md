@@ -17,30 +17,14 @@ Making Sense 另加主题过滤：它的意识与哲学存货大半在付费墙�
 > - **本清单不写内容钩子**：钩子只能从标题猜，而猜出来的钩子会变成引擎的先入之见。
 >   引擎读到什么写什么。
 
-共 128 期。播放量为抓取当日数值（原清单 2026-09-19，Peterman Pod 与 Google I/II 2026-10-12）。
+共 125 期。播放量为抓取当日数值（原清单 2026-09-19，Peterman Pod 与 Google I/II 2026-10-12）。
 
 The Peterman Pod 不按播放量取，按嘉宾级别人工挑：图灵奖得主、编程语言与基础系统的创造者、业界最高职级（VP / Distinguished / IC9 / CTO / 总监）；
 职业发展类以高职级的人为主，另有 BigCat 逐期勾回的几期（IC7/IC8、M2 等）。
 
+Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans 专题」，不在本清单里；专题的选题与写法见 `ETHAN.md`。
+
 ---
-
-- **The Peterman Pod** — Amazon VP: Stack Ranking & PIPs, Working With Bezos, His Promotions | Ethan Evans
-  - 2025 · 53 分钟 · 635,748 播放 · 职业 / 管理
-  - source: <https://www.youtube.com/watch?v=40-ENZmqcz0>
-  - transcript: `transcripts/amazon-vp-stack-ranking-pips-working.txt`
-  - slug: `amazon-vp-stack-ranking-pips-working`
-
-- **The Peterman Pod** — Amazon VP: How Corporate Politics Work And How To Win | Ethan Evans
-  - 2026 · 170 分钟 · 562,847 播放 · 职业 / 管理
-  - source: <https://www.youtube.com/watch?v=6WaeGfLnRvc>
-  - transcript: `transcripts/amazon-vp-corporate-politics-work-win.txt`
-  - slug: `amazon-vp-corporate-politics-work-win`
-
-- **The Peterman Pod** — Amazon VP: Questions On Corporate Politics But They Get Increasingly Darker | Ethan Evans
-  - 2026 · 187 分钟 · 141,049 播放 · 职业 / 管理
-  - source: <https://www.youtube.com/watch?v=KhjhRRz3VJw>
-  - transcript: `transcripts/amazon-vp-questions-corporate-politics-but.txt`
-  - slug: `amazon-vp-questions-corporate-politics-but`
 
 - **Huberman Lab** — How to Build Immense Inner Strength | David Goggins
   - 2024 · 157 分钟 · 22,785,766 播放 · 健康 / 体能
