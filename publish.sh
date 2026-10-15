@@ -22,7 +22,7 @@ set -e
 
 # Collect all new (untracked + modified) HTML files matching the topic pattern.
 # Excludes index.html — that's expected to be modified, not "the new content".
-NEW_FILES=$(git status --porcelain | grep -oE '\S+-(day|week|book|issue|read|paper|blog|talk|pod)[0-9]+(\.en)?\.html$' | sort -u)
+NEW_FILES=$(git status --porcelain | grep -oE '\S+-(day|week|book|issue|read|paper|blog|talk|pod|topic)[0-9]+(\.en)?\.html$' | sort -u)
 [ -z "$NEW_FILES" ] && { echo "ERROR: no new *-{day,week,book,issue}{N}[.en].html in working tree"; exit 1; }
 
 # Primary (Chinese) file = the non-.en one if any, else the .en one
@@ -31,7 +31,7 @@ PRIMARY=$(echo "$NEW_FILES" | grep -v '\.en\.html$' | head -1)
 
 PADDED_N=$(echo "$PRIMARY" | grep -oE '[0-9]+' | tail -1)
 N=$((10#$PADDED_N))
-KIND=$(echo "$PRIMARY" | grep -oE '(day|week|book|issue|read|paper|blog|talk|pod)')
+KIND=$(echo "$PRIMARY" | grep -oE '(day|week|book|issue|read|paper|blog|talk|pod|topic)')
 
 TITLE=$(grep -oE '<title>[^<]+' "$PRIMARY" | head -1 | sed 's|<title>||')
 [ -z "$TITLE" ] && TITLE="$PRIMARY"
