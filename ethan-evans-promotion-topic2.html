@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ethan Evans 专题 · 晋升的机制</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="ethan-evans-promotion-topic2.en.html">English →</a></div>
+<header>
+<div class="kicker">Ethan Evans 专题 · 第 2 篇</div>
+<h1>晋升不是奖赏，是一笔交易</h1>
+<p class="sub">魔法循环、关系、一句话的案子，和越来越少的坑位</p>
+</header>
+<div class="meta-card"><b>主题</b> 晋升的机制 · <b>文章</b>《Level Up》免费文章通读 19 篇、引用 13 篇（2023–2026），另有 1 篇嘉宾稿作旁证 · <b>访谈</b> The Peterman Pod 第一期（2025 年 8 月）· <b>原片</b> <a href="https://www.youtube.com/watch?v=40-ENZmqcz0">YouTube</a></div>
+
+<h2>他的主张</h2>
+<h3>一、晋升是你和上司之间的一笔交易</h3>
+<p>Evans 讲晋升，起点是一个从 Amazon 借来的概念。2023 年 5 月他写道，Bezos 不盯销售额和利润这些「产出」，而是盯价格、选品、便利这三样团队每天能动手改的东西，也就是「<a href="https://levelupwithethanevans.substack.com/p/the-amazon-secret-of-controllable">可控输入</a>」（controllable inputs）。职业也一样：薪水和头衔是产出，你今天改不了；你能改的，是有没有把时间花在真正有影响的事上，有没有在用得着之前就把人脉经营好。</p>
+<p>一个月后，这个思路落成了他此后反复讲、也一直在卖课的框架「<a href="https://levelupwithethanevans.substack.com/p/the-magic-loop-the-growth-and-promotion">魔法循环</a>」（Magic Loop）。核心只有四步：把手头的活干好；问上司我还能帮你或团队做什么；把那件事也干好；回到第二步。进阶版是从「问」变成「提建议」，最后变成看见需要就直接去做。他说这是自己几十年里找到的最有效、可重复的晋升路径。</p>
+<p>这个循环的要害不在于多干活，而在于第二步把上下级的关系翻了个面。他说自己问过很多经理，他们都说很少有下属来问「我能帮你什么」。2023 年的文章强调的是「双赢」，到了 2025 年的访谈，他把底牌摊开了，说这其实是一份交易：我把你需要的都做了，你只负责一件事，确保我得到回报。</p>
+<blockquote><span class="en">I can either work for you as a standard cog in a box or I can really push and go above and beyond, but there's got to be a payoff</span><span class="zh">我可以当你组织图里一个普通的齿轮，也可以真正拼一把、做到远超预期，但那样就得有回报。</span><cite>— Ethan Evans · <a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=1423s">[00:23:43]</a></cite></blockquote>
+<p>他升 VP 走的就是这条路：上司花了两年半才到愿意把自己的信誉押上去的那一步。交易也会违约。他刚进 Amazon 时跟一位新人工程师做过同样的约定，却因为不懂一年两次的评审周期而没能兑现（<a href="ethan-evans-who-topic1.html">第 1 篇</a>讲过这段）。他从中得出的教训是，做这笔交易之前，先弄清你的上司懂不懂晋升流程。</p>
+
+<h3>二、关系不是附加题</h3>
+<p>魔法循环回答的是「做什么」，Evans 花更多笔墨讲的是「谁愿意替你开口」。2023 年 10 月的《<a href="https://levelupwithethanevans.substack.com/p/relationships-drive-promotion">Relationships Drive Promotion</a>》开头就把话说死了：</p>
+<blockquote><span class="en">Many purists believe that only performance should factor into promotion. The Straight Truth is that this is an idealized fantasy that denies brain science.</span><span class="zh">很多纯粹主义者相信，晋升只该看表现。直白的真相是，这是一个否认脑科学的理想化幻想。</span><cite>— Ethan Evans ·《Relationships Drive Promotion》，2023</cite></blockquote>
+<p>他所说的「脑科学」，其实是一种归因上的偏向：我们喜欢的人犯了错，我们替他找理由，堵车了、家里有人病了、活太多；不喜欢的人犯了错，我们找的是证明他懒、他马虎的证据。2026 年初的一场讲座里他又讲了一遍这个例子，几乎没改，可见这是他最核心的信念之一。</p>
+<p>关系从哪里来？早两个月的《<a href="https://levelupwithethanevans.substack.com/p/formula-to-build-the-relationships">「Formula」to build the relationships and trust</a>》给过一个配方。最理性的一端是可靠，信任就是「长时间的一致」；最感性的一端是可亲，真心为对方好；中间是牺牲，人最信那些为自己做过难事的人，就像一起打过仗的士兵。到 2025 年，他把这些压成了一句话：</p>
+<blockquote><span class="en">Be valuable and be compatible.</span><span class="zh">要有价值，也要合得来。</span><cite>— Ethan Evans ·《<a href="https://levelupwithethanevans.substack.com/p/who-managers-promote-and-why">Who managers promote and why</a>》，2025</cite></blockquote>
+<p>后面跟着两条互相补位的推论：价值越高，合不合得来就越不要紧；越合得来，价值就可以少一点。他说这也解释了为什么有些人坐在高位上，旁人看不出他凭什么，因为上面的人找到了一个信得过、靠得住的人。这条主张三年里只在加强。2024 年他转述一位 Amazon 女性 VP 的话，说在低增长的环境里，<a href="https://levelupwithethanevans.substack.com/p/attitude-matters-amazon-vp">态度</a>成了决胜项；2026 年他干脆从高管的位置发问：我为什么要把一个我不喜欢、不信任的人，提到离我更近的地方？</p>
+<p>值得留意的是他怎么回应「这不就是拍马屁」。他不辩解，只说你可以坚持这个看法，但要接受被人跳过的结果。这是他「直言」品牌的典型姿势：把规则当作天气来描述，不讨论它该不该如此。</p>
+
+<h3>三、晋升是一场辩护，要有一句话的案子</h3>
+<p>关系让上司愿意替你开口，开口之后还得有话可说。2024 年他给过一份<a href="https://levelupwithethanevans.substack.com/p/make-the-case-for-your-promotion">晋升文档</a>（promotion document）的骨架，分两大块：这个岗位的范围和难度，值不值得配一个高一级的人；候选人本人的表现。其中最有他个人色彩的一条是，如果你有一个大家都知道的短板，就在文档里自己先写出来，附上改进计划和进展，别等评审会上有人提出来，让你的上司被动防守。</p>
+<p>到 2026 年，他把这件事讲得更短。高管没有时间先读一份大文档，替你说话的人需要的是一条「推文」：</p>
+<blockquote><span class="en">Because she did X, we got Y. That’s why she deserves this role.</span><span class="zh">因为她做了 X，我们才有了 Y。所以这个位置该给她。</span><cite>— Ethan Evans ·《<a href="https://levelupwithethanevans.substack.com/p/how-to-break-into-senior-leadership">How to Break Into Senior Leadership</a>》，2026</cite></blockquote>
+<p>他自己的那条推文来自 Prime Video 早期。TiVo 找上门想合作，SVP 觉得这是分心，他说除非你明令禁止，否则我就做。结果做成了，随后三星、索尼等电视厂商纷纷找来。他升总监的材料里分量最重的，是市场部 VP 写的一句：没有 Ethan，就没有 TiVo。访谈里他把晋升分成两种：一种像「终身成就奖」，年复一年地好好干，流程最终磨过去；另一种来自一次超出寻常的事件。<a class="ts" href="https://www.youtube.com/watch?v=40-ENZmqcz0&amp;t=986s">[00:16:26]</a> 他教的显然是后一种。</p>
+<p>辩护还需要证人。他讲过一个场景：自己在二十多位 AWS 的 VP 面前为下属的总监晋升辩护，材料被挑得千疮百孔，一位不认识候选人的 SVP 打断他，说<a href="https://levelupwithethanevans.substack.com/p/youre-doing-this-all-wrong-amazon">你讲错了</a>，让我来。因为这位 SVP 与候选人没有利害关系，他的话被当作独立判断，晋升通过了。Evans 的结论是，这种独立的声音可以提前安排：他自己升 VP 之前，上司就请另一位 SVP 带了他一年，到评审时那位 SVP 正好在场。</p>
+<p>工程师一侧的版本，可以看 Ryan Peterman 发在这份 newsletter 上的<a href="https://levelupwithethanevans.substack.com/p/speedrunning-guide-junior-to-staff">嘉宾稿</a>（作者是 Peterman，不是 Evans）。他说大厂的晋升是「滞后」的，你得先在下一级的水平上稳定干六到十二个月，委员会才敢批。</p>
+
+<h3>四、坑位从哪里来：从「耐心」到「让他怕失去你」</h3>
+<p>前三条讲怎么让自己配得上，这一条讲坑位。Evans 的说法在这里三年间变化最明显。</p>
+<p>2023 年 7 月，他给晋升开的三味药是<a href="https://levelupwithethanevans.substack.com/p/path-to-promotion-patience-opportunism">耐心、机会主义和计划</a>。他提醒读者，人一辈子要工作四十多年：</p>
+<blockquote><span class="en">being frantic to achieve everything in your 20s or even mid-30s will burn you out AND hold you back.</span><span class="zh">想在二十几岁、甚至三十五六岁之前就把一切都拿到手，这种急切会把你烧干，也会拖你的后腿。</span><cite>— Ethan Evans ·《Path to Promotion》，2023</cite></blockquote>
+<p>2024 年起增长放缓，他的重心移到了坑位本身。《<a href="https://levelupwithethanevans.substack.com/p/klingon-promotions">Klingon Promotions</a>》讲的是上级被撤换时接位，名字取自《星际迷航》里靠干掉舰长上位的克林贡人，他特意说明这不是鼓励夺权。办法是在上级被换掉之前，就去补他做不到的那些事，等他被调走，你自然是最顺理成章的人选。2025 年他又写道：</p>
+<blockquote><span class="en">Half of my own career growth, roughly, happened in reorganizations.</span><span class="zh">我自己的职业成长，大约一半发生在重组里。</span><cite>— Ethan Evans ·《<a href="https://levelupwithethanevans.substack.com/p/reorgs-are-the-new-promotion">Reorgs are the new promotion</a>》，2025</cite></blockquote>
+<p>理由是，晋升要走委员会和文件，重组却往往是一两位领导关起门来，往新组织图的空框里填名字。</p>
+<p>到 2026 年 9 月，「耐心」几乎从他的方子里消失了。他设想上司手下有两个同样努力的人，X 安静地等，Y 明确表示要往上走。上司心里想的是：X 会理解的，下一轮再说；Y 不升可能就走了。</p>
+<blockquote><span class="en">You want to be Y, not X.</span><span class="zh">你要做 Y，别做 X。</span><cite>— Ethan Evans ·《How to Break Into Senior Leadership》，2026</cite></blockquote>
+<p>他教的说法不是最后通牒，而是「我的职业对我很重要，我想知道它对公司是否同样重要」，这正是他当年自己升总监时的原话（<a href="amazon-vp-stack-ranking-pips-working-pod1.html">第 1 期精读</a>讲过这段访谈）。从「这是一场几十年的游戏，别急」到「别做那个安静等待的人」，变的不是他的价值观，而是坑位的供给：增长期可以等，停滞期等的人会被排到后面。但他在 2024 年的《<a href="https://levelupwithethanevans.substack.com/p/limited-big-tech-promotions-and-the">Limited Big Tech promotions</a>》里还留着一句反方向的提醒，别为最快的下一次晋升做优化，去找自己擅长又喜欢的事。这句话和 2026 年的紧迫感并排放着，他没有调和过。</p>
+
+<h2>这些主张怎么咬合</h2>
+<p>把四条连起来，Evans 的晋升模型是一个以上司为枢纽的三方关系。你的输入是原料，上司是唯一能启动流程的人，他在 2025 年说过，经理不动笔，什么都不会发生。上司愿不愿意动笔，取决于你对他有没有价值、他喜不喜欢和你共事，而魔法循环同时喂了这两样：帮上司做事，既是在给他创造价值，也是在建立关系。晋升文档和「推文」把这些积累翻译成评审会听得懂的话；独立证人和 skip-level（上司的上司）则化解「经理有偏心」的怀疑。坑位是外部约束：前面这些只决定你在队伍里排第几，队伍前面有没有空位，要看增长、重组和别人的离开。</p>
+<p>这一篇和第 1 篇的四个折扣直接相连。一年两次的周期、文件和委员会，是「公司折扣」打的对象；从耐心到施压的转变，是「时代折扣」的现场演示；「经理其实这么想」的那些话，全都坐在「位置折扣」里。往后看，「卡在 L7」会讨论这套机制为什么在高级经理一级突然不灵，「向上管理」则是第二条主张的展开。</p>
+
+<h2>边界</h2>
+<div class="claim">
+<p class="said">「只看表现的晋升，是一个否认脑科学的幻想。」——《Relationships Drive Promotion》，2023</p>
+<p class="verdict">有据</p>
+<p>Martin 等人 2016 年的元分析汇总了 146 个样本，上下级关系质量（LMX，领导-成员交换）与任务绩效的相关约为 0.30，与客观绩效指标也有 0.24，而且证据指向「关系好，干得才好」，不是反过来。关系确实要紧，但不只是 Evans 说的偏心：关系好的人更被信任、更有干劲，是真的干得更好。</p>
+</div>
+<div class="claim">
+<p class="said">「魔法循环是我找到的最有效、可重复的晋升路径……它对所有人都有效。」——《The Magic Loop》，2023</p>
+<p class="verdict">有据，但说宽了</p>
+<p>Seibert 等人 2001 年追踪 180 名员工两年，发现主动型的人通过主动经营职业、了解组织政治和创新，预测了加薪和晋升次数，方向与魔法循环一致。但同一研究里，主动提出异议的「发声」（voice）与晋升负相关。「最有效」和「对所有人都有效」，只有他本人和学员的经验支撑。</p>
+</div>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>分布式系统 · Raft 的领导者选举</b>：Raft 里，投票者只把票投给日志至少和自己一样新的候选者，所以领导者一旦失联，最可能当选的是一直跟得最紧的那个跟随者。「克林贡式晋升」是同一个结构：上级被撤换之前，你已经在补他做不到的事，相当于提前把自己的日志写到最新。不像的地方在于，Raft 的选举是对称、自动的，靠超时触发；公司里没有超时器，何时换人、换谁，由上面的人关起门来决定。</li>
+<li><b>博弈论 · Axelrod 与「未来的影子」</b>：Robert Axelrod 在《合作的进化》里指出，合作只有在重复博弈、且未来足够重要时才稳定。魔法循环把一次性的「干活换工资」变成了重复博弈。不像的是，上司换人很频繁，未来的影子随时会被截断，他升 VP 时只差半年就会遇上换老板。</li>
+<li><b>经济学 · Spence 的信号理论</b>：Michael Spence 1973 年指出，一个信号要可信，发出它就得有成本。替你说话的 SVP 之所以有分量，是因为他押上了自己的信誉，而且和你没有利害关系。</li>
+<li><b>心理学 · Thorndike 的光环效应</b>：Edward Thorndike 1920 年发现，长官给士兵打分时，对某一项的好印象会渗到其他各项。Evans 讲的「喜欢的人犯错我们替他找理由」，就是这个效应在晋升里的样子。</li>
+<li><b>哲学 · Epictetus 的控制二分</b>：斯多葛派的《手册》开篇就把事情分成「在我们能力之内」和「不在之内」两类，这和可控输入是同一个切法。不像的是，Epictetus 要人对后一类淡然处之，Evans 盯着输入，眼睛却始终看着头衔这个产出。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Ethan Evans 借用 Amazon「可控输入」的思路：薪水和头衔是产出，有影响的工作和人脉才是每天能改的输入。</li>
+<li>魔法循环分四步：干好本职，问上司还能帮什么，把那件事干好，再回到第二步。</li>
+<li>Evans 在 2025 年的访谈里把魔法循环说成一份交易：我超额付出，上司负责让我得到回报。</li>
+<li>做魔法循环这笔交易之前，要先确认上司懂公司的晋升流程和评审周期。</li>
+<li>Evans 认为关系会改变上司对错误的归因：喜欢的人犯错被原谅，不喜欢的人犯错被定性。</li>
+<li>Evans 的信任配方有三层：可靠是理性的一端，可亲是感性的一端，中间是为对方做过的难事。</li>
+<li>Evans 把晋升标准压成一句话「要有价值，也要合得来」，两者可以互相补位。</li>
+<li>晋升材料需要一条「推文」：因为某人做了 X，我们才有了 Y，Evans 自己的是「没有 Ethan 就没有 TiVo」。</li>
+<li>评审会上一个无利害关系的高层替你说话，分量远超你的经理，Evans 建议提前安排这样的证人。</li>
+<li>Evans 的晋升建议从 2023 年的「耐心」转向 2026 年的「别做安静等待的人」，并把重组当作主要的上升通道。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://levelupwithethanevans.substack.com/p/relationships-drive-promotion">Relationships Drive Promotion</a> · <a href="https://levelupwithethanevans.substack.com/p/the-magic-loop-the-growth-and-promotion">The Magic Loop</a></span><span class="d">Evans，2023。两条边界里被检验的原话。</span></li>
+<li><span class="t"><a href="https://levelupwithethanevans.substack.com/p/how-to-break-into-senior-leadership">How to Break Into Senior Leadership</a></span><span class="d">Evans，2026。「推文」、X 与 Y，看他说法怎么变的主要依据。</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=40-ENZmqcz0">Amazon VP: Stack Ranking &amp; PIPs, Working With Bezos, His Promotions</a></span><span class="d">The Peterman Pod，2025。魔法循环作为交易、两种晋升，本页时间戳都指向这一期。</span></li>
+<li><span class="t"><a href="https://research.manchester.ac.uk/en/publications/leader-member-exchange-lmx-and-performance-a-meta-analytic-review/">Martin et al., LMX and Performance: A Meta-Analytic Review (2016)</a></span><span class="d">Personnel Psychology。第一条边界的依据。</span></li>
+<li><span class="t"><a href="https://doi.org/10.1111/j.1744-6570.2001.tb00234.x">Seibert, Kraimer &amp; Crant, What Do Proactive People Do? (2001)</a></span><span class="d">Personnel Psychology。第二条边界的依据。</span></li>
+</ul>
+<footer>Ethan Evans 专题 · 按主题把他的文章和访谈理成体系 · 写于 2026-10-15</footer>
+</div>
+</body></html>
