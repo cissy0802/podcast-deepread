@@ -50,6 +50,7 @@ MAX_PER_GUEST = 3
 
 GATED_PATTERNS = (
     "members-only",
+    "available to this channel's members",   # 2026 wording; A Life Engineered gates its "Principal" tier this way
     "All Access",
     "Join this channel",
     "Private video",

@@ -17,12 +17,14 @@ Making Sense 另加主题过滤：它的意识与哲学存货大半在付费墙�
 > - **本清单不写内容钩子**：钩子只能从标题猜，而猜出来的钩子会变成引擎的先入之见。
 >   引擎读到什么写什么。
 
-共 125 期。播放量为抓取当日数值（原清单 2026-09-19，Peterman Pod 与 Google I/II 2026-10-12）。
+共 146 期。播放量为抓取当日数值（原清单 2026-09-19，Peterman Pod 与 Google I/II 2026-10-12）。
 
 The Peterman Pod 不按播放量取，按嘉宾级别人工挑：图灵奖得主、编程语言与基础系统的创造者、业界最高职级（VP / Distinguished / IC9 / CTO / 总监）；
 职业发展类以高职级的人为主，另有 BigCat 逐期勾回的几期（IC7/IC8、M2 等）。
 
 Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans 专题」，不在本清单里；专题的选题与写法见 `ETHAN.md`。
+
+2026-10-16 加入 The Pragmatic Engineer 8 期、In Depth（First Round）6 期、A Life Engineered 7 期，BigCat 直接确认；未写的部分按频道比例重新穿插。
 
 ---
 
@@ -50,35 +52,11 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/andrew-bustamante-cia-spy.txt`
   - slug: `andrew-bustamante-cia-spy`
 
-- **Dwarkesh Podcast** — Elon Musk – "In 36 months, the cheapest place to put AI will be space”
-  - 2026 · 169 分钟 · 2,349,472 播放 · 思想 / 访谈
-  - source: <https://www.youtube.com/watch?v=BYXbuik3dgA>
-  - transcript: `transcripts/elon-musk-months-cheapest-place-put.txt`
-  - slug: `elon-musk-months-cheapest-place-put`
-
 - **The Peterman Pod** — Turing Award Winner: Disagreeing with Google, Postgres, Future Problems | Mike Stonebraker
   - 2026 · 56 分钟 · 511,993 播放 · 计算机 / 系统
   - source: <https://www.youtube.com/watch?v=YPObBOwIrHk>
   - transcript: `transcripts/turing-award-winner-disagreeing-google-postgres.txt`
   - slug: `turing-award-winner-disagreeing-google-postgres`
-
-- **Conversations with Tyler** — @any_austin  on the Hermeneutics of Video Games
-  - 2025 · 66 分钟 · 59,841 播放 · 经济 / 跨学科
-  - source: <https://www.youtube.com/watch?v=rOYjgXY-Ts4>
-  - transcript: `transcripts/any_austin-hermeneutics-video-games.txt`
-  - slug: `any_austin-hermeneutics-video-games`
-
-- **The Ezra Klein Show** — Kara Swisher on the Radicalization of Elon Musk | The Ezra Klein Show
-  - 2025 · 67 分钟 · 1,615,303 播放 · 政治 / 社会
-  - source: <https://www.youtube.com/watch?v=2xXLycFv5Gc>
-  - transcript: `transcripts/kara-swisher-radicalization-elon-musk.txt`
-  - slug: `kara-swisher-radicalization-elon-musk`
-
-- **The Peterman Pod** — OpenAI & Meta Distinguished Engineer (IC9): Working With Zuck, Carmack & Career Growth | Philip Su
-  - 2025 · 80 分钟 · 384,337 播放 · 职业 / 管理
-  - source: <https://www.youtube.com/watch?v=v2JxdjTi_1I>
-  - transcript: `transcripts/openai-meta-distinguished-engineer-working-zuck.txt`
-  - slug: `openai-meta-distinguished-engineer-working-zuck`
 
 - **Huberman Lab** — A Process for Finding & Achieving Your Unique Purpose | Robert Greene
   - 2023 · 191 分钟 · 15,727,530 播放 · 思想 / 访谈
@@ -86,11 +64,11 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/process-finding-achieving-unique-purpose-robert.txt`
   - slug: `process-finding-achieving-unique-purpose-robert`
 
-- **The Peterman Pod** — Boris Cherny (Creator of Claude Code) On What Grew His Career And Building at Anthropic
-  - 2025 · 84 分钟 · 273,156 播放 · 职业 / 管理
-  - source: <https://www.youtube.com/watch?v=AmdLVWMdjOk>
-  - transcript: `transcripts/boris-cherny-grew-his-career-building.txt`
-  - slug: `boris-cherny-grew-his-career-building`
+- **The Peterman Pod** — OpenAI & Meta Distinguished Engineer (IC9): Working With Zuck, Carmack & Career Growth | Philip Su
+  - 2025 · 80 分钟 · 384,337 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=v2JxdjTi_1I>
+  - transcript: `transcripts/openai-meta-distinguished-engineer-working-zuck.txt`
+  - slug: `openai-meta-distinguished-engineer-working-zuck`
 
 - **Mindscape (Sean Carroll)** — The Biggest Ideas in the Universe | 7. Quantum Mechanics
   - 2020 · 65 分钟 · 463,889 播放 · 物理 / 宇宙学
@@ -104,17 +82,53 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/starbucks.txt`
   - slug: `starbucks`
 
+- **Dwarkesh Podcast** — Elon Musk – "In 36 months, the cheapest place to put AI will be space”
+  - 2026 · 169 分钟 · 2,349,472 播放 · 思想 / 访谈
+  - source: <https://www.youtube.com/watch?v=BYXbuik3dgA>
+  - transcript: `transcripts/elon-musk-months-cheapest-place-put.txt`
+  - slug: `elon-musk-months-cheapest-place-put`
+
 - **Lex Fridman Podcast** — Tucker Carlson: Putin, Navalny, Trump, CIA, NSA, War, Politics & Freedom | Lex Fridman Podcast #414
   - 2024 · 184 分钟 · 16,977,955 播放 · 政治 / 社会
   - source: <https://www.youtube.com/watch?v=f_lRdkH_QoY>
   - transcript: `transcripts/tucker-carlson-putin-navalny-trump-cia.txt`
   - slug: `tucker-carlson-putin-navalny-trump-cia`
 
-- **Making Sense (Sam Harris)** — Psychedelics Don't Distort Reality — They Reveal How Your Brain Constructs It
-  - 2026 · 60 分钟 · 1,789,550 播放 · 神经科学 / 心理
-  - source: <https://www.youtube.com/watch?v=r5KRnstXYUg>
-  - transcript: `transcripts/psychedelics-don-t-distort-reality-they.txt`
-  - slug: `psychedelics-don-t-distort-reality-they`
+- **The Peterman Pod** — Boris Cherny (Creator of Claude Code) On What Grew His Career And Building at Anthropic
+  - 2025 · 84 分钟 · 273,156 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=AmdLVWMdjOk>
+  - transcript: `transcripts/boris-cherny-grew-his-career-building.txt`
+  - slug: `boris-cherny-grew-his-career-building`
+
+- **Conversations with Tyler** — @any_austin  on the Hermeneutics of Video Games
+  - 2025 · 66 分钟 · 59,841 播放 · 经济 / 跨学科
+  - source: <https://www.youtube.com/watch?v=rOYjgXY-Ts4>
+  - transcript: `transcripts/any_austin-hermeneutics-video-games.txt`
+  - slug: `any_austin-hermeneutics-video-games`
+
+- **The Pragmatic Engineer** — Designing Data-intensive Applications with Martin Kleppmann
+  - 2026 · 85 分钟 · 431,159 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=SVOrURyOu_U>
+  - transcript: `transcripts/designing-data-intensive-applications-martin-kleppmann.txt`
+  - slug: `designing-data-intensive-applications-martin-kleppmann`
+
+- **The Ezra Klein Show** — Kara Swisher on the Radicalization of Elon Musk | The Ezra Klein Show
+  - 2025 · 67 分钟 · 1,615,303 播放 · 政治 / 社会
+  - source: <https://www.youtube.com/watch?v=2xXLycFv5Gc>
+  - transcript: `transcripts/kara-swisher-radicalization-elon-musk.txt`
+  - slug: `kara-swisher-radicalization-elon-musk`
+
+- **A Life Engineered** — Gergely Orosz on Tech's Entry-Level Crisis and What Comes Next
+  - 2025 · 44 分钟 · 107,060 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=o7Asyo9s2_M>
+  - transcript: `transcripts/gergely-orosz-tech-s-entry-level-crisis.txt`
+  - slug: `gergely-orosz-tech-s-entry-level-crisis`
+
+- **In Depth (First Round)** — A masterclass in engineering leadership from Carta, Stripe, and Uber | Will Larson (CTO at Carta)
+  - 2023 · 78 分钟 · 16,120 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=La2_IaV0icE>
+  - transcript: `transcripts/masterclass-engineering-leadership-from-carta-stripe.txt`
+  - slug: `masterclass-engineering-leadership-from-carta-stripe`
 
 - **The Peterman Pod** — Creator of C++: Bell Labs, Negative Overhead Abstraction, Mistakes | Bjarne Stroustrup
   - 2026 · 119 分钟 · 252,276 播放 · 计算机 / 系统
@@ -122,29 +136,17 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/creator-c-bell-labs-negative-overhead.txt`
   - slug: `creator-c-bell-labs-negative-overhead`
 
-- **Dwarkesh Podcast** — David Reich — How one small tribe conquered the world 70,000 years ago
-  - 2024 · 117 分钟 · 2,055,900 播放 · 演化 / 生物
-  - source: <https://www.youtube.com/watch?v=Uj6skZIxPuI>
-  - transcript: `transcripts/david-reich-one-small-tribe-conquered.txt`
-  - slug: `david-reich-one-small-tribe-conquered`
-
-- **The Peterman Pod** — Retired Netflix Eng Director: Leetcode, Regrets, Hiring Stories
-  - 2026 · 79 分钟 · 235,836 播放 · 职业 / 管理
-  - source: <https://www.youtube.com/watch?v=ApG9vjbHDCk>
-  - transcript: `transcripts/retired-netflix-eng-director-leetcode-regrets.txt`
-  - slug: `retired-netflix-eng-director-leetcode-regrets`
-
 - **Huberman Lab** — Dr. Paul Conti: How to Understand & Assess Your Mental Health | Huberman Lab Guest Series
   - 2023 · 222 分钟 · 15,011,220 播放 · 神经科学 / 心理
   - source: <https://www.youtube.com/watch?v=tLRCS48Ens4>
   - transcript: `transcripts/paul-conti-understand-assess-mental-health.txt`
   - slug: `paul-conti-understand-assess-mental-health`
 
-- **The Peterman Pod** — Turing Award Winner: Thinking Clearly, Paxos vs Raft, Working With Dijkstra | Leslie Lamport
-  - 2026 · 70 分钟 · 201,642 播放 · 计算机 / 系统
-  - source: <https://www.youtube.com/watch?v=U719vQz-WFs>
-  - transcript: `transcripts/turing-award-winner-thinking-clearly-paxos.txt`
-  - slug: `turing-award-winner-thinking-clearly-paxos`
+- **The Peterman Pod** — Retired Netflix Eng Director: Leetcode, Regrets, Hiring Stories
+  - 2026 · 79 分钟 · 235,836 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=ApG9vjbHDCk>
+  - transcript: `transcripts/retired-netflix-eng-director-leetcode-regrets.txt`
+  - slug: `retired-netflix-eng-director-leetcode-regrets`
 
 - **Mindscape (Sean Carroll)** — Episode 28: Roger Penrose on Spacetime, Consciousness, and the Universe
   - 2019 · 95 分钟 · 375,976 播放 · 物理 / 宇宙学
@@ -158,17 +160,17 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/nvidia-ceo-jensen-huang.txt`
   - slug: `nvidia-ceo-jensen-huang`
 
-- **Conversations with Tyler** — Sam Altman on Trust, Persuasion, and the Future of Intelligence - Live at the Progress Conference
-  - 2025 · 54 分钟 · 45,625 播放 · 人工智能
-  - source: <https://www.youtube.com/watch?v=cuSDy0Rmdks>
-  - transcript: `transcripts/sam-altman-trust-persuasion-future-intelligence.txt`
-  - slug: `sam-altman-trust-persuasion-future-intelligence`
+- **Making Sense (Sam Harris)** — Psychedelics Don't Distort Reality — They Reveal How Your Brain Constructs It
+  - 2026 · 60 分钟 · 1,789,550 播放 · 神经科学 / 心理
+  - source: <https://www.youtube.com/watch?v=r5KRnstXYUg>
+  - transcript: `transcripts/psychedelics-don-t-distort-reality-they.txt`
+  - slug: `psychedelics-don-t-distort-reality-they`
 
-- **The Peterman Pod** — Creator of TypeScript: 10x Faster Typescript, Why AI Won't Replace SWEs | Anders Hejlsberg
-  - 2026 · 65 分钟 · 178,077 播放 · 计算机 / 系统
-  - source: <https://www.youtube.com/watch?v=cywK3XYYJ2o>
-  - transcript: `transcripts/creator-typescript-10x-faster-typescript-ai.txt`
-  - slug: `creator-typescript-10x-faster-typescript-ai`
+- **Dwarkesh Podcast** — David Reich — How one small tribe conquered the world 70,000 years ago
+  - 2024 · 117 分钟 · 2,055,900 播放 · 演化 / 生物
+  - source: <https://www.youtube.com/watch?v=Uj6skZIxPuI>
+  - transcript: `transcripts/david-reich-one-small-tribe-conquered.txt`
+  - slug: `david-reich-one-small-tribe-conquered`
 
 - **Lex Fridman Podcast** — Jordan Peterson: Life, Death, Power, Fame, and Meaning | Lex Fridman Podcast #313
   - 2022 · 183 分钟 · 16,799,240 播放 · 哲学 / 宗教
@@ -176,11 +178,17 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/jordan-peterson-life-death-power-fame.txt`
   - slug: `jordan-peterson-life-death-power-fame`
 
-- **The Ezra Klein Show** — Tim Walz Is Kamala Harris’ V.P. Pick. Watch Our Interview With Him.
-  - 2024 · 59 分钟 · 1,322,495 播放 · 政治 / 社会
-  - source: <https://www.youtube.com/watch?v=3fuS9PmV9hg>
-  - transcript: `transcripts/tim-walz-kamala-harris-v-p.txt`
-  - slug: `tim-walz-kamala-harris-v-p`
+- **The Peterman Pod** — Turing Award Winner: Thinking Clearly, Paxos vs Raft, Working With Dijkstra | Leslie Lamport
+  - 2026 · 70 分钟 · 201,642 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=U719vQz-WFs>
+  - transcript: `transcripts/turing-award-winner-thinking-clearly-paxos.txt`
+  - slug: `turing-award-winner-thinking-clearly-paxos`
+
+- **The Peterman Pod** — Creator of TypeScript: 10x Faster Typescript, Why AI Won't Replace SWEs | Anders Hejlsberg
+  - 2026 · 65 分钟 · 178,077 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=cywK3XYYJ2o>
+  - transcript: `transcripts/creator-typescript-10x-faster-typescript-ai.txt`
+  - slug: `creator-typescript-10x-faster-typescript-ai`
 
 - **Huberman Lab** — Controlling Your Dopamine For Motivation, Focus & Satisfaction
   - 2021 · 136 分钟 · 12,458,499 播放 · 神经科学 / 心理
@@ -194,17 +202,17 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/instagram-principal-engineer-promotions-breaking-prod.txt`
   - slug: `instagram-principal-engineer-promotions-breaking-prod`
 
-- **Dwarkesh Podcast** — Ilya Sutskever – We're moving from the age of scaling to the age of research
-  - 2025 · 96 分钟 · 1,534,551 播放 · 人工智能
-  - source: <https://www.youtube.com/watch?v=aR20FWCCjAs>
-  - transcript: `transcripts/ilya-sutskever-re-moving-from-age.txt`
-  - slug: `ilya-sutskever-re-moving-from-age`
+- **Conversations with Tyler** — Sam Altman on Trust, Persuasion, and the Future of Intelligence - Live at the Progress Conference
+  - 2025 · 54 分钟 · 45,625 播放 · 人工智能
+  - source: <https://www.youtube.com/watch?v=cuSDy0Rmdks>
+  - transcript: `transcripts/sam-altman-trust-persuasion-future-intelligence.txt`
+  - slug: `sam-altman-trust-persuasion-future-intelligence`
 
-- **The Peterman Pod** — Meta Senior Manager (M2): Manager Career Growth, PIPs, Amazon vs Meta | Stefan Mai
-  - 2025 · 91 分钟 · 143,795 播放 · 职业 / 管理
-  - source: <https://www.youtube.com/watch?v=wUrvXN-yiyo>
-  - transcript: `transcripts/meta-senior-manager-manager-career-growth.txt`
-  - slug: `meta-senior-manager-manager-career-growth`
+- **The Pragmatic Engineer** — How AWS S3 is built
+  - 2026 · 78 分钟 · 236,871 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=5vL6aCvgQXU>
+  - transcript: `transcripts/aws-s3-built.txt`
+  - slug: `aws-s3-built`
 
 - **Mindscape (Sean Carroll)** — Episode 9: Solo -- Why Is There Something Rather than Nothing?
   - 2018 · 81 分钟 · 186,355 播放 · 思想 / 访谈
@@ -218,17 +226,29 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/tsmc-founder-morris-chang.txt`
   - slug: `tsmc-founder-morris-chang`
 
-- **The Peterman Pod** — AWS Distinguished Eng: Learning From 3000 Incidents And How Engineering Is Changing | Marc Brooker
-  - 2026 · 71 分钟 · 141,221 播放 · 计算机 / 系统
-  - source: <https://www.youtube.com/watch?v=u3GjIXP9N0s>
-  - transcript: `transcripts/aws-distinguished-eng-learning-from-incidents.txt`
-  - slug: `aws-distinguished-eng-learning-from-incidents`
+- **The Peterman Pod** — Meta Senior Manager (M2): Manager Career Growth, PIPs, Amazon vs Meta | Stefan Mai
+  - 2025 · 91 分钟 · 143,795 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=wUrvXN-yiyo>
+  - transcript: `transcripts/meta-senior-manager-manager-career-growth.txt`
+  - slug: `meta-senior-manager-manager-career-growth`
 
-- **Huberman Lab** — Dr. Andy Galpin: How to Build Strength, Muscle Size & Endurance
-  - 2022 · 211 分钟 · 10,412,678 播放 · 健康 / 体能
-  - source: <https://www.youtube.com/watch?v=IAnhFUUCq6c>
-  - transcript: `transcripts/andy-galpin-build-strength-muscle-size.txt`
-  - slug: `andy-galpin-build-strength-muscle-size`
+- **The Ezra Klein Show** — Tim Walz Is Kamala Harris’ V.P. Pick. Watch Our Interview With Him.
+  - 2024 · 59 分钟 · 1,322,495 播放 · 政治 / 社会
+  - source: <https://www.youtube.com/watch?v=3fuS9PmV9hg>
+  - transcript: `transcripts/tim-walz-kamala-harris-v-p.txt`
+  - slug: `tim-walz-kamala-harris-v-p`
+
+- **A Life Engineered** — The 2% of Engineers Winning the AI Era (Ex-Meta L8)
+  - 2026 · 97 分钟 · 65,209 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=q3ca41YIZjc>
+  - transcript: `transcripts/engineers-winning-ai-era.txt`
+  - slug: `engineers-winning-ai-era`
+
+- **Dwarkesh Podcast** — Ilya Sutskever – We're moving from the age of scaling to the age of research
+  - 2025 · 96 分钟 · 1,534,551 播放 · 人工智能
+  - source: <https://www.youtube.com/watch?v=aR20FWCCjAs>
+  - transcript: `transcripts/ilya-sutskever-re-moving-from-age.txt`
+  - slug: `ilya-sutskever-re-moving-from-age`
 
 - **Lex Fridman Podcast** — Elon Musk: War, AI, Aliens, Politics, Physics, Video Games, and Humanity | Lex Fridman Podcast #400
   - 2023 · 136 分钟 · 14,289,006 播放 · 思想 / 访谈
@@ -236,11 +256,23 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/elon-musk-war-ai-aliens-politics.txt`
   - slug: `elon-musk-war-ai-aliens-politics`
 
-- **Conversations with Tyler** — Daron Acemoglu on Liberalism, Automation, and the Educated Elite
-  - 2026 · 62 分钟 · 28,790 播放 · 政治 / 社会
-  - source: <https://www.youtube.com/watch?v=e5O1Y-5phEU>
-  - transcript: `transcripts/daron-acemoglu-liberalism-automation-educated-elite.txt`
-  - slug: `daron-acemoglu-liberalism-automation-educated-elite`
+- **Huberman Lab** — Dr. Andy Galpin: How to Build Strength, Muscle Size & Endurance
+  - 2022 · 211 分钟 · 10,412,678 播放 · 健康 / 体能
+  - source: <https://www.youtube.com/watch?v=IAnhFUUCq6c>
+  - transcript: `transcripts/andy-galpin-build-strength-muscle-size.txt`
+  - slug: `andy-galpin-build-strength-muscle-size`
+
+- **The Peterman Pod** — AWS Distinguished Eng: Learning From 3000 Incidents And How Engineering Is Changing | Marc Brooker
+  - 2026 · 71 分钟 · 141,221 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=u3GjIXP9N0s>
+  - transcript: `transcripts/aws-distinguished-eng-learning-from-incidents.txt`
+  - slug: `aws-distinguished-eng-learning-from-incidents`
+
+- **In Depth (First Round)** — How to build a company when you’re not an optimist | Jay Kreps (Co-founder and CEO, Confluent)
+  - 2026 · 74 分钟 · 7,072 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=KU-gdDfQtHc>
+  - transcript: `transcripts/build-company-when-re-not-optimist.txt`
+  - slug: `build-company-when-re-not-optimist`
 
 - **The Peterman Pod** — Google DeepMind Distinguished Eng (L9): How To Land a Job at a Frontier Lab | Vlad Feinberg
   - 2026 · 64 分钟 · 122,103 播放 · 职业 / 管理
@@ -248,23 +280,11 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/google-deepmind-distinguished-eng-land-job.txt`
   - slug: `google-deepmind-distinguished-eng-land-job`
 
-- **Dwarkesh Podcast** — Andrej Karpathy — “We’re summoning ghosts, not building animals”
-  - 2025 · 146 分钟 · 1,406,203 播放 · 人工智能
-  - source: <https://www.youtube.com/watch?v=lXUZvyajciY>
-  - transcript: `transcripts/andrej-karpathy-re-summoning-ghosts-not.txt`
-  - slug: `andrej-karpathy-re-summoning-ghosts-not`
-
 - **Mindscape (Sean Carroll)** — Episode 45: Leonard Susskind on Quantum Information, Quantum Gravity, and Holography
   - 2019 · 73 分钟 · 176,468 播放 · 物理 / 宇宙学
   - source: <https://www.youtube.com/watch?v=XTSdPSOcdjI>
   - transcript: `transcripts/leonard-susskind-quantum-information-quantum-gravity.txt`
   - slug: `leonard-susskind-quantum-information-quantum-gravity`
-
-- **Acquired** — The Jamie Dimon Interview: How JP Morgan Became an $800 Billion Bank
-  - 2025 · 66 分钟 · 247,422 播放 · 商业 / 投资
-  - source: <https://www.youtube.com/watch?v=AR_1IPhzAtU>
-  - transcript: `transcripts/jamie-dimon-interview-jp-morgan-became.txt`
-  - slug: `jamie-dimon-interview-jp-morgan-became`
 
 - **The Peterman Pod** — Shopify Distinguished Eng (L10): Principal+ Engineering, Career Story, Regrets | Ilya Grigorik
   - 2025 · 50 分钟 · 102,764 播放 · 职业 / 管理
@@ -272,17 +292,17 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/shopify-distinguished-eng-principal-engineering-career.txt`
   - slug: `shopify-distinguished-eng-principal-engineering-career`
 
+- **Acquired** — The Jamie Dimon Interview: How JP Morgan Became an $800 Billion Bank
+  - 2025 · 66 分钟 · 247,422 播放 · 商业 / 投资
+  - source: <https://www.youtube.com/watch?v=AR_1IPhzAtU>
+  - transcript: `transcripts/jamie-dimon-interview-jp-morgan-became.txt`
+  - slug: `jamie-dimon-interview-jp-morgan-became`
+
 - **Huberman Lab** — The Science of Eating for Health, Fat Loss & Lean Muscle | Dr. Layne Norton
   - 2022 · 229 分钟 · 8,874,360 播放 · 健康 / 体能
   - source: <https://www.youtube.com/watch?v=K4Ze-Sp6aUE>
   - transcript: `transcripts/science-eating-health-fat-loss-lean.txt`
   - slug: `science-eating-health-fat-loss-lean`
-
-- **The Ezra Klein Show** — Pete Buttigieg on 2024 and the ‘Crank Realignment’
-  - 2024 · 57 分钟 · 1,211,787 播放 · 政治 / 社会
-  - source: <https://www.youtube.com/watch?v=8JDMKyTpXWc>
-  - transcript: `transcripts/pete-buttigieg-crank-realignment.txt`
-  - slug: `pete-buttigieg-crank-realignment`
 
 - **The Peterman Pod** — Co-Creator of Haskell: Useless vs Useful Languages, Rust vs C, Functional Programming | Simon Jones
   - 2026 · 87 分钟 · 97,476 播放 · 计算机 / 系统
@@ -290,17 +310,29 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/co-creator-haskell-useless-vs-useful-languages.txt`
   - slug: `co-creator-haskell-useless-vs-useful-languages`
 
+- **Conversations with Tyler** — Daron Acemoglu on Liberalism, Automation, and the Educated Elite
+  - 2026 · 62 分钟 · 28,790 播放 · 政治 / 社会
+  - source: <https://www.youtube.com/watch?v=e5O1Y-5phEU>
+  - transcript: `transcripts/daron-acemoglu-liberalism-automation-educated-elite.txt`
+  - slug: `daron-acemoglu-liberalism-automation-educated-elite`
+
+- **The Pragmatic Engineer** — Distributed databases with Peter Mattis
+  - 2026 · 102 分钟 · 186,743 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=0GzwuYGvKA4>
+  - transcript: `transcripts/distributed-databases-peter-mattis.txt`
+  - slug: `distributed-databases-peter-mattis`
+
+- **Dwarkesh Podcast** — Andrej Karpathy — “We’re summoning ghosts, not building animals”
+  - 2025 · 146 分钟 · 1,406,203 播放 · 人工智能
+  - source: <https://www.youtube.com/watch?v=lXUZvyajciY>
+  - transcript: `transcripts/andrej-karpathy-re-summoning-ghosts-not.txt`
+  - slug: `andrej-karpathy-re-summoning-ghosts-not`
+
 - **Lex Fridman Podcast** — Paul Rosolie: Amazon Jungle, Uncontacted Tribes, Anacondas, and Ayahuasca | Lex Fridman Podcast #369
   - 2023 · 214 分钟 · 13,020,290 播放 · 思想 / 访谈
   - source: <https://www.youtube.com/watch?v=gPfriiHBBek>
   - transcript: `transcripts/paul-rosolie-amazon-jungle-uncontacted-tribes.txt`
   - slug: `paul-rosolie-amazon-jungle-uncontacted-tribes`
-
-- **Making Sense (Sam Harris)** — Waking Up with Sam Harris - Looking for the Self (26 Minute Meditation)
-  - 2015 · 26 分钟 · 1,098,518 播放 · 意识 / 心智
-  - source: <https://www.youtube.com/watch?v=CN-_zzHpcdM>
-  - transcript: `transcripts/waking-up-sam-harris-looking.txt`
-  - slug: `waking-up-sam-harris-looking`
 
 - **The Peterman Pod** — Ex-Stripe CTO: Hiring Without Leetcode, Career Growth, Coding as a Leader (Career Story)
   - 2025 · 126 分钟 · 94,488 播放 · 职业 / 管理
@@ -314,17 +346,17 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/robert-sapolsky-behave-way-do.txt`
   - slug: `robert-sapolsky-behave-way-do`
 
-- **Acquired** — The Mark Zuckerberg Interview
-  - 2024 · 87 分钟 · 218,441 播放 · 人工智能
-  - source: <https://www.youtube.com/watch?v=QciJ9ubeLQk>
-  - transcript: `transcripts/mark-zuckerberg-interview.txt`
-  - slug: `mark-zuckerberg-interview`
+- **The Ezra Klein Show** — Pete Buttigieg on 2024 and the ‘Crank Realignment’
+  - 2024 · 57 分钟 · 1,211,787 播放 · 政治 / 社会
+  - source: <https://www.youtube.com/watch?v=8JDMKyTpXWc>
+  - transcript: `transcripts/pete-buttigieg-crank-realignment.txt`
+  - slug: `pete-buttigieg-crank-realignment`
 
-- **Huberman Lab** — What Alcohol Does to Your Body, Brain & Health
-  - 2022 · 121 分钟 · 7,993,023 播放 · 神经科学 / 心理
-  - source: <https://www.youtube.com/watch?v=DkS1pkKpILY>
-  - transcript: `transcripts/alcohol-does-body-brain-health.txt`
-  - slug: `alcohol-does-body-brain-health`
+- **A Life Engineered** — Why This Amazon Director Walked Away From Everything at 42 | Dave Anderson
+  - 2025 · 48 分钟 · 69,956 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=AJq-bo9tSCs>
+  - transcript: `transcripts/amazon-director-walked-away-from-everything.txt`
+  - slug: `amazon-director-walked-away-from-everything`
 
 - **The Peterman Pod** — Meta Distinguished Eng (IC9): Influencing Engs, Failures, and Learnings | Adam Ernst
   - 2026 · 40 分钟 · 92,028 播放 · 职业 / 管理
@@ -332,11 +364,23 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/meta-distinguished-eng-influencing-engs-failures.txt`
   - slug: `meta-distinguished-eng-influencing-engs-failures`
 
-- **Dwarkesh Podcast** — Ajeya Cotra – "This might be the clearest warning shot we ever get"
-  - 2026 · 140 分钟 · 1,310,347 播放 · 人工智能
-  - source: <https://www.youtube.com/watch?v=X50zezLFWWI>
-  - transcript: `transcripts/ajeya-cotra-might-be-clearest-warning.txt`
-  - slug: `ajeya-cotra-might-be-clearest-warning`
+- **Huberman Lab** — What Alcohol Does to Your Body, Brain & Health
+  - 2022 · 121 分钟 · 7,993,023 播放 · 神经科学 / 心理
+  - source: <https://www.youtube.com/watch?v=DkS1pkKpILY>
+  - transcript: `transcripts/alcohol-does-body-brain-health.txt`
+  - slug: `alcohol-does-body-brain-health`
+
+- **Acquired** — The Mark Zuckerberg Interview
+  - 2024 · 87 分钟 · 218,441 播放 · 人工智能
+  - source: <https://www.youtube.com/watch?v=QciJ9ubeLQk>
+  - transcript: `transcripts/mark-zuckerberg-interview.txt`
+  - slug: `mark-zuckerberg-interview`
+
+- **Making Sense (Sam Harris)** — Waking Up with Sam Harris - Looking for the Self (26 Minute Meditation)
+  - 2015 · 26 分钟 · 1,098,518 播放 · 意识 / 心智
+  - source: <https://www.youtube.com/watch?v=CN-_zzHpcdM>
+  - transcript: `transcripts/waking-up-sam-harris-looking.txt`
+  - slug: `waking-up-sam-harris-looking`
 
 - **The Peterman Pod** — Turing Award Winner: Data Abstraction, Dijkstra, Distributed Systems | Barbara Liskov
   - 2026 · 34 分钟 · 91,974 播放 · 计算机 / 系统
@@ -344,17 +388,11 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/turing-award-winner-data-abstraction-dijkstra.txt`
   - slug: `turing-award-winner-data-abstraction-dijkstra`
 
-- **Conversations with Tyler** — Paul Gillingham on Why Mexico Stays Together
-  - 2026 · 69 分钟 · 23,185 播放 · 经济 / 跨学科
-  - source: <https://www.youtube.com/watch?v=AaeXt_ocDKY>
-  - transcript: `transcripts/paul-gillingham-mexico-stays-together.txt`
-  - slug: `paul-gillingham-mexico-stays-together`
-
-- **The Peterman Pod** — Creator of Scala: Comparing Languages And How AI Will Impact Them | Martin Odersky
-  - 2026 · 57 分钟 · 87,980 播放 · 计算机 / 系统
-  - source: <https://www.youtube.com/watch?v=LdN4sPWM-WY>
-  - transcript: `transcripts/creator-scala-comparing-languages-ai-will.txt`
-  - slug: `creator-scala-comparing-languages-ai-will`
+- **Dwarkesh Podcast** — Ajeya Cotra – "This might be the clearest warning shot we ever get"
+  - 2026 · 140 分钟 · 1,310,347 播放 · 人工智能
+  - source: <https://www.youtube.com/watch?v=X50zezLFWWI>
+  - transcript: `transcripts/ajeya-cotra-might-be-clearest-warning.txt`
+  - slug: `ajeya-cotra-might-be-clearest-warning`
 
 - **Lex Fridman Podcast** — David Kipping: Alien Civilizations and Habitable Worlds | Lex Fridman Podcast #355
   - 2023 · 227 分钟 · 12,476,809 播放 · 宇宙 / 地外
@@ -362,17 +400,23 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/david-kipping-alien-civilizations-habitable-worlds.txt`
   - slug: `david-kipping-alien-civilizations-habitable-worlds`
 
+- **The Peterman Pod** — Creator of Scala: Comparing Languages And How AI Will Impact Them | Martin Odersky
+  - 2026 · 57 分钟 · 87,980 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=LdN4sPWM-WY>
+  - transcript: `transcripts/creator-scala-comparing-languages-ai-will.txt`
+  - slug: `creator-scala-comparing-languages-ai-will`
+
+- **In Depth (First Round)** — Twitter's former CEO on rebuilding the web for AI | Parag Agrawal (Co-founder and CEO of Parallel)
+  - 2025 · 65 分钟 · 74,821 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=fORbmCMX5GA>
+  - transcript: `transcripts/twitter-s-former-ceo-rebuilding-web.txt`
+  - slug: `twitter-s-former-ceo-rebuilding-web`
+
 - **Mindscape (Sean Carroll)** — Mindscape 245 | Solo: The Crisis in Physics
   - 2023 · 262 分钟 · 169,642 播放 · 物理 / 宇宙学
   - source: <https://www.youtube.com/watch?v=MTM-8memDHs>
   - transcript: `transcripts/crisis-physics.txt`
   - slug: `crisis-physics`
-
-- **Acquired** — Lockheed Martin (Audio)
-  - 2023 · 218 分钟 · 215,681 播放 · 商业 / 投资
-  - source: <https://www.youtube.com/watch?v=atMrnp_EVcI>
-  - transcript: `transcripts/lockheed-martin.txt`
-  - slug: `lockheed-martin`
 
 - **Huberman Lab** — Effects of Fasting & Time Restricted Eating on Fat Loss & Health | Huberman Lab Podcast #41
   - 2021 · 146 分钟 · 7,497,290 播放 · 健康 / 体能
@@ -386,11 +430,35 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/intern-microsoft-distinguished-engineer-promotions.txt`
   - slug: `intern-microsoft-distinguished-engineer-promotions`
 
+- **Conversations with Tyler** — Paul Gillingham on Why Mexico Stays Together
+  - 2026 · 69 分钟 · 23,185 播放 · 经济 / 跨学科
+  - source: <https://www.youtube.com/watch?v=AaeXt_ocDKY>
+  - transcript: `transcripts/paul-gillingham-mexico-stays-together.txt`
+  - slug: `paul-gillingham-mexico-stays-together`
+
+- **The Pragmatic Engineer** — Scaling Uber with Thuan Pham (Uber’s first CTO)
+  - 2026 · 99 分钟 · 270,506 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=3jjRNVfm3V4>
+  - transcript: `transcripts/scaling-uber-thuan-pham.txt`
+  - slug: `scaling-uber-thuan-pham`
+
+- **Acquired** — Lockheed Martin (Audio)
+  - 2023 · 218 分钟 · 215,681 播放 · 商业 / 投资
+  - source: <https://www.youtube.com/watch?v=atMrnp_EVcI>
+  - transcript: `transcripts/lockheed-martin.txt`
+  - slug: `lockheed-martin`
+
 - **The Peterman Pod** — Distinguished Eng: Stack Ranking, Competing with Bezos, Regrets | Bryan Cantrill
   - 2026 · 81 分钟 · 77,259 播放 · 计算机 / 系统
   - source: <https://www.youtube.com/watch?v=qhSL-5GtmQM>
   - transcript: `transcripts/distinguished-eng-stack-ranking-competing-bezos.txt`
   - slug: `distinguished-eng-stack-ranking-competing-bezos`
+
+- **The Peterman Pod** — OpenAI & Meta Distinguished Eng (IC9): The Psychology Behind Tech Career Peaks | Philip Su
+  - 2026 · 44 分钟 · 76,927 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=RMo04pSSiao>
+  - transcript: `transcripts/openai-meta-distinguished-eng-psychology-behind.txt`
+  - slug: `openai-meta-distinguished-eng-psychology-behind`
 
 - **Dwarkesh Podcast** — Dario Amodei — “We are near the end of the exponential”
   - 2026 · 142 分钟 · 1,230,846 播放 · 人工智能
@@ -404,12 +472,6 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/dark-heart-trump-s-foreign-policy.txt`
   - slug: `dark-heart-trump-s-foreign-policy`
 
-- **The Peterman Pod** — OpenAI & Meta Distinguished Eng (IC9): The Psychology Behind Tech Career Peaks | Philip Su
-  - 2026 · 44 分钟 · 76,927 播放 · 职业 / 管理
-  - source: <https://www.youtube.com/watch?v=RMo04pSSiao>
-  - transcript: `transcripts/openai-meta-distinguished-eng-psychology-behind.txt`
-  - slug: `openai-meta-distinguished-eng-psychology-behind`
-
 - **Huberman Lab** — ADHD & How Anyone Can Improve Their Focus
   - 2021 · 138 分钟 · 7,329,554 播放 · 神经科学 / 心理
   - source: <https://www.youtube.com/watch?v=hFL6qRIJZ_Y>
@@ -422,17 +484,17 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/lee-smolin-time-philosophy-nature-reality.txt`
   - slug: `lee-smolin-time-philosophy-nature-reality`
 
-- **Acquired** — Charlie Munger (Audio)
-  - 2023 · 66 分钟 · 194,199 播放 · 商业 / 投资
-  - source: <https://www.youtube.com/watch?v=w6qRb171cog>
-  - transcript: `transcripts/charlie-munger.txt`
-  - slug: `charlie-munger`
-
 - **Lex Fridman Podcast** — Ben Shapiro vs Destiny Debate: Politics, Jan 6, Israel, Ukraine & Wokeism | Lex Fridman Podcast #410
   - 2024 · 140 分钟 · 12,450,317 播放 · 政治 / 社会
   - source: <https://www.youtube.com/watch?v=tYrdMjVXyNg>
   - transcript: `transcripts/ben-shapiro-vs-destiny-debate-politics.txt`
   - slug: `ben-shapiro-vs-destiny-debate-politics`
+
+- **A Life Engineered** — EC2 Founding Engineer: The Career Decisions That Quietly Limit Your Future
+  - 2026 · 61 分钟 · 25,869 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=frqiUkjxAOE>
+  - transcript: `transcripts/ec2-founding-engineer-career-decisions-quietly.txt`
+  - slug: `ec2-founding-engineer-career-decisions-quietly`
 
 - **The Peterman Pod** — Creator of Lua: What People Get Wrong About Scripting Languages | Roberto Ierusalimschy
   - 2026 · 65 分钟 · 62,400 播放 · 计算机 / 系统
@@ -440,29 +502,35 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/creator-lua-people-get-wrong-about.txt`
   - slug: `creator-lua-people-get-wrong-about`
 
-- **Conversations with Tyler** — Dan Wang on What China and America Can Learn from Each Other
-  - 2025 · 97 分钟 · 15,601 播放 · 经济 / 跨学科
-  - source: <https://www.youtube.com/watch?v=qCGG3s4Luyw>
-  - transcript: `transcripts/dan-wang-china-america-can-learn.txt`
-  - slug: `dan-wang-china-america-can-learn`
-
 - **The Peterman Pod** — Sergey Levine: Humanoid Robotics Results, Chinese Labs & Future Timelines
   - 2026 · 57 分钟 · 61,416 播放 · 计算机 / 系统
   - source: <https://www.youtube.com/watch?v=9OSbaPjv0Rc>
   - transcript: `transcripts/sergey-levine-humanoid-robotics-results-chinese.txt`
   - slug: `sergey-levine-humanoid-robotics-results-chinese`
 
-- **Dwarkesh Podcast** — Jensen Huang – Will Nvidia’s moat persist?
-  - 2026 · 103 分钟 · 967,792 播放 · 商业 / 投资
-  - source: <https://www.youtube.com/watch?v=Hrbq66XqtCo>
-  - transcript: `transcripts/jensen-huang-will-nvidia-s-moat.txt`
-  - slug: `jensen-huang-will-nvidia-s-moat`
+- **Acquired** — Charlie Munger (Audio)
+  - 2023 · 66 分钟 · 194,199 播放 · 商业 / 投资
+  - source: <https://www.youtube.com/watch?v=w6qRb171cog>
+  - transcript: `transcripts/charlie-munger.txt`
+  - slug: `charlie-munger`
 
 - **The Peterman Pod** — Meta Senior Staff Eng (IC7): Zuck Stories, Rapid Career Growth, Code Machine Archetype
   - 2025 · 86 分钟 · 56,994 播放 · 职业 / 管理
   - source: <https://www.youtube.com/watch?v=OzlK68kcuHc>
   - transcript: `transcripts/meta-senior-staff-eng-zuck-stories.txt`
   - slug: `meta-senior-staff-eng-zuck-stories`
+
+- **Conversations with Tyler** — Dan Wang on What China and America Can Learn from Each Other
+  - 2025 · 97 分钟 · 15,601 播放 · 经济 / 跨学科
+  - source: <https://www.youtube.com/watch?v=qCGG3s4Luyw>
+  - transcript: `transcripts/dan-wang-china-america-can-learn.txt`
+  - slug: `dan-wang-china-america-can-learn`
+
+- **The Pragmatic Engineer** — The Philosophy of Software Design – with John Ousterhout
+  - 2025 · 81 分钟 · 304,749 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=lz451zUlF-k>
+  - transcript: `transcripts/philosophy-software-design-john-ousterhout.txt`
+  - slug: `philosophy-software-design-john-ousterhout`
 
 - **Huberman Lab** — How Meditation Works & Science-Based Effective Meditations
   - 2022 · 146 分钟 · 7,191,349 播放 · 思想 / 访谈
@@ -476,11 +544,11 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/avi-loeb-taking-aliens-seriously.txt`
   - slug: `avi-loeb-taking-aliens-seriously`
 
-- **Acquired** — Renaissance Technologies (Audio)
-  - 2024 · 190 分钟 · 184,272 播放 · 商业 / 投资
-  - source: <https://www.youtube.com/watch?v=2KjW4BqNFy0>
-  - transcript: `transcripts/renaissance-technologies.txt`
-  - slug: `renaissance-technologies`
+- **In Depth (First Round)** — The most expensive mistake in outsourcing your tech stack | Jay Parikh (EVP CoreAI, Microsoft)
+  - 2026 · 64 分钟 · 8,561 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=TgLIxlKiQvs>
+  - transcript: `transcripts/most-expensive-mistake-outsourcing-tech-stack.txt`
+  - slug: `most-expensive-mistake-outsourcing-tech-stack`
 
 - **The Peterman Pod** — The Co-Creator of Kubernetes: Engineering-Led Direction and Convincing Management | Brendan Burns
   - 2026 · 67 分钟 · 55,721 播放 · 计算机 / 系统
@@ -488,17 +556,17 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/co-creator-kubernetes-engineering-led-direction-convincing-management.txt`
   - slug: `co-creator-kubernetes-engineering-led-direction-convincing-management`
 
+- **Dwarkesh Podcast** — Jensen Huang – Will Nvidia’s moat persist?
+  - 2026 · 103 分钟 · 967,792 播放 · 商业 / 投资
+  - source: <https://www.youtube.com/watch?v=Hrbq66XqtCo>
+  - transcript: `transcripts/jensen-huang-will-nvidia-s-moat.txt`
+  - slug: `jensen-huang-will-nvidia-s-moat`
+
 - **Lex Fridman Podcast** — Michael Saylor: Bitcoin, Inflation, and the Future of Money | Lex Fridman Podcast #276
   - 2022 · 236 分钟 · 11,427,643 播放 · 思想 / 访谈
   - source: <https://www.youtube.com/watch?v=mC43pZkpTec>
   - transcript: `transcripts/michael-saylor-bitcoin-inflation-future-money.txt`
   - slug: `michael-saylor-bitcoin-inflation-future-money`
-
-- **Making Sense (Sam Harris)** — Final Thoughts on Free Will (Episode #241)
-  - 2021 · 44 分钟 · 372,634 播放 · 意识 / 心智
-  - source: <https://www.youtube.com/watch?v=u45SP7Xv_oU>
-  - transcript: `transcripts/final-thoughts-free-will.txt`
-  - slug: `final-thoughts-free-will`
 
 - **The Peterman Pod** — Turing Award Winner: P vs NP, Zero-Knowledge Proofs, Quantum Computation | Avi Wigderson
   - 2026 · 135 分钟 · 47,693 播放 · 计算机 / 系统
@@ -506,11 +574,17 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/turing-award-winner-p-vs-np.txt`
   - slug: `turing-award-winner-p-vs-np`
 
-- **The Ezra Klein Show** — Is Trump ‘Detoxing’ the Economy or Poisoning It? | The Ezra Klein Show
-  - 2025 · 60 分钟 · 1,144,601 播放 · 商业 / 投资
-  - source: <https://www.youtube.com/watch?v=3PXVrLH4zSU>
-  - transcript: `transcripts/trump-detoxing-economy-poisoning.txt`
-  - slug: `trump-detoxing-economy-poisoning`
+- **Acquired** — Renaissance Technologies (Audio)
+  - 2024 · 190 分钟 · 184,272 播放 · 商业 / 投资
+  - source: <https://www.youtube.com/watch?v=2KjW4BqNFy0>
+  - transcript: `transcripts/renaissance-technologies.txt`
+  - slug: `renaissance-technologies`
+
+- **Making Sense (Sam Harris)** — Final Thoughts on Free Will (Episode #241)
+  - 2021 · 44 分钟 · 372,634 播放 · 意识 / 心智
+  - source: <https://www.youtube.com/watch?v=u45SP7Xv_oU>
+  - transcript: `transcripts/final-thoughts-free-will.txt`
+  - slug: `final-thoughts-free-will`
 
 - **Huberman Lab** — Science of Muscle Growth, Increasing Strength & Muscular Recovery
   - 2021 · 124 分钟 · 6,693,987 播放 · 健康 / 体能
@@ -524,23 +598,23 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/dropbox-s-former-most-senior-eng.txt`
   - slug: `dropbox-s-former-most-senior-eng`
 
+- **The Ezra Klein Show** — Is Trump ‘Detoxing’ the Economy or Poisoning It? | The Ezra Klein Show
+  - 2025 · 60 分钟 · 1,144,601 播放 · 商业 / 投资
+  - source: <https://www.youtube.com/watch?v=3PXVrLH4zSU>
+  - transcript: `transcripts/trump-detoxing-economy-poisoning.txt`
+  - slug: `trump-detoxing-economy-poisoning`
+
+- **A Life Engineered** — Why Promotions Can Quietly Kill Great Engineers
+  - 2026 · 47 分钟 · 25,616 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=g8iO2Z-oJDY>
+  - transcript: `transcripts/promotions-can-quietly-kill-great-engineers.txt`
+  - slug: `promotions-can-quietly-kill-great-engineers`
+
 - **Mindscape (Sean Carroll)** — Mindscape 155 | Stephen Wolfram on Computation, Hypergraphs, and Fundamental Physics
   - 2021 · 160 分钟 · 108,612 播放 · 物理 / 宇宙学
   - source: <https://www.youtube.com/watch?v=0bMYtEKjHs0>
   - transcript: `transcripts/stephen-wolfram-computation-hypergraphs-fundamental-physics.txt`
   - slug: `stephen-wolfram-computation-hypergraphs-fundamental-physics`
-
-- **Acquired** — Costco (Audio)
-  - 2023 · 181 分钟 · 181,029 播放 · 商业 / 投资
-  - source: <https://www.youtube.com/watch?v=9PxxtJVWRrg>
-  - transcript: `transcripts/costco.txt`
-  - slug: `costco`
-
-- **Dwarkesh Podcast** — Mark Zuckerberg — Llama 3, $10B models, Caesar Augustus, & 1 GW datacenters
-  - 2024 · 78 分钟 · 866,123 播放 · 人工智能
-  - source: <https://www.youtube.com/watch?v=bc6uFV9CJGg>
-  - transcript: `transcripts/mark-zuckerberg-llama-10b-models-caesar.txt`
-  - slug: `mark-zuckerberg-llama-10b-models-caesar`
 
 - **The Peterman Pod** — How Anthropic Builds And How Engineering Will Change Soon | Thariq Shihipar
   - 2026 · 70 分钟 · 42,877 播放 · 计算机 / 系统
@@ -548,11 +622,11 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/anthropic-builds-engineering-will-change-soon.txt`
   - slug: `anthropic-builds-engineering-will-change-soon`
 
-- **Conversations with Tyler** — Katja Hoyer on Weimar, the GDR, and the German Character
-  - 2026 · 67 分钟 · 15,391 播放 · 经济 / 跨学科
-  - source: <https://www.youtube.com/watch?v=pziNQu9Ltxs>
-  - transcript: `transcripts/katja-hoyer-weimar-gdr-german-character.txt`
-  - slug: `katja-hoyer-weimar-gdr-german-character`
+- **Dwarkesh Podcast** — Mark Zuckerberg — Llama 3, $10B models, Caesar Augustus, & 1 GW datacenters
+  - 2024 · 78 分钟 · 866,123 播放 · 人工智能
+  - source: <https://www.youtube.com/watch?v=bc6uFV9CJGg>
+  - transcript: `transcripts/mark-zuckerberg-llama-10b-models-caesar.txt`
+  - slug: `mark-zuckerberg-llama-10b-models-caesar`
 
 - **Lex Fridman Podcast** — Elon Musk: SpaceX, Mars, Tesla Autopilot, Self-Driving, Robotics, and AI | Lex Fridman Podcast #252
   - 2021 · 151 分钟 · 11,173,774 播放 · 思想 / 访谈
@@ -566,11 +640,29 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/turing-award-winner-tpu-vs-gpu.txt`
   - slug: `turing-award-winner-tpu-vs-gpu`
 
+- **Conversations with Tyler** — Katja Hoyer on Weimar, the GDR, and the German Character
+  - 2026 · 67 分钟 · 15,391 播放 · 经济 / 跨学科
+  - source: <https://www.youtube.com/watch?v=pziNQu9Ltxs>
+  - transcript: `transcripts/katja-hoyer-weimar-gdr-german-character.txt`
+  - slug: `katja-hoyer-weimar-gdr-german-character`
+
+- **The Pragmatic Engineer** — Kubernetes and retiring at the top with Kelsey Hightower
+  - 2026 · 172 分钟 · 284,572 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=UlXpOGIpITM>
+  - transcript: `transcripts/kubernetes-retiring-at-top-kelsey-hightower.txt`
+  - slug: `kubernetes-retiring-at-top-kelsey-hightower`
+
 - **Huberman Lab** — Dr. Andy Galpin: How to Build Physical Endurance & Lose Fat | Huberman Lab Guest Series
   - 2023 · 228 分钟 · 5,665,144 播放 · 健康 / 体能
   - source: <https://www.youtube.com/watch?v=oNkDA2F7CjM>
   - transcript: `transcripts/andy-galpin-build-physical-endurance-lose.txt`
   - slug: `andy-galpin-build-physical-endurance-lose`
+
+- **Acquired** — Costco (Audio)
+  - 2023 · 181 分钟 · 181,029 播放 · 商业 / 投资
+  - source: <https://www.youtube.com/watch?v=9PxxtJVWRrg>
+  - transcript: `transcripts/costco.txt`
+  - slug: `costco`
 
 - **The Peterman Pod** — Meta Superintelligence Labs (MSL) Eng Director: Promo Hacking, Industry Shifts, Regrets | John White
   - 2026 · 43 分钟 · 40,220 播放 · 职业 / 管理
@@ -590,11 +682,11 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/uber-distinguished-eng-unfair-promos-influence.txt`
   - slug: `uber-distinguished-eng-unfair-promos-influence`
 
-- **Dwarkesh Podcast** — Why Leonardo was a saboteur, Gutenberg went broke, and Florence was weird – Ada Palmer
-  - 2026 · 122 分钟 · 824,677 播放 · 神经科学 / 心理
-  - source: <https://www.youtube.com/watch?v=PAIhVfGbREA>
-  - transcript: `transcripts/leonardo-was-saboteur-gutenberg-went-broke.txt`
-  - slug: `leonardo-was-saboteur-gutenberg-went-broke`
+- **In Depth (First Round)** — How to be effective up and down the org chart | Matt MacInnis (Rippling, Inkling, Apple)
+  - 2024 · 75 分钟 · 5,165 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=1vVvk9VwVEw>
+  - transcript: `transcripts/be-effective-up-down-org-chart.txt`
+  - slug: `be-effective-up-down-org-chart`
 
 - **The Peterman Pod** — Creator of Lean: Handwritten Math Will Change Dramatically | Leonardo de Moura
   - 2026 · 68 分钟 · 36,880 播放 · 计算机 / 系统
@@ -608,11 +700,11 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/science-making-breaking-habits.txt`
   - slug: `science-making-breaking-habits`
 
-- **The Ezra Klein Show** — Yuval Noah Harari on Donald Trump’s Core Delusion | The Ezra Klein Show
-  - 2026 · 115 分钟 · 1,086,798 播放 · 政治 / 社会
-  - source: <https://www.youtube.com/watch?v=9NCxS__rtAo>
-  - transcript: `transcripts/yuval-noah-harari-donald-trump-s.txt`
-  - slug: `yuval-noah-harari-donald-trump-s`
+- **Dwarkesh Podcast** — Why Leonardo was a saboteur, Gutenberg went broke, and Florence was weird – Ada Palmer
+  - 2026 · 122 分钟 · 824,677 播放 · 神经科学 / 心理
+  - source: <https://www.youtube.com/watch?v=PAIhVfGbREA>
+  - transcript: `transcripts/leonardo-was-saboteur-gutenberg-went-broke.txt`
+  - slug: `leonardo-was-saboteur-gutenberg-went-broke`
 
 - **Lex Fridman Podcast** — Joe Rogan: Comedy, Controversy, Aliens, UFOs, Putin, CIA, and Freedom | Lex Fridman Podcast #300
   - 2022 · 101 分钟 · 10,831,085 播放 · 宇宙 / 地外
@@ -620,23 +712,23 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/joe-rogan-comedy-controversy-aliens-ufos.txt`
   - slug: `joe-rogan-comedy-controversy-aliens-ufos`
 
+- **The Ezra Klein Show** — Yuval Noah Harari on Donald Trump’s Core Delusion | The Ezra Klein Show
+  - 2026 · 115 分钟 · 1,086,798 播放 · 政治 / 社会
+  - source: <https://www.youtube.com/watch?v=9NCxS__rtAo>
+  - transcript: `transcripts/yuval-noah-harari-donald-trump-s.txt`
+  - slug: `yuval-noah-harari-donald-trump-s`
+
+- **A Life Engineered** — Should You Leave Big Tech or Ride It Out? | Christophe Bisciglia
+  - 2026 · 56 分钟 · 23,295 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=efC1_kSIGhA>
+  - transcript: `transcripts/should-leave-big-tech-ride-out.txt`
+  - slug: `should-leave-big-tech-ride-out`
+
 - **The Peterman Pod** — Creator of OCaml: Functional Programming, Formal Verification, Programming Languages | Xavier Leroy
   - 2026 · 84 分钟 · 35,613 播放 · 计算机 / 系统
   - source: <https://www.youtube.com/watch?v=9Cswiqrq6So>
   - transcript: `transcripts/creator-ocaml-functional-programming-formal-verification.txt`
   - slug: `creator-ocaml-functional-programming-formal-verification`
-
-- **Conversations with Tyler** — Bob Spitz: Why the Rolling Stones Outlasted Everyone
-  - 2026 · 62 分钟 · 13,961 播放 · 经济 / 跨学科
-  - source: <https://www.youtube.com/watch?v=YzcuM5Q7a50>
-  - transcript: `transcripts/bob-spitz-rolling-stones-outlasted-everyone.txt`
-  - slug: `bob-spitz-rolling-stones-outlasted-everyone`
-
-- **Mindscape (Sean Carroll)** — Mindscape 78 | Daniel Dennett on Minds, Patterns, and the Scientific Image
-  - 2020 · 121 分钟 · 102,446 播放 · 意识 / 心智
-  - source: <https://www.youtube.com/watch?v=8yZw4wxvnVQ>
-  - transcript: `transcripts/daniel-dennett-minds-patterns-scientific-image.txt`
-  - slug: `daniel-dennett-minds-patterns-scientific-image`
 
 - **Acquired** — Google Part I: Origins of Search. How the Best Business in Human History Happened (Audio)
   - 2025 · 219 分钟 · 109,662 播放 · 商业 / 投资
@@ -644,11 +736,29 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/google-part-i-origins-search-best.txt`
   - slug: `google-part-i-origins-search-best`
 
+- **Mindscape (Sean Carroll)** — Mindscape 78 | Daniel Dennett on Minds, Patterns, and the Scientific Image
+  - 2020 · 121 分钟 · 102,446 播放 · 意识 / 心智
+  - source: <https://www.youtube.com/watch?v=8yZw4wxvnVQ>
+  - transcript: `transcripts/daniel-dennett-minds-patterns-scientific-image.txt`
+  - slug: `daniel-dennett-minds-patterns-scientific-image`
+
 - **The Peterman Pod** — OpenAI Codex Tech Lead: How His Career Grew And How He Uses Codex | Michael Bolin
   - 2026 · 80 分钟 · 32,181 播放 · 职业 / 管理
   - source: <https://www.youtube.com/watch?v=hN5ZFzWFhhg>
   - transcript: `transcripts/openai-codex-tech-lead-his-career.txt`
   - slug: `openai-codex-tech-lead-his-career`
+
+- **Conversations with Tyler** — Bob Spitz: Why the Rolling Stones Outlasted Everyone
+  - 2026 · 62 分钟 · 13,961 播放 · 经济 / 跨学科
+  - source: <https://www.youtube.com/watch?v=YzcuM5Q7a50>
+  - transcript: `transcripts/bob-spitz-rolling-stones-outlasted-everyone.txt`
+  - slug: `bob-spitz-rolling-stones-outlasted-everyone`
+
+- **The Pragmatic Engineer** — How AI will change software engineering – with Martin Fowler
+  - 2025 · 108 分钟 · 326,437 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=CQmI4XKTa0U>
+  - transcript: `transcripts/ai-will-change-software-engineering-martin.txt`
+  - slug: `ai-will-change-software-engineering-martin`
 
 - **Huberman Lab** — How to Lose Fat with Science-Based Tools
   - 2021 · 113 分钟 · 5,585,801 播放 · 思想 / 访谈
@@ -662,23 +772,29 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/new-grad-principal-engineer-at-meta.txt`
   - slug: `new-grad-principal-engineer-at-meta`
 
-- **Dwarkesh Podcast** — Richard Sutton – Father of RL thinks LLMs are a dead end
-  - 2025 · 67 分钟 · 790,432 播放 · 思想 / 访谈
-  - source: <https://www.youtube.com/watch?v=21EYKqUsPfg>
-  - transcript: `transcripts/richard-sutton-father-rl-thinks-llms.txt`
-  - slug: `richard-sutton-father-rl-thinks-llms`
-
 - **The Peterman Pod** — Mozilla Firefox CTO: Chrome vs Firefox and Distinguished Eng Promos
   - 2025 · 95 分钟 · 27,582 播放 · 职业 / 管理
   - source: <https://www.youtube.com/watch?v=KhJgI9u47kI>
   - transcript: `transcripts/mozilla-firefox-cto-chrome-vs-firefox.txt`
   - slug: `mozilla-firefox-cto-chrome-vs-firefox`
 
+- **Dwarkesh Podcast** — Richard Sutton – Father of RL thinks LLMs are a dead end
+  - 2025 · 67 分钟 · 790,432 播放 · 思想 / 访谈
+  - source: <https://www.youtube.com/watch?v=21EYKqUsPfg>
+  - transcript: `transcripts/richard-sutton-father-rl-thinks-llms.txt`
+  - slug: `richard-sutton-father-rl-thinks-llms`
+
 - **Lex Fridman Podcast** — Donald Hoffman: Reality is an Illusion - How Evolution Hid the Truth | Lex Fridman Podcast #293
   - 2022 · 196 分钟 · 10,409,362 播放 · 演化 / 生物
   - source: <https://www.youtube.com/watch?v=reYdQYZ9Rj4>
   - transcript: `transcripts/donald-hoffman-reality-illusion-evolution.txt`
   - slug: `donald-hoffman-reality-illusion-evolution`
+
+- **Acquired** — Google Part II: Alphabet (Audio)
+  - 2025 · 251 分钟 · 78,248 播放 · 商业 / 投资
+  - source: <https://www.youtube.com/watch?v=QhAftC_zFr8>
+  - transcript: `transcripts/google-part-ii-alphabet.txt`
+  - slug: `google-part-ii-alphabet`
 
 - **Making Sense (Sam Harris)** — Is AI Already Conscious? (FULL EPISODE)
   - 2026 · 91 分钟 · 222,886 播放 · 意识 / 心智
@@ -691,12 +807,6 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - source: <https://www.youtube.com/watch?v=ZusCQdM6ovw>
   - transcript: `transcripts/david-wallace-arrow-time.txt`
   - slug: `david-wallace-arrow-time`
-
-- **Acquired** — Google Part II: Alphabet (Audio)
-  - 2025 · 251 分钟 · 78,248 播放 · 商业 / 投资
-  - source: <https://www.youtube.com/watch?v=QhAftC_zFr8>
-  - transcript: `transcripts/google-part-ii-alphabet.txt`
-  - slug: `google-part-ii-alphabet`
 
 - **The Peterman Pod** — Frontline Manager at Meta to Senior Director at Snapchat in 3 Years (Career Story)
   - 2025 · 42 分钟 · 23,366 播放 · 职业 / 管理
@@ -716,11 +826,29 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/googlex-chief-scientist-imposter-syndrome-career.txt`
   - slug: `googlex-chief-scientist-imposter-syndrome-career`
 
+- **In Depth (First Round)** — Why great leaders make themselves obsolete | Eric Sager (COO, Plaid)
+  - 2026 · 70 分钟 · 9,127 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=QVB6LRTeIms>
+  - transcript: `transcripts/great-leaders-make-themselves-obsolete-eric.txt`
+  - slug: `great-leaders-make-themselves-obsolete-eric`
+
 - **The Ezra Klein Show** — What Trump’s Tariffs Will Actually Do | The Ezra Klein Show
   - 2025 · 51 分钟 · 983,981 播放 · 政治 / 社会
   - source: <https://www.youtube.com/watch?v=DhabG-dyQu0>
   - transcript: `transcripts/trump-s-tariffs-will-actually-do.txt`
   - slug: `trump-s-tariffs-will-actually-do`
+
+- **A Life Engineered** — Why The Best Reinvent Themselves Every 2 Years | Carlos Arguelles
+  - 2025 · 49 分钟 · 18,152 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=_ToZs0OVAUs>
+  - transcript: `transcripts/best-reinvent-themselves-every-years-carlos.txt`
+  - slug: `best-reinvent-themselves-every-years-carlos`
+
+- **The Peterman Pod** — Ex-Head of Eng at Instagram: Career Regrets and Learnings | James Everingham
+  - 2026 · 58 分钟 · 20,624 播放 · 职业 / 管理
+  - source: <https://www.youtube.com/watch?v=VIF5Fm8NdE8>
+  - transcript: `transcripts/ex-head-eng-at-instagram-career-regrets.txt`
+  - slug: `ex-head-eng-at-instagram-career-regrets`
 
 - **Conversations with Tyler** — David Brooks on Audacity, AI, and the American Psyche (Live at @92ndStreetY)
   - 2025 · 74 分钟 · 13,257 播放 · 人工智能
@@ -728,11 +856,11 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/david-brooks-audacity-ai-american-psyche.txt`
   - slug: `david-brooks-audacity-ai-american-psyche`
 
-- **The Peterman Pod** — Ex-Head of Eng at Instagram: Career Regrets and Learnings | James Everingham
-  - 2026 · 58 分钟 · 20,624 播放 · 职业 / 管理
-  - source: <https://www.youtube.com/watch?v=VIF5Fm8NdE8>
-  - transcript: `transcripts/ex-head-eng-at-instagram-career-regrets.txt`
-  - slug: `ex-head-eng-at-instagram-career-regrets`
+- **The Pragmatic Engineer** — The third golden age of software engineering – thanks to AI, with Grady Booch
+  - 2026 · 77 分钟 · 350,439 播放 · 计算机 / 系统
+  - source: <https://www.youtube.com/watch?v=OfMAtaocvJw>
+  - transcript: `transcripts/third-golden-age-software-engineering-thanks.txt`
+  - slug: `third-golden-age-software-engineering-thanks`
 
 - **Dwarkesh Podcast** — Ilya Sutskever (OpenAI Chief Scientist) — Why next-token prediction could surpass human intelligence
   - 2023 · 47 分钟 · 784,549 播放 · 人工智能
@@ -746,17 +874,17 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - transcript: `transcripts/brett-johnson-us-most-wanted-cybercriminal.txt`
   - slug: `brett-johnson-us-most-wanted-cybercriminal`
 
-- **Mindscape (Sean Carroll)** — Mindscape 253 | David Deutsch on Science, Complexity, and Explanation
-  - 2023 · 102 分钟 · 87,928 播放 · 复杂性 / 系统
-  - source: <https://www.youtube.com/watch?v=ldgK7EhEnto>
-  - transcript: `transcripts/david-deutsch-science-complexity-explanation.txt`
-  - slug: `david-deutsch-science-complexity-explanation`
-
 - **Acquired** — Google Part III: The AI Company. Google is amazingly well-positioned... will they win in AI? (Audio)
   - 2025 · 246 分钟 · 127,203 播放 · 商业 / 投资
   - source: <https://www.youtube.com/watch?v=lCEB7xHer5U>
   - transcript: `transcripts/google-part-iii-ai-company-google.txt`
   - slug: `google-part-iii-ai-company-google`
+
+- **Mindscape (Sean Carroll)** — Mindscape 253 | David Deutsch on Science, Complexity, and Explanation
+  - 2023 · 102 分钟 · 87,928 播放 · 复杂性 / 系统
+  - source: <https://www.youtube.com/watch?v=ldgK7EhEnto>
+  - transcript: `transcripts/david-deutsch-science-complexity-explanation.txt`
+  - slug: `david-deutsch-science-complexity-explanation`
 
 - **The Peterman Pod** — Turing Award Winner: Early AI, LLM Predictions, Causality | Judea Pearl
   - 2026 · 87 分钟 · 18,434 播放 · 计算机 / 系统
