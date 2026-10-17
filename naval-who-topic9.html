@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naval 专题 · 读他之前：四个折扣</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="naval-who-topic9.en.html">English →</a></div>
+<header>
+<div class="kicker">Naval 专题 · 第 1 篇</div>
+<h1>读他之前，先打四个折扣</h1>
+<p class="sub">时代、位置、体裁、动机：Naval 的格言是站在哪里说的</p>
+</header>
+<div class="meta-card"><b>主题</b> 读他之前：四个折扣 · <b>材料</b> nav.al 文字 16 篇（2008–2025，含《How to Get Rich》与《How to Angel Invest》合订本）、访谈转写 5 份（2015–2026）· <b>访谈</b> The Tim Ferriss Show（2015）· The Knowledge Project（2017）· Joe Rogan Experience #1309（2019）· Chris Williamson（2025）· Eric Jorgenson Megasode（2026）</div>
+
+<h2>四个折扣</h2>
+<p>Naval Ravikant 流传最广的东西是格言：「财富是你睡觉时也在替你赚钱的资产」「你不会靠出租时间致富」。这个专题接下来八篇，会把这些格言按主题放回它们被说出的那段对话里。在那之前，这一篇只回答一个问题：<strong>他的话是站在什么位置上说的。</strong>一个硅谷天使投资人在 2018 年发的推文，带着他的时代、他在牌桌上的座位、推文这种体裁，以及他自己的生意。知道这四样，才知道每句话该打几折。</p>
+
+<h3>一、时代：杠杆突然变便宜的那十年</h3>
+<p>Naval 九岁随母亲从德里移民到纽约皇后区，母亲白天做体力活、晚上读夜校，他和哥哥是放学后自己回家的「钥匙儿童」。他在 2015 年对 Tim Ferriss 回忆，小时候看美国的理想生活，像是隔着窗玻璃、把鼻子贴在上面往里看。<a class="ts" href="https://www.youtube.com/watch?v=-7J-Gwc9pVg&amp;t=864s">[00:14:24]</a> 后来他读了纽约的理科高中 Stuyvesant 和达特茅斯学院，1990 年代中期到了硅谷。他说自己在 @Home 公司上班时到处宣称要出去创业，结果被同事一次次追问「你怎么还在」，硬是被激将出了第一家公司。</p>
+<p>他后来的财富很大一块来自天使投资。他回忆，第一笔做成的大投资是 Twitter，那时它还是个靠短信用的「玩具」，他在白板前给创始人讲了半小时增长策略，才换来一点额度。他在 2009 年的一篇博客《<a href="https://nav.al/the-returns-to-entrepreneurship">The returns to entrepreneurship</a>》里，把那个时代说得很清楚：开源软件、云服务和外包工具让创业成本塌了下来，过去要一两百万美元才能搭起来的公司，现在一万美元就够；而产品一上网，面对的就是快要到来的第三十亿个网民。他由此下了一个判断：</p>
+<blockquote><span class="en">No, people aren’t getting any smarter or harder-working. But the amount of leverage is obscene.</span><span class="zh">不，人并没有变得更聪明、更勤奋。只是可用的杠杆多得离谱。</span><cite>— Naval ·《The returns to entrepreneurship》，2009</cite></blockquote>
+<p>这句话是他整套致富理论的种子，但它首先是一句关于时代的话：同样的人，放在杠杆便宜的年代就赢得更大更快。他自己的战绩也落在这个窗口里。2015 年 Ferriss 问起他投资生涯的得意之作，他列了 Twitter、Uber 和 Postmates 的早期轮次，说他那时估计 Twitter 涨了约 400 倍、Uber 约 4000 倍。<a class="ts" href="https://www.youtube.com/watch?v=-7J-Gwc9pVg&amp;t=3309s">[00:55:09]</a> 说到这些成功是怎么来的，他的回答很坦白：</p>
+<blockquote><span class="en">Some of it was luck. A lot of it was luck.</span><span class="zh">有一部分是运气。很大一部分是运气。</span><cite>— Naval · The Tim Ferriss Show，2015 <a class="ts" href="https://www.youtube.com/watch?v=-7J-Gwc9pVg&amp;t=3140s">[00:52:20]</a></cite></blockquote>
+<p>两年后在 The Knowledge Project 上，他又说科技生意需要大量运气：时机、市场、监管，天时地利。<a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=6252s">[01:44:12]</a> 2019 年讲天使投资时，他把当下称作科技业的「淘金热」时代，并提醒听众，十年前 Y Combinator 刚起步、AngelList 还不存在，这些建议可能很快过时。可是同一时期，他最出名的那串推文叫《How to Get Rich (without getting lucky)》，标题承诺的恰恰是剥离运气。到 2026 年，他对 Eric Jorgenson 说眼下是人类历史上创造财富最好的时期，承认人生有很多运气，但认为时间够长就能「越过」运气。<a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=795s">[00:13:15]</a> <strong>第一个折扣：凡是讲杠杆、股权、早期下注的建议，都要问它有多少是那个杠杆骤然变便宜的十年给的。</strong></p>
+
+<h3>二、位置：坐在幂律的赢家一端</h3>
+<p>天使投资人看到的世界，和创业者看到的不一样。Naval 在 2019 年的《<a href="https://nav.al/angel-1">How to Angel Invest</a>》里讲得非常直白：投资组合的回报几乎全靠一两笔。</p>
+<blockquote><span class="en">If you look at just about any successful angel investor’s portfolio, the majority of returns come from one deal.</span><span class="zh">几乎任何一位成功天使投资人的组合，大部分回报都来自其中一笔。</span><cite>— Naval ·《How to Angel Invest, Part 1》，2019</cite></blockquote>
+<p>他接着说，去掉最好的两三笔，大多数基金就会亏钱；第二部分里他更把种子轮比作买彩票，只是判断力能让你提前知道几个中奖号码，组合依然必不可少。这是投资人的视角：手里握着一百张票，九十张作废也没关系。他甚至在同一季播客里借 Taleb 讲过遍历性（ergodicity）：一百个人平均下来成立的事，不等于一个人重复一百次也成立，俄罗斯轮盘六个人各玩一次会出五个富翁，一个人玩六次只会死。可他给普通人的致富建议，承诺的却是另一种平均：</p>
+<blockquote><span class="en">In 1,000 parallel universes, you want to be wealthy in 999 of them.</span><span class="zh">在一千个平行宇宙里，你要在其中九百九十九个里都变得富有。</span><cite>— Naval ·《<a href="https://nav.al/money-luck">Making Money Isn’t About Luck</a>》，2019</cite></blockquote>
+<p>一千个平行宇宙是一千个人的平均，而读者只活一次。一个靠组合抹平运气的人，教一个只有一张票的人如何不靠运气，这个落差他懂一半：同一季播客里，他鼓励人做有点「不理性的乐观」的下注，理由是创业失败了也没什么大不了，丢的不过是投资人的几百万，「他们还有的是」。这句话从投资人的座位上看完全成立，从创业者的座位上看，丢掉的是五到十年。</p>
+<p>公平地说，他自己并不是一把就中的人。他说第一笔小财富在股市里亏光了，第二笔被合伙人骗走，第三次才成。他也承认「如果我这个印度穷孩子能做到，谁都能」有前提：四肢健全、头脑正常，而且受过教育。<strong>第二个折扣：凡是从结果倒推出来的规律，都要问它是从组合里看出来的，还是从一张票上看出来的。</strong></p>
+
+<h3>三、体裁：格言是写给自己的书签</h3>
+<p>Naval 对自己的体裁有清醒的描述。2019 年被问到怎样对待别人的建议，他说他九成的推文是「心智钩子」，用来在下次遇到同样处境时提醒自己，像指针一样指向背后的经验：</p>
+<blockquote><span class="en">If you don’t have the underlying experience, then it reads like a collection of quotes.</span><span class="zh">如果你没有底下那层经验，读起来就只是一串语录。</span><cite>— Naval ·《<a href="https://nav.al/reject-advice">Reject Most Advice</a>》，2019</cite></blockquote>
+<p>这意味着读者拿到的是书签，不是书。同一季播客里，他承认那串推文本该叫「如何创造财富」，只是「如何致富」更抓人；对 Joe Rogan 他直接说那是个「标题党」标题。<a class="ts" href="https://www.youtube.com/watch?v=3qHkcs3kG44&amp;t=668s">[00:11:08]</a> 他还提醒，别把他的话当数学推演，不同场合说的两句话放在一起看会互相矛盾。2025 年他把这种写法的取舍说得更透：</p>
+<blockquote><span class="en">I keep my principles high level and incomplete. Partially because it just sounds better and it’s easier to remember, but also just because it’s more applicable.</span><span class="zh">我刻意让原则保持高层、不完整。一部分是因为这样听起来更好、更好记，也因为这样适用面更广。</span><cite>— Naval ·《<a href="https://nav.al/inspiration">Inspiration All the Way Down</a>》，2025</cite></blockquote>
+<p>有意思的是，这套体系最早的样子比推文更谨慎。2008 年他在博客上写过一组《<a href="https://nav.al/life-formulas-i">Life Formulas</a>》，「收入 = 责任 + 杠杆 + 特定知识」已经在里面，开头却注明「这是写给自己的笔记，你的参照系、因而你的计算可能不同」，「承担风险」后面还挂着一个问号。十年后的推文把这些限定都压掉了。他在 2015 年还自嘲过，因为词汇多半来自阅读，说话时用书面语，就算不太懂也能显得很聪明。<a class="ts" href="https://www.youtube.com/watch?v=-7J-Gwc9pVg&amp;t=5980s">[01:39:40]</a> <strong>第三个折扣：每读到一句格言，先去找它被压掉的那个条件。</strong></p>
+
+<h3>四、动机：不卖课的人也有自己的仓位</h3>
+<p>Naval 很在意这一折。他说《How to Get Rich》播客不放广告、不卖任何东西，因为一卖就毁了可信度，并给出一条检验标准：</p>
+<blockquote><span class="en">If anyone is giving advice on how to get rich and they’re also making money off of it, they should have made their money elsewhere.</span><span class="zh">谁要是教人致富、又靠这个赚钱，那他的钱最好是在别处赚的。</span><cite>— Naval ·《<a href="https://nav.al/rich-quick">There Are No Get Rich Quick Schemes</a>》，2019</cite></blockquote>
+<p>按这条标准，他是过关的：他的钱确实是在别处赚的。但他紧接着补了一句，这类人也图名声和自我满足，「做事总得有个动机」。他的动机不在课程，而在仓位。他是 AngelList 的联合创始人，那是一个帮创业公司融资、让合格投资人跟投的平台；他在 2019 年说自己大部分身家都压在未上市的创业公司里，说存进 401(k) 养老账户的钱等于投给了车管所和国防部，劝科技从业者把钱「加倍」投回科技业。这些建议和他的仓位方向一致。同一期里，搭档 Nivi 也直说过，他们大概免不了「替自己的持仓说话」。</p>
+<p>他的听众也有轮廓。他对 Rogan 说，他是「年轻男性极客心中的英雄」，播客听众九成以上是男性。到了 2025 年，他又重新下场创办了一家公司，Impossible, Inc.。<strong>第四个折扣：凡是把人往创业、股权和科技推的建议，都要记得说话人自己就站在那个方向上。</strong></p>
+
+<h2>这些折扣怎么咬合</h2>
+<p>四个折扣不是平均打在每句话上，而是彼此加强。时代让杠杆变便宜，位置让他从组合里看到幂律，体裁把组合里的分母压掉，只剩赢家的那一句，动机则让这一句恰好指向他自己的方向。最受影响的正是那串推文的副标题「不靠运气」：他在长访谈里讲运气讲得很坦白，到了格言里，运气成了可以被性格和努力消掉的东西。他自己对偏向心里有数：</p>
+<blockquote><span class="en">Because it comes from someone who’s steeped in Silicon Valley and tech companies, it’s always going to have a bias towards that.</span><span class="zh">因为这些话出自一个泡在硅谷和科技公司里的人，所以它永远会偏向那边。</span><cite>— Naval ·《<a href="https://nav.al/working-ourselves">We Should All Be Working for Ourselves</a>》，2019</cite></blockquote>
+<p>Naval 自己的体系咬得很紧：财富是为了自由，自由是为了内心的平静。四个折扣主要扣在第一环上。《致富的机制》一篇要扣时代和位置；《判断力与决策》要扣位置，因为判断力恰恰是他用来解释组合回报的那个变量；《幸福》和《自我》两篇主要扣体裁，那里的格言更短，条件丢得更多。打完折剩下的仍然很多：他肯说出运气、偏向和自己的仓位，这在讲致富的人里并不常见。</p>
+
+<h2>边界</h2>
+<div class="claim">
+<p class="said">「二十年前我认定聪明又勤奋的那些人，现在几乎无一例外都成功了。」——2019 年《<a href="https://nav.al/eventually">Eventually You Will Get What You Deserve</a>》；2025 年在《<a href="https://nav.al/agency">Blame Yourself for Everything, and Preserve Your Agency</a>》里说得更满：「每一个，我想不出例外」</p>
+<p class="verdict">有据，但说宽了</p>
+<p>Gompers 等人 2010 年追踪风投支持的创业者：上一家公司成功上市的人，下一家上市的概率是 30%，首次创业者 21%，失败过的 22%。能力确实会延续，但即便是被市场证明过的人，十次里也有七次不成。他的样本是自己记得、仍在硅谷的人，没有分母。</p>
+</div>
+<div class="claim">
+<p class="said">「你必须拥有股权，也就是一家企业的一部分，才能获得财务自由。」——2019 年《<a href="https://nav.al/renting-time">You Won’t Get Rich Renting Out Your Time</a>》</p>
+<p class="verdict">有据，但说宽了</p>
+<p>大财富确实多以股权形式存在。但 Hall 与 Woodward 的研究（2010 年发表于《美国经济评论》）发现，风投支持的创业公司里，约 73% 给创业者的退出价值是零；风险厌恶适中、身家不到 70 万美元的人，期望上不如去拿工资。投资人能分散，创业者手里通常只有一张票。</p>
+</div>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>统计学 · 伯克森悖论</b>：Joseph Berkson 1946 年指出，只在住院病人里看，两种互不相关的病会显得负相关，因为入院本身就是筛选。Naval 记得的「二十年前的聪明人」，是仍留在硅谷、仍在他视野里的人；聪明和成功都会让人更容易留在他的视野里，于是看上去「聪明的都成功了」。</li>
+<li><b>机器学习 · 分布偏移</b>：一个模型在某段数据上学得再好，换到分布不同的数据上就可能失灵，而它自己并不知道。Naval 的规律多半是在 2005 到 2015 年的硅谷「训练集」上学出来的：创业便宜、网民暴涨、少数几笔赢走一切。像的地方在于，他 2019 年自己也提醒过建议会很快过时；不像的地方是，人能读到警告，模型读不到。</li>
+<li><b>社会学 · Merton 的自我实现预言</b>：Robert Merton 1948 年描述，一个起初错误的判断，会因为人们照着它行动而变成真的。Gompers 的论文也指出，供应商和客户更愿意押注有成功记录的人，于是成功生出成功。Naval 看好、出钱、站台的人后来成功了，其中一部分正是「被看好」本身的结果。</li>
+<li><b>佛学 · 指月之指</b>：禅宗常说，言语像指向月亮的手指，看手指的人看不到月亮。Naval 说他的推文是指向经验的「指针」，同一个结构；不同在于禅宗认为手指永远不是月亮，Naval 却相信一句话可以检验真假，并为它负责。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>读 Naval Ravikant 的格言，要先打四个折扣：时代、位置、体裁、动机。</li>
+<li>Naval 在 2009 年写道，人没有变聪明，是互联网让创业的杠杆便宜得离谱，赢家因此赢得更大更快。</li>
+<li>Naval 2015 年对 Tim Ferriss 说，他投中 Twitter、Uber 等公司，有一部分是运气，很大一部分是运气。</li>
+<li>Naval 承认天使投资的回报几乎全来自组合里的一两笔，种子轮像买彩票，必须靠组合。</li>
+<li>Naval 的「一千个平行宇宙里九百九十九个都致富」，是给只有一张票的个人开的承诺。</li>
+<li>Naval 说他九成的推文是提醒自己的心智钩子，没有底下那层经验的人读到的只是语录。</li>
+<li>Naval 2008 年的《Life Formulas》已有「收入 = 责任 + 杠杆 + 特定知识」，当时注明只是写给自己的笔记。</li>
+<li>Naval 不靠卖致富课赚钱，但他是 AngelList 联合创始人，大部分身家压在未上市的创业公司里。</li>
+<li>Naval 自己说，他的建议出自一个泡在硅谷和科技公司里的人，永远会偏向那边。</li>
+<li>Naval 自己讲过遍历性：一百个人的平均不等于一个人重复一百次，投资人有组合，创业者只有一条时间线。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://nav.al/rich">How to Get Rich</a> · <a href="https://nav.al/angel-1">How to Angel Invest, Part 1</a> · <a href="https://nav.al/angel-2">Part 2</a></span><span class="d">Naval 与 Nivi，2019–2020。位置、体裁、动机三个折扣的主要材料。</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=-7J-Gwc9pVg">The Tim Ferriss Show：Naval Ravikant</a></span><span class="d">2015。早年经历与「很大一部分是运气」的出处。</span></li>
+<li><span class="t"><a href="https://nav.al/in-the-arena">In the Arena</a></span><span class="d">Naval 与 Nivi，2025。第一条边界的 2025 年说法。</span></li>
+<li><span class="t"><a href="https://doi.org/10.1016/j.jfineco.2009.11.001">Gompers et al., Performance Persistence in Entrepreneurship (2010)</a> · <a href="https://www.nber.org/papers/w14219">Hall &amp; Woodward, The Burden of the Nondiversifiable Risk of Entrepreneurship (2010)</a></span><span class="d">两条边界判词的依据。</span></li>
+</ul>
+<footer>Naval 专题 · 把他的格言放回原处 · 写于 2026-10-17</footer>
+</div>
+</body></html>
