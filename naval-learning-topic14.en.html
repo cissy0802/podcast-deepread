@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naval Series · Reading and Learning</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="naval-learning-topic14.html">中文 →</a></div>
+<header>
+<div class="kicker">Naval Topic · No. 6</div>
+<h1>Read what you love until you love to read, then read less</h1>
+<p class="sub">Desire, foundations, method: how Naval learns, and how he revised himself in 2026</p>
+</header>
+<div class="meta-card"><b>Topic</b> Reading and Learning · <b>Material</b> 4 nav.al texts (2019–2021), 7 interview transcripts (2015–2026) · <b>Interviews</b> The Tim Ferriss Show (2015, 2020) · The Knowledge Project (2017) · Joe Rogan Experience #1309 (2019) · BeerBiceps (2024) · Chris Williamson (2025) · Eric Jorgenson Megasode (2026)</div>
+
+<h2>His claims</h2>
+
+<h3>1. Read what you love until you love to read</h3>
+<p>While recording <em>How to Get Rich</em> in 2019, Nivi read out a handful of tweets he filed under "continuous learning." Naval said the most important one wasn't even there: the foundation of learning is reading, and he doesn't know a smart person who doesn't read all the time. The hard part is what to read and how, because for most people reading is a chore. His answer became the episode's title: read what you love until you love to read. The only support he offers is an observation.</p>
+<blockquote><span class="en">Everybody I know who reads a lot loves to read, and they love to read because they read books that they loved.</span><cite>— Naval · <a href="https://nav.al/love-read">Read What You Love Until You Love to Read</a>, 2019</cite></blockquote>
+<p>He admits it's a bit of a catch-22. The way out is to start wherever you are, fiction included, keep going until it becomes a habit, get bored of the simple stuff, and climb: science fiction, non-fiction, science, philosophy, mathematics. That is the path he walked. On The Knowledge Project in 2017 he described a childhood in which his mother used the New York public library as an after-school daycare; he stayed until closing, went from comics and mysteries to fantasy and sci-fi, then to science, math and philosophy, and counted himself lucky that nobody at seven or sixteen told him what he shouldn't read. <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=345s">[00:05:45]</a> Much of it, he says, was mental junk food; eat enough of it and your taste changes on its own.</p>
+<p>Underneath is a claim about scarcity. The internet puts ten libraries of Alexandria at everyone's fingertips, so "…the means of learning are abundant. It’s the desire to learn that’s scarce." Children are born asking why; in his view, schools and parenting replace curiosity with compliance. Talking to Chris Williamson in 2025, he turned the same idea into a daily practice: when he wants to read a book he downloads it on the spot, when he wants to understand something he looks it up or asks ChatGPT right then, because learning happens at the moment curiosity arrives, and by the time a scheduled hour comes around your mood has moved on. How much, he asks, do you remember of the geography, history and math school made you learn on its timetable? <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=2515s">[00:41:55]</a></p>
+<p>How much should you read? On The Knowledge Project he said he reads perhaps one to two hours a day, and that this alone accounts for whatever material success and intelligence he has, because:</p>
+<blockquote><span class="en">Real people don't read an hour a day. Real people, I think, read a minute a day or less.</span><cite>— Naval · The Knowledge Project, 2017 <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=879s">[00:14:39]</a></cite></blockquote>
+<p>That claim can be checked against data, and the Limits section below does so. For now, note its preconditions: an unsupervised child, a library open to him, and a great deal of free time. "Read what you love" is about how desire is born; it is not yet a method of learning.</p>
+
+<h3>2. Foundations: math, logic and a steel frame</h3>
+<p>Loving to read isn't enough. In the same episode Naval added an exception: books are full of junk too, and what you read early programs your brain, so you will judge everything you read later as true or false against it. So read foundational books, meaning the original, strongly scientific works in a field. His pairings: instead of a business book, Adam Smith's <em>The Wealth of Nations</em>; instead of a modern book on evolution, Darwin's <em>Origin of Species</em>; instead of advanced cosmology, Feynman's <em>Six Easy Pieces</em>. The idea predates the tweets. In 2015 he told Tim Ferriss that the older the problem, the older the solution, that a book which has survived two thousand years has been filtered by many people, and that everyone has a loose understanding of evolution but few have read the <em>Origin</em>. <a class="ts" href="https://www.youtube.com/watch?v=-7J-Gwc9pVg&amp;t=2572s">[00:42:52]</a></p>
+<p>What counts as a foundation? In the next episode he defined it as principles and algorithms, a logical understanding you can attack or defend from any angle; and the ultimate foundation is mathematics and logic, because they give you the scientific method, which in turn lets you separate truth from falsehood in other fields. Nivi chimed in that a lifetime of learning needs two things, practical persuasion and depth in some technical subject. Naval widened it to five: reading, writing, arithmetic, persuasion (talking), and programming, which he calls an applied form of arithmetic that gets you leverage for free in any domain.</p>
+<p>His favorite image here is the "steel frame of understanding." He put it most fully to Joe Rogan in 2019: knowing arithmetic cold is worth far more than memorized calculus, and Feynman could walk from counting on your fingers to calculus in four pages because he understood numbers rather than remembering them.</p>
+<blockquote><span class="en">When you're memorizing, it's an indication that you don't understand. You should be able to rederive anything on the spot, and if you can't, you don't know it.</span><cite>— Naval · Joe Rogan Experience #1309, 2019 <a class="ts" href="https://www.youtube.com/watch?v=3qHkcs3kG44&amp;t=5632s">[01:33:52]</a></cite></blockquote>
+<p>In 2020 he told Ferriss that arithmetic, statistics and probability are all the math you need to succeed in life. In 2024, talking to the Indian podcaster BeerBiceps, he explained where the obsession comes from. He wanted to be a physicist, his math wasn't good enough, and surrounded by physicists he couldn't bluff with words; later he studied computer science, where the code has to compile and run, and you can't trick the machine. <a class="ts" href="https://www.youtube.com/watch?v=wQGOYnWHnto&amp;t=1414s">[00:23:34]</a> That is where the foundation lands: a system that gives you real feedback.</p>
+<p>The payoff, as he described it in 2019, is to walk into a library, look up and down the shelves and fear no book: you can take any one down, understand it, absorb what is true and reject what is false.</p>
+
+<h3>3. How to read: slowly, skipping, and a 2026 revision</h3>
+<p>On method he left two pieces of advice that sound opposed. One is from 2019:</p>
+<blockquote><span class="en">It’s better to go through a book really slowly and struggle and stumble and rewind, than it is to fly through it quickly and say, “Well, now I’ve read 20 books, I’ve read 30 books, I’ve read 50 books in the field.”</span><cite>— Naval · <a href="https://nav.al/math-logic">The Foundations Are Math and Logic</a>, 2019</cite></blockquote>
+<p>The other is the habit he describes in interviews. In 2017 he said he reads books the way he reads blogs, jumping forward, back and into the middle, reading the part that interests him and putting the book down without guilt, since a book can be treated like a blog archive. In the same conversation he said he finishes maybe a tenth of the books he buys. Two years later he told Rogan more bluntly:</p>
+<blockquote><span class="en">I don't read anymore to complete books. I read to satisfy my genuine intellectual curiosity.</span><cite>— Naval · Joe Rogan Experience #1309, 2019 <a class="ts" href="https://www.youtube.com/watch?v=3qHkcs3kG44&amp;t=333s">[00:05:33]</a></cite></blockquote>
+<p>He keeps fifty to seventy books open on his Kindle and bounces between them. What reconciles the two is a line he keeps returning to, borrowed from the Twitter account @illacertus: don't read all the books, read the best hundred over and over. Skimming finds the hundred; slow reading and rereading are reserved for them. When he began reading David Deutsch's <em>The Beginning of Infinity</em> chapter by chapter with Brett Hall in 2021, he said he was stuck in a <a href="https://nav.al/read">loop</a>, rereading only that book and <em>The Fabric of Reality</em> until he understood them fully, and that had he read them twenty years earlier he would have chosen the right books and authors afterwards. How that book became his worldview is the subject of <a href="naval-deutsch-topic15.en.html">A Borrowed Worldview</a>.</p>
+<p>By 2026 he had reached a surprising verdict on his own reading history. Asked by Eric Jorgenson where judgment comes from, he said you have to do things first. He cited one of Seneca's letters to Lucilius on learning from the specific to the general rather than the reverse, and called people full of grand theories who have never been in the field what Taleb calls an "intellectual yet idiot." Then he turned to himself:</p>
+<blockquote><span class="en">And now I realize actually most of my reading was worthless. You know, it was all academic book knowledge.</span><cite>— Naval · Eric Jorgenson Megasode, 2026 <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=2970s">[00:49:30]</a></cite></blockquote>
+<p>These days, he says, he reads less but deliberately, only when he is trying to figure something out: "I'll read small amounts and then I'll think a lot." <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=3020s">[00:50:20]</a> His example is Taleb: he can't find many real cases of antifragility in his own life, so he doesn't reread <em>Antifragile</em>, but he keeps rereading <em>Skin in the Game</em>, because ideas like the minority rule generalize things he has seen himself. In 2024 he told BeerBiceps something similar: what he enjoys is understanding, not knowledge, because knowledge gets conflated with memorization, and for that he has ChatGPT and the internet. <a class="ts" href="https://www.youtube.com/watch?v=wQGOYnWHnto&amp;t=3622s">[01:00:22]</a></p>
+<p>The turn was visible earlier. Describing Spearhead in 2020, he said the <a href="https://nav.al/finding-time">classes and talks</a> they gave founders learning to angel invest were largely worthless, while office hours on specific deals were incredibly useful. Set that beside the 2017 line about reading explaining his success and the shift is clear: in his own telling, reading has gone from the cause of success to a spark for thinking.</p>
+
+<h2>How the claims fit together</h2>
+<p>Naval's view of learning runs in a line. Desire comes first, desire becomes habit, and inside the habit a foundation slowly forms; the foundation lets you pick up any book and also lets you skip around, because you know which beam of the frame each page hangs from. Understanding beats memory, and in the end even reading yields to doing. The line locks into the rest of the series. The specific knowledge of <a href="naval-wealth-topic10.en.html">The Mechanics of Wealth</a> is, he says, learned on the job and can't be taught, which is exactly this curiosity-driven kind of learning; the judgment of <a href="naval-judgment-topic11.en.html">Judgment and Decision-Making</a> is, by 2026, something you get by doing before learning; and in the Williamson episode he calls learning the moment curiosity strikes a recipe for happiness, which links to <a href="naval-happiness-topic12.en.html">Happiness Is a Skill You Can Practice</a>.</p>
+<p>The weakest link is the starting point. "Read what you love" assumes free time, a library you can walk into, and a desire that climbs by itself from comics to mathematics. He did climb, but he also concedes that too much reading, or the wrong reading, can stuff your head. For someone with only scraps of time, "read what you love" and "read only foundational originals" pull against each other, and he doesn't say how to choose. The other tension is his own: in 2017 reading explained his success, in 2026 most of it was worthless. Both are his words; which one you should believe depends on which stretch of life you are standing in.</p>
+
+<h2>Limits</h2>
+<div class="claim">
+<p class="said">"I read one to two hours a day, which puts me in the top 0.01 percent; real people read a minute a day or less." (paraphrased) The Knowledge Project, 2017 <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=879s">[00:14:39]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>The US Bureau of Labor Statistics time-use survey found that in 2024 Americans over 14 spent <a href="https://www.bls.gov/opub/ted/2026/its-read-across-america-day.htm">about 17 minutes</a> a day reading for personal interest. Bone and colleagues' 2025 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12496190/">analysis</a> found that only about 16% of people read for pleasure on the surveyed day in 2023, but those who did read for an average of 1 hour 37 minutes. He is right that most people don't read on a given day; but people reading one to two hours are far more common than one in ten thousand. That this alone explains success can't be tested.</p>
+</div>
+<div class="claim">
+<p class="said">"Don't read all the books; read the best hundred over and over until you absorb them." (paraphrased) Repeated in 2017, 2019 and 2021</p>
+<p class="verdict">Supported, but overstated</p>
+<p>Dunlosky and colleagues' 2013 <a href="https://www.psychologicalscience.org/journals/pspi/1529100612453266/">review</a> of ten study techniques found that rereading does improve recall, and spaced rereading beats massed rereading, but returns diminish after a pass or two and it is far less effective than practice testing, earning a "low utility" rating. Naval's later habit of reading a little and thinking a lot, and of compressing ideas into tweets and explaining them to people, is closer to the retrieval and self-explanation the researchers favor. Rereading pays, as long as it isn't only rereading.</p>
+</div>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Educational psychology · Bjork's desirable difficulties</b>: In 1994 Robert Bjork proposed that some practices which make learning harder in the moment, such as spacing and self-testing, make memory more durable, while fluent reading tends to create the illusion of having learned. Naval's "struggle and stumble and rewind" is exactly this kind of difficulty; the difference is that his skimming seeks out the interesting passages and so routes around the hard parts.</li>
+<li><b>Psychology · Self-determination theory</b>: Edward Deci and Richard Ryan argue that intrinsic motivation rests on three needs: autonomy, competence and relatedness. "Read what you love" supplies autonomy, and climbing from junk food to mathematics is competence growing step by step. Where it differs: the theory gives real weight to relatedness, while Naval's reading story contains little more than one child and one library.</li>
+<li><b>Cognitive psychology · Bartlett's schemas</b>: In 1932 Frederic Bartlett had Cambridge participants repeatedly retell an unfamiliar Native American folk tale, "The War of the Ghosts," and found they unwittingly reshaped it into something familiar. Naval's claim that early reading programs your brain and becomes the yardstick for everything later describes the same mechanism. He treats it as a reason to read good books first; Bartlett's experiment is also a warning that the frame distorts what you read.</li>
+<li><b>Computing · Random access and indexes</b>: Reading a book like a blog archive swaps sequential reads for random access. Random access is fast only with an index, and Naval's steel frame plays that role, telling him which slot each page belongs in. Skipping around without a frame is more like rummaging a disk with no directory.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Naval Ravikant holds that the foundation of learning is reading, and that the way in is to read what you love until you love to read.</li>
+<li>Naval argues that the means of learning are now abundant and the desire to learn is scarce, and that schools often replace children's curiosity with compliance.</li>
+<li>As a child Naval used a New York public library as daycare, and with no one policing his choices he climbed from comics to science, math and philosophy.</li>
+<li>Naval recommends building foundations from a field's original works, such as The Wealth of Nations instead of business books and Origin of Species instead of modern evolution books.</li>
+<li>Naval treats mathematics and logic as the ultimate foundation, and names reading, writing, arithmetic, persuasion and programming as the five most important skills.</li>
+<li>Naval's "steel frame of understanding" is knowledge built up from the basics: having to memorize means you don't understand, and real understanding lets you rederive on the spot.</li>
+<li>In 2019 Naval said it is better to read one great book slowly, yet his actual habit is to skip around, not finish, and reread only the best hundred books.</li>
+<li>In 2026 Naval told Eric Jorgenson that most of his reading was worthless, and that he now reads small amounts and then thinks a lot.</li>
+<li>Naval's later view is to do first and learn from the specific to the general, citing Seneca's letters and Taleb's "intellectual yet idiot."</li>
+<li>Psychologist Robert Bjork's "desirable difficulties" holds that struggle while learning often strengthens memory, while fluent reading can create the illusion of mastery.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://nav.al/love-read">Read What You Love Until You Love to Read</a> · <a href="https://nav.al/math-logic">The Foundations Are Math and Logic</a></span><span class="d">Naval and Nivi, 2019. Main texts for the sections on desire and foundations.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=mGY2To_HW98">The Knowledge Project: Naval Ravikant</a> · <a href="https://www.youtube.com/watch?v=3qHkcs3kG44">Joe Rogan Experience #1309</a></span><span class="d">2017, 2019. Childhood reading, skimming, the steel frame and "one to two hours a day."</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=3TafDme-GCc">My Conversation with Naval Megasode</a></span><span class="d">Eric Jorgenson, 2026. The "most of my reading was worthless" revision.</span></li>
+<li><span class="t"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12496190/">Bone et al., The decline in reading for pleasure (2025)</a> · <a href="https://www.psychologicalscience.org/journals/pspi/1529100612453266/">Dunlosky et al., Improving Students’ Learning (2013)</a></span><span class="d">Basis for the two verdicts in Limits.</span></li>
+</ul>
+<footer>Naval Series · his aphorisms, put back where they were said · written 2026-10-17</footer>
+</div>
+</body></html>
