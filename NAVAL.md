@@ -14,8 +14,9 @@ BigCat 想**系统地读他**：把散在推文、播客、访谈里的格言按
 
 1. 跑 `bash setup.sh`，读 `.preflight`。`transcripts: BLOCKED` 或 `egress: BLOCKED` → 不发布，PushNotification 报告，结束。
 2. 素材在私有仓里（与播客转写同仓）：
-   - **文字**：`../podcast-transcripts/naval/*.md`，每篇一个文件，头部有 title / date / url / source。来源是 nav.al 上的播客逐字稿和文章、《How to Get Rich》推文串原文，以及《The Almanack of Naval Ravikant》（作者免费发布的版本）。
-   - **访谈转写**：`../podcast-transcripts/transcripts/` 下文件名以 `naval-` 开头的那些。
+   - **文字**：`../podcast-transcripts/naval/*.md`，nav.al 全站 240 篇（2026-10-17 抓），头部有 title / date / url / source / words。分几段：2005–2016 早年博客（Venture Hacks、融资、Epinions 时期）；2019 How to Get Rich 播客；2020 幸福系列、Kapil Gupta、Matt Ridley、天使投资；2021 与 Brett Hall 逐章读 Deutsch《The Beginning of Infinity》；2022–2024 Vitalik、David Deutsch、The Deutsch Files I–IV；2025–2026 播客重开（In the Arena、Curate People、AI 系列）。**合订本和片段内容重复**：`2019-12-28-rich.md`、`2021-*-infinity*.md`、`2025-10-14-in-the-arena.md`、`2025-11-07-curate-people.md` 是整期合订本，同期的短篇是从里面切出的小节。读合订本，引用时链接到对应片段页（更精确）。
+   - **访谈转写**（YouTube ASR，轮次不带名字）：`../podcast-transcripts/transcripts/naval-*.txt`，共 7 份：Joe Rogan #1309（2019）、Chris Williamson「44 Harsh Truths」（2024）、BeerBiceps（2024）、Tim Ferriss 幸福一期（2020）、Tim Ferriss 创业建议一期（2015）、The Knowledge Project #18（2017）、Eric Jorgenson Megasode。
+   - **《Almanack》没有抓**：它的内容都能追到上面的原始出处，引原始出处。主题清单里写「起点：Almanack 里……」的，改用 grep 在上面两类素材里找对应段落。
    - **目录不存在或少于 10 个文件 → 不发布**，PushNotification 请 BigCat 先在笔记本上抓素材（见文末「素材清单」），结束。**绝不能凭记忆写**：他的格言网上流传的版本和原话常常不一样，很多「纳瓦尔语录」根本不是他说的。
 3. 已经写好的专题页：`ls naval-*-topic*.html`。index 里「Naval 专题」分区的灰行就是待写主题。
 
@@ -87,18 +88,6 @@ index 最下面、「Ethan Evans 专题」之后是「Naval 专题」分区（`d
 7. **naval-life · 长期游戏：健康、关系与人生选择**
    起点：long-term games with long-term people、健康与运动、家庭、退休的定义。
 
-## 素材清单（在笔记本上抓，云端抓不到）
+## 素材清单
 
-云端环境访问不到 YouTube 字幕和 nav.al，素材要在住宅网络下抓好，放进私有仓 `cissy0802/podcast-transcripts`：
-
-- **访谈转写** → `transcripts/naval-{slug}.txt`，用 `python3 tools/fetch_transcript.py <YouTube URL> -o …`。建议至少：
-  - Joe Rogan Experience #1309 — Naval Ravikant（2019）
-  - The Knowledge Project（Shane Parrish）— Naval Ravikant（2017）
-  - The Tim Ferriss Show 上 Naval 的几期（2015、2020）
-  - nav.al 自己的播客近两年的长期节目（如有 YouTube 版）
-- **文字材料** → `naval/{yyyy-mm-dd}-{slug}.md`，头部写 `title / date / url / source / words`（同 `ethan-evans/` 的格式）：
-  - nav.al/rich（How to Get Rich 播客全季逐字稿）及推文串原文
-  - nav.al 上幸福系列和其他带逐字稿的播客页
-  - 《The Almanack of Naval Ravikant》作者免费发布的版本（navalmanack.com），按章拆成多个文件
-
-抓好后 push 私有仓，再触发本 routine。
+2026-10-17 已抓齐（见第 0 节）。要补访谈：在笔记本上 `python3 tools/fetch_transcript.py <YouTube URL> -o ../podcast-transcripts/transcripts/naval-{slug}.txt`，push 私有仓。云端抓不到 YouTube 字幕。
