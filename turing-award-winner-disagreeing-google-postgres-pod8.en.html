@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Peterman Pod × Mike Stonebraker — General-purpose only wins the low end</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="turing-award-winner-disagreeing-google-postgres-pod8.html">中文 →</a></div>
+<header>
+<div class="kicker">The Peterman Pod · 2026</div>
+<h1>General-purpose only wins the low end: the father of Postgres on types, consistency and LLMs scoring zero</h1>
+<p class="sub">Mike Stonebraker × Ryan Peterman · "Turing Award Winner: Disagreeing with Google, Postgres, Future Problems | Mike Stonebraker"</p>
+</header>
+<div class="meta-card"><b>Show</b> The Peterman Pod · 2026-04-20 · <b>Length</b> 57 min · <b>Guest</b> Mike Stonebraker · <b>Host</b> Ryan Peterman · <b>Video</b> <a href="https://www.youtube.com/watch?v=YPObBOwIrHk">YouTube</a></div>
+
+<h2>The moment</h2>
+<p>By the late 1970s, Berkeley's Ingres was running at about a hundred universities: a free relational database on Unix that actually worked. Visitors always asked the same question, what's your biggest application, and the answer was always "not very big." Then Arizona State University seriously considered putting its student records, all 40,000 students, on Ingres.</p>
+<p>Stonebraker says they could live with an unsupported operating system from Bell Labs, and with an unsupported database from some Berkeley professors. What killed the project was something else: there was no COBOL on Unix, and they were a COBOL shop.</p>
+<blockquote><span class="en">So unsupported operating system, unsupported database system, no COBOL doomed us to, you know, irrelevance.</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=332s">[00:05:32]</a></cite></blockquote>
+<p>The only way out, he concluded, was a company. In 1980 Ingres Corporation raised venture money and moved the system to DEC's VMS. The story sets the tone for the whole hour: for Stonebraker, a technology stands or falls on whether it runs on real customers' data.</p>
+
+<h2>Who’s talking, and when</h2>
+<p>In 1971 Stonebraker had just arrived at Berkeley as an assistant professor, convinced his thesis topic was a dead end. His mentor Gene Wong suggested they do something together, a year after Ted Codd published the relational model in CACM. As he remembers it, they knew nothing about databases and were not skilled programmers like Bill Joy, and they decided to write a database system anyway. Ingres became his ticket to tenure; Postgres followed, and the body of work earned him the 2014 Turing Award.</p>
+<p>Ryan Peterman's show interviews senior engineers and the creators of systems, and he tends to ask about hiring, growth and the advice you'd give your younger self. He asks those here too, but Stonebraker has little patience for small talk and drags almost every question back to a technical judgment.</p>
+<p>The episode was recorded in spring 2026. Stonebraker was busy with two things: DBOS, the company he co-founded in 2023 to bring database transactions and durability into ordinary programs, and BEAVER, an enterprise text-to-SQL benchmark from his group at MIT. The whole conversation ends up at one question: what should LLMs do, and what should databases do?</p>
+
+<h2>The episode, worked through</h2>
+<h3>1. Postgres began with a subtraction</h3>
+<p>Peterman asks what Ingres lacked that made a new system necessary. Stonebraker tells two failures. The first was Ingres's original academic purpose: a geographic information system for a neighboring professor, which needs points, lines and polygons. Ingres had integers, floats and strings, and could not support geometry efficiently on top of them. As a GIS, he says, it was a complete failure.</p>
+<p>The second is better. Around 1985, commercial Ingres implemented dates on the standard Gregorian calendar, with subtraction that respects month lengths and leap years. A customer who dealt in bonds called to say it was wrong. In his world a month earns the same interest however long it is, so March 15 minus February 15 is 30 days (the 30/360 day-count convention). He had to pull both dates into application code, subtract there and write the answer back, at a cost of two to three times in efficiency.</p>
+<blockquote><span class="en">Why can't I just overload your definition of subtraction with what I want?</span><cite>— the customer, as Stonebraker recounts it · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=772s">[00:12:52]</a></cite></blockquote>
+<p>In Ingres, subtraction was hard-coded. Stonebraker saw that bond time and GIS polygons were the same need: users want their own data types, as fast as the built-in ones. So the heart of Postgres was an extensible type system, which is where today's huge ecosystem of Postgres types and extensions comes from. He also admits that the time-travel queries they added at the same time were badly implemented and eventually taken out.</p>
+
+<h3>2. One size fits none</h3>
+<p>Two decades ago Stonebraker wrote that the era of "one size fits all" databases was over. His evidence was three systems that look nothing alike: StreamBase for streams, Vertica's column store for warehouses, and the conventional row store. Each was an order of magnitude faster than the others on its own workload. He says it is still true: ClickHouse is a column store, and Pinecone beats user-defined types for vector search.</p>
+<p>And Postgres? His positioning is blunt. If you are just getting going with a database problem, choose Postgres: it's free, the community is huge, talent is easy to find. But it has no column store and no multi-node support, so on a large data warehouse it is not competitive.</p>
+<blockquote><span class="en">At the low end, it's Postgres. At the high end, that's just not true.</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=1115s">[00:18:35]</a></cite></blockquote>
+<p>The principle cuts the other way too. A few years ago he gave a talk at Amazon and told them that their 15 database systems were about 12 too many. A graph database is almost never the performant option; if you want a nodes-and-edges interface, put a layer on top of a relational system. Specialization doesn't mean more is better: an engine without a market big enough to pay for its maintenance should be retired.</p>
+
+<h3>3. Two fights with Google</h3>
+<p>The first was MapReduce. Many people, Stonebraker says, reasoned that Google is smart so they should do whatever Google says, and piled onto Hadoop, which was ridiculously inefficient. He, David DeWitt and others understood distributed databases and published work showing a parallel database could beat the heck out of Hadoop.</p>
+<p>The second, to him, mattered more:</p>
+<blockquote><span class="en">that wasn't the only thing Google was stupid about.</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=1366s">[00:22:46]</a></cite></blockquote>
+<p>He means eventual consistency, and he makes it concrete with two warehouses. East and west coasts each hold a replica of the inventory; both sell the last widget at the same moment and notify each other asynchronously; stock ends at minus one and someone doesn't get their widget. A company that says "usually ships in 24 hours," like Amazon, may be allowed to oversell. Most enterprises are not.</p>
+<blockquote><span class="en">And so eventual consistency just doesn't work.</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=1491s">[00:24:51]</a></cite></blockquote>
+<p>He ties this back to referential integrity from half an hour earlier: "stock is greater than minus one" is itself an integrity constraint, and eventual consistency can't hold it. Peterman sums it up as trading correctness for performance. Stonebraker's reply is cold: if you don't care about your data, you're willing to put up with bad things happening. In his telling, Jeff Dean finally figured it out, Google built Spanner with conventional transactions, and abandoned both eventual consistency and MapReduce. As "Claims, checked" below shows, that ending is tidier than the record.</p>
+
+<h3>4. Put all the state in a database, LLMs included</h3>
+<p>DBOS started as a scheduling problem. Matei Zaharia, a Databricks co-founder, told him that a cloud might be orchestrating a million Spark jobs at once, and none of the operating-system schedulers they tried could scale to that. They put the scheduling data in Postgres and did scheduling as a database application, and then it clicked: most of what an operating system does is manage data at scale, so why not replace the upper half of Linux with a database?</p>
+<p>The VCs said, to a person, that displacing Linux was a dream, but the programming-language part was nifty. So the company became durable workflows: ordinary programs in TypeScript, Java, Go and Python where every step is a transaction and finished steps are never lost. He says about two-thirds of customers are building agentic AI, mostly read-only. Once agents read and write, say two agents moving $100 from one account to another, it becomes a distributed-database problem: it all happens, or it looks like it never happened.</p>
+<p>On LLMs themselves he is not gentle. On the public text-to-SQL benchmarks, Spider and BIRD, the best systems score above 80 percent. On a benchmark his group built from real data warehouses, he says, LLMs score zero. He gives four reasons: real queries run to a hundred lines, against ten or twenty in the public sets; table and column names are cryptic abbreviations with redundant materialized views everywhere; the data carries local conventions, like MIT's one-month term in January; and, most basically, this data was never in the training corpus.</p>
+<blockquote><span class="en">And there's an adage that if you haven't seen the data a couple times before, you have no chance of regurgitating it.</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=2710s">[00:45:10]</a></cite></blockquote>
+<p>His prescription is a database person's: break the query into smaller pieces and hand the retrieval system the FROM clause and join terms; when two structured sources must be combined, don't let the LLM do the join, leave them as tables and join in SQL. They are working with Munich's transportation department, where answers to citizens' complaints are scattered across trolley schedules, light sequencing, intersection drawings and regulation text. The plan is to turn all of it into tables and let a query optimizer do the joining.</p>
+<p>Curiously, after saying LLMs all but fail on real data, his closing advice to the young is this:</p>
+<blockquote><span class="en">Computer science may well not be a growth industry going forward. And I'm not sure I would recommend 18 year olds to major in computer science.</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=3148s">[00:52:28]</a></cite></blockquote>
+<p>Health care and the building trades look like safe bets to him, everything else riskier. The two judgments don't contradict each other: what he doubts is that an LLM can understand a company's private data, not that it can write code.</p>
+
+<h2>Claims, checked</h2>
+<div class="claim">
+<p class="said">Stonebraker says that on his group's benchmarks LLMs score 0%, about 10% with RAG and other tricks, and about 35% when given the FROM clause and all the join terms. <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=2646s">[00:44:06]</a></p>
+<p class="verdict">Supported</p>
+<p>In the first version of the BEAVER paper (2024), GPT-4o and the other models scored 0% execution accuracy in the retrieval setting. The May 2026 version grows to 9,128 questions; the strongest agentic method reaches 10.8%, and 30.1% with every subtask given as a hint. His three numbers roughly map onto different versions, and the conclusion holds.</p>
+</div>
+<div class="claim">
+<p class="said">Stonebraker says Jeff Dean eventually figured it out, and that with Spanner Google completely abandoned both eventual consistency and MapReduce. <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=1561s">[00:26:01]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>Dean is an author of the Spanner paper, which says users kept complaining that Bigtable struggled to stay strongly consistent under wide-area replication. But the same paper says "many projects happily use Bigtable," and Google still sells Bigtable today. Dropping MapReduce is on record: in 2014 Urs Hölzle said Google <a href="https://www.datacenterknowledge.com/hyperscalers/google-dumps-mapreduce-in-favor-of-new-hyper-scale-analytics-system">doesn't really use it anymore</a>.</p>
+</div>
+<div class="claim">
+<p class="said">Stonebraker says a file system built on a DBMS is faster than the Linux file system, and that replacing the upper half of the OS with a database has essentially no downside. <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=2418s">[00:40:18]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>The DBOS paper (VLDB 2022) shows write performance matching or beating ext4, but ext4's read performance "considerably exceeds" DBOS's, because a database call costs about 40 microseconds against roughly 1 for a Linux system call. The paper itself calls the comparison "apples-to-oranges."</p>
+</div>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Economics · Hayek's "knowledge of the particular circumstances of time and place"</b>: In <a href="https://www.econlib.org/library/Essays/hykKnw.html">"The Use of Knowledge in Society"</a>, Hayek argued that the knowledge that matters most is scattered among individuals and tied to specific situations, and no central planner can ever gather it all. The bond trader's 30-day month and MIT's January term are exactly that kind of knowledge; the training corpus plays the planner. Stonebraker's remedy points the same way: leave knowledge where it lives and query it through an interface. The difference is that Hayek's interface is prices, his is a SQL join, which demands that everything first be made into tables.</li>
+<li><b>Neuroscience · Complementary learning systems</b>: McClelland and colleagues proposed in 1995 that the hippocampus quickly records single episodes while the neocortex slowly extracts statistical regularities. An LLM is the neocortex, good at general patterns but unable to hold a private fact seen once; Stonebraker's insistence on letting SQL look up exact tables gives it a hippocampus. Unlike the brain, which gradually consolidates episodes into cortex during sleep, his design never writes table data into the model.</li>
+<li><b>Operating systems · Plan 9's "everything is a file"</b>: Unix unified devices and inter-process communication under the file abstraction; Bell Labs' <a href="https://9p.io/plan9/">Plan 9</a> pushed it further, making networks and windows files too, and never displaced Unix. DBOS's "everything is a table" is the same ambition, and the VCs' warning rhymes with Plan 9's fate. The difference: tables bring transactions and queries that files never had.</li>
+<li><b>Evolutionary biology · Competitive exclusion</b>: In ecology, two species cannot occupy the same niche for long; one diverges or exits. "One size fits none" says the same thing: streams, column stores and row stores each hold a niche, and Postgres is the generalist that is everywhere at the low end. Telling Amazon to cut 12 databases is saying that a niche too small can't feed a species.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Ingres ran at about a hundred universities, but Arizona State's student-records project died because Unix had no COBOL, which convinced Stonebraker to start a company.</li>
+<li>The core innovation of Postgres was an extensible type system, prompted by Ingres's failure at GIS polygons and by a bond customer who wanted to overload date subtraction.</li>
+<li>The bond customer counted every month as 30 days, so he had to subtract dates in application code, losing a factor of two to three in efficiency.</li>
+<li>Stonebraker argues that stream, column-store and row-store engines are each an order of magnitude faster than a general system on their own workload, so one size fits none.</li>
+<li>Stonebraker positions Postgres as the default at the low end, but without a column store or multi-node support it cannot handle large data warehouses.</li>
+<li>Stonebraker told Amazon its 15 databases were about 12 too many; an engine without a market large enough to pay for maintenance should be retired.</li>
+<li>Stonebraker believes many people adopted Hadoop only because they trusted Google to be smart, while parallel databases were far more efficient.</li>
+<li>Stonebraker's example of two warehouses selling the last widget at once shows that eventual consistency cannot enforce a constraint like "stock never below zero."</li>
+<li>DBOS began by putting the scheduling data for a million Spark jobs into a database and became workflows that give ordinary programs transactions and durability.</li>
+<li>Stonebraker says LLMs fail on real data warehouses because private data is not in the training corpus; the fix is to split queries and leave joins to SQL.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=YPObBOwIrHk">Turing Award Winner: Disagreeing with Google, Postgres, Future Problems | Mike Stonebraker</a></span><span class="d">The episode. All timestamps on this page point here.</span></li>
+<li><span class="t"><a href="https://arxiv.org/abs/2409.02038">BEAVER: An Enterprise Benchmark for Text-to-SQL</a></span><span class="d">Basis for the first check; compares the 2024 first version with the 2026 third.</span></li>
+<li><span class="t"><a href="https://research.google/pubs/spanner-googles-globally-distributed-database-2/">Spanner: Google's Globally-Distributed Database</a></span><span class="d">OSDI 2012; basis for the second check.</span></li>
+<li><span class="t"><a href="https://www.vldb.org/pvldb/vol15/p21-skiadopoulos.pdf">DBOS: A DBMS-oriented Operating System</a></span><span class="d">VLDB 2022; basis for the third check.</span></li>
+</ul>
+<footer>Podcast Deep-Read · one long episode, its main threads worked through · written 2026-10-17</footer>
+</div>
+</body></html>

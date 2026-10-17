@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Peterman Pod × Mike Stonebraker — 通用系统只配赢低端</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="turing-award-winner-disagreeing-google-postgres-pod8.en.html">English →</a></div>
+<header>
+<div class="kicker">The Peterman Pod · 2026</div>
+<h1>通用系统只配赢低端：Postgres 之父谈类型、一致性和大模型的零分</h1>
+<p class="sub">Mike Stonebraker × Ryan Peterman ·《Turing Award Winner: Disagreeing with Google, Postgres, Future Problems | Mike Stonebraker》</p>
+</header>
+<div class="meta-card"><b>节目</b> The Peterman Pod · 2026-04-20 · <b>时长</b> 57 分钟 · <b>嘉宾</b> Mike Stonebraker · <b>主持</b> Ryan Peterman · <b>原片</b> <a href="https://www.youtube.com/watch?v=YPObBOwIrHk">YouTube</a></div>
+
+<h2>那一段</h2>
+<p>七十年代末，伯克利做的 Ingres 已经在大约一百所大学里跑着，是 Unix 上一个免费、而且真能用的关系数据库。来参观的人总会问同一个问题：你们最大的应用有多大？答案总是「不大」。后来亚利桑那州立大学认真考虑过，要把全校四万名学生的学籍数据放进 Ingres。</p>
+<p>Stonebraker 说，对方能接受一个来自贝尔实验室、没人提供支持的操作系统，也能接受一群伯克利教授写的、同样没人支持的数据库。让项目彻底告吹的是另一件事：Unix 上没有 COBOL，而他们是一家 COBOL 单位。</p>
+<blockquote><span class="en">So unsupported operating system, unsupported database system, no COBOL doomed us to, you know, irrelevance.</span><span class="zh">没人支持的操作系统，没人支持的数据库，再加上没有 COBOL，我们注定无足轻重。</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=332s">[00:05:32]</a></cite></blockquote>
+<p>他的结论是，唯一的出路是开公司。1980 年，Ingres 公司拿到风险投资，把系统移植到 DEC 的 VMS 上。这个故事差不多定下了整期的调子：在 Stonebraker 看来，技术站不站得住，要看它在真实客户的数据上跑不跑得通。</p>
+
+<h2>谁在聊，和那一年</h2>
+<p>1971 年，Stonebraker 刚到伯克利当助理教授，觉得博士论文的方向走不下去。导师 Gene Wong 拉他一起做点东西，那一年距离 Ted Codd 在 CACM 上发表关系模型的论文刚好一年。他回忆说，当时他们对数据库一无所知，也不是 Bill Joy 那样的高手程序员，就这样决定写一个数据库。Ingres 成了他拿终身教职的门票，后来又有了 Postgres，他也因为这些工作拿到了 2014 年的图灵奖。</p>
+<p>主持人 Ryan Peterman 的节目专访资深工程师和系统的创造者，常问怎么招人、怎么成长、回头看会给年轻的自己什么建议。这一期他也问了这些，但 Stonebraker 不太配合寒暄，几乎每个问题都会被他拉回一个技术判断。</p>
+<p>这期录在 2026 年春天。Stonebraker 当时在做两件事：一是 2023 年创办的 DBOS 公司，把数据库的事务和持久化搬进普通程序；二是他在 MIT 的团队做的企业级文本转 SQL（text-to-SQL）基准 BEAVER。整期节目最后都落到了同一个问题上：大模型和数据库，到底谁该管什么。</p>
+
+<h2>这期聊透</h2>
+<h3>一、Postgres 起于一次减法</h3>
+<p>Peterman 问，Ingres 缺什么，让他非得另起炉灶做 Postgres？Stonebraker 讲了两次失败。第一次是 Ingres 最初的学术目标：给隔壁教授做地理信息系统，需要点、线、多边形。可 Ingres 只有整数、浮点数和字符串，在这些类型上没法高效地支持几何数据，作为 GIS 它「彻底失败」。</p>
+<p>第二次更有意思。大约 1985 年，商业版 Ingres 按标准实现了公历日期，减法完全按大小月和闰年来算。一位做债券的客户打电话说，你们做错了。在他的行当里，不论一个月有几天，利息都一样多，所以 3 月 15 日减 2 月 15 日应该等于 30 天（金融里叫 30/360 计息惯例）。他只好把两个日期取到应用代码里自己相减，再写回去，效率差了两三倍。</p>
+<blockquote><span class="en">Why can't I just overload your definition of subtraction with what I want?</span><span class="zh">我为什么不能直接用我想要的那套定义，重载你们的减法？</span><cite>— Stonebraker 转述那位客户 · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=772s">[00:12:52]</a></cite></blockquote>
+<p>在 Ingres 里，减法是写死的。Stonebraker 意识到，债券的日期和 GIS 的多边形是同一类需求：用户想要自己的数据类型，而且要和内置类型一样快。于是 Postgres 的核心就是一套可扩展的类型系统（extensible type system）。今天 Postgres 周边有大量第三方类型和扩展，源头就在这里。他也坦白，当年同时塞进去的「时间旅行」查询，实现得一塌糊涂，后来被拿掉了。</p>
+
+<h3>二、一种尺寸，谁都不合身</h3>
+<p>Stonebraker 二十年前写过一篇论文，说数据库「一种尺寸适合所有人」（one size fits all）的时代已经过去。他手上的证据是三个长得完全不像的系统：做流处理的 StreamBase、做列存的 Vertica，还有传统的行存数据库。每一个在自己擅长的负载上，都比另外两个快一个数量级。他说今天依然如此，ClickHouse 是列存，Pinecone 做向量检索比在通用数据库里自定义类型更快。</p>
+<p>那 Postgres 呢？他给了一个很干脆的定位：如果你刚开始，有一个数据库问题，就选 Postgres，它免费，社区大，招人容易。但它没有列存，也没有多节点支持，做大型数据仓库就不是对手。</p>
+<blockquote><span class="en">At the low end, it's Postgres. At the high end, that's just not true.</span><span class="zh">在低端，答案就是 Postgres。到了高端，这话就不成立了。</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=1115s">[00:18:35]</a></cite></blockquote>
+<p>这条原则也有反过来的一面。几年前他去亚马逊演讲，说他们维护着 15 个数据库系统，「多了大约 12 个」。图数据库几乎从来不是性能最好的选择，想要节点和边的界面，在关系数据库上面加一层就行。所以专用不等于越多越好，一个引擎如果没有足够大的市场来支撑维护成本，就该退役。</p>
+
+<h3>三、和 Google 吵的两架</h3>
+<p>第一架是 MapReduce。Stonebraker 说，当年很多人的逻辑是「Google 很聪明，照它说的做就行」，于是一窝蜂上了 Hadoop，而 Hadoop 的效率低得离谱。他和 David DeWitt 等人懂分布式数据库，写论文证明并行数据库能把 Hadoop 打得落花流水。</p>
+<p>第二架他认为更要紧：</p>
+<blockquote><span class="en">that wasn't the only thing Google was stupid about.</span><span class="zh">Google 犯傻的地方还不止这一处。</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=1366s">[00:22:46]</a></cite></blockquote>
+<p>他说的是最终一致性（eventual consistency）。他用两个仓库讲清楚了：东海岸和西海岸各有一份库存副本，两边同时卖出最后一件商品，各自异步通知对方，最后库存变成负一，总有一个客户拿不到货。像亚马逊那样写着「通常 24 小时内发货」的公司或许可以超卖，大多数企业不行。</p>
+<blockquote><span class="en">And so eventual consistency just doesn't work.</span><span class="zh">所以最终一致性就是行不通。</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=1491s">[00:24:51]</a></cite></blockquote>
+<p>他把这个例子接回了半小时前讲过的参照完整性：「库存不小于零」本身就是一条完整性约束，而最终一致性守不住它。Peterman 总结说，这是拿正确性换性能。Stonebraker 的回答很冷：如果你不在乎自己的数据，那你就能忍受坏事发生。在他的叙述里，故事的结局是 Jeff Dean 终于想明白了，Google 做了带传统事务的 Spanner，放弃了最终一致性，也放弃了 MapReduce。下文「说法核查」里会讲到，这个结局说得比实际干脆。</p>
+
+<h3>四、把状态都放进数据库，大模型也不例外</h3>
+<p>DBOS 的起点是一个调度问题。Databricks 的联合创始人 Matei Zaharia 告诉他，云上随时可能有一百万个 Spark 任务要排队，操作系统领域现成的调度器都扛不住这个规模。他们把调度数据放进 Postgres，用数据库应用来做调度，然后意识到操作系统做的事情大多是大规模地管理数据，那为什么不把 Linux 的上半截换成数据库？</p>
+<p>风投听完都说，想取代 Linux 是做梦，但你们给编程语言加的那部分很好用。于是公司做成了「持久化工作流」：在 TypeScript、Java、Go、Python 里写普通程序，每一步都是事务，做完的步骤不会丢。他说现在大约三分之二的客户在做智能体（agentic AI），而且大多只读；一旦智能体开始读写，比如两个智能体要把一百美元从一个账户转到另一个，就变成了分布式数据库的问题，要么全做完，要么像没发生过。</p>
+<p>谈到大模型本身，他的话就不客气了。公开的文本转 SQL 基准 Spider 和 BIRD 上，最好的系统有八成以上的准确率；在他们从真实数据仓库里整理出来的基准上，他说大模型的准确率是零。原因他列了四条：真实查询有上百行，而公开基准只有一二十行；表名和列名是一串缩写，还有大量冗余视图；数据里有各家自己的说法，比如 MIT 一月份那个为期一个月的短学期；最根本的是，这些数据从来不在训练语料里。</p>
+<blockquote><span class="en">And there's an adage that if you haven't seen the data a couple times before, you have no chance of regurgitating it.</span><span class="zh">有句老话说，一份数据你没见过几次，就别指望能把它复述出来。</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=2710s">[00:45:10]</a></cite></blockquote>
+<p>他开的方子还是数据库式的：把查询拆成小块，把 FROM 子句和连接条件交给检索系统；碰到要合并两个结构化数据源时，别让大模型去做连接，留在表里交给 SQL。他们正在和慕尼黑的交通部门合作：市民投诉的答案散落在电车时刻表、信号灯配时、路口图纸和法规文本里，他们的思路是把这些全变成表，再交给查询优化器去连接。</p>
+<p>有意思的是，说完大模型在真实数据上几乎交白卷，到了节目最后，他对年轻人的建议却是这样的：</p>
+<blockquote><span class="en">Computer science may well not be a growth industry going forward. And I'm not sure I would recommend 18 year olds to major in computer science.</span><span class="zh">计算机科学往后很可能不再是一个增长的行业。我不确定自己会建议 18 岁的年轻人去读计算机。</span><cite>— Mike Stonebraker · <a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=3148s">[00:52:28]</a></cite></blockquote>
+<p>他觉得医疗和建筑行业是稳妥的选择，其余都风险更大。这两个判断并不矛盾：他怀疑的是大模型能不能理解一家公司的私有数据，而不是它能不能写代码。</p>
+
+<h2>说法核查</h2>
+<div class="claim">
+<p class="said">Stonebraker 说，在他们的基准上，大模型的准确率是 0%，加上 RAG 等技巧到 10%，再给出 FROM 子句和全部连接条件，约 35%。<a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=2646s">[00:44:06]</a></p>
+<p class="verdict">有据</p>
+<p>BEAVER 论文 2024 年的第一版里，GPT-4o 等模型在检索设定下的执行准确率确实是 0%。2026 年 5 月的新版扩到 9128 道题，最强的智能体方法也只有 10.8%，给齐所有子任务提示后是 30.1%。他的三个数字大致对应不同版本，结论站得住。</p>
+</div>
+<div class="claim">
+<p class="said">Stonebraker 说，Jeff Dean 终于想明白了，Google 做 Spanner 时完全放弃了最终一致性，也完全放弃了 MapReduce。<a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=1561s">[00:26:01]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>Dean 是 Spanner 论文的作者之一，论文也说用户一直抱怨 Bigtable 难以在跨数据中心复制时保持强一致。但同一篇论文写着「很多项目乐于使用 Bigtable」，Google 至今仍在卖 Bigtable。弃用 MapReduce 倒是有据：2014 年 Urs Hölzle 公开说 Google <a href="https://www.datacenterknowledge.com/hyperscalers/google-dumps-mapreduce-in-favor-of-new-hyper-scale-analytics-system">基本不再用它</a>。</p>
+</div>
+<div class="claim">
+<p class="said">Stonebraker 说，建在数据库上的文件系统比 Linux 的文件系统更快，把操作系统的上半截换成数据库基本没有代价。<a class="ts" href="https://www.youtube.com/watch?v=YPObBOwIrHk&amp;t=2418s">[00:40:18]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>DBOS 的 VLDB 2022 论文显示，它的写性能持平或超过 ext4，但读性能「明显不如」ext4，原因是调用一次数据库约 40 微秒，而 Linux 系统调用约 1 微秒。论文自己也说这是「苹果比橘子」的比较。</p>
+</div>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>经济学 · Hayek 的「特定时间和地点的知识」</b>：Hayek 在<a href="https://www.econlib.org/library/Essays/hykKnw.html">《知识在社会中的运用》</a>里说，最要紧的知识散落在每个人手里，是关于具体情境的知识，中央计划者永远收集不全。债券客户的 30 天一个月、MIT 的一月短学期，都是这种知识，训练语料就像那个计划者。Stonebraker 的方子也和 Hayek 同向：让知识留在原处，用接口去问。不像的是，Hayek 的接口是价格，他的接口是 SQL 连接，要求事先把一切整理成表。</li>
+<li><b>神经科学 · 互补学习系统</b>：McClelland 等人 1995 年提出，海马体快速记下单次经历，新皮层缓慢地抽取统计规律。大模型像新皮层，擅长通用模式，却记不住一次只出现过一回的私有事实；Stonebraker 主张让 SQL 去查精确的表，相当于给它配一个海马体。不像的是，大脑会在睡眠里把经历慢慢并入皮层，而他的设计从不把表里的数据写进模型。</li>
+<li><b>操作系统 · Plan 9 的「一切皆文件」</b>：Unix 用文件这一个抽象统一了设备和进程通信，贝尔实验室的 <a href="https://9p.io/plan9/">Plan 9</a> 把它推得更远，网络和窗口也是文件，却始终没取代 Unix。DBOS 的「一切皆表」是同一种野心，风投的警告也和 Plan 9 的命运对得上。差别在于，表带来了文件没有的事务和查询。</li>
+<li><b>生物进化 · 竞争排斥原理</b>：生态学里，两个物种不能长期占据同一个生态位，最后会分化或有一方退出。「一种尺寸谁都不合身」说的是同一回事：流处理、列存、行存各占一个生态位，Postgres 像一个广适种，在低端最常见。他劝亚马逊砍掉 12 个数据库，是在说生态位太小的物种养不活。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Ingres 曾在约一百所大学运行，但亚利桑那州立大学的学籍项目因为 Unix 上没有 COBOL 而告吹，Stonebraker 由此决定开公司。</li>
+<li>Postgres 的核心创新是可扩展的类型系统，动机来自 Ingres 做不了 GIS 的多边形，以及一位债券客户想重载日期减法。</li>
+<li>那位债券客户按每月 30 天计息，只能把日期取到应用代码里相减，效率因此差了两三倍。</li>
+<li>Stonebraker 认为流处理、列存、行存三类引擎在各自的负载上都比通用系统快一个数量级，「一种尺寸适合所有人」并不成立。</li>
+<li>Stonebraker 对 Postgres 的定位是：低端的默认选择，但没有列存和多节点，做不了大型数据仓库。</li>
+<li>Stonebraker 告诉亚马逊，15 个数据库多了约 12 个；没有足够市场支撑维护成本的引擎就该退役。</li>
+<li>Stonebraker 认为当年很多人上 Hadoop 只是因为相信 Google 聪明，而并行数据库的效率能远远胜过 Hadoop。</li>
+<li>Stonebraker 用两地仓库同时卖出最后一件货的例子说明，最终一致性守不住「库存不小于零」这类完整性约束。</li>
+<li>DBOS 起于把百万级 Spark 任务的调度数据放进数据库，后来做成在普通程序里提供事务和持久化的工作流。</li>
+<li>Stonebraker 认为大模型在真实数据仓库上失败，是因为私有数据不在训练语料里，解法是拆小查询，把连接留给 SQL。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=YPObBOwIrHk">Turing Award Winner: Disagreeing with Google, Postgres, Future Problems | Mike Stonebraker</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>
+<li><span class="t"><a href="https://arxiv.org/abs/2409.02038">BEAVER: An Enterprise Benchmark for Text-to-SQL</a></span><span class="d">第一条核查的依据，对照了 2024 年第一版和 2026 年第三版。</span></li>
+<li><span class="t"><a href="https://research.google/pubs/spanner-googles-globally-distributed-database-2/">Spanner: Google's Globally-Distributed Database</a></span><span class="d">OSDI 2012，第二条核查的依据。</span></li>
+<li><span class="t"><a href="https://www.vldb.org/pvldb/vol15/p21-skiadopoulos.pdf">DBOS: A DBMS-oriented Operating System</a></span><span class="d">VLDB 2022，第三条核查的依据。</span></li>
+</ul>
+<footer>播客精读 · 一期长播客，挑出主线讲透 · 写于 2026-10-17</footer>
+</div>
+</body></html>
