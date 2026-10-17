@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naval 专题 · 致富的机制</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="naval-wealth-topic10.en.html">English →</a></div>
+<header>
+<div class="kicker">Naval 专题 · 第 2 篇</div>
+<h1>不靠出租时间：Naval 的致富机制</h1>
+<p class="sub">特定知识、责任、杠杆，三个零件怎样拼成一台机器</p>
+</header>
+<div class="meta-card"><b>主题</b> 致富的机制：特定知识、杠杆、责任 · <b>材料</b> nav.al 文字 14 篇（2019，《How to Get Rich》播客季各节）、访谈转写 3 份（2019–2026）· <b>访谈</b> Joe Rogan Experience #1309（2019）· Chris Williamson（2025）· Eric Jorgenson Megasode（2026）</div>
+<h2>他的主张</h2>
+<p>2018 年，Naval 发了一串推文，叫《How to Get Rich (without getting lucky)》；第二年，他和 AngelList 的另一位联合创始人 Nivi 把它逐条录成了<a href="https://nav.al/rich">一季播客</a>。推文条目很多，拆开看其实是一台由三个零件组成的机器。讲特定知识的那一期开头，他自己把它压成了一句话：想赚钱，就得按规模拿报酬；「为什么是你」靠责任，「规模」靠杠杆，「钱付给你而不是别人」靠特定知识。下面先看他想造出来的是什么，再一个一个看零件。</p>
+<h3>一、先把财富和钱分开</h3>
+<p>第一期里，Nivi 问财富、钱和地位有什么区别。Naval 的回答是，<a href="https://nav.al/seek-wealth">财富是你睡觉时也在替你挣钱的资产</a>，比如工厂、夜里还在服务客户的程序、拿去再投资的存款；钱只是社会开给你的借条，用来转移财富；地位（status）则是你在社会阶梯上的排名。分开它们的要害在于博弈的性质。财富是正和的，你有一套房子，不妨碍我也有一套；地位是零和的，第三名想往上走，第二名就得让出位置。至于为什么要财富，他只给了一个理由，就是买到自由，不用打领带，不用七点起床挤通勤。</p>
+<p>从这个定义出发，就推出了他最常被转引的那句话，你不会靠出租时间（renting out your time）致富。他在播客里给的理由是，拿工资意味着投入和产出绑在一起，睡觉、度假、退休的时候都没有收入；而且你做的是一个固定的角色，固定角色可以被教会，能被教会，就迟早会被更新的人或者机器替掉。他想要的是另一种工作：</p>
+<blockquote><span class="en">You really just want a job, or a career, or a profession where your inputs don’t match your outputs.</span><span class="zh">你真正想要的，是一份投入和产出对不上的工作、事业或职业。</span><cite>— Naval ·《<a href="https://nav.al/renting-time">You Won’t Get Rich Renting Out Your Time</a>》，2019</cite></blockquote>
+<p>他拿伐木工和程序员作对比。世上最好的伐木工，大概也就比最差的强三倍；一个好工程师可能写出比特币，另一个工程师埋头干上一年，写出来的代码却没人用。让投入和产出脱钩的是工具，也就是他所说的杠杆。</p>
+<p>有意思的是，同一个结论到了 Joe Rogan 的节目上，换了一套理由：</p>
+<blockquote><span class="en">Even lawyers and doctors who are charging three, four, 500 an hour, they’re not getting rich because their lifestyle is slowly ramping up along with their income and they’re not saving enough.</span><span class="zh">就连每小时收三四百、五百美元的律师和医生也富不起来，因为他们的生活水准跟着收入一点点往上涨，钱根本存不下来。</span><cite>— Naval · Joe Rogan Experience #1309，2019 <a class="ts" href="https://www.youtube.com/watch?v=3qHkcs3kG44&amp;t=1344s">[00:22:24]</a></cite></blockquote>
+<p>这已经不是「投入产出绑定」的结构论证，而是关于生活方式膨胀的行为论证。两套理由指向同一个结论，就是要拥有股权（equity），也就是一块生意，不管你是老板、投资人、股东，还是经营一个归你自己的品牌。但两套理由的前提不同。一个省吃俭用的医生可以驳倒第二套，却驳不倒第一套。Naval 自己也在别处承认，靠压低开销提早退休<a href="https://nav.al/hourly-rate">完全说得通</a>，只是那不在他要谈的「创造财富」范围之内。</p>
+<p>他还给过一个最具体的例子，是房地产业的一<a href="https://nav.al/laborer-tech">级级台阶</a>。最底下是工地上的零工，按小时拿 15 到 75 美元，杠杆只有手里那点工具。往上一级是总承包商，接下一单 10 万美元的活，成本 7 万，剩下的 3 万就是他承担责任换来的那份「股权」，超支也由他兜着。再往上是开发商，得知道哪个街区值得买，还要动用资本。最顶上是 Zillow、Redfin 这类把代码也加进来的房地产科技公司。这个例子比任何一句格言都更能说明他的框架：<strong>三个零件不是三选一，而是一层层往上叠。</strong></p>
+<h3>二、特定知识：教不会，只能被认出来</h3>
+<p>Naval 说，特定知识（specific knowledge）是整串推文里最难讲清、也最容易被误解的概念。用大白话说，它是没法靠上课学到的本事。它可能来自天性，可能来自童年里养成的软技能，可能新到还没有人会，也可能是在复杂环境里反复撞出来的判断，比如调度一支卡车车队，或者预报天气。他的论证是一个反证：</p>
+<blockquote><span class="en">And it’s not true that everything can be taught. In fact, the most interesting things cannot be taught.</span><span class="zh">并不是什么都能教。事实上，最有意思的那些东西恰恰教不会。</span><cite>— Naval ·《<a href="https://nav.al/specific-knowledge">Arm Yourself With Specific Knowledge</a>》，2019</cite></blockquote>
+<p>如果一门本事能开班教，别人也能学会，到最后连计算机都能被编程去做，那你就是可替换的，回报会被压到培训成本再加一点培训的回报。所以真正值钱的，恰恰是教不会的那一部分。学校当然有用，但只是杠杆：心理学学位能让一个天生会卖东西的人如虎添翼，却教不会一个内向的人做销售。</p>
+<p>既然教不会，那它从哪来？他的回答是天赋、好奇心和热情，而且它多半不是选出来的，是事后看出来的。过了二十出头，你几乎没法挑选自己的特定知识，只能盘点已经长出来的东西。他讲了自己的经历。他从小想当天体物理学家，十五六岁时，母亲在厨房里随口说了一句「不，你会去做生意」。她早就注意到，儿子每次路过披萨店，都要点评人家切片怎么卖、点单流程哪里不对。在<a href="https://nav.al/creative-technical">下一期</a>里他补充说，这种知识如果能教，也只能在工作中、靠学徒式的传授。</p>
+<p>Nivi 追问时搬出了 Scott Adams 的「技能叠加」：不求某一项拿第一，而是在三四项上都进前 25%，组合起来就没什么人跟你争。Naval 认为这在统计上说得通，但提醒别拼得太刻意，太盯着钱，就挑不中自己真心喜欢的东西，也就钻不深。六年后，他对 Chris Williamson 说得更干脆：</p>
+<blockquote><span class="en">The more you do things that are natural to you, the less competition you have. You escape competition through authenticity.</span><span class="zh">你做的事越是出于本性，竞争就越少。做真实的自己，就是逃离竞争的办法。</span><cite>— Naval · Chris Williamson，2025 <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=2709s">[00:45:09]</a></cite></blockquote>
+<p>这里埋着整套框架里最强的一个断言。他说，在观点的领域里，复利和杠杆都在起作用。用着一千倍的杠杆，一个人八成时候判断对，另一个人九成时候判断对，市场付给后者的钱会多出几百倍。这个数字他没有给出处，只是一个示意，而且它有一个前提，就是你已经站在杠杆上了。没有杠杆，八成和九成的差距就只是一成。他也拿这把尺子量过自己。2025 年他对 Williamson 说，自己的特定知识不在幸福，也不在哲学，而在拆解一门科技生意、提前判断什么能成 <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=8072s">[02:14:32]</a>。</p>
+<h3>三、责任与杠杆：押上名字，换来放大器</h3>
+<p>责任（accountability）在 Naval 这里不是一个道德词。推文的意思是，以自己的名义承担商业风险，社会就会回报你责任、股权和杠杆。播客里他拿公司的分配顺序来类比。员工最先拿钱，其次是债主，股东排在最后；生意平平时股东什么也拿不到，生意好时收益上不封顶。</p>
+<blockquote><span class="en">Essentially, taking accountability for your actions is the same as taking an equity position in all of your work.</span><span class="zh">说到底，为自己的行为担起责任，就等于在你所有的工作里都持有一份股权。</span><cite>— Naval ·《<a href="https://nav.al/accountability-equity">Take Accountability to Earn Equity</a>》，2019</cite></blockquote>
+<p>他点名 Taleb 的《Skin in the Game》是必读书，并借它把责任称作声誉上的切身利害，也就是把自己的名声押在桌上。为什么值得押？他的理由是，现代社会的下行风险没那么大，个人破产可以清掉债务，诚实尽力的失败会被原谅。这里有一个他自己说出口的条件。他最熟悉的是硅谷，在「好的生态」里才是这样。</p>
+<p>责任之所以排在杠杆前面，是因为最古老的两种杠杆都得别人点头。劳动杠杆（labor）是别人替你干活，得有人愿意跟着你；资本杠杆（capital）是别人把钱交给你打理，得有人信得过你。他认为劳动是<a href="https://nav.al/labor-capital">最差的一种杠杆</a>，管人是一团乱麻，社会却高估了它。资本是上个世纪的主要杠杆，好管理，也好放大，但前提是你先有特定知识和好名声，别人才肯把钱给你。第三种是边际复制成本为零的产品，也就是代码和媒体：</p>
+<blockquote><span class="en">Probably the most interesting thing to keep in mind about the new forms of leverage is they are permissionless.</span><span class="zh">关于新形式的杠杆，最值得记住的大概是，它们不需要任何人许可。</span><cite>— Naval ·《<a href="https://nav.al/product-media">Product and Media are New Leverage</a>》，2019</cite></blockquote>
+<p>写代码、写书、录播客、发推文，都用不着谁来批准。他说新一代的财富都出在这里，例子从 Bezos、Zuckerberg 一直举到 Joe Rogan，说 Rogan 靠播客一年进账五千万到一亿美元。同年上 Rogan 的节目时，他干脆把整个框架套在了主持人身上。没有人能替代 Rogan 当 Rogan，这是特定知识；名字是他自己的，这是责任；播客在他睡觉时替他工作，这是杠杆 <a class="ts" href="https://www.youtube.com/watch?v=3qHkcs3kG44&amp;t=6643s">[01:50:43]</a>。整串推文最后被他压成了两个词，「把自己产品化」（<a href="https://nav.al/productize-yourself">productize yourself</a>）。</p>
+<p>到了 2026 年，他在和 Eric Jorgenson 的长谈一开头，就修正了这台机器的起点：</p>
+<blockquote><span class="en">Deutsch had a better definition of wealth than I did. My definition of wealth was very focused by my desire to make money.</span><span class="zh">Deutsch 对财富的定义比我的好。我当年的定义，太受想赚钱这个念头的左右了。</span><cite>— Naval · Eric Jorgenson Megasode，2026 <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=0s">[00:00:00]</a></cite></blockquote>
+<p>他转而采用 David Deutsch 的说法，把财富看成你能促成的物理变化的总和，而知识才是最大的乘数，不是资本。这个转向从哪来，见《<a href="naval-deutsch-topic15.html">借来的世界观</a>》一篇。同一期里他还说，AI 不会取代软件工程师，而是会让软件工程师取代其他所有人 <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=3956s">[01:05:56]</a>。这对「教不会的才值钱」意味着什么，留给《<a href="naval-ai-topic17.html">AI 时代的 Naval</a>》一篇。</p>
+<h2>这些主张怎么咬合</h2>
+<p>三个零件是串联的。特定知识回答「为什么付钱给你」，责任回答「为什么信你」，杠杆回答「能放大多少倍」，股权负责把放大出来的那部分留在你手里。少了哪一环，机器都会空转。有知识没杠杆，是手艺人；有杠杆没知识，是随时可以换掉的经理；前两样都有却不署名，收益就归了别人。这台机器再往外连着他体系的下一环。2019 年他对 Rogan 说，这是一个「无限杠杆」的时代，一个决定会被放大成千上万倍，所以头脑清醒、判断准确变得格外要紧 <a class="ts" href="https://www.youtube.com/watch?v=3qHkcs3kG44&amp;t=1170s">[00:19:30]</a>，这是《<a href="naval-judgment-topic11.html">判断力与决策</a>》一篇的起点。财富买来的是自由，自由之后，才轮到《<a href="naval-happiness-topic12.html">幸福是一种可以练的技能</a>》。而「和长期的人玩长期的游戏」靠的是复利，那是《<a href="naval-life-topic16.html">长期游戏</a>》要讲的事。</p>
+<p>链条上最弱的是第一环。责任和杠杆都可以当成行动指南，署名、写代码、发东西就行；特定知识却被他定义成教不会、往往要别人替你看出来、过了二十岁就基本定型的东西。这样一来，整套方法在最关键的地方变成了「先发现你已经是谁」，而怎么发现，他只能说跟着好奇心走。他没有假装自己有更好的办法，但这也意味着，推文副标题里的「不靠运气」，在第一环上要打个问号。至于他说这些话时所处的时代和位置，见《<a href="naval-who-topic9.html">读他之前：四个折扣</a>》。</p>
+<h2>边界</h2>
+<div class="claim">
+<p class="said">上一代的财富靠资本，新一代的财富全都来自代码或媒体。——2019 年《<a href="https://nav.al/product-media">Product and Media are New Leverage</a>》</p>
+<p class="verdict">有据，但说宽了</p>
+<p>Kaplan 与 Rauh 统计了 1982 到 2011 年的福布斯 400 富豪榜。按行业算，科技的占比涨了约 11 个百分点，代码这一半站得住；但涨得最多的是金融，约 16 个百分点，私募、对冲基金和风投在 2000 年代扩张，挤掉的恰恰是媒体等行业。资本并没有退场。数据止于 2011 年，此后科技的比重可能更高。</p>
+</div>
+<div class="claim">
+<p class="said">代码和媒体不需要许可，所以非常平等，是杠杆的「伟大均衡器」。——2019 年《<a href="https://nav.al/product-media">Product and Media are New Leverage</a>》</p>
+<p class="verdict">有据，但说宽了</p>
+<p>门确实开得更大了。Spotify 公布，2025 年排第 10 万名的艺人在平台上产生了 7,300 多美元的版税，十年前同一名次只有约 350 美元。但同一份报告里，80 多位艺人各超 1,000 万美元，超过 100 万的约 1,500 人，而且这些是版税总额，还要和唱片公司分。入场平等了，回报仍是幂律。</p>
+</div>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>经济学 · Rosen 的超级明星经济学</b>：Sherwin Rosen 1981 年指出，当技术让一个人能同时服务整个市场时，才能上的小差距会变成收入上的巨大差距。这几乎就是 Naval「八成对九成、收入差几百倍」的正式版本，也解释了为什么不需要许可的杠杆反而会让收入更集中。</li>
+<li><b>金融学 · 股权是一份看涨期权</b>：在 Robert Merton 1974 年给出的框架里，股东持有的相当于以公司资产为标的的看涨期权，下跌有底，上涨无顶，波动越大越值钱。Naval 说承担责任就等于持有股权，是同一个结构；不同的是，期权持有人可以分散买很多份，一个人的名字却只有一个。</li>
+<li><b>生态学 · 竞争排斥与生态位</b>：苏联生态学家 Georgy Gause 在 1930 年代用草履虫实验表明，两个物种抢同一个生态位，最后只能剩下一个，共存的办法是各自分化出生态位。Naval 的「做真实的自己就能逃离竞争」也是在找生态位。不同在于，物种的分化靠漫长的选择，Naval 却假定人可以靠自省找到它。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Naval 的致富框架可以压成一句话：特定知识决定钱为什么付给你，责任决定人为什么信你，杠杆决定能放大多少倍。</li>
+<li>Naval 把财富定义为睡觉时也在挣钱的资产，钱只是转移财富的借条，地位是零和的社会排名。</li>
+<li>Naval 说靠出租时间富不起来，nav.al 上的理由是投入和产出绑定、角色可替换，对 Joe Rogan 讲的理由则是生活方式跟着收入膨胀。</li>
+<li>Naval 用房地产的台阶说明，从零工、承包商、开发商到房地产科技公司，每上一级都多叠一层知识、责任和杠杆。</li>
+<li>Naval 认为特定知识教不会，能开班教的本事别人也学得会，最终会被替换，回报也会被压低。</li>
+<li>Naval 说特定知识靠好奇心和天性长出来，多半是事后被看出来的，他自己的生意头脑最早是母亲认出来的。</li>
+<li>Naval 把承担责任比作在所有工作里持有股权，下行风险更大，上行收益几乎没有上限。</li>
+<li>Naval 把杠杆分成劳动、资本、代码与媒体三种，前两种需要别人许可，代码和媒体不需要。</li>
+<li>Naval 在 2026 年承认自己当年的财富定义受赚钱欲望左右，转而采用 David Deutsch「知识是最大乘数」的说法。</li>
+<li>Sherwin Rosen 的超级明星经济学说明，当一个人能服务整个市场时，才能上的小差距会变成收入上的巨大差距。</li>
+</ol>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://nav.al/rich">How to Get Rich</a></span><span class="d">Naval 与 Nivi，2019。本页三条主张的主要材料，正文链接到其中各节。</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=3qHkcs3kG44">Joe Rogan Experience #1309 - Naval Ravikant</a></span><span class="d">2019。出租时间的另一套理由，以及把框架套在 Rogan 身上的那一段。</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=3TafDme-GCc">My Conversation with Naval Megasode</a></span><span class="d">Eric Jorgenson，2026。对财富定义的修正。</span></li>
+<li><span class="t"><a href="https://www.aeaweb.org/articles?id=10.1257/aer.103.3.158">Kaplan &amp; Rauh, Family, Education, and Sources of Wealth among the Richest Americans, 1982–2012 (2013)</a></span><span class="d">第一条边界判词的依据。</span></li>
+<li><span class="t"><a href="https://loudandclear.byspotify.com/takeaways/">Spotify Loud &amp; Clear: 2025 Takeaways</a></span><span class="d">第二条边界判词的依据。</span></li>
+</ul>
+<footer>Naval 专题 · 把他的格言放回原处 · 写于 2026-10-17</footer>
+</div>
+</body></html>

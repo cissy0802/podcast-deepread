@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naval Topic · The Mechanics of Wealth</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="naval-wealth-topic10.html">中文 →</a></div>
+<header>
+<div class="kicker">Naval Topic · No. 2</div>
+<h1>Not by Renting Out Your Time: Naval's Machine for Getting Rich</h1>
+<p class="sub">Specific knowledge, accountability, leverage: how three parts make one machine</p>
+</header>
+<div class="meta-card"><b>Topic</b> The mechanics of wealth: specific knowledge, leverage, accountability · <b>Material</b> 14 nav.al pieces (2019, sections of the How to Get Rich podcast season), 3 interview transcripts (2019–2026) · <b>Interviews</b> Joe Rogan Experience #1309 (2019) · Chris Williamson (2025) · Eric Jorgenson Megasode (2026)</div>
+<h2>His claims</h2>
+<p>In 2018 Naval posted a tweetstorm called "How to Get Rich (without getting lucky)". The next year he and Nivi, his AngelList co-founder, recorded it tweet by tweet as <a href="https://nav.al/rich">a podcast season</a>. There are a lot of tweets, but taken apart they describe a machine with three parts. At the start of the specific-knowledge episode he compressed it himself: to make money you have to get paid at scale; "why you" is accountability, "at scale" is leverage, and "you getting paid rather than somebody else" is specific knowledge. First, what the machine is meant to produce; then the parts, one at a time.</p>
+<h3>1. Separate wealth from money</h3>
+<p>In the first episode Nivi asks how wealth, money and status differ. Naval's answer: <a href="https://nav.al/seek-wealth">wealth is assets that earn while you sleep</a> — the factory, the program serving customers at night, savings reinvested in other businesses. Money is an IOU from society, the way wealth is transferred. Status is your rank in the social hierarchy. What separates them is the kind of game. Wealth is positive-sum: your owning a house does not stop me owning one. Status is zero-sum: for number three to move up, number two has to move out. As for why you want wealth, he gives exactly one reason. It buys freedom — no tie, no 7 a.m. commute.</p>
+<p>From that definition comes his most-quoted line: you will not get rich renting out your time. The reason he gives on the podcast is that a salary ties your inputs to your outputs. Asleep, on vacation or retired, you earn nothing. And a set role can be taught, so sooner or later someone with fresher training, or a machine, replaces you. What he wants is a different kind of work:</p>
+<blockquote><span class="en">You really just want a job, or a career, or a profession where your inputs don’t match your outputs.</span><cite>— Naval · "<a href="https://nav.al/renting-time">You Won’t Get Rich Renting Out Your Time</a>," 2019</cite></blockquote>
+<p>He contrasts a lumberjack with a programmer. The best lumberjack in the world is maybe three times better than the worst; one great engineer can create bitcoin while another works a whole year on code nobody uses. What cuts the link between input and output is tools — what he calls leverage.</p>
+<p>Interestingly, on Joe Rogan's show the same conclusion arrives with a different reason:</p>
+<blockquote><span class="en">Even lawyers and doctors who are charging three, four, 500 an hour, they’re not getting rich because their lifestyle is slowly ramping up along with their income and they’re not saving enough.</span><cite>— Naval · Joe Rogan Experience #1309, 2019 <a class="ts" href="https://www.youtube.com/watch?v=3qHkcs3kG44&amp;t=1344s">[00:22:24]</a></cite></blockquote>
+<p>That is no longer the structural argument about tied inputs and outputs; it is a behavioral argument about lifestyle creep. Both point to the same conclusion — own equity, a piece of a business, whether as owner, investor, shareholder or the person behind a brand. But they rest on different premises. A frugal doctor refutes the second and not the first. Naval himself concedes elsewhere that keeping expenses low and retiring early is <a href="https://nav.al/hourly-rate">perfectly valid</a>; it just isn't the wealth creation he is talking about.</p>
+<p>His most concrete example is a <a href="https://nav.al/laborer-tech">ladder in real estate</a>. At the bottom is the day laborer at $15 to $75 an hour, with no leverage beyond hand tools. One rung up, a general contractor takes a $100,000 job that costs $70,000 and pockets the $30,000 — the "equity" earned by taking accountability, and he eats any overrun. Above him, a developer has to know which neighborhoods are worth buying and puts capital in. At the top sits a real-estate tech company like Zillow or Redfin, which adds code. The example says more about his framework than any aphorism: <strong>the three parts are not alternatives; they stack.</strong></p>
+<h3>2. Specific knowledge: it can't be taught, only recognized</h3>
+<p>Naval calls specific knowledge the hardest idea in the tweetstorm to get across and the one people get most confused about. In plain terms, it is a skill you cannot get from a class. It may come from your temperament, from soft skills learned in childhood, from something so new nobody else knows it either, or from judgment built by pattern-matching in a complex domain — running a fleet of trucks, say, or forecasting weather. His argument runs by contradiction:</p>
+<blockquote><span class="en">And it’s not true that everything can be taught. In fact, the most interesting things cannot be taught.</span><cite>— Naval · "<a href="https://nav.al/specific-knowledge">Arm Yourself With Specific Knowledge</a>," 2019</cite></blockquote>
+<p>If a skill can be taught in a class, others can learn it, and eventually a computer can be programmed to do it. Then you are replaceable, and your returns sink to the cost of training plus a return on that training. So the part worth paying for is exactly the part that can't be taught. School still helps, but only as leverage: a psychology degree arms a natural salesperson and won't turn an introvert into one.</p>
+<p>If it can't be taught, where does it come from? From talent, curiosity and passion, he says — and it is usually found by looking back, not chosen. Past your early twenties you hardly pick your specific knowledge; you take stock of what has already grown. He tells his own story. He wanted to be an astrophysicist, and at fifteen or sixteen his mother said from the kitchen, "No, you're going to go into business." She had noticed that every time they walked past the local pizza parlor he critiqued how they sold their slices and ran their ordering. In the <a href="https://nav.al/creative-technical">next episode</a> he adds that to the extent such knowledge is taught at all, it is on the job, through apprenticeship.</p>
+<p>Nivi pushes back with Scott Adams's skill stack: rather than be the best at one thing, get into the top 25% at three or more, and the combination leaves you little competition. Naval agrees the statistics work but warns against assembling it too deliberately; get too goal-oriented about money and you won't pick the thing you love, so you won't go deep. Six years later he put it more bluntly to Chris Williamson:</p>
+<blockquote><span class="en">The more you do things that are natural to you, the less competition you have. You escape competition through authenticity.</span><cite>— Naval · Chris Williamson, 2025 <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=2709s">[00:45:09]</a></cite></blockquote>
+<p>Buried here is the boldest claim in the framework. In the domain of ideas, he says, compounding and leverage both apply: operating with 1,000 times leverage, someone right 90% of the time gets paid hundreds of times more than someone right 80% of the time. He gives no source for the number; it is an illustration, and it assumes you are already standing on leverage. Without leverage, the gap between 80 and 90 is just ten points. He has applied the yardstick to himself, too. In 2025 he told Williamson that his specific knowledge is not happiness or philosophy but taking a technology business apart and predicting what will work <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=8072s">[02:14:32]</a>.</p>
+<h3>3. Accountability and leverage: stake your name, get the amplifier</h3>
+<p>Accountability is not a moral word for Naval. The tweet says to take business risks under your own name, and society will reward you with responsibility, equity and leverage. On the podcast he draws the analogy with a company's payout order. Employees get paid first, then the debt holders, and equity holders last; in a mediocre business the equity holders get nothing, in a good one their upside is nearly unlimited.</p>
+<blockquote><span class="en">Essentially, taking accountability for your actions is the same as taking an equity position in all of your work.</span><cite>— Naval · "<a href="https://nav.al/accountability-equity">Take Accountability to Earn Equity</a>," 2019</cite></blockquote>
+<p>He names Taleb's <em>Skin in the Game</em> as required reading and borrows from it to call accountability reputational skin in the game — your name on the table. Why is it worth staking? Because, he argues, the downside in modern society is not that large: personal bankruptcy can wipe debts clean, and honest, high-integrity failure is forgiven. He states the condition himself. He is most familiar with Silicon Valley, and this holds "in good ecosystems."</p>
+<p>Accountability comes before leverage because the two oldest kinds of leverage need someone else's yes. Labor means people working for you, so somebody has to follow you; capital means money entrusted to you, so somebody has to trust you. He calls labor <a href="https://nav.al/labor-capital">the worst form of leverage</a> — managing people is messy, and society overvalues it. Capital was the dominant leverage of the last century and scales well, but only after specific knowledge and a good name persuade people to hand it over. The third kind is products with no marginal cost of replication — code and media:</p>
+<blockquote><span class="en">Probably the most interesting thing to keep in mind about the new forms of leverage is they are permissionless.</span><cite>— Naval · "<a href="https://nav.al/product-media">Product and Media are New Leverage</a>," 2019</cite></blockquote>
+<p>Coding, writing books, recording podcasts, tweeting: nobody has to approve them. This is where the new fortunes are made, he says, citing everyone from Bezos and Zuckerberg to Joe Rogan, who he says makes 50 to 100 million dollars a year from his podcast. On Rogan's show that same year he fitted the whole framework onto his host. No one can replace Rogan at being Rogan: specific knowledge. The name is his: accountability. The podcast works while he sleeps: leverage <a class="ts" href="https://www.youtube.com/watch?v=3qHkcs3kG44&amp;t=6643s">[01:50:43]</a>. He compressed the entire tweetstorm into two words: <a href="https://nav.al/productize-yourself">productize yourself</a>.</p>
+<p>By 2026, at the very start of a long conversation with Eric Jorgenson, he revised the machine's starting point:</p>
+<blockquote><span class="en">Deutsch had a better definition of wealth than I did. My definition of wealth was very focused by my desire to make money.</span><cite>— Naval · Eric Jorgenson Megasode, 2026 <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=0s">[00:00:00]</a></cite></blockquote>
+<p>He now adopts David Deutsch's version: wealth is the set of physical transformations you can bring about, and knowledge, not capital, is the big multiplier. Where that turn came from is the subject of <a href="naval-deutsch-topic15.en.html">Borrowed Worldview</a>. In the same conversation he says AI won't replace software engineers; it will let software engineers replace everybody else <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=3956s">[01:05:56]</a>. What that means for "only what can't be taught is valuable" is left to <a href="naval-ai-topic17.en.html">Naval in the Age of AI</a>.</p>
+<h2>How the claims fit together</h2>
+<p>The three parts are wired in series. Specific knowledge answers "why pay you," accountability answers "why trust you," leverage answers "how much can it be multiplied," and equity keeps the multiplied part in your hands. Remove any one and the machine idles. Knowledge without leverage is a craftsman; leverage without knowledge is a replaceable manager; both without your name on it, and the gains go to someone else. The machine also connects to the next link in his system. In 2019 he told Rogan we live in an age of infinite leverage, where a decision is multiplied a thousandfold, so a clear mind and good judgment matter more than ever <a class="ts" href="https://www.youtube.com/watch?v=3qHkcs3kG44&amp;t=1170s">[00:19:30]</a> — the starting point of <a href="naval-judgment-topic11.en.html">Judgment and Decisions</a>. Wealth buys freedom, and only after freedom comes <a href="naval-happiness-topic12.en.html">Happiness Is a Skill You Can Practice</a>. Playing long-term games with long-term people runs on compound interest, which belongs to <a href="naval-life-topic16.en.html">The Long Game</a>.</p>
+<p>The weakest link is the first. Accountability and leverage can be followed as instructions — sign your work, write code, publish. Specific knowledge, though, is defined as unteachable, often spotted by other people, and largely set by your twenties. At its most important point, then, the method becomes "first discover who you already are," and for how to discover it he can only say: follow your curiosity. He doesn't pretend to have a better method, but it means the subtitle's promise, "without getting lucky," needs a question mark at the first link. For the era and the seat he was speaking from, see <a href="naval-who-topic9.en.html">Before You Read Him: Four Discounts</a>.</p>
+<h2>Limits</h2>
+<div class="claim">
+<p class="said">The last generation's fortunes were made by capital; the new generation's are all made through code or media. — 2019, "<a href="https://nav.al/product-media">Product and Media are New Leverage</a>"</p>
+<p class="verdict">Supported, but overstated</p>
+<p>Kaplan and Rauh tracked the Forbes 400 from 1982 to 2011. Technology's share grew by about 11 percentage points, so the code half holds. But finance grew the most, about 16 points; private equity, hedge funds and venture capital expanded in the 2000s, at the expense of media among others. Capital did not leave the stage. The data stop in 2011; tech's share has probably grown since.</p>
+</div>
+<div class="claim">
+<p class="said">Code and media are permissionless, so they are very egalitarian, "great equalizers of leverage." — 2019, "<a href="https://nav.al/product-media">Product and Media are New Leverage</a>"</p>
+<p class="verdict">Supported, but overstated</p>
+<p>The door has widened. Spotify reports that in 2025 its 100,000th highest-earning artist generated more than $7,300 in royalties, against about $350 a decade earlier. But the same report counts 80-plus artists above $10 million each and about 1,500 above $1 million — and these are gross royalties, shared with labels. Entry is equal; returns still follow a power law.</p>
+</div>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Economics · Rosen's economics of superstars</b>: Sherwin Rosen showed in 1981 that when technology lets one person serve a whole market, small differences in talent turn into huge differences in income. That is almost the formal version of Naval's "80% versus 90%, paid hundreds of times more," and it explains why permissionless leverage can concentrate income rather than spread it.</li>
+<li><b>Finance · Equity as a call option</b>: in Robert Merton's 1974 framework, shareholders hold what amounts to a call option on the firm's assets — limited downside, unlimited upside, worth more the more volatile things are. Naval's "accountability is equity in all your work" has the same structure; the difference is that an option holder can buy many, while a person has only one name.</li>
+<li><b>Ecology · Competitive exclusion and niches</b>: the Soviet ecologist Georgy Gause showed with paramecia in the 1930s that two species competing for the same niche cannot coexist; they survive together only by differentiating. Naval's "escape competition through authenticity" is also a search for a niche. The difference: species differentiate through long selection, while Naval assumes a person can find the niche by introspection.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Naval's wealth framework fits in one line: specific knowledge decides why you get paid, accountability why you are trusted, leverage how far it multiplies.</li>
+<li>Naval defines wealth as assets that earn while you sleep, money as the IOU that transfers wealth, and status as a zero-sum social rank.</li>
+<li>Naval says renting out your time won't make you rich; on nav.al the reason is tied inputs and replaceable roles, on Joe Rogan's show it is lifestyle creep.</li>
+<li>Naval's real-estate ladder, from day laborer to contractor to developer to real-estate tech company, shows knowledge, accountability and leverage stacking at each rung.</li>
+<li>Naval argues specific knowledge can't be taught, because anything taught in a class can be learned by others, eventually automated, and paid less.</li>
+<li>Naval says specific knowledge grows from curiosity and temperament and is usually recognized in hindsight; his mother spotted his business mind first.</li>
+<li>Naval compares taking accountability to holding equity in all your work: more downside risk in exchange for nearly unlimited upside.</li>
+<li>Naval sorts leverage into labor, capital, and code and media; the first two need someone's permission, code and media do not.</li>
+<li>In 2026 Naval admitted his old definition of wealth was shaped by his desire to make money and adopted David Deutsch's view that knowledge is the big multiplier.</li>
+<li>Sherwin Rosen's economics of superstars shows that when one person can serve a whole market, small talent gaps become huge income gaps.</li>
+</ol>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://nav.al/rich">How to Get Rich</a></span><span class="d">Naval and Nivi, 2019. The main material for all three claims; the text links to individual sections.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=3qHkcs3kG44">Joe Rogan Experience #1309 - Naval Ravikant</a></span><span class="d">2019. The second reason for not renting out your time, and the framework applied to Rogan.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=3TafDme-GCc">My Conversation with Naval Megasode</a></span><span class="d">Eric Jorgenson, 2026. The revised definition of wealth.</span></li>
+<li><span class="t"><a href="https://www.aeaweb.org/articles?id=10.1257/aer.103.3.158">Kaplan &amp; Rauh, Family, Education, and Sources of Wealth among the Richest Americans, 1982–2012 (2013)</a></span><span class="d">Basis for the first verdict.</span></li>
+<li><span class="t"><a href="https://loudandclear.byspotify.com/takeaways/">Spotify Loud &amp; Clear: 2025 Takeaways</a></span><span class="d">Basis for the second verdict.</span></li>
+</ul>
+<footer>Naval Topic · his aphorisms, put back where they were said · written 2026-10-17</footer>
+</div>
+</body></html>
