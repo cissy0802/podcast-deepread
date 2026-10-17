@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naval 专题 · 判断力与决策</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="naval-judgment-topic11.en.html">English →</a></div>
+<header>
+<div class="kicker">Naval 专题 · 第 3 篇</div>
+<h1>判断力：被杠杆放大的那一点差距</h1>
+<p class="sub">判断为什么值钱、怎样少犯错、什么时候交给直觉</p>
+</header>
+<div class="meta-card"><b>主题</b> 判断力与决策 · <b>材料</b> nav.al 文字 7 篇（2019–2025）、访谈转写 3 份（2017–2026）· <b>访谈</b> The Knowledge Project（2017）· Chris Williamson（2025）· Eric Jorgenson Megasode（2026）</div>
+<h2>他的主张</h2>
+<p>在 Naval 的致富公式里，特定知识、杠杆和责任都有现成的口号，判断力却最难讲清楚。它不是一项可以报班学的技能，他自己的说法也前后变过：2017 年讲排除法和心智模型，2019 年讲冷静和不动情绪，到 2025 年以后，越来越多地讲直觉和品味。这一篇把这条演变线理出来，看他说判断力为什么值钱、怎么练，以及最后为什么交给了说不清的直觉。</p>
+<h3>一、判断力为什么值钱：杠杆把小差距放大</h3>
+<p>2019 年的《How to Get Rich》播客讲完特定知识、责任和杠杆之后，搭档 Nivi 把话题引到推文串的最后一项，「杠杆是判断力的放大器」。Naval 的回答给前面几集排了一个先后：职业生涯的前半段拼命去拿杠杆，拿到以后反而要放慢，因为这时你掌舵的已经不是帆船，而是一艘油轮。</p>
+<blockquote><span class="en">In an age of infinite leverage, judgment becomes the most important skill.</span><span class="zh">在杠杆几乎无限的时代，判断力成了最重要的技能。</span><cite>— Naval ·《<a href="https://nav.al/judgment">Judgment Is the Decisive Skill</a>》，2019</cite></blockquote>
+<p>他的论证是一道乘法。掌舵一家千亿美元公司的人，判断只要比别人准一两成，复利下来的差额就远远超过他的薪水。这道题他讲过很多遍，数字每次都不一样。2017 年对 Shane Parrish 说的是一个人对八成、另一个对七成 <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=4989s">[01:23:09]</a>；2020 年换成巴菲特对 85%、对手对 70%；2026 年对 Eric Jorgenson 又成了两位苹果 CEO 候选人，一个对 80%，一个对 85% <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=3122s">[00:52:02]</a>。这些百分比是随手举的例子，不是测量，他也从没说过它们从哪里来。真正的主张只在结构上：杠杆越大，判断上的一点差距就越值钱。</p>
+<p>那判断力究竟是什么？Nivi 给的定义是能预见决定的长期后果。Naval 说这和他对智慧的定义几乎一样，智慧是用在自己生活里的判断力，判断力是用在外部问题上的智慧。</p>
+<p>这个主张要成立，有两个前提，他自己都说到了。第一，判断力得先被人看见。巴菲特之所以值钱，是因为他几十年来在公开场合一再说对、对结果负全责，人们才敢把杠杆交给他；Naval 在 2020 年说得更直接，杠杆是社会在你<a href="https://nav.al/finding-time">展示过判断力之后</a>才给你的。第二，判断得能被检验，而这恰恰是他自己那一行最难做到的。讲天使投资时他承认：</p>
+<blockquote><span class="en">It would be great if you could look at the results of your investments and see if you were correct. But you won’t know for 10 or 15 years, and the industry will have changed by then because it evolves and adapts quickly.</span><span class="zh">要是能翻翻投资结果、看看自己当初对不对，那当然好。可这要十到十五年才知道，到那时这个行业早就变了，因为它演化和适应得太快。</span><cite>— Naval ·《<a href="https://nav.al/angel-2">How to Angel Invest, Part 2</a>》，2020</cite></blockquote>
+<p>所以他教的校准办法都是代理指标，比如看后续轮次里顶级风投肯不肯加价跟进。他也点破了这个办法的局限：这是一场凯恩斯选美比赛（Keynesian beauty contest），测的是你能不能猜中下一位评委的口味，而不是你的判断本身对不对。</p>
+<h3>二、怎样少犯错：排除法，再把欲望挪开</h3>
+<p>2017 年 The Knowledge Project 那一期专门谈了决策。Parrish 问他有没有一套决策流程，他说脑子里装了很多心智模型（mental models，即各学科里可以反复套用的思考框架），大多来自进化论、博弈论和 Charlie Munger，但他不跑清单。两年后他说得更明白，Munger 用清单式的心智模型，<a href="https://nav.al/principal-agent">那不是他思考的方式</a>。他那次真正讲出来的方法，来自年轻时迷上的复杂性理论（complexity theory）：越钻研，越明白人类预测未来的能力有多差。既然判断不了什么会成，那就去排除什么不会成。</p>
+<blockquote><span class="en">So I think being successful is just about not making mistakes. It's not about, you know, having correct judgments; it's about avoiding the incorrect judgments.</span><span class="zh">所以我觉得，成功无非就是不犯错。关键不在做出正确的判断，而在避开错误的判断。</span><cite>— Naval · The Knowledge Project，2017 <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=5073s">[01:24:33]</a></cite></blockquote>
+<p>落到投资上，这就成了一套系统，而不是一次次单独押注：看一万家公司，挑出五百家有机会做大的，再在最后跑出来的五家上加码 <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=5168s">[01:26:08]</a>。天使投资最多亏掉本金，上行却可能是一万倍，他说他要的就是这种被「做过手脚」的牌局。这里能看出排除法的一个条件：它之所以管用，是因为他坐在一个亏损有底、收益没顶的位置上。</p>
+<p>那怎样才能看清哪些事不会成？他的回答几乎全落在心理上。Parrish 问他做决定时怎样确保面对的是现实，他说最大的障碍是心里早有一个「应该如何」，并举了一个人人都有体会的例子：朋友失恋时，旁观的我们一分钟就看出答案，当事人却看不见，因为他还在盼着现实是另一个样子。他说自己做决定时也一样。</p>
+<blockquote><span class="en">The more of a desire that I had that it worked out a certain way, the less likely I am to see the truth.</span><span class="zh">我越盼着事情朝某个方向走，就越看不清真相。</span><cite>— Naval · The Knowledge Project，2017 <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=6176s">[01:42:56]</a></cite></blockquote>
+<p>他的对策很具体。生意不顺的时候，他会当着合伙人和同事的面承认，不对任何人隐瞒，也就骗不了自己。2019 年他把这一点推得更远，说判断最好的人往往情绪最少，一个人越是愤怒，判断就越差。2020 年他又把它接到幸福上：<a href="https://nav.al/inefficient">不快乐的人</a>头脑里同时跑着太多线程，腾不出空来做判断，而他自己变得平静以后，决定反而做得更清楚了。这条线留给《<a href="naval-happiness-topic12.html">幸福是一种可以练的技能</a>》一篇接着讲。他另一个常给的建议是多读哲学、科学和历史，少读投资书，那属于《<a href="naval-learning-topic14.html">读书与学习</a>》一篇的范围。</p>
+<h3>三、从推理到直觉：「拿不定主意，答案就是不」</h3>
+<p>到了 2025 年，Naval 讲决策的重心变了。Chris Williamson 问他，到底该信头脑还是信直觉，他的回答很干脆：</p>
+<blockquote><span class="en">I think the gut is what decides.</span><span class="zh">我觉得，拍板的是直觉。</span><cite>— Naval · Chris Williamson，2025 <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=5456s">[01:30:56]</a></cite></blockquote>
+<p>头脑只是事后替它找理由。他说的直觉不是情绪，而是「提炼过的判断力」，是进化和个人经验一起积累下来的品味。头脑擅长解决边界清楚的新问题，最不擅长的恰恰是艰难的决定，所以他的做法是先把利弊想一遍，然后睡一觉、等上几天，直到直觉带着确信冒出来。同一段里，他列了三条给自己用的启发式（heuristics），第一条是这样的：</p>
+<blockquote><span class="en">If you're offered an opportunity, if you have a new thing that you're saying yes or no to that is a change from where you're starting, the answer is by default always no.</span><span class="zh">如果有人给你一个机会，如果你面前是一件要答「要」或「不要」的新事情，而它意味着离开你现在的位置，那答案默认永远是「不」。</span><cite>— Naval · Chris Williamson，2025 <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=5930s">[01:38:50]</a></cite></blockquote>
+<p>第二条，两条路看起来差不多时，选短期更痛的那条，因为大脑总会把眼前的痛苦放大。第三条他归功于 Kapil Gupta，选长远看来让你心里更平静的那条 <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=5993s">[01:39:53]</a>。</p>
+<p>这条「默认说不」是有来历的。2017 年他对 Parrish 说，他最想改的毛病是贪多应承：现在的自己总在替未来那个精力充沛的自己许诺。他想给日历加一道「双重验证」，任何承诺都先写下来，过 48 小时再定，或者干脆只答应现在就愿意动手的事，他把后一种归到 Derek Sivers「不是『当然要』，就是不要」的做法 <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=6683s">[01:51:23]</a>。换句话说，这条规则最初是一个机会太多的人给自己设的闸门。2025 年他给的理由也一样，现代社会选项太多了。</p>
+<p>这条线的终点是品味。2025 年他在自己的播客里描述过判断力怎样长成：</p>
+<blockquote><span class="en">You start with reasoning and then you build up your judgment. And then when your judgment is sufficiently refined, it just becomes taste or intuition or gut feel, and that’s what you operate on.</span><span class="zh">你从推理起步，慢慢攒出判断力。等判断力磨得足够细，它就成了品味、直觉或者说手感，你就凭它行事。</span><cite>— Naval ·《<a href="https://nav.al/arena">Life is Lived in The Arena</a>》，2025</cite></blockquote>
+<p>2026 年他对 Jorgenson 说，判断力好到一定程度就说不出道理了，那时它就叫品味。被问到现在投资是不是主要凭品味，他说几乎全是，而且他讨厌把它讲出来 <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=3320s">[00:55:20]</a>。他也承认这是「有钱以后的品味」：不想和这位创始人一起散步，或者对这个品类提不起好奇，他就不投。</p>
+<h2>这些主张怎么咬合</h2>
+<p>三条主张连成一条链。杠杆让判断力值钱，排除法和管住欲望让判断力可以练，练到最后，判断沉淀成不必再说理由的品味。这条链也把专题的其他几篇串在一起。判断力是《<a href="naval-wealth-topic10.html">致富的机制</a>》里最后一个乘数，《<a href="naval-who-topic9.html">读他之前：四个折扣</a>》一篇已经提到，他正是用判断力来解释投资组合的回报。而让判断变好的办法，情绪少、欲望少、头脑安静，又直接通向《<a href="naval-happiness-topic12.html">幸福是一种可以练的技能</a>》和《<a href="naval-self-topic13.html">自我、冥想与东方哲学</a>》。在他的体系里，平静不只是终点，也是做好决定的工具。</p>
+<p>最弱的一环在第二条和第三条的接缝处。2019 年他说判断最好的人情绪最少，2025 年又说该听直觉。他用「直觉是提炼过的判断，欲望才是干扰」把两者调和起来，也承认欲望常常压过判断，让人在明知要失败的关系里继续耗下去。可是在做决定的那一刻，怎么分辨涌上来的是磨练出的直觉，还是换了装束的欲望？他没有给检验办法，只说年轻时要等得更久。再加上他承认自己那一行的反馈要十到十五年才回来，一种说不出道理的品味，别人几乎没法核对，连他自己也很难。他在 2017 年因为宏观经济学做不出可证伪的预测，就把它叫作垃圾科学；拿同一把尺子量他的品味，这是一处值得留意的张力。</p>
+<h2>边界</h2>
+<div class="claim">
+<p class="said">「如果你掌舵的是谷歌或苹果，判断比下一个人好一两成，社会就会多付你几亿美元。」——2019 年《<a href="https://nav.al/judgment">Judgment Is the Decisive Skill</a>》</p>
+<p class="verdict">有据，但说宽了</p>
+<p>Gabaix 与 Landier 2008 年发表于《经济学季刊》的模型正是这道乘法：CEO 才能上的微小差别，被公司规模放大成巨大的薪酬差距。但他们校准出的才能差距比「一两成」小得多，把排名第 250 的 CEO 换成第一名，公司市值只多 0.016%，薪水却高出五倍以上。机制成立，可高薪并不意味着判断真的好了一两成。</p>
+</div>
+<div class="claim">
+<p class="said">「拿不定主意，答案就是不。」——2025 年 Chris Williamson 访谈，见上文引语</p>
+<p class="verdict">证据不足</p>
+<p>直接检验过这件事的研究很少。Levitt 2021 年发表于《经济研究评论》的实验里，在大事上犹豫不决的人上网抛硬币做决定，一年里抛了两万多次；硬币说「改」的人更可能真的辞职或分手，半年后也更快乐。样本是自愿上网的人，并不具代表性，也只测了离开现状，没测接下新机会。但在辞职和分手上，仅有的随机证据指向反方向。</p>
+</div>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>认知心理学 · Kahneman 与 Klein 的「直觉何时可信」</b>：一位研究直觉的偏差，一位研究专家直觉的威力，两人 2009 年合写<a href="https://pubmed.ncbi.nlm.nih.gov/19739881/">论文</a>，结论是直觉是否可靠，要看环境有没有稳定的规律，当事人有没有机会靠反馈学会这些规律；主观上的确信不能证明判断准确。Naval「直觉由经验提炼」和他们一致，不一致的是「练成之后别信别的」：反馈要十几年才回来的早期投资，正是最难满足这两个条件的环境。</li>
+<li><b>机器学习 · 蒸馏</b>：把一个逐步推理的大模型蒸馏进一个出手快的小模型，速度上去了，中间的推理链却不见了，出了错也难追查。Naval 说的从推理到品味是同一个过程。不同在于，模型可以拿留出集检验，人的品味通常没有留出集。</li>
+<li><b>行为经济学 · 现状偏差</b>：Samuelson 与 Zeckhauser 1988 年提出现状偏差（status quo bias），人在选择时会不成比例地偏向维持原样。「拿不定就说不」等于有意把默认值设在现状上。对机会过剩的人，这是给注意力限流；对机会稀少的人，它可能把本来就有的偏差又放大了一层。</li>
+<li><b>分布式系统 · 准入控制</b>：系统快过载时，宁可在入口拒掉新请求，也不要全部接下来再一起拖垮。日历上的「双重验证」就是 Naval 给自己做的准入控制。不像的地方是，系统能实时测负载，人却总高估未来的容量，这正是他说的那个「未来的自己」的幻觉。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Naval 认为在杠杆几乎无限的时代，判断力是最重要的技能，因为杠杆会放大判断上的微小差距。</li>
+<li>Naval 反复用「一个人对八成、另一个对七成」这类例子说明判断力的价值，但这些百分比每次都不一样，只是示意。</li>
+<li>Naval 把判断力定义为预见行动长期后果的能力，并说智慧就是用在个人生活里的判断力。</li>
+<li>Naval 承认天使投资要十到十五年才知道判断对不对，看后续轮次加价只是凯恩斯选美式的代理指标。</li>
+<li>Naval 2017 年说，成功主要在于避开错误的判断，而不是做出正确的判断，因为人很不擅长预测未来。</li>
+<li>Naval 的投资系统是看一万家、挑五百家、再给跑出来的少数几家加码，靠亏损有底、收益没顶的结构取胜。</li>
+<li>Naval 认为欲望是判断最大的干扰：越盼着事情朝某个方向走，就越看不清真相，所以他会公开承认生意不顺。</li>
+<li>Naval 2025 年说拍板的是直觉，头脑只在事后找理由；他说的直觉是由经验提炼出的判断力，最终会变成品味。</li>
+<li>Naval 的「拿不定主意，答案就是不」针对的是离开现状的新机会，源自他给自己贪多应承设的闸门。</li>
+<li>心理学家 Kahneman 和 Klein 指出，直觉只在规律稳定、反馈及时的环境里可靠，主观确信本身不能证明判断准确。</li>
+</ol>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://nav.al/judgment">Judgment Is the Decisive Skill</a> · <a href="https://nav.al/angel-2">How to Angel Invest, Part 2</a></span><span class="d">Naval 与 Nivi，2019–2020。判断力为什么值钱，以及它为什么难校准。</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=mGY2To_HW98">The Knowledge Project #18：Naval Ravikant</a></span><span class="d">2017。排除法、欲望与现实、日历的「双重验证」。</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=KyfUysrNaco">Chris Williamson：44 Harsh Truths About The Game Of Life</a> · <a href="https://www.youtube.com/watch?v=3TafDme-GCc">Eric Jorgenson：My Conversation with Naval Megasode</a></span><span class="d">2025–2026。直觉、三条启发式，以及判断如何沉淀为品味。</span></li>
+<li><span class="t"><a href="https://www.nber.org/papers/w12365">Gabaix &amp; Landier, Why Has CEO Pay Increased So Much? (2008)</a> · <a href="https://www.nber.org/papers/w22487">Levitt, Heads or Tails (2021)</a></span><span class="d">两条边界判词的依据。</span></li>
+</ul>
+<footer>Naval 专题 · 把他的格言放回原处 · 写于 2026-10-17</footer>
+</div>
+</body></html>

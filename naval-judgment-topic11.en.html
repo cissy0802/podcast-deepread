@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naval Series · Judgment and Decision-Making</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="naval-judgment-topic11.html">中文 →</a></div>
+<header>
+<div class="kicker">Naval Topic · No. 3</div>
+<h1>Judgment: the small edge that leverage multiplies</h1>
+<p class="sub">Why judgment pays, how to make fewer mistakes, and when to hand the decision to your gut</p>
+</header>
+<div class="meta-card"><b>Topic</b> Judgment and decision-making · <b>Material</b> 7 nav.al texts (2019–2025), 3 interview transcripts (2017–2026) · <b>Interviews</b> The Knowledge Project (2017) · Chris Williamson (2025) · Eric Jorgenson Megasode (2026)</div>
+<h2>His claims</h2>
+<p>Of the four ingredients in Naval's wealth formula, specific knowledge, leverage and accountability all come with ready-made slogans. Judgment is the one that is hardest to pin down. It is not a skill you can take a course in, and his own account of it has shifted: in 2017 he talked about elimination and mental models, in 2019 about staying calm and unemotional, and from 2025 on, more and more about gut feel and taste. This page traces that arc: why he thinks judgment pays, how he thinks it is trained, and why he ends up handing it to an intuition he cannot explain.</p>
+<h3>1. Why judgment pays: leverage multiplies small edges</h3>
+<p>In the 2019 How to Get Rich podcast, after episodes on specific knowledge, accountability and leverage, his co-host Nivi turned to the last item in the tweetstorm: "leverage is a force multiplier for your judgment." Naval's answer put the earlier episodes in order. Spend the first half of your career hustling for leverage; once you have it, slow down, because you are no longer steering a sailboat but an oil tanker.</p>
+<blockquote><span class="en">In an age of infinite leverage, judgment becomes the most important skill.</span><cite>— Naval · <a href="https://nav.al/judgment">Judgment Is the Decisive Skill</a>, 2019</cite></blockquote>
+<p>His argument is a multiplication. If you steer a hundred-billion-dollar company and your judgment is ten or twenty percent better than the next person's, the compounded difference dwarfs your salary. He has run this sum many times, and the numbers change every time. In 2017 he told Shane Parrish about someone who is right 80% of the time versus 70% <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=4989s">[01:23:09]</a>; in 2020 it was Buffett at 85% against competitors at 70%; in 2026, talking to Eric Jorgenson, it became two candidates for Apple CEO, one right 80% of the time and one 85% <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=3122s">[00:52:02]</a>. The percentages are illustrations, not measurements, and he never says where they come from. The actual claim is structural: the more leverage you have, the more a small edge in judgment is worth.</p>
+<p>So what is judgment? Nivi defined it as being able to foresee the long-term effects of your decisions. Naval said that is almost exactly his definition of wisdom: wisdom is judgment applied to your own life, and judgment is wisdom applied to external problems.</p>
+<p>The claim rests on two conditions, and he names both. First, judgment has to be seen. Buffett is valuable because he has been right in public, over and over, for decades and has been fully accountable for the results, so people trust him with leverage. In 2020 Naval put it more bluntly: society gives you leverage <a href="https://nav.al/finding-time">after you have demonstrated judgment</a>. Second, judgment has to be checkable, and that is exactly what his own trade makes hardest. Discussing angel investing, he admitted:</p>
+<blockquote><span class="en">It would be great if you could look at the results of your investments and see if you were correct. But you won’t know for 10 or 15 years, and the industry will have changed by then because it evolves and adapts quickly.</span><cite>— Naval · <a href="https://nav.al/angel-2">How to Angel Invest, Part 2</a>, 2020</cite></blockquote>
+<p>So the calibration methods he teaches are proxies, such as watching whether top venture firms follow you into later rounds at higher prices. He also names the catch: this is a Keynesian beauty contest. It measures whether you can guess the next judge's taste, not whether your own judgment is right.</p>
+<h3>2. Making fewer mistakes: eliminate, then get desire out of the way</h3>
+<p>The 2017 Knowledge Project episode was largely about decisions. Asked whether he had a decision process, Naval said he carries many mental models (reusable frameworks borrowed from different fields), mostly from evolution, game theory and Charlie Munger, but he does not run a checklist. Two years later he was more explicit: Munger thinks in mental-model checklists, but <a href="https://nav.al/principal-agent">that is just not how he thinks</a>. The method he actually described came from complexity theory, which he got into when he was younger: the deeper he went, the clearer it became how bad humans are at predicting the future. If you cannot tell what will work, eliminate what will not.</p>
+<blockquote><span class="en">So I think being successful is just about not making mistakes. It's not about, you know, having correct judgments; it's about avoiding the incorrect judgments.</span><cite>— Naval · The Knowledge Project, 2017 <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=5073s">[01:24:33]</a></cite></blockquote>
+<p>In investing, that becomes a system rather than a string of individual bets: see ten thousand companies, pick five hundred that have a shot at being huge, then double down on the five winners <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=5168s">[01:26:08]</a>. An angel bet can lose at most 1x and can return 10,000x, and he says that is the kind of rigged game he wants. Which reveals a condition on the elimination method: it works because he sits where losses have a floor and gains have no ceiling.</p>
+<p>How, then, do you see what will not work? His answer is almost entirely psychological. When Parrish asked how he makes sure he is dealing with reality, he said the biggest obstacle is a preconceived idea of how things should be, and gave an example everyone recognizes: when a friend goes through a breakup, we see the answer in a minute, but they cannot, because they still wish reality were different. He said the same happens to him.</p>
+<blockquote><span class="en">The more of a desire that I had that it worked out a certain way, the less likely I am to see the truth.</span><cite>— Naval · The Knowledge Project, 2017 <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=6176s">[01:42:56]</a></cite></blockquote>
+<p>His countermeasure is concrete. When a business is not going well, he admits it in front of his co-founders and co-workers; if he hides it from no one, he cannot fool himself. In 2019 he pushed the point further: the people with the best judgment are among the least emotional, and the more outraged someone is, the worse their judgment. In 2020 he tied it to happiness: <a href="https://nav.al/inefficient">unhappy people</a> have too many threads running to make judgments, and once he became calmer his own decisions got clearer. That thread continues in <a href="naval-happiness-topic12.en.html">Happiness Is a Skill You Can Train</a>. His other standing advice, to read philosophy, science and history rather than investment books, belongs to <a href="naval-learning-topic14.en.html">Reading and Learning</a>.</p>
+<h3>3. From reasoning to intuition: "if you can't decide, the answer is no"</h3>
+<p>By 2025 the emphasis had moved. Chris Williamson asked whether to trust the head or the gut, and Naval answered without hesitation:</p>
+<blockquote><span class="en">I think the gut is what decides.</span><cite>— Naval · Chris Williamson, 2025 <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=5456s">[01:30:56]</a></cite></blockquote>
+<p>The head, he said, rationalizes afterwards. By gut he does not mean emotion but "refined judgment", taste aggregated through evolution and personal experience. The mind is good at new problems with clear edges and bad at hard decisions, so he thinks through the pros and cons, then sleeps on it and waits a few days until the gut answer arrives with conviction. In the same passage he listed three heuristics he uses himself. The first:</p>
+<blockquote><span class="en">If you're offered an opportunity, if you have a new thing that you're saying yes or no to that is a change from where you're starting, the answer is by default always no.</span><cite>— Naval · Chris Williamson, 2025 <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=5930s">[01:38:50]</a></cite></blockquote>
+<p>Second, when two paths look equal, take the one that is more painful in the short term, because the brain always inflates imminent pain. Third, which he credits to Kapil Gupta, take the path that will leave you more at peace in the long run <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=5993s">[01:39:53]</a>.</p>
+<p>The default no has a history. In 2017 he told Parrish the habit he most wanted to change was signing up for too much: present-day Naval keeps making promises on behalf of an energetic future Naval. He wanted two-factor authentication on his calendar: write down every commitment and decide 48 hours later, or only agree to what he would be willing to do right now, which he linked to Derek Sivers's "hell yes or no" <a class="ts" href="https://www.youtube.com/watch?v=mGY2To_HW98&amp;t=6683s">[01:51:23]</a>. In other words, the rule began as a gate set by a man with too many opportunities. His reason in 2025 was the same: modern society is full of options.</p>
+<p>The arc ends in taste. In 2025, on his own podcast, he described how judgment grows:</p>
+<blockquote><span class="en">You start with reasoning and then you build up your judgment. And then when your judgment is sufficiently refined, it just becomes taste or intuition or gut feel, and that’s what you operate on.</span><cite>— Naval · <a href="https://nav.al/arena">Life is Lived in The Arena</a>, 2025</cite></blockquote>
+<p>In 2026 he told Jorgenson that judgment eventually gets so good you cannot articulate it, and then it is called taste. Asked whether his investing is now mostly taste, he said almost entirely, and that he hates articulating it <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=3320s">[00:55:20]</a>. He concedes this is "post-wealth taste": if he does not want to take a walk with the founder, or is not curious about the category, he passes.</p>
+<h2>How the claims fit together</h2>
+<p>The three claims form a chain. Leverage makes judgment valuable; elimination and keeping desire in check make it trainable; trained long enough, it settles into taste that no longer needs reasons. The chain also connects this series. Judgment is the last multiplier in <a href="naval-wealth-topic10.en.html">The Mechanics of Wealth</a>, and <a href="naval-who-topic9.en.html">Before You Read Him: Four Discounts</a> noted that it is the variable he uses to explain portfolio returns. And the recipe for better judgment, less emotion, less desire, a quieter mind, leads straight into <a href="naval-happiness-topic12.en.html">Happiness Is a Skill You Can Train</a> and <a href="naval-self-topic13.en.html">Self, Meditation and Eastern Philosophy</a>. In his system, peace is not only the destination; it is also a tool for deciding well.</p>
+<p>The weakest link is the seam between the second and third claims. In 2019 the best judges were the least emotional; in 2025 you should follow your gut. He reconciles the two by saying the gut is refined judgment and desire is the interference, and he admits desire often overrides judgment, keeping people in relationships they knew would fail. But in the moment of decision, how do you tell trained intuition from desire in disguise? He offers no test, only that the young must wait longer. Add his admission that feedback in his trade takes ten to fifteen years, and a taste that cannot be articulated becomes almost impossible for anyone else to audit, or even for him. In 2017 he dismissed macroeconomics as junk science because it makes no falsifiable predictions; measured by the same yardstick, his taste is a tension worth noticing.</p>
+<h2>Limits</h2>
+<div class="claim">
+<p class="said">"If you're steering Google or Apple, and your judgment is 10 or 20 percent better than the next person's, society will literally pay you hundreds of millions of dollars more." — 2019, <a href="https://nav.al/judgment">Judgment Is the Decisive Skill</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>Gabaix and Landier's 2008 model in the Quarterly Journal of Economics is exactly this multiplication: tiny differences in CEO talent, magnified by firm size, produce huge pay gaps. But their calibrated talent gap is far smaller than 10–20%: replacing CEO number 250 with number 1 raises firm value by only 0.016%, while number 1 is paid over 500% more. The mechanism holds; high pay does not show that anyone's judgment is 10–20% better.</p>
+</div>
+<div class="claim">
+<p class="said">"If you can't decide, the answer is no." — 2025, Chris Williamson interview, quoted above</p>
+<p class="verdict">Insufficient evidence</p>
+<p>Few studies test this directly. In Levitt's experiment (Review of Economic Studies, 2021), people stuck on big decisions flipped a coin online, more than 20,000 times in a year; those the coin told to change were more likely to quit or break up, and were happier six months later. The sample was self-selected and only tested leaving the status quo, not taking on new opportunities. But for quitting and breakups, the only randomized evidence points the other way.</p>
+</div>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Cognitive psychology · Kahneman and Klein on when intuition can be trusted</b>: one studied the biases of intuition, the other the power of expert intuition, and in 2009 they wrote a joint <a href="https://pubmed.ncbi.nlm.nih.gov/19739881/">paper</a> concluding that intuition is reliable only when the environment has stable regularities and the person has had the chance to learn them through feedback; subjective confidence is no proof of accuracy. Naval's "intuition is distilled experience" agrees with them. Where they part is "once developed, trust nothing else": early-stage investing, with feedback a decade or more away, is precisely the environment that struggles to meet both conditions.</li>
+<li><b>Machine learning · Distillation</b>: distill a large step-by-step reasoning model into a fast small one and you gain speed but lose the reasoning chain, so errors become hard to trace. Naval's path from reasoning to taste is the same process. The difference is that a model can be checked on a held-out set; human taste usually has none.</li>
+<li><b>Behavioral economics · Status quo bias</b>: Samuelson and Zeckhauser described status quo bias in 1988, the disproportionate tendency to stick with the current state of affairs. "If you can't decide, it's no" deliberately sets the default to the status quo. For someone drowning in opportunities, that rations attention; for someone with few, it may amplify a bias they already have.</li>
+<li><b>Distributed systems · Admission control</b>: when a system nears overload, it is better to reject new requests at the door than to accept everything and collapse. Naval's calendar two-factor authentication is admission control for himself. The difference: a system can measure its load in real time, while people consistently overestimate their future capacity, which is exactly the "future me" illusion he describes.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Naval argues that in an age of nearly infinite leverage, judgment is the most important skill, because leverage magnifies small differences in judgment.</li>
+<li>Naval repeatedly illustrates the value of judgment with examples like "right 80% of the time versus 70%", but the percentages change each time and are only illustrative.</li>
+<li>Naval defines judgment as foreseeing the long-term consequences of actions, and calls wisdom judgment applied to one's own life.</li>
+<li>Naval admits that angel investors need 10 to 15 years to learn whether their judgment was right, and that later-round markups are only a Keynesian-beauty-contest proxy.</li>
+<li>In 2017 Naval said success is mainly about avoiding incorrect judgments rather than making correct ones, because people are bad at predicting the future.</li>
+<li>Naval's investing system is to see ten thousand companies, pick five hundred, and double down on the few winners, relying on a structure where losses are capped and gains are not.</li>
+<li>Naval sees desire as the biggest enemy of judgment: the more you want something to turn out a certain way, the less you see the truth, so he admits business trouble openly.</li>
+<li>In 2025 Naval said the gut decides and the head rationalizes afterwards; by gut he means judgment refined by experience, which eventually becomes taste.</li>
+<li>Naval's "if you can't decide, the answer is no" targets new opportunities that change the status quo, and grew out of a gate he set against his own overcommitting.</li>
+<li>Psychologists Kahneman and Klein found that intuition is reliable only in environments with stable regularities and timely feedback, and that subjective confidence does not prove accuracy.</li>
+</ol>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://nav.al/judgment">Judgment Is the Decisive Skill</a> · <a href="https://nav.al/angel-2">How to Angel Invest, Part 2</a></span><span class="d">Naval and Nivi, 2019–2020. Why judgment pays, and why it is hard to calibrate.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=mGY2To_HW98">The Knowledge Project #18: Naval Ravikant</a></span><span class="d">2017. Elimination, desire versus reality, and two-factor authentication for the calendar.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=KyfUysrNaco">Chris Williamson: 44 Harsh Truths About The Game Of Life</a> · <a href="https://www.youtube.com/watch?v=3TafDme-GCc">Eric Jorgenson: My Conversation with Naval Megasode</a></span><span class="d">2025–2026. The gut, three heuristics, and how judgment settles into taste.</span></li>
+<li><span class="t"><a href="https://www.nber.org/papers/w12365">Gabaix &amp; Landier, Why Has CEO Pay Increased So Much? (2008)</a> · <a href="https://www.nber.org/papers/w22487">Levitt, Heads or Tails (2021)</a></span><span class="d">The basis for both verdicts in Limits.</span></li>
+</ul>
+<footer>Naval Series · his aphorisms, put back where they were said · written 2026-10-17</footer>
+</div>
+</body></html>
