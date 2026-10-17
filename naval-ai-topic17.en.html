@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naval Series · Naval in the Age of AI: Back to Code</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="naval-ai-topic17.html">中文 →</a></div>
+<header>
+<div class="kicker">Naval Series · No. 9</div>
+<h1>After Twenty Years Away, Naval Is Writing Code Again</h1>
+<p class="sub">How he rewrote his 2019 line that code is leverage for the age of vibe coding, and whether his view of AI still squares with the Deutsch he borrows from</p>
+</header>
+<div class="meta-card"><b>Topic</b> Naval in the Age of AI: Back to Code · <b>Material</b> 12 nav.al texts (2019–2026, including the seven-part 2026 AI series and the In the Arena compilation), 2 interview transcripts (2025–2026) · <b>Interviews</b> Chris Williamson (2025) · Eric Jorgenson Megasode (2026)</div>
+
+<h2>What he claims</h2>
+<p>This page is about a man still changing his mind. Most of what Naval has said about AI was said in the first half of 2026, and within a few months his tone shifted several times. He warned his audience in advance when he reopened the subject in February 2026:</p>
+<blockquote><span class="en">We are obviously talking about things in February of 2026, and we’re working with the information we have now, and not with perfect hindsight.</span><cite>— Naval · <a href="https://nav.al/ai">A Motorcycle for the Mind</a>, 2026</cite></blockquote>
+<p>So this page does what he asks. Every judgment carries a date; predictions are not scored, only placed in time alongside what has happened since.</p>
+
+<h3>1. From “learn to command the robots” to “English is the programming language”</h3>
+<p>Start in 2019. His wealth framework splits leverage into labor, capital, and code-and-media. The last is the newest and the most important: copying it costs almost nothing and using it needs nobody’s approval, which he called permissionless leverage. The framework itself is covered in <a href="naval-wealth-topic10.en.html">The Mechanics of Wealth</a>. On code, he argued that the robot revolution had already happened, only the robots were packed into data centers, and they were not smart; they had to be told exactly what to do:</p>
+<blockquote><span class="en">Coding is such a great superpower because now you can speak the language of the robot armies and you can tell them what to do.</span><cite>— Naval · <a href="https://nav.al/product-media">Product and Media are New Leverage</a>, 2019</cite></blockquote>
+<p>The premise was that the robots understood only a hard language. By 2025 that premise was loosening, but Naval was still restrained. In the Chris Williamson interview released in spring 2025, he called large models “natural language computers” that made English a programming language, but said they do not create, every poem they write is garbage, and they are bad even at summarizing, <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=8818s">[02:26:58]</a> and that being confidently wrong one time in ten kept them out of mission-critical systems. <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=8933s">[02:28:53]</a> In the long Eric Jorgenson conversation recorded the same year, he framed AI as a tool:</p>
+<blockquote><span class="en">So I don't think of the AI necessarily as having judgment, but I think of it as like the ultimate leverage information retrieval tool.</span><cite>— Naval · Eric Jorgenson Megasode, recorded 2025 <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=3847s">[01:04:07]</a></cite></blockquote>
+<p>The turn came in December 2025. Looking back in April 2026, he said coding agents hit an inflection point with Claude Opus 4.5: it felt like having a junior programmer who was fast, essentially free and eager to please. He has a computer science degree but had not seriously coded in decades, put off by the activation energy of wiring services together. This time he dove in. He built himself a “personal app store”: send a two-line description, the app gets built and delivered, tap install, and thirty seconds later it runs on his phone. He is rebuilding Airchat on his own, the voice social app he once worked on with eight or nine engineers for nine to twelve months before selling it off. Evenings that used to go to reading, doomscrolling and video games now go to vibe coding, directing an AI to write software in plain language.</p>
+<p>So he rewrote his own 2019 sentence. In a February 2026 tweet he said vibe coding is the new product management and training and tuning models is the new coding. Once you had to speak the robots’ language to use code leverage; now English and a structured mind are enough. His image is that every person has become a spellcaster. The lever is the same lever; you just no longer need a foreign language to pull it.</p>
+
+<h3>2. Everyone has the lever now. Where did scarcity move?</h3>
+<p>By his own logic, leverage everyone can use stops being a moat. In February 2026 he predicted a tsunami of apps, but “no demand for average”: the best app in each category still takes nearly all of it, and the firms hit hardest are the five-to-twenty-person software companies living off niche enterprise needs. By April he put it more bluntly:</p>
+<blockquote><span class="en">If your whole advantage is like, “Hey, I’m building cool software that other people don’t know how to build,” I think that’s uninvestable.</span><cite>— Naval · <a href="https://nav.al/code">A Return to Code</a>, 2026</cite></blockquote>
+<p>He gave two reasons: others can hack the same thing together today, and agents are improving so fast that within a year, he guessed, they would build scalable, well-architected software. On that clock the answer arrives in spring 2027.</p>
+<p>So where did the value go? He has offered three answers. First, <strong>knowledge one layer down</strong>. All abstractions leak; AI code has bugs and bad architecture, and someone who understands what sits underneath can plug the leaks. He told Jorgenson that even if Jobs’s team had been handed AI to vibe-code with, they could not have built the iPhone without knowing what the abstraction was hiding. <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=4138s">[01:08:58]</a> Second, <strong>judgment</strong>, meaning picking the right thing to work on. He was once flamed for saying 10x engineers exist; now he says 1,000x, and choosing the right problem over the wrong one is an infinite difference. Third, <strong>accountability</strong>. In May 2026 he said humans are becoming verifiers: much of the old work of lawyers, engineers and operators becomes checking the AI’s output and saying it is roughly correct and that you will roughly stand behind it.</p>
+<p>All three are old faces from the 2019 framework: specific knowledge (knowledge that cannot be trained into you and grows only out of your own curiosity and history), judgment, and accountability (putting your name behind the result). AI takes the most copyable link in the chain, and the remaining links become worth more. Hence the line he has repeated from the 2025 Williamson interview <a class="ts" href="https://www.youtube.com/watch?v=KyfUysrNaco&amp;t=8969s">[02:29:29]</a> through 2026: AI will not replace programmers; programmers will use AI to replace everyone else. People telling the young to drop programming for art or the trades, he says, are idiots. <a class="ts" href="https://www.youtube.com/watch?v=3TafDme-GCc&amp;t=3956s">[01:05:56]</a></p>
+
+<h3>3. Waste tokens, save time</h3>
+<p>He is specific about how he uses the tools. He refuses to learn prompt tricks or workflow scaffolding, on the grounds that the model adapts to him faster than he adapts to it. He always uses the smartest model, because one that is right 92% of the time is worth far more than one right 88% of the time. In May 2026 he compressed the approach into a slogan:</p>
+<blockquote><span class="en">I’ll throw Codex, Claude, and Gemini at the same problem over and over and just waste tokens to save time.</span><cite>— Naval · <a href="https://nav.al/tokens">Waste Tokens, Save Time</a>, 2026</cite></blockquote>
+<p>His observations of the models from the same period are much cooler. Once a codebase outgrows the context window, the models lose the plot, fix the same bug five times, and occasionally “fix” a bug by deleting the feature. Having several models review each other’s code helps less than you would think: they share a strong groupthink, and a slight push sends them all toward the answer you wanted. The thing he does most is stop the model, call the change a hack, and send it back to fix the architecture; the model always apologizes and agrees it was a hack, even when it was not.</p>
+<p>So “don’t learn the tricks” has a precondition. He says himself that he can specify things precisely in structured English because he understands computer architecture. And what he actually built, with other models reviewing every pull request and Claude working through user bug reports every 24 hours, is itself a fairly careful workflow. What he skips is other people’s packaged tricks, not engineering sense.</p>
+
+<h3>4. Can AI create? Is the Deutsch line still holding?</h3>
+<p>A large part of Naval’s worldview is borrowed from the physicist David Deutsch: humans are universal explainers, knowledge grows through conjecture and criticism, and real intelligence must be able to create new explanations. The background is in <a href="naval-deutsch-topic15.en.html">A Borrowed Worldview</a>. In 2021 he applied that line to GPT-3 and concluded that no amount of extra compute would produce intelligence:</p>
+<blockquote><span class="en">It’s extrapolating from what it already sees out there generated by humans on the web, but it doesn’t have an underlying model of reality that can explain the seen in terms of the unseen.</span><cite>— Naval · <a href="https://nav.al/agi">More Compute Power Doesn’t Produce AGI</a>, 2021</cite></blockquote>
+<p>His test then was to ask it a follow-up “why” and watch it fall apart. Five years on, he has largely held the line. In February 2026 he still said AI is not alive and lacks single-shot learning, a body, and real creativity; he rejected Jobs’s “creativity is just putting things together” and defined creativity as an answer you could not have foreseen from the question and the known elements. AI solving some Erdős problems counts, he allowed, as a very limited form of creativity, and he said he did not think more compute alone would get further, adding that he could be wrong. In June he cited Gödel stepping outside a formal system to prove it incomplete as something he does not think an AI can do, and bet that the human-plus-AI era will last longer than people think.</p>
+<p>What changed is the test. By 2026 the 2021 “ask it why” no longer works; he himself has AI explain a concept a hundred different ways until he gets it. The new criterion is borrowed from machine learning: “out of distribution.” Its trouble showed when he and his guests discussed the Studio Ghibli style: once a style has been copied everywhere by AI, it is in distribution and no longer art. On that definition, anything AI learns to do automatically stops counting as creative. That is the opposite of the “risky, narrow, precise predictions that are falsifiable” he demanded of others in February.</p>
+<p>At the same time, his practical forecast for AI is generous. He explains why AI is so good at code and math: plenty of data and easy verification, since code has to compile and pass tests. So in May he said that in verifiable domains and on already-solved problems the models will keep winning, and he does not see where that stops. What he reserves for humans is the territory nobody can score automatically.</p>
+
+<h2>How the claims fit together</h2>
+<p>Joined up, the four threads form one chain. AI makes code leverage universal, so value moves to judgment, taste, verification and accountability; those are exactly what he believes AI cannot do, for a Deutschian reason, that humans create explanations and machines extrapolate; and so he stays optimistic about jobs. In May 2026 he said pessimism is easier than optimism because optimism requires creativity: it is easy to see which jobs will vanish and hard to imagine the next ones. The judgment link connects to <a href="naval-judgment-topic11.en.html">Judgment and Decision-Making</a>.</p>
+<p>The weakest link is agency. In February 2026 he said the thing that most distinguishes entrepreneurs is extreme agency, and AI, having no desires of its own, cannot do an entrepreneur’s job. In June his guest Max Hodak said the returns to humans would shift to 70% agency, 30% intelligence; Naval took the other side and said 99% intelligence, 1% agency, because agents will exercise the agency. The two uses of the word differ, setting direction versus carrying it out, but the words he uses to fence off human territory are one by one being handed to machines by him. Remember too the motive discount from <a href="naval-who-topic9.en.html">Before You Read Him: Four Discounts</a>: when he says pure software is uninvestable and the money should go to hardware and models, his own new company, Impossible, does hardware, software and AI.</p>
+
+<h2>Limits</h2>
+<div class="claim">
+<p class="said">“A programmer with a fleet of AIs is, call it 5-10x more productive than they used to be.” — February 2026, A Motorcycle for the Mind</p>
+<p class="verdict">Insufficient evidence</p>
+<p>In METR’s 2025 randomized trial, 16 experienced open-source developers took 19% longer with AI, yet afterward believed they had been 20% faster. A February 2026 follow-up estimated roughly 18% less time for returning developers, but METR itself calls that data unreliable because developers who will not work without AI stopped enrolling; the true speedup may be larger, by an unmeasured amount. Today 5–10x rests on self-reports, the least reliable kind of evidence.</p>
+</div>
+<div class="claim">
+<p class="said">“Junior engineers basically got a promotion to senior engineer, and junior engineering got taken over by agents.” — May 2026, Vibe Coding Hardware; in June he added that higher productivity means hiring more people</p>
+<p class="verdict">Supported, but overstated</p>
+<p>Brynjolfsson and colleagues at Stanford, using ADP payroll data through June 2026, find employment of 22–25-year-olds in AI-exposed occupations 19% below where it would be had it kept pace with less-exposed peers, with no comparable gap for experienced workers, mainly through reduced hiring rather than layoffs. The work did move to agents, but the “promotion” went only to people already in the seats; the next cohort was not hired. The authors stress these are early descriptive signals, not causal estimates.</p>
+</div>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Software engineering · Brooks, No Silver Bullet</b>: In 1986 Fred Brooks split software’s difficulty into accidental complexity, from tools, languages and environments, and essential complexity, deciding what to build and how to specify it. Naval says he stopped coding for twenty years because the activation energy of wiring services and learning new frameworks was too high: accidental complexity. He says the hardest part of vibe coding is knowing what you want: essential complexity. The match is that AI mainly removes the first kind; the mismatch is that Brooks predicted no single technology would bring a tenfold gain within a decade, and tenfold is exactly what Naval now claims.</li>
+<li><b>Psychology · flow</b>: Csikszentmihalyi’s flow needs challenge matched to skill and immediate feedback. Naval describes vibe coding as an unbounded video game, always at the edge of your ability, with real-world rewards, which ticks off flow’s conditions almost one by one. The difference is that flow theory treats it as a good experience, while Naval warns that obsessions come in good and bad kinds and only the intellectual ones should be fed.</li>
+<li><b>Economics · the Jevons paradox</b>: In the 19th century Jevons observed that as steam engines burned coal more efficiently, Britain’s total coal use rose. Naval and his guests expect cheaper code to mean more software and more small teams. The likeness is that a falling price pries demand loose; the difference is that Jevons was about totals and says nothing about who gets the new work.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Naval, speaking about AI in February 2026, explicitly asked listeners to read his words by their date.</li>
+<li>Naval said in 2019 that coding is a superpower because programmers speak the language of the robot armies, which then understood only precise code.</li>
+<li>In 2025 Naval still held that large models do not create, write badly and are wrong one time in ten, and called AI the ultimate leverage information retrieval tool.</li>
+<li>After Claude Opus 4.5 arrived in December 2025, Naval, who had not coded in decades, took up vibe coding and is rebuilding Airchat alone, an app once built by eight or nine engineers.</li>
+<li>Naval rewrote his 2019 code-leverage idea as “vibe coding is the new product management, training models is the new coding”: English is now enough to use code leverage.</li>
+<li>Naval said in April 2026 that pure software is uninvestable, because anyone can hack it together and coding agents are improving too fast.</li>
+<li>For Naval, once anyone can write code, value moves to knowledge of the layer below, judgment about what to build, and accountability; humans are becoming verifiers.</li>
+<li>Naval’s rule is “waste tokens, save time” and skip prompt tricks, yet he also notes models that please the user, share groupthink and lose the plot when the context fills up.</li>
+<li>Naval follows Deutsch in holding that AI cannot create new explanations and that the human-plus-AI era will last, but his test has moved from “ask it why” to “out of distribution.”</li>
+<li>Brooks’s split between accidental and essential complexity helps explain Naval’s experience: AI mainly removes the accidental kind, such as wiring services and learning frameworks.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://nav.al/ai">A Motorcycle for the Mind</a> · <a href="https://nav.al/code">A Return to Code</a></span><span class="d">Naval and Nivi, February and April 2026. The main material on vibe coding, uninvestable software and AI creativity.</span></li>
+<li><span class="t"><a href="https://nav.al/industrial">The AI Industrial Revolution</a></span><span class="d">The June 2026 compilation with Rauch, Scholl and Hodak: “waste tokens,” “humans are becoming verifiers,” and the 99% intelligence exchange.</span></li>
+<li><span class="t"><a href="https://nav.al/product-media">Product and Media are New Leverage</a> · <a href="https://nav.al/agi">More Compute Power Doesn’t Produce AGI</a></span><span class="d">2019 and 2021: the starting points for code leverage and his view of AGI.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=3TafDme-GCc">Eric Jorgenson Megasode</a> · <a href="https://www.youtube.com/watch?v=KyfUysrNaco">Chris Williamson: 44 Harsh Truths</a></span><span class="d">Two long interviews recorded in 2025, before his turn.</span></li>
+<li><span class="t"><a href="https://arxiv.org/abs/2507.09089">Becker et al., 2025</a> · <a href="https://metr.org/blog/2026-02-24-uplift-update/">METR, February 2026 update</a></span><span class="d">Basis for the first limit.</span></li>
+<li><span class="t"><a href="https://digitaleconomy.stanford.edu/publications/canaries-in-the-coal-mine/">Brynjolfsson, Chandar &amp; Chen, Canaries in the Coal Mine? (revised August 2026)</a></span><span class="d">Basis for the second limit.</span></li>
+</ul>
+<footer>Naval Series · his aphorisms, put back where they were said · written 2026-10-17</footer>
+</div>
+</body></html>
