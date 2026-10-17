@@ -85,8 +85,12 @@ index 最下面、「Ethan Evans 专题」之后是「Naval 专题」分区（`d
    起点：他谈冥想、ego、Krishnamurti、non-duality、佛学的段落（Joe Rogan、Knowledge Project 等访谈）。这一篇最贴近读者的深度兴趣，越界可以写得深一些。
 6. **naval-learning · 读书与学习**
    起点：Almanack 里讲阅读与学习的部分。关键词：read what you love、foundations（数学、科学、说服力）、learning to learn。
-7. **naval-life · 长期游戏：健康、关系与人生选择**
+7. **naval-deutsch · 借来的世界观：Deutsch、好解释与无穷的开始**
+   起点：2021 年与 Brett Hall 逐章读《The Beginning of Infinity》（`infinity.md` / `infinity-2.md` 合订本及同期片段）、`david-deutsch`、`david-deutsch-2`、`deutsch-files-i`–`iv`。关键词：good explanations、optimism、「problems are soluble」、error correction、fallibilism。**这一篇的重心是分清谁的话**：哪些是 Deutsch 本人在节目里说的，哪些是 Naval 的转述，Naval 取了哪一层、拿去用在哪里（致富、政治、AI），用得准不准。Deutsch 的观点在学界是什么位置（Popper 一脉、多世界诠释）照 `CLAUDE.md` 2b 交代清楚。
+8. **naval-life · 长期游戏：健康、关系与人生选择**
    起点：long-term games with long-term people、健康与运动、家庭、退休的定义。
+9. **naval-ai · AI 时代的 Naval：回到写代码**
+   起点：2026 年 AI 系列（`ai`、`code`、`over`、`sell`、`tokens`、`hardware`、`regulatory`、`industrial`、`future`）、2025 `in-the-arena` 里讲 AI 的部分、2025–2026 YouTube 上的两期长节目。关键词：vibe coding、「waste tokens, save time」、AI 作为新的无需许可的杠杆。重点看两条线：他 2019 年「代码和媒体是杠杆」的说法在 AI 时代被他怎么改写；他对 AI 的判断和他接受的 Deutsch 式「AGI 必须能创造解释」是否一致。**这一篇时效性最强**，他的预测不判对错，只交代说的时间和之后的进展，每个判断标日期。
 
 ## 素材清单
 
