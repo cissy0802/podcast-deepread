@@ -12,7 +12,7 @@ BigCat 想**系统地读他**：按主题理清他关于创业、技术押注、
 
 ## 和 NAVAL.md 不一样的地方
 
-- **素材**（私有仓 `../podcast-transcripts/`）：**访谈和演讲转写**（YouTube ASR，轮次不带名字）`transcripts/jensen-*.txt`：Joe Rogan #2422、Lex Fridman #494、Cleo Abram、Stanford GSB View From The Top、Stanford eCorner（早年）、Hoover「Only in America」、Stripe Sessions（与 Patrick Collison）、BG2 Ep17（2024）与 BG2 2025、Ezra Klein、Sequoia、加州理工 2024 毕业演讲、卡内基梅隆 2026 毕业演讲；外加 `TOPICS.md` 里本来就有的两期 `nvidia-ceo-jensen-huang`（Acquired）和 `jensen-huang-will-nvidia-s-moat`（Dwarkesh）。头部有 upload_date，年份以它为准。
+- **素材**（私有仓 `../podcast-transcripts/`）：**访谈和演讲转写**（YouTube ASR，轮次不带名字）`transcripts/jensen-*.txt`：Joe Rogan #2422、Lex Fridman #494、Cleo Abram、Stanford GSB View From The Top、SIEPR 经济峰会主题演讲（2024，`jensen-siepr-2024`）、Stanford eCorner（早年）、Hoover「Only in America」、Stripe Sessions（与 Patrick Collison）、BG2 Ep17（2024）与 BG2 2025、Ezra Klein、Sequoia、加州理工 2024 毕业演讲、卡内基梅隆 2026 毕业演讲；外加 `TOPICS.md` 里本来就有的两期 `nvidia-ceo-jensen-huang`（Acquired）和 `jensen-huang-will-nvidia-s-moat`（Dwarkesh）。头部有 upload_date，年份以它为准。
   - Acquired / Dwarkesh 那两期将来会有单期精读页（由主引擎按 `TOPICS.md` 写）。本专题可以用它们的转写，但**不复述成单期摘要**；那两页若已存在（`ls *jensen*-pod*.html nvidia-ceo-*-pod*.html`），在正文里链接过去。
 - **说话人**：Rogan、Lex、BG2（两位主持人）、Ezra Klein 都会长篇插话。只把黄仁勋本人说的算在他头上。毕业演讲是单人，最好引。
 - **他是在卖东西。** 他讲「AI 工厂」「token 经济」「每个国家都要主权 AI」时，也是在讲 NVIDIA 的下一个市场。「边界」要拿他的说法对照公开数据（NVIDIA 财报和 10-K 的营收结构、客户集中度、资本开支数据、独立研究），不替他背书，也不因为他是卖家就一概否定。
@@ -35,7 +35,7 @@ BigCat 想**系统地读他**：按主题理清他关于创业、技术押注、
 4. **jensen-management · 扁平组织：几十个直接汇报、不做一对一、T5T**
    起点：他的直接汇报人数、不开一对一、「在公开场合推理」、Top 5 Things 邮件、以使命而非组织架构做事。看这套做法依赖什么前提（他本人、公司规模、文化），换一家公司还成不成立。
 5. **jensen-pain · 痛苦、品格与他给年轻人的话**
-   起点：Stanford GSB 那句「祝你经历足够多的痛苦和磨难」、加州理工和卡内基梅隆的毕业演讲、他对「期望低」与韧性的说法。这一篇最容易写成鸡汤，要还原他的论证，并找心理学研究对照（韧性、逆境与成就的关系）。
+   起点：「祝你经历足够多的痛苦和磨难」那句（原话在 2024 年 3 月的 SIEPR 经济峰会，常被误记为 Stanford GSB）、加州理工和卡内基梅隆的毕业演讲、他对「期望低」与韧性的说法。这一篇最容易写成鸡汤，要还原他的论证，并找心理学研究对照（韧性、逆境与成就的关系）。
 6. **jensen-ai-factory · AI 工厂与 token：他眼里的计算革命**
    起点：「数据中心就是 AI 工厂」「token 是新的商品」、推理需求、规模定律、从卖芯片到卖整机柜和整座数据中心、主权 AI。读者是行家：讲清他的论证链，再用财报和独立数据看哪一环已被验证。
 7. **jensen-moat · 护城河：全栈、供应链与竞争**
