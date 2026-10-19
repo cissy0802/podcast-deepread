@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Peterman Pod × Philip Su — 自请从 E9 降回 E7 的人，回头算工时这笔账</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="openai-meta-distinguished-engineer-working-zuck-pod10.en.html">English →</a></div>
+<header>
+<div class="kicker">The Peterman Pod · 2025</div>
+<h1>自请从 E9 降回 E7 的人，回头算工时这笔账</h1>
+<p class="sub">Philip Su × Ryan Peterman ·《OpenAI &amp; Meta Distinguished Engineer (IC9): Working With Zuck, Carmack &amp; Career Growth | Philip Su》</p>
+</header>
+<div class="meta-card"><b>节目</b> The Peterman Pod · 2025-05-23 · <b>时长</b> 81 分钟 · <b>嘉宾</b> Philip Su · <b>主持</b> Ryan Peterman · <b>原片</b> <a href="https://www.youtube.com/watch?v=v2JxdjTi_1I">YouTube</a></div>
+
+<h2>那一段</h2>
+<p>节目快结束时，Philip Su 讲了一件他说多数人都会猜错结局的往事。那是他在微软的第一年，办公室里放着睡袋，常常睡在公司。未婚妻从马里兰飞到西雅图来看他，他给她安排的行程是这样的：每天晚上十一点下班，两人去 Denny's 吃一顿夜宵，吃到午夜，然后他回去接着写代码。</p>
+<blockquote><span class="en">I am very fortunate and lucky that she is my wife now. But anybody I tell that story to, you could bet nine out of 10 times that's the story that ends with that's how I got the engagement ring back</span><span class="zh">我很幸运，她现在是我太太。可我跟谁讲这个故事，十有八九，对方都以为它的结尾是「我就这样被退了戒指」。</span><cite>— Philip Su · <a class="ts" href="https://www.youtube.com/watch?v=v2JxdjTi_1I&amp;t=4567s">[01:16:07]</a></cite></blockquote>
+<p>他用一个比喻收尾：有的芦苇会弯，有的会断，而断了的修不回来。当年他把一样东西弯到了大多数人早就折断的程度，自己却浑然不觉。这一期八十分钟，表面上在聊职级、扎克伯格和 Carmack，其实一直在绕着这个问题转：<strong>拼命到底换来了什么，又押上了什么。</strong></p>
+
+<h2>谁在聊，和那一年</h2>
+<p>Su 在微软待了十二年，三十岁左右就做到了相当于 Meta E7 的级别。他说，这十二年里微软的股价只涨了 15 美分。三十三岁他加入 Facebook，是西雅图办公室招的第二个人，也是那里头七个月里年纪最大的员工，当时全公司的中位年龄是 27 岁。后来他带十二个人去伦敦创建工程办公室，几年里长到四五百人，他也因此升到 E9；再后来他转去 Oculus 写代码，主动要求降回 E7。2018 年离开时，他自掏腰包请全公司喝了一天咖啡，主持人说账单超过两万三千美元。</p>
+<p>主持人 Ryan Peterman 2018 年加入 Facebook 时还是应届生，那天的免费咖啡他也喝到了。他的节目专访资深工程师，最爱问升职、管理和「给年轻的自己什么建议」。这一期录在 2025 年春天。离开 Facebook 后，Su 做过一个由盖茨基金会资助、给疟疾快速检测写免费软件的非营利项目，也去亚马逊的旗舰仓库干过一整个购物旺季，做成了播客迷你剧《Peak Salvation》。AI 起势时，他只投了一家公司，加入了当时大约只有 120 名工程师的 OpenAI。</p>
+
+<h2>术语表 · Glossary</h2>
+<div class="glossary"><ul>
+<li><b>Meta 的工程师职级</b>：E5 是高级工程师，E6 是 Staff，E7 是 Senior Staff，E9 是 Distinguished Engineer，比 Staff 高三级。Su 说，在公司内部，E9 的薪酬大致和副总裁相当。</li>
+<li><b>单向门（one-way door）</b>：亚马逊的说法，指走过去就很难回头的决定。</li>
+</ul></div>
+
+<h2>这期聊透</h2>
+<h3>一、工时这笔账：回报递减，但仍有回报</h3>
+<p>Peterman 问 Su 在微软升得快靠什么。Su 给了三样东西：运气、天赋和苦干。前两样他说得很直白，人不是想当宇航员就能当上，他自己永远成不了好的篮球运动员。能自己控制的只有第三样。他那几年设了凌晨三点的闹钟，说是照着「达·芬奇的理论」睡四小时、醒来写代码、再睡四小时。</p>
+<p>Peterman 追问：如果目标是不计代价地成长，这样做真的最优吗？Su 没有替四十小时工作制说话。他认为每小时的效率确实会下降，但多数人要熬很久，曲线才会掉到负值。他举外科住院医生为例：没人愿意让值班第 34 个小时的医生给自己开刀，可人人都想要一个见过各种病例的外科医生，而把六年的经验压进四年，最快的办法就是多上手术台。</p>
+<blockquote><span class="en">So, there is diminishing returns, but there are still returns.</span><span class="zh">所以，回报是递减的，但仍然有回报。</span><cite>— Philip Su · <a class="ts" href="https://www.youtube.com/watch?v=v2JxdjTi_1I&amp;t=265s">[00:04:25]</a></cite></blockquote>
+<p>这条线的另一半，他留到了最后才讲。他在三十岁左右就到了 E7，并认定这可能就是自己的终点级别，结果陷入了一段相当严重的抑郁：目标清楚的时候，生活充满意义；真追上了，就不知道接下来该干什么。他说自己是「追上了汽车的狗」，又像童星，问题在于余下的四十年怎么过。所以他给年轻自己的建议有两条。一是先想清楚自己到底要什么，他引用 Roy Disney 的话说，价值观清楚了，决定就容易了。二是 30 岁到 E7 和 38 岁到 E7，放在整段职业生涯里没有区别，38 岁之后还有三十年要工作。</p>
+<p>体力会退，那什么会长？他的回答是判断力。</p>
+<blockquote><span class="en">When I was young, I would outrun everybody, but I was running serpentine basically, right?</span><span class="zh">年轻时我跑得比谁都快，可基本上是在跑蛇形。</span><cite>— Philip Su · <a class="ts" href="https://www.youtube.com/watch?v=v2JxdjTi_1I&amp;t=3831s">[01:03:51]</a></cite></blockquote>
+<p>老手跑的是直线，因为他能早早嗅出一件事走错了方向。Su 举了一个朋友的例子：那位朋友所在的微软项目，副总裁每周亲自来开 bug 分拣会，好赶上发布日期。</p>
+<blockquote><span class="en">look, if your VP is in triage meetings on a weekly basis so that you can ship on time, your project is nowhere near shipping on time.</span><span class="zh">听着，如果你们的副总裁每周都来开分拣会，就为了按时发布，那这个项目离按时发布还差得远。</span><cite>— Philip Su · <a class="ts" href="https://www.youtube.com/watch?v=v2JxdjTi_1I&amp;t=3892s">[01:04:52]</a></cite></blockquote>
+<p>另一样会长的东西，是愿意让全队朝一个差了两三度的方向一起使劲。年轻时他觉得偏两度就是错；现在他认为，整队朝着九成八正确的方向一起拉，胜过一半人拉着百分之百正确的方向、另一半人还在争论。他用亚马逊的「不同意，但执行」（disagree and commit）来概括这一点。</p>
+
+<h3>二、级别不是一张清单</h3>
+<p>Su 解释职级时用的尺子是：你能单枪匹马保证交付多大、多长的事。他先声明自己的数据已经是十五年前的了，然后给了大致的刻度。E5、E6 能稳定影响十到十五个人的工作；E7 大约影响五十人，交给他一个目标，六个月不管不问，回来时事情应该已经做完了。</p>
+<p>到了 E8 以上，量变就让位给质变。他记得 Facebook 第一次讨论 E9 时，公司已有几千人，候选的工程师只有三位，而且三个人的长处完全不同，没法给后来的人列一张「做完这四件事就升 E9」的清单。他拿大学终身教职作比方：说到底，是别的教授都觉得你是教授，你才算是教授。</p>
+<blockquote><span class="en">a lot of it is would other E8 think you are an E8?</span><span class="zh">很大程度上就看一件事：别的 E8 会不会觉得你是 E8？</span><cite>— Philip Su · <a class="ts" href="https://www.youtube.com/watch?v=v2JxdjTi_1I&amp;t=1537s">[00:25:37]</a></cite></blockquote>
+<p>这把尺子也解释了他为什么会自请降级。在伦敦，让他升到 E9 的是一些看不见的判断。比如他提前十八个月测算下一年 H-1B 签证的预期量，据此去说服总部调整伦敦当年的实习生名额。等他回去当程序员，这些本事全用不上。升 E9 时他就向当时的 CTO Schrep 担心过这一天，Schrep 说等那天来了再说。那天真来了，他觉得在一个能干好的级别上干得好，比在高一级的位置上勉强踩水舒服得多。他也提醒，降级后要管住自己，别再对站点怎么运营发表意见，要支持新的负责人。</p>
+<p>他把这种进退归结为一个形状：菱形。入行一两年时，从工程师转产品经理很容易；到 E5 前后最难，因为技能已经分了岔；再往上，好的 E8 和好的总监做的事情又重新汇合，都要有愿景、懂业务、能带人。所以他在管理和一线之间来回换了至少六次，还有四次，自己以前的经理反过来向他汇报。至于要不要转管理，他的检验标准只有一个问题：</p>
+<blockquote><span class="en">Would you want to work for you? That's the key question.</span><span class="zh">你愿意给你自己打工吗？这才是关键问题。</span><cite>— Philip Su · <a class="ts" href="https://www.youtube.com/watch?v=v2JxdjTi_1I&amp;t=687s">[00:11:27]</a></cite></blockquote>
+<p>他对自己也照用这把尺。他承认，二十四岁的自己他不会愿意为之工作；那一年他不得不开除一位四十岁、比他高两级的下属。直到最后一年当经理，他仍然不擅长给负面反馈，总想把话说轻一点，结果对方听不出问题有多严重。</p>
+
+<h3>三、通才的价值跟着公司规模变</h3>
+<p>Su 说自己是通才。他加入 Facebook 时，全公司只有约 500 名工程师，他和另外两个人用大约六个月就从零做出了视频通话功能，他还顺手帮忙谈 Skype 的合同，招聘并管理测试外包。八年后公司有了几千名工程师，他觉得自己成了「一个很普通的程序员」。这是他 2018 年离开的原因之一。</p>
+<p>他的解释用的是「量化效应」（quantization）。小公司没法雇一个每周只干三小时的公关，只能找个擅长沟通的产品经理兼着，所以通才可以被切成好几份来用。公司大到每一份活都值得一个全职岗位时，通才只有一小部分本事用得上。他因此劝新人别太早押宝在一门专长上，还拿 COBOL 程序员作比方：那门技术哪天不用了，你就只能盼着再来一次千年虫。</p>
+<p>挑 OpenAI 用的也是同一种规模思维。</p>
+<blockquote><span class="en">What I learned from working at Facebook is I would much rather join the market leader or nobody at all.</span><span class="zh">在 Facebook 我学到的是：要么加入领头的那家，要么谁也不加入。</span><cite>— Philip Su · <a class="ts" href="https://www.youtube.com/watch?v=v2JxdjTi_1I&amp;t=3066s">[00:51:06]</a></cite></blockquote>
+<p>他的理由是，领头的公司输得起，可以拿几次大失败去换几次大胆的尝试；老二只能先把老大的功能清单全部补齐，再加一个差异点，比如 Google+ 的「圈子」，整个排期都由老大决定。</p>
+
+<h2>说法核查</h2>
+<div class="claim">
+<p class="said">Su 说，每周干 50 到 60 小时，总产出多半更多，而且对很多人来说，效率曲线要熬很久才会转为负值。<a class="ts" href="https://www.youtube.com/watch?v=v2JxdjTi_1I&amp;t=265s">[00:04:25]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>经济学家 Pencavel 重新分析了一战期间英国军工厂（以女工为主）的记录：周工时在 49 小时以下时，产出和工时成正比，之后增长放缓，约 63 小时到顶，干 70 小时和 56 小时的产出相差无几。50 到 60 小时确实还落在上涨的那一段，但他说的「很久」其实只到 63 小时左右，而且这是流水线体力活的数据。</p>
+</div>
+<div class="claim">
+<p class="said">Su 说，外科住院医生至今还要值 36 小时的班。<a class="ts" href="https://www.youtube.com/watch?v=v2JxdjTi_1I&amp;t=265s">[00:04:25]</a></p>
+<p class="verdict">与证据相反</p>
+<p>至少在美国不是这样。负责住院医师培训认证的 ACGME，在现行的《共同项目要求》里规定，连续排班不得超过 24 小时，另外最多 4 小时只能用于交接和教学，不得接收新病人，每周不超过 80 小时。照这个规定，36 小时的班在美国已经不被允许了。</p>
+</div>
+<div class="claim">
+<p class="said">Su 说，老二的排期由老大决定，所以要么加入领头的那家，要么谁也不加入。<a class="ts" href="https://www.youtube.com/watch?v=v2JxdjTi_1I&amp;t=3066s">[00:51:06]</a></p>
+<p class="verdict">这是观点，不是事实</p>
+<p>他举的 Google+ 确实失败了：Google 在 2018 年自己承认，消费版的使用率很低，90% 的会话不到五秒，随后宣布关闭。可 Facebook 本身就是反例：2005 到 2009 年，世界上最大的社交网站是 <a href="https://en.wikipedia.org/wiki/Myspace">Myspace</a>，Facebook 是从老二追上去的。</p>
+</div>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>分布式系统 · Paxos 的「领导者」</b>：基本的 Paxos 里，如果两个提议者互相抢着推进编号，可能谁也达不成决议，系统活锁。Lamport 在《Paxos Made Simple》里的办法是选出一位唯一的提议者，由它来推进。Su 说的「九成八正确也要一起拉」是同一个取舍：先保证有进展，再谈最优。不像的是，Paxos 里任何一个被选定的值都同样正确，而团队的方向确实有好坏之分，所以「不同意，但执行」之前，异议要先充分说出来。</li>
+<li><b>计算机 · 装箱问题（bin packing）</b>：Su 的量化效应就是装箱：小公司的岗位是一堆零碎的活，只有能切开的物品（通才）才装得满；大公司的每份活本身就占满一个箱子，可切分反而没了价值。</li>
+<li><b>生态学 · 泛化种与特化种</b>：生态学里，特化种在稳定环境中占优，泛化种在多变环境中更能存活。Su 的 COBOL 警告说的是同一件事：专长押在一个会消失的生态位上，风险由个人承担。</li>
+<li><b>佛学 · 有爱（bhava-taṇhā）</b>：佛教把渴爱分成三种，其中「有爱」是对「成为某种存在」的渴求。Su 追上 E7 后的空虚很像这种结构：他渴求的是「成为」，一旦已经是了，渴求没了着落，苦却没有结束。不像的是，佛教的解法是看清渴爱本身，Su 的解法是事先想清楚自己要什么。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Philip Su 在微软第一年睡在办公室，未婚妻来西雅图时，他每天只能在晚上十一点陪她吃一顿 Denny's 夜宵。</li>
+<li>Philip Su 认为职业成长快只靠三样东西：运气、天赋和苦干，其中能自己控制的只有苦干。</li>
+<li>Philip Su 的工时观是：多干的每一小时回报都在递减，但只要没到负值，就仍然有回报。</li>
+<li>Philip Su 三十岁左右到了 E7，把它当成终点级别，随后陷入抑郁，像一只追上了汽车的狗。</li>
+<li>Philip Su 认为资深的人靠判断力「跑直线」，例如副总裁每周来开 bug 分拣会，就说明项目远远赶不上发布。</li>
+<li>Philip Su 用影响范围衡量职级：E7 大约影响五十人，能在无人过问的情况下独立交付六个月的项目。</li>
+<li>Philip Su 认为 E8 以上的晋升像大学终身教职，关键在于同级别的人是否认可你。</li>
+<li>Philip Su 从伦敦站点负责人转回 Oculus 写代码后，主动要求从 E9 降回 E7，并且约束自己不再插手站点事务。</li>
+<li>Philip Su 判断一个人能否带队的标准是：如果你是下属，你愿不愿意为自己工作。</li>
+<li>Philip Su 用「量化效应」解释通才在小公司更值钱，这在结构上就是计算机里的装箱问题。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=v2JxdjTi_1I">OpenAI &amp; Meta Distinguished Engineer (IC9): Working With Zuck, Carmack &amp; Career Growth | Philip Su</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>
+<li><span class="t"><a href="https://docs.iza.org/dp8129.pdf">John Pencavel, The Productivity of Working Hours (IZA DP 8129, 2014)</a></span><span class="d">第一条核查的依据，后刊于 Economic Journal（2015）。</span></li>
+<li><span class="t"><a href="https://www.acgme.org/globalassets/pfassets/programrequirements/2026-prs/cprresidency_2026.pdf">ACGME Common Program Requirements (Residency), 2026</a></span><span class="d">第二条核查的依据，见工作时长一节。</span></li>
+<li><span class="t"><a href="https://blog.google/technology/safety-security/project-strobe/">Google: Project Strobe（2018-10-08）</a></span><span class="d">第三条核查里 Google+ 使用率与关停的依据。</span></li>
+</ul>
+<footer>播客精读 · 一期长播客，挑出主线讲透 · 写于 2026-10-19</footer>
+</div>
+</body></html>
