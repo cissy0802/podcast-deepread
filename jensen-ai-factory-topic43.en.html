@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jensen Huang Series · AI Factories and Tokens</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="jensen-ai-factory-topic43.html">中文 →</a></div>
+<header>
+<div class="kicker">Jensen Huang Series · No. 6</div>
+<h1>The data center becomes a factory, and its product is the token</h1>
+<p class="sub">Jensen Huang’s argument for a computing revolution, and which links of it the books have already confirmed</p>
+</header>
+<div class="meta-card"><b>Topic</b> AI factories and tokens · <b>Sources</b> 8 interview and talk transcripts (2024–2026), NVIDIA’s fiscal 2026 10-K and Q4 release, Amazon and Meta depreciation disclosures, Epoch AI inference-price data · <b>Interviews</b> SIEPR Economic Summit (2024) · Stripe Sessions (2024) · BG2 (2024, 2025) · Lex Fridman #494 (2026) · Dwarkesh Patel (2026) · Sequoia (2026) · Ezra Klein (2026)</div>
+<h2>His claims</h2>
+<p>The line Jensen Huang has repeated most in recent years is that data centers are “AI factories” and the tokens models emit are a new commodity. Heard often enough it sounds like a slogan, but taken apart it is a complete chain of argument. The way we compute has changed, so the purpose of the computer has changed; demand will therefore climb to an unprecedented scale; what NVIDIA sells has grown from a chip into an entire factory; and in the end every country will want one. This page walks the chain, then checks against filings and independent data which links already hold.</p>
+<h3>1. The computer goes from warehouse to factory</h3>
+<p>His starting point is a claim about computing itself. At Stanford’s SIEPR Economic Summit in March 2024, asked how many fabs the future would need, he said he is bad at forecasting but good at reasoning from first principles. Almost all content today is “pre-recorded”: someone writes it and saves it to a file, and the computer retrieves it with a recommender. Future AI understands your context and generates every answer on the spot. Two years later, with Ezra Klein, with Lex Fridman and at a Sequoia event, he was drawing the same contrast in nearly the same words.</p>
+<p>The second step follows. A storage system is a warehouse, a generative system is a factory, and the two are very different businesses.</p>
+<blockquote><span class="en">We're now building factories. Warehouses don't make much money.</span><cite>— Jensen Huang · Lex Fridman #494, 2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=5233s">[01:27:13]</a></cite></blockquote>
+<p>He told Lex the computer has changed not only how it works but what it is for: it now generates revenue directly. A factory needs a product, and his product is the token. At Stripe Sessions in 2024 he gave Patrick Collison an industrial-revolution analogy:</p>
+<blockquote><span class="en">In this new Industrial Revolution, electrons come in and floating point numbers come out.</span><cite>— Jensen Huang · Stripe Sessions, 2024 <a class="ts" href="https://www.youtube.com/watch?v=8Pfa8kPjUio&amp;t=2280s">[00:38:00]</a></cite></blockquote>
+<p>The last industrial revolution took atoms in and sent electrons out, and electricity came to be priced by the kilowatt-hour; tokens, he said, are starting to be priced in millions per dollar. At Sequoia in 2026 he called NVIDIA’s machine the dynamo of this age, adding that Siemens built the dynamo “300 years ago” (it was 1866). To Dwarkesh Patel he compressed the company into one line: the input is electrons, the output is tokens, and NVIDIA is in the middle.</p>
+<p>The commodity also comes in grades. He told Lex tokens are segmenting like iPhones, free, premium and several tiers between, and that someone paying $1,000 per million tokens is “not if, it’s only when.” To Dwarkesh he used this to explain bringing in Groq: fast-response tokens mean lower throughput, but a high enough price per token makes up for it, and that market did not exist a few years ago.</p>
+<h3>2. Where demand comes from: the scaling laws keep multiplying</h3>
+<p>How big the factory gets depends on demand, and his demand case rests on scaling laws whose number keeps growing. At BG2 in October 2024 he said scaling now showed up in post-training and inference as well as pre-training. Back at BG2 in September 2025 he said there are “three scaling laws” and admitted he had underestimated inference a year earlier. With Lex in March 2026 he was at four, adding agentic scaling, where agents spawn teams of sub-agents. The four form a loop, with what agents learn flowing back into pre-training data, so in the end:</p>
+<blockquote><span class="en">Intelligence is going to scale by one thing and it's compute.</span><cite>— Jensen Huang · Lex Fridman #494, 2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=1692s">[00:28:12]</a></cite></blockquote>
+<p>Inference carries the most weight. People once assumed inference was easy and inference chips would be cheap little parts; he says inference is thinking, and thinking is much harder than reading. At BG2 in 2025 he split demand into two multiplying exponentials: the number of users, and the compute per use, which rises because models now think before they answer. With Ezra in 2026 he called a billion-fold increase in compute demand a reasonable framework.</p>
+<p>Yet the same man has poured cold water on scaling laws. When Ezra credited early predictions that scaling would work, Huang corrected him:</p>
+<blockquote><span class="en">It is not true that if you just keep training these models they'll get better.</span><cite>— Jensen Huang · The Ezra Klein Show, 2026 <a class="ts" href="https://www.youtube.com/watch?v=HjurAWAr_nY&amp;t=3621s">[01:00:21]</a></cite></blockquote>
+<p>His point is that a second law was needed precisely because more pre-training alone was not enough. That cuts both ways for his own demand case: whenever one law slows, a new one takes over, which makes “demand will keep rising” hard to falsify.</p>
+<p>The other half of demand is price. At SIEPR in 2024 he said people ask whether cutting the cost of computing a million-fold means customers buy less, and that the opposite happens. Later, answering the fab question, he put efficiency and demand side by side:</p>
+<blockquote><span class="en">In the meantime, I'm improving computing by a million times every 10 years while demand is going up by a trillion times.</span><cite>— Jensen Huang · SIEPR Economic Summit, 2024 <a class="ts" href="https://www.youtube.com/watch?v=cEg8cOx7UZk&amp;t=2645s">[00:44:05]</a></cite></blockquote>
+<h3>3. What he sells grows from a chip into a factory</h3>
+<p>If the product is the token, the computer no longer ends at the chip. At BG2 in 2024 he said it plainly:</p>
+<blockquote><span class="en">I've said before, the data center is now the unit of computing.</span><cite>— Jensen Huang · BG2 Ep17, 2024 <a class="ts" href="https://www.youtube.com/watch?v=bUrCR4jQQg8&amp;t=1293s">[00:21:33]</a></cite></blockquote>
+<p>That unit grew fast. Presenting the H100 at SIEPR in March 2024, he called it a “chip” and said it weighed 70 pounds, had 35,000 parts and cost about a quarter of a million dollars, plainly no longer a bare die. At Sequoia in June 2026 his unit was the rack: 72 chips, two tons, 1.5 million parts, about $4 million. To Lex he traced the unit from GPU to computer to cluster to the whole AI factory, and said that when he now thinks of “a computer,” he pictures a gigawatt-scale monster wired to the grid.</p>
+<p>He gives two reasons. First, Moore’s law has slowed, single chips barely get faster, so CPU, GPU, networking chips, switches and software must be redesigned together, which he calls extreme co-design. Second, factories are power-limited, so tokens per watt directly set how much a factory earns. At BG2 he said NVLink 72 took Hopper to Blackwell up 30x in one year, something no Moore’s law could deliver. The same logic underlies his claim that rivals’ chips are not cheap enough even if free, which belongs to “The Moat.”</p>
+<p>His numbers are worth lining up. How much has computing improved in ten years? At SIEPR in March 2024 he said costs fell a million-fold; at BG2 that October, 100,000-fold (against 100x for Moore’s law); with Lex in 2026, a million-fold again. A tenfold gap is rhetoric in his telling. The gap on factory returns is bigger. A one-gigawatt factory costs about $50 billion, a figure he repeats consistently. What it yields is another matter: at Sequoia in June 2026 he said it “generates $300, $400 billion in intelligence” <a class="ts" href="https://www.youtube.com/watch?v=2UpQbeAZuqA&amp;t=1136s">[00:18:56]</a>; to Ezra that September, that it rents for $40 to $50 billion a year (noted in “Before Reading Him: Four Discounts”). One is output value as end users see it, the other the landlord’s rent, nearly eight times apart, and on stage he does not distinguish them.</p>
+<p>He has sized the whole market too. At BG2 in 2025 he said about $50 trillion of world GDP corresponds to human intellectual work; if AI augments $10 trillion of it at 50% gross margins, the world needs roughly $5 trillion a year of AI infrastructure, against a market of about $400 billion then.</p>
+<h3>4. Sovereign AI: every country needs its own factory</h3>
+<p>The last link is the buyer. At SIEPR in 2024, asked about geopolitical risk, he first said the US has every right to decide who can buy such products, then pivoted: in the past six to nine months every country had “awakened” to the need to control its own digital intelligence <a class="ts" href="https://www.youtube.com/watch?v=cEg8cOx7UZk&amp;t=3046s">[00:50:46]</a>. India, he said, cannot export its data for another country to turn into intelligence and import it back. His summary was candid: geopolitics limits opportunity in one place and creates enormous opportunity elsewhere. At BG2 in 2025, when the host compared AI to nuclear power in the 1940s, he replied:</p>
+<blockquote><span class="en">Nobody needs atomic bombs. Everybody needs AI.</span><cite>— Jensen Huang · BG2, 2025 <a class="ts" href="https://www.youtube.com/watch?v=pE6sw_E9Gh0&amp;t=3594s">[00:59:54]</a></cite></blockquote>
+<p>Countries should use OpenAI, Gemini, Grok and Anthropic, he went on, but also learn to build AI, because industrial, manufacturing and national-security models must be cultivated at home; like energy and communications, every country needs AI infrastructure. This link is now on the books. On the February 2026 earnings call NVIDIA’s CFO said sovereign AI more than tripled year over year <a href="https://www.fool.com/investing/2026/02/28/nvda-earnings-call-stock-q4-ceo-cfo/">to over $30 billion</a>, about a seventh of annual revenue, driven mainly by customers in Canada, France, the Netherlands, Singapore and the UK.</p>
+<h2>How the claims fit together</h2>
+<p>Joined up, the four parts form one chain: generative computing means every answer is computed fresh, those tokens turn the data center into a factory, scaling laws keep token demand rising, power limits force the whole factory to be co-designed and sold as a unit, and every country wants one. Some links already check out. NVIDIA’s fiscal 2026 <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm">10-K</a> shows Data Center revenue up 68%, with networking up 142%, far faster than compute at 59%. Gross margin fell from 75.0% to 71.1%, and of the two reasons the filing gives, one is an H20 inventory charge and the other is exactly the shift from Hopper HGX systems to Blackwell full-scale data center solutions. Selling the whole factory is real, and it costs margin. Token volume is rising too: in July 2025 Google <a href="https://blog.google/inside-google/message-ceo/alphabet-earnings-q2-2025/">said</a> its monthly tokens had doubled from 480 trillion to over 980 trillion in two months.</p>
+<p>The weakest link sits between tokens and revenue. He counts token output, but whoever pays must ultimately earn money from AI applications; he conceded to Ezra that supply will someday exceed demand, just not in the next two or three years. A second weak spot is two of his own arguments colliding. He uses “output per watt sets revenue” to show rivals’ chips are not worth having even free, but the same arithmetic applies to his own previous generation. If Blackwell yields 30 times Hopper’s tokens per watt, then in a power-limited factory Hopper too becomes “not cheap enough even if free,” which clashes head-on with his claim that the compute is durable; the Limits section below returns to this. The chain’s starting point is in “Betting on CUDA,” and the jobs side of his “AI augments world GDP” estimate is left to “Work, Risk and the Future.”</p>
+<h2>Limits</h2>
+<div class="claim">
+<p class="said">“Token cost is coming down an order of magnitude every year.” — to Lex Fridman, 2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=2297s">[00:38:17]</a></p>
+<p class="verdict">Supported</p>
+<p>Epoch AI’s March 2025 <a href="https://epoch.ai/data-insights/llm-inference-price-trends">data</a> show that the price of reaching a fixed capability fell 9x to 900x a year depending on benchmark and threshold; matching GPT-4 on GPQA Diamond got about 40x cheaper per year. Tenfold a year is conservative. But hardware is not the whole story, since smaller and better models account for much of it, and Epoch notes the steepest declines came in the latest year and may not persist.</p>
+</div>
+<div class="claim">
+<p class="said">NVIDIA compute is general-purpose and durable like an airplane, with a longer useful life, so it can become an asset class with the lowest cost of capital. — to Ezra Klein, 2026 <a class="ts" href="https://www.youtube.com/watch?v=HjurAWAr_nY&amp;t=4946s">[01:22:26]</a></p>
+<p class="verdict">Insufficient evidence</p>
+<p>The biggest buyers’ own books disagree. Amazon’s 2024 <a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm">10-K</a> cut the useful life of a subset of servers and networking equipment from six years to five, effective January 2025, citing the faster pace of AI and machine learning. That same month Meta extended certain servers and network assets to 5.5 years, lowering 2025 depreciation by about $2.9 billion. This GPU fleet has not finished a full life cycle; durability cannot be settled yet.</p>
+</div>
+<h2>Crossing Over · Cross-Disciplinary Connections</h2>
+<div class="crossx"><ul>
+<li><b>Economic history · The dynamo and the productivity paradox</b>: Huang reaches for the dynamo himself; economic historian Paul David’s 1990 paper “The Dynamo and the Computer” tells the other side of that analogy. Electric motors entered factories without lifting productivity for a long time, because plants first just swapped one big motor for the steam engine; gains came only when each machine got its own motor and floors and workflows were redesigned. AI factories may be similar: the bottleneck is not the dynamo but how soon users rework their processes. The difference is that today’s dynamo is replaced every year.</li>
+<li><b>Distributed systems · Warehouse-scale computers</b>: In 2009 Google’s Barroso and Hölzle argued for designing the whole data center as <a href="https://research.google/pubs/the-datacenter-as-a-computer-an-introduction-to-the-design-of-warehouse-scale-machines/">one “warehouse-scale computer.”</a> That is Huang’s “the data center is the unit of computing,” down to the word warehouse, which he uses for the unprofitable old computer. The difference is that Google’s warehouse serves itself, while NVIDIA sells whole warehouses to customers who each integrate differently.</li>
+<li><b>Biology · ATP</b>: Mitochondria convert energy from the electron transport chain into ATP, the one energy currency the cell spends on almost every task: electrons in, universal currency out. But every ATP molecule is identical, while Huang himself says tokens are tiering, from free to $1,000 per million. That makes “the token is a commodity” more a metaphor than a unit of measure like the kilowatt-hour.</li>
+</ul></div>
+<h2>Ten Takeaways</h2>
+<ol class="takeaways">
+<li>Jensen Huang argues computing is shifting from retrieving pre-recorded content to generating answers in context, the starting point of his AI factory case.</li>
+<li>Jensen Huang likens old data centers to warehouses and AI data centers to factories, because a factory’s output maps directly to revenue.</li>
+<li>Jensen Huang sums up NVIDIA as electrons in, tokens out, and predicts tokens will be priced by the unit like electricity.</li>
+<li>Jensen Huang says tokens are tiering like iPhones, and that $1,000 per million tokens is only a matter of time.</li>
+<li>Jensen Huang’s count of scaling laws keeps growing; by 2026 it was four: pre-training, post-training, test-time and agentic scaling.</li>
+<li>Jensen Huang splits inference demand into two multiplying exponentials, users and compute per use, and calls inference harder and bigger than training.</li>
+<li>Jensen Huang says the data center is now the unit of computing, as NVIDIA’s product grew from a $250,000 H100 to a $4 million rack.</li>
+<li>Jensen Huang puts a one-gigawatt AI factory at about $50 billion, but its yield at $300–400 billion at Sequoia and $40–50 billion a year in rent to Ezra Klein.</li>
+<li>Jensen Huang framed sovereign AI in 2024 as new opportunity beyond geopolitical limits, arguing every country needs its own AI infrastructure.</li>
+<li>Economic historian Paul David showed electric motors raised productivity only after factories were redesigned; AI factory returns may hinge on how fast users rework processes.</li>
+</ol>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=vif8NQcjVf0">Lex Fridman #494: Jensen Huang</a> · <a href="https://www.youtube.com/watch?v=HjurAWAr_nY">The Ezra Klein Show: Jensen Huang Thinks A.I. Alarmism Has Gone Too Far</a></span><span class="d">2026. Warehouse versus factory, four scaling laws, token tiers; the two statements checked under Limits.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=bUrCR4jQQg8">BG2 Ep17 (2024)</a> · <a href="https://www.youtube.com/watch?v=pE6sw_E9Gh0">BG2 (2025)</a> · <a href="https://www.youtube.com/watch?v=cEg8cOx7UZk">SIEPR Economic Summit keynote (2024)</a></span><span class="d">The unit of computing, three scaling laws, the $5 trillion estimate, and two versions of sovereign AI.</span></li>
+<li><span class="t"><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm">NVIDIA fiscal 2026 10-K</a> · <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026">Q4 results release</a></span><span class="d">Networking versus compute growth, and the gross margin change and its causes.</span></li>
+<li><span class="t"><a href="https://epoch.ai/data-insights/llm-inference-price-trends">Epoch AI: LLM inference prices</a> · <a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm">Amazon 2024 10-K</a> · <a href="https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx">Meta Q4 2024 results</a></span><span class="d">The basis for both verdicts under Limits.</span></li>
+</ul>
+<footer>Jensen Huang Series · reading his claims by theme · written 2026-10-19</footer>
+</div>
+</body></html>

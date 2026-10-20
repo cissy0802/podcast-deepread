@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>黄仁勋专题 · AI 工厂与 token</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="jensen-ai-factory-topic43.en.html">English →</a></div>
+<header>
+<div class="kicker">黄仁勋专题 · 第 6 篇</div>
+<h1>数据中心变成工厂，产品叫 token</h1>
+<p class="sub">黄仁勋的计算革命论证链，以及账本已经验证了其中哪几环</p>
+</header>
+<div class="meta-card"><b>主题</b> AI 工厂与 token · <b>材料</b> 访谈与演讲转写 8 份（2024–2026），NVIDIA 2026 财年 10-K 与四季度财报，亚马逊与 Meta 的折旧披露，Epoch AI 推理价格数据 · <b>访谈</b> SIEPR 经济峰会（2024）· Stripe Sessions（2024）· BG2（2024、2025）· Lex Fridman #494（2026）· Dwarkesh Patel（2026）· Sequoia（2026）· Ezra Klein（2026）</div>
+<h2>他的主张</h2>
+<p>黄仁勋这几年最常讲的一套话，是把数据中心叫作「AI 工厂」，把模型吐出来的 token 叫作一种新商品。听多了像口号，拆开看却是一条完整的论证链。计算的方式变了，计算机的用途跟着变了，需求会涨到前所未有的量级，NVIDIA 卖的东西从一块芯片变成一整座工厂，最后每个国家都得有一座。这一篇顺着这条链走一遍，再用财报和独立数据看哪几环已经对上了账。</p>
+<h3>一、计算机从仓库变成工厂</h3>
+<p>他的出发点是一个关于计算本身的判断。2024 年 3 月在斯坦福 SIEPR 经济峰会上，有人问未来需要多少晶圆厂，他说自己不擅长预测，擅长的是从第一性原理推算。今天几乎所有内容都是「预先录好的」，有人写好、存进文件，计算机再用推荐算法替你取出来；将来的 AI 懂得你的上下文，每一次回答都现场生成。两年后对 Ezra Klein、对 Lex Fridman、在红杉资本的活动上，他讲的还是这个对比，措辞几乎没变。</p>
+<p>从这里推出第二步。存储系统像仓库，生成系统像工厂，两者的生意完全不同：</p>
+<blockquote><span class="en">We're now building factories. Warehouses don't make much money.</span><span class="zh">我们现在造的是工厂。仓库赚不了多少钱。</span><cite>— 黄仁勋 · Lex Fridman #494，2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=5233s">[01:27:13]</a></cite></blockquote>
+<p>他对 Lex 说，计算机不只换了做事的方法，连它在世界上的用途都变了，成了直接产生收入的东西。工厂得有产品，他给的产品就是 token。2024 年在 Stripe Sessions 上，他对 Patrick Collison 讲了一个工业革命的比喻：</p>
+<blockquote><span class="en">In this new Industrial Revolution, electrons come in and floating point numbers come out.</span><span class="zh">在这场新的工业革命里，进去的是电子，出来的是浮点数。</span><cite>— 黄仁勋 · Stripe Sessions，2024 <a class="ts" href="https://www.youtube.com/watch?v=8Pfa8kPjUio&amp;t=2280s">[00:38:00]</a></cite></blockquote>
+<p>上一次工业革命是原子进、电子出，电后来按千瓦时论价；他说 token 如今也开始按「每美元多少百万个」论价。2026 年在红杉，他把 NVIDIA 的机器比作这个时代的发电机，还说西门子的发电机是「三百年前」的发明（其实是 1866 年）。对 Dwarkesh Patel，他把整家公司压成一句话，输入是电子，输出是 token，中间是 NVIDIA。</p>
+<p>这种商品还会分档。他对 Lex 说，token 正在像 iPhone 一样分层，有免费的，有高级的，中间还有好几档，每百万 token 卖 1000 美元「不是会不会，只是什么时候」。对 Dwarkesh，他用这一点解释为什么并入 Groq：响应快的 token 吞吐量低，但只要单价够高就补得回来，这样的市场几年前还不存在。</p>
+<h3>二、需求从哪来：规模定律越数越多</h3>
+<p>工厂要建多大，取决于需求。他的需求论证建立在规模定律（scaling laws）上，而这条定律在他嘴里是越数越多的。2024 年 10 月在 BG2，他说预训练之外，后训练和推理阶段也出现了扩展；2025 年 9 月回到 BG2，他正式说「现在有三条规模定律」，并承认一年前自己低估了推理；2026 年 3 月对 Lex，他数到了第四条，智能体再派生出一群子智能体，叫作智能体扩展（agentic scaling）。他说这四条会连成一个循环，智能体攒下的经验回流成预训练数据，周而复始，所以归根到底：</p>
+<blockquote><span class="en">Intelligence is going to scale by one thing and it's compute.</span><span class="zh">智能的增长只取决于一样东西，那就是算力。</span><cite>— 黄仁勋 · Lex Fridman #494，2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=1692s">[00:28:12]</a></cite></blockquote>
+<p>推理在这条链上分量最重。当年人人以为推理容易，推理芯片会是便宜的小芯片，他说推理就是思考，而思考比阅读难得多。2025 年在 BG2，他把需求拆成两个相乘的指数，一个是用户数，一个是每次使用的计算量，后者涨是因为模型开始先想再答。2026 年对 Ezra，他说计算需求涨上十亿倍也是合理的估计。</p>
+<p>有意思的是，同一个人在别处给规模定律泼过冷水。Ezra 说起早年关于规模定律的预测已经应验，他马上纠正：</p>
+<blockquote><span class="en">It is not true that if you just keep training these models they'll get better.</span><span class="zh">说只要一直训练下去，这些模型就会越来越好，这不是真的。</span><cite>— 黄仁勋 · The Ezra Klein Show，2026 <a class="ts" href="https://www.youtube.com/watch?v=HjurAWAr_nY&amp;t=3621s">[01:00:21]</a></cite></blockquote>
+<p>他的意思是，正因为光靠加大预训练不够，才需要第二条定律。这句话对他自己的需求论证是把双刃剑。每当一条定律放缓，就有一条新的来接班，「需求还会涨」于是很难被证伪。</p>
+<p>需求的另一半在价格上。2024 年在 SIEPR，他说常有人问他，把计算成本降一百万倍，客户岂不是要少买，他说恰恰相反。后来回答晶圆厂够不够的问题时，他把效率和需求放在一起算了一笔账：</p>
+<blockquote><span class="en">In the meantime, I'm improving computing by a million times every 10 years while demand is going up by a trillion times.</span><span class="zh">与此同时，我每十年把计算性能提升一百万倍，而需求在涨一万亿倍。</span><cite>— 黄仁勋 · SIEPR 经济峰会，2024 <a class="ts" href="https://www.youtube.com/watch?v=cEg8cOx7UZk&amp;t=2645s">[00:44:05]</a></cite></blockquote>
+<h3>三、卖的东西从一块芯片变成一座工厂</h3>
+<p>产品既然是 token，计算机的边界就不再是芯片。2024 年在 BG2 他说得很直接：</p>
+<blockquote><span class="en">I've said before, the data center is now the unit of computing.</span><span class="zh">我说过，现在计算的单位是整个数据中心。</span><cite>— 黄仁勋 · BG2 Ep17，2024 <a class="ts" href="https://www.youtube.com/watch?v=bUrCR4jQQg8&amp;t=1293s">[00:21:33]</a></cite></blockquote>
+<p>这个单位两年里长得很快。2024 年 3 月他在 SIEPR 介绍 H100 时，管它叫「芯片」，说它重 70 磅，由 3.5 万个零件组成，单价约 25 万美元，显然早已不是一颗裸片。2026 年 6 月在红杉，他讲的单位已经是机柜，一柜 72 颗芯片，重 2 吨，150 万个零件，约 400 万美元。对 Lex，他说计算的单位从 GPU 变成整机、集群，如今是整座 AI 工厂。他说自己现在一想到「计算机」，脑子里就是一个接着电网的吉瓦级庞然大物。</p>
+<p>他给的理由有两条。一是摩尔定律放缓，单颗芯片快不了多少，只能把 CPU、GPU、网络芯片、交换机和软件放在一起重新设计，他称之为极端协同设计（extreme co-design）。二是工厂受电力限制，每瓦电能产出多少 token，直接决定一座工厂一年能挣多少钱。他在 BG2 说，从 Hopper 到 Blackwell，靠 NVLink 72 一年就把性能提高了 30 倍，摩尔定律不可能做到。同一条逻辑还撑着他「对手的芯片白送都不够便宜」的说法，那属于《护城河》一篇。</p>
+<p>他报的数字值得对一对。十年里计算进步了多少，2024 年 3 月在 SIEPR 他说成本降了一百万倍，同年 10 月在 BG2 说十万倍（摩尔定律只有一百倍），2026 年对 Lex 又回到一百万倍。十倍的出入，在他的讲法里只是修辞。工厂的收益出入更大。一吉瓦工厂造价约 500 亿美元，这个数他各处都一样；可它能产出多少，2026 年 6 月在红杉他说是「三四千亿美元的智能」<a class="ts" href="https://www.youtube.com/watch?v=2UpQbeAZuqA&amp;t=1136s">[00:18:56]</a>，同年 9 月对 Ezra 则说每年能租出 400 到 500 亿（《读他之前：四个折扣》一篇提过）。前者是终端用户眼里的产值，后者是工厂主收到的租金，差了将近八倍，他在台上并不区分。</p>
+<p>整个盘子他也算过。2025 年在 BG2，他说全球 GDP 里约有 50 万亿美元对应人类的智力劳动，假如其中 10 万亿由 AI 增强，按五成毛利算，每年就需要约 5 万亿美元的 AI 基础设施投入，而眼下这个市场约 4000 亿。</p>
+<h3>四、主权 AI：每个国家都要有自己的工厂</h3>
+<p>链条的最后一环是买家。2024 年在 SIEPR，被问到地缘政治风险时，他先说美国有权决定这类产品卖给谁，接着话锋一转，说过去六到九个月每个国家都「觉醒」了，意识到必须掌控自己的数字智能 <a class="ts" href="https://www.youtube.com/watch?v=cEg8cOx7UZk&amp;t=3046s">[00:50:46]</a>。他举印度为例，不能把自己的数据交出去，让别的国家炼成智能，再进口回来。他的总结很坦白，地缘政治在一处限制了机会，在别处创造了巨大的机会。2025 年在 BG2，主持人把 AI 比作 1940 年代的核能，他回了一句：</p>
+<blockquote><span class="en">Nobody needs atomic bombs. Everybody needs AI.</span><span class="zh">没人需要原子弹，人人都需要 AI。</span><cite>— 黄仁勋 · BG2，2025 <a class="ts" href="https://www.youtube.com/watch?v=pE6sw_E9Gh0&amp;t=3594s">[00:59:54]</a></cite></blockquote>
+<p>他接着说，各国尽可以用 OpenAI、Gemini、Grok 和 Anthropic，但也要自己学会造 AI，工业、制造和国家安全的模型得自己培养；就像能源和通信一样，每个国家都需要 AI 基础设施。这一环已经进了账本。NVIDIA 首席财务官在 2026 年 2 月的财报电话会上说，主权 AI 业务一年里涨到上一年的三倍多，<a href="https://www.fool.com/investing/2026/02/28/nvda-earnings-call-stock-q4-ceo-cfo/">超过 300 亿美元</a>，约占全年收入的七分之一，主要来自加拿大、法国、荷兰、新加坡和英国的客户。</p>
+<h2>这些主张怎么咬合</h2>
+<p>四段连起来，就是一条链：生成式计算让每个回答都要现场算，算出来的 token 让数据中心成了工厂，规模定律让 token 的需求不断上涨，电力约束让整座工厂必须协同设计、整体出售，而每个国家都想要一座。其中几环已经对上了账。NVIDIA 2026 财年的 <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm">10-K</a> 显示，数据中心收入增长 68%，其中网络业务增长 142%，远快于计算业务的 59%；毛利率从 75.0% 降到 71.1%，年报给的两条原因，一条是 H20 的存货减值，另一条正是从卖 Hopper HGX 系统转向卖 Blackwell 的整套数据中心方案。卖整座工厂是真的，代价是让出一部分利润率。token 的产量也确实在涨，Google 在 2025 年 7 月<a href="https://blog.google/inside-google/message-ceo/alphabet-earnings-q2-2025/">说</a>，自家每月处理的 token 两个月内从 480 万亿翻到了 980 万亿以上。</p>
+<p>最弱的一环在 token 和收入之间。他算的是 token 的产量，可付钱的人最终要靠 AI 应用赚到钱才付得起；他对 Ezra 也承认，总有一天会供过于求，只是不在这两三年。另一处是他自己的两个论证互相咬住了。他用「每瓦产出决定收入」说明对手的芯片白送也不划算，同样的算术也适用于他自己的上一代产品。如果 Blackwell 每瓦产出的 token 是 Hopper 的 30 倍，在电力受限的工厂里，Hopper 也会变得「白送都不够便宜」，这和他说的算力经久耐用正面相撞，下文「边界」会再碰到这一点。这条链的起点见《押注 CUDA》一篇；他拿「AI 增强全球 GDP」推算需求，其中就业的那一面留给《工作、风险与未来》一篇。</p>
+<h2>边界</h2>
+<div class="claim">
+<p class="said">「token 的成本每年降一个数量级。」——2026 年对 Lex Fridman <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=2297s">[00:38:17]</a></p>
+<p class="verdict">有据</p>
+<p>Epoch AI 2025 年 3 月的<a href="https://epoch.ai/data-insights/llm-inference-price-trends">数据</a>显示，要达到同一能力水平，大模型推理价格每年降 9 到 900 倍，视基准和门槛而定；达到 GPT-4 在 GPQA Diamond 上的成绩，价格每年降约 40 倍。每年十倍算是保守的说法。但降价的功劳不全在硬件，更小更好的模型占了很大一块；Epoch 也提醒，最快的降幅集中在最近一年，未必能持续。</p>
+</div>
+<div class="claim">
+<p class="said">NVIDIA 的算力像飞机一样通用、耐用，使用寿命更长，因此能成为一种资产类别，融资成本最低。——2026 年对 Ezra Klein <a class="ts" href="https://www.youtube.com/watch?v=HjurAWAr_nY&amp;t=4946s">[01:22:26]</a></p>
+<p class="verdict">证据不足</p>
+<p>最大的买家自己的账就不一致。亚马逊 2024 财年 <a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm">10-K</a> 写明，从 2025 年 1 月起把部分服务器和网络设备的折旧年限从六年缩短为五年，理由是人工智能与机器学习的技术迭代加快；同一个月，Meta 却把部分服务器和网络设备的年限延长到 5.5 年，2025 年折旧因此少计约 29 亿美元。这批 GPU 还没走完一个完整的使用周期，耐不耐用，现在下不了结论。</p>
+</div>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>经济史 · 发电机与生产率悖论</b>：黄仁勋自己拿发电机作比，经济史学家 Paul David 1990 年的论文《The Dynamo and the Computer》讲的却是这个比喻的另一面。电动机进了工厂，生产率很久都不见起色，因为工厂起初只是拿一台大电机替换蒸汽机；要等到每台机器各配小电机、厂房和流程重新布置，收益才显出来。AI 工厂也许一样，瓶颈不在发电机，而在用电的一方多久才肯改流程。不同的是，今天的「发电机」还在一年换一代。</li>
+<li><b>分布式系统 · 仓库级计算机</b>：Google 的 Barroso 与 Hölzle 2009 年写过一本小书，主张把整个数据中心当作<a href="https://research.google/pubs/the-datacenter-as-a-computer-an-introduction-to-the-design-of-warehouse-scale-machines/">一台「仓库级计算机」</a>（warehouse-scale computer）来设计。这正是黄仁勋「数据中心是计算的单位」，连「仓库」这个词都撞上了，只是他拿仓库来比喻不赚钱的旧计算机。差别在于 Google 的仓库自用，NVIDIA 要把整座仓库卖给集成方式各不相同的客户。</li>
+<li><b>生物学 · ATP</b>：线粒体把电子传递链释放的能量转成 ATP，细胞里几乎所有耗能的活都用这种「能量货币」结算，结构上正是电子进、通用货币出。不同的是每个 ATP 分子都一模一样，而他自己说 token 正在分档，有免费的，也有每百万 1000 美元的。这让「token 是商品」更像一个比喻，而不是千瓦时那样的计量单位。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>黄仁勋认为计算正从「检索预先录好的内容」转向「按上下文现场生成」，这是他整套 AI 工厂论述的起点。</li>
+<li>黄仁勋把旧数据中心比作仓库、把 AI 数据中心比作工厂，理由是工厂的产出直接对应收入。</li>
+<li>黄仁勋把 NVIDIA 概括为「输入是电子、输出是 token」，并预言 token 会像电力一样按单位计价。</li>
+<li>黄仁勋说 token 正在像 iPhone 一样分档，每百万 token 卖 1000 美元只是时间问题。</li>
+<li>黄仁勋讲的规模定律越数越多，2026 年已是预训练、后训练、测试时和智能体扩展四条。</li>
+<li>黄仁勋把推理需求拆成用户数和每次使用的计算量两个相乘的指数，认为推理比训练更难，市场也更大。</li>
+<li>黄仁勋说数据中心已是计算的单位，NVIDIA 卖的东西从约 25 万美元的 H100 变成了约 400 万美元一柜的整机。</li>
+<li>黄仁勋称一吉瓦 AI 工厂造价约 500 亿美元，对其产出却在红杉说三四千亿，对 Ezra Klein 说每年租金四五百亿。</li>
+<li>黄仁勋 2024 年把各国建设主权 AI 说成地缘限制之外的新机会，主张每个国家都要有自己的 AI 基础设施。</li>
+<li>经济史学家 Paul David 指出电动机要等工厂重新设计才提高生产率，AI 工厂的收益也可能卡在用户改流程的速度上。</li>
+</ol>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=vif8NQcjVf0">Lex Fridman #494：Jensen Huang</a> · <a href="https://www.youtube.com/watch?v=HjurAWAr_nY">The Ezra Klein Show：Jensen Huang Thinks A.I. Alarmism Has Gone Too Far</a></span><span class="d">2026。仓库与工厂、四条规模定律、token 分档；两条边界被核查的原话。</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=bUrCR4jQQg8">BG2 Ep17（2024）</a> · <a href="https://www.youtube.com/watch?v=pE6sw_E9Gh0">BG2（2025）</a> · <a href="https://www.youtube.com/watch?v=cEg8cOx7UZk">SIEPR 经济峰会主题演讲（2024）</a></span><span class="d">计算单位、三条规模定律、5 万亿美元的推算，以及主权 AI 的两个版本。</span></li>
+<li><span class="t"><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm">NVIDIA 2026 财年 10-K</a> · <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026">第四季度财报</a></span><span class="d">网络与计算业务的增速、毛利率变化及其原因。</span></li>
+<li><span class="t"><a href="https://epoch.ai/data-insights/llm-inference-price-trends">Epoch AI：LLM inference prices</a> · <a href="https://www.sec.gov/Archives/edgar/data/1018724/000101872425000004/amzn-20241231.htm">亚马逊 2024 财年 10-K</a> · <a href="https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/default.aspx">Meta 2024 年四季度财报</a></span><span class="d">两条边界判词的依据。</span></li>
+</ul>
+<footer>黄仁勋专题 · 按主题读他的说法 · 写于 2026-10-19</footer>
+</div>
+</body></html>
