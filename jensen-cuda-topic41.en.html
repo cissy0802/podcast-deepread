@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jensen Huang Series · Betting on CUDA</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="jensen-cuda-topic41.html">中文 →</a></div>
+<header>
+<div class="kicker">Jensen Huang Series · No. 3</div>
+<h1>Betting on CUDA: A Platform Nobody Paid For in Ten Years</h1>
+<p class="sub">On stage it is a story of foresight; the annual reports from those years tell a different one</p>
+</header>
+<div class="meta-card"><b>Topic</b> Accelerated computing, CUDA and the installed-base bet · <b>Sources</b> 9 interview and speech transcripts (2011–2026), NVIDIA 10-Ks for fiscal 2008–2010 and 2017, the AlexNet paper · <b>Main venues</b> Stanford eCorner (2011) · Acquired (2023) · Stanford GSB (2024) · Stripe Sessions (2024) · Caltech commencement (2024) · Cleo Abram (2025) · Joe Rogan #2422 (2025) · Lex Fridman #494 (2026) · Dwarkesh Patel (2026)</div>
+<h2>His Claims</h2>
+<p>CUDA is the bet Jensen Huang most likes to talk about, and in his telling the story is complete. NVIDIA decided to put a general-purpose computing architecture into every gaming card; costs soared, the market cap collapsed, no customer wanted it, and he held on for ten years until AlexNet was trained on two GeForce cards in 2012 and the AI era began. This piece reads the story in three parts: why he wanted to turn a graphics company into a computing company, why CUDA had to ride on consumer cards, and what kept the company going through the lean decade. Then it opens the annual reports from those years to see what the bet looked like on the books.</p>
+
+<h3>1. From Cg to CUDA: a specialist trying to become a generalist</h3>
+<p>Talking to Lex Fridman in 2026, he summed up NVIDIA's path as two words he had joined on purpose: accelerated computing. An accelerator is a specialist, superb at one class of task, but its market is narrow, and market size caps the R&amp;D budget. A computing company is a generalist with broad reach that risks losing its specialty. Thirty years of NVIDIA, he said, have been a search for a narrow path between the two, widening the set of applications it can accelerate without giving up what it does best. The steps he listed were the programmable pixel shader, IEEE-compliant FP32, Cg (C for the shader), and finally CUDA.</p>
+<p>In a 2011 Stanford entrepreneurship class he described the same road, but CUDA was only four or five years old and he still called the whole thing "GPU computing". The first programmable-shading chip, GeForce FX, nearly broke the company and was not a great graphics part, he said, but researchers noticed it had a language called Cg and 32-bit floating point. They bought cards at Fry's, contorted molecular dynamics and fluid simulations into graphics problems, and got twentyfold speedups. His inference: graphics already ran a thousand times faster than on a CPU, so opening those parallel processors fully to C would unlock far more problems. He named the risk in the same class. A general-purpose product is a Swiss army knife that pulls a company away from its core, as any marketing course will teach, but they judged the move too important not to make.</p>
+<p>Where it all started keeps moving earlier in his retellings. At Stanford GSB in 2024 and with Cleo Abram in 2025, the spark was doctors at Mass General using Cg for CT reconstruction and a quantum chemist running his algorithms on it. On Acquired in 2023 he said NVIDIA had been a platform company from day one, with a 1993 architecture called UDA, "the UDA of CUDA"; a year later at Stripe, the same UDA became a "unified driver architecture" invented in 1993. At Stripe he also gave the plainest account of the principle. In many important programs a small kernel of code eats almost all the runtime, so accelerate that kernel to the limit and the whole program flies.</p>
+
+<h3>2. Putting CUDA on every GeForce</h3>
+<p>With CUDA built, the next question was who would use it. His answer to Lex in 2026 is the core of the whole bet:</p>
+<blockquote><span class="en">They come to a computing platform because the install base is large. Because a developer like anybody else wants to develop software that reaches a lot of people.</span><cite>— Jensen Huang · Lex Fridman #494, 2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=687s">[00:11:27]</a></cite></blockquote>
+<p>His example was x86. No architecture has drawn more criticism, while many beautifully designed RISC architectures largely failed; to him the installed base defines an architecture and everything else is secondary. GeForce was already selling millions of units a year, which led to the decision:</p>
+<blockquote><span class="en">And we said, you know, we ought to put CUDA on GeForce and put it into every single PC whether customers use it or not and use it as a starting point of cultivating our installed base.</span><cite>— Jensen Huang · Lex Fridman #494, 2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=779s">[00:12:59]</a></cite></blockquote>
+<p>Meanwhile they went to universities, wrote books and taught classes. There was no cloud; the PC was the main computing vehicle, and the idea was to put a supercomputer in the hands of every researcher and student until something remarkable happened. An easily missed premise is that the users were already there. Many researchers were gamers who built lab clusters from PC parts anyway, which is why he calls NVIDIA "the house that GeForce built". On Acquired he called architectural compatibility across every chip for thirty years the company's only non-negotiable rule, a rule that already appears in <a href="jensen-origin-topic34.en.html">Denny's and the Near-Death Years</a>; it is what let CUDA ride on every gaming card.</p>
+<p>The price was that gamers would not pay extra for a feature they did not use. He has told this part many times, and the numbers differ each time. To Patrick Collison in 2024:</p>
+<blockquote><span class="en">It cost so much to go after that zero billion dollar market, it actually crushed the $1 billion dollar market we were enjoying.</span><cite>— Jensen Huang · Stripe Sessions, 2024 <a class="ts" href="https://www.youtube.com/watch?v=8Pfa8kPjUio&amp;t=1716s">[00:28:36]</a></cite></blockquote>
+<p>That time the market cap fell to "like a billion dollars". To Joe Rogan in 2025, costs "doubled" and the valuation fell from about 12 billion to two or three; to Lex in 2026, costs rose 50% and the market cap went from six, seven or eight billion to 1.5. He described the launch itself to Rogan this way:</p>
+<blockquote><span class="en">When I launched CUDA, the audience was complete silence. No customer wanted it.</span><cite>— Jensen Huang · Joe Rogan #2422, 2025 <a class="ts" href="https://www.youtube.com/watch?v=3hptKYix4X8&amp;t=8376s">[02:19:36]</a></cite></blockquote>
+<p>Whether those numbers match the books is checked against the annual reports in "Boundaries" below.</p>
+
+<h3>3. Ten years of holding on, until AlexNet</h3>
+<p>With no market, what kept it alive? He has given three answers, and they connect. The first is the "zero billion dollar market". Asked by Collison what the phrase means, he said he would rather create a market than take share; something never done before and insanely hard to do has, by definition, a market of zero. He dislikes spreadsheets because you can make them say anything; he wants reasoning, in words, about why you believe. Asked how long CUDA took to start working, he said probably ten years.</p>
+<p>The second answer is a set of signposts for the team. At Stanford GSB in 2024 he said gross margin is not a KPI but a result; inside NVIDIA the phrase is "early indicators of future success", and he used solved problems to keep the company's hope up. Projects are chosen not by market size:</p>
+<blockquote><span class="en">Because the importance of the work is the early indicators of a future market.</span><cite>— Jensen Huang · Stanford GSB, 2024 <a class="ts" href="https://www.youtube.com/watch?v=lXLBTBBil2U&amp;t=1336s">[00:22:16]</a></cite></blockquote>
+<p>In the same answer he said that whatever others can do, let them do; the company should pick only what would not happen without it. Two years later, talking to Dwarkesh Patel, he applied that principle back to CUDA, and ten years became twenty:</p>
+<blockquote><span class="en">If we didn't dedicate ourselves to 20 years of CUDA while losing money most of that time, if we didn't do it, nobody else would have done it.</span><cite>— Jensen Huang · Dwarkesh Patel, 2026 <a class="ts" href="https://www.youtube.com/watch?v=Hrbq66XqtCo&amp;t=2655s">[00:44:15]</a></cite></blockquote>
+<p>The third answer is the most practical: small businesses to stay alive. He told Collison they searched everywhere for applications, CT reconstruction, seismic processing, molecular dynamics. None became a home run, but together they sustained CUDA just enough and bought it time.</p>
+<p>Then came AlexNet. He told this part almost identically on Acquired in 2023 and to Cleo Abram in 2025, and one detail stands out. NVIDIA was working on computer vision internally and struggling to make CUDA run vision algorithms well:</p>
+<blockquote><span class="en">And we were trying to get CUDA to be a good computer vision processor and we were frustrated by a whole bunch of early developments internally with respect to our computer vision effort and getting CUDA to be able to do it.</span><cite>— Jensen Huang · Cleo Abram, 2025 <a class="ts" href="https://www.youtube.com/watch?v=7ARBJQn6QkM&amp;t=769s">[00:12:49]</a></cite></blockquote>
+<p>So when AlexNet appeared, NVIDIA was a group of people stuck on the very same problem. He says they went back to first principles to ask why it worked, and concluded that a deep network is something like a universal function approximator, trained layer by layer, deepenable without limit, better with more data and bigger models. If that held, almost all software would eventually be written this way and computers would have to be built differently. What followed was a rebuild of the entire computing stack and, in 2016, the first DGX-1 delivered to OpenAI.</p>
+<p>At Caltech in 2024 he reduced all of it to one line of logic:</p>
+<blockquote><span class="en">This is one of those if you build it will they come. Our logic is if we don't build it they can't come.</span><cite>— Jensen Huang · Caltech commencement, 2024 <a class="ts" href="https://www.youtube.com/watch?v=53iujxhGRsE&amp;t=888s">[00:14:48]</a></cite></blockquote>
+<p>It is worth setting this beside what the AlexNet paper says. In their <a href="https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf">2012 paper</a>, Krizhevsky, Sutskever and Hinton report training for five to six days on two 3GB GTX 580s, with network size limited mainly by GPU memory, and say results could improve simply by waiting for faster GPUs and bigger datasets. From the researchers' side, the GPU was an off-the-shelf tool; from Huang's side, it was installed base he had put on store shelves six years earlier.</p>
+
+<h2>How the Claims Fit Together</h2>
+<p>The three parts form one chain. Accelerated computing supplied the direction, from specialist to generalist; the installed base supplied the means, using gaming volume to put a new architecture on every researcher's desk; the "zero billion dollar market" and "early indicators" supplied the patience, letting the company explain what it was doing in years without revenue. AlexNet is the apple that fell at the end of the chain, and as <a href="jensen-who-topic32.en.html">Before Reading Him: Four Discounts</a> showed, what he saw early was accelerated computing; deep learning came later. The chain extends to <a href="jensen-moat-topic44.en.html">The Moat</a>, where his claim that CUDA is NVIDIA's greatest treasure rests on the same installed-base argument, and back to the survive-first patience of <a href="jensen-origin-topic34.en.html">Denny's and the Near-Death Years</a>.</p>
+<p>The weakest link is "holding on". All three of his answers can only be checked afterwards. He admitted at Stripe that the line between commitment and stubbornness is fuzzy; his method is to gut-check first principles daily, asking whether the physics changed or someone else solved the problem. But a company betting on the wrong thing runs the same check and reaches the same conclusion. He rarely sets CUDA beside businesses NVIDIA also pushed and later left, such as the phone chips it was squeezed out of (see <a href="jensen-pain-topic31.en.html">Pain, Character and His Advice to the Young</a>), so the chain has no denominator. And with costs up 50% or 100%, a market-cap trough of one billion or three, a wait of ten years or twenty, what is certain is the moral of the story, not its scale.</p>
+
+<h2>Boundaries</h2>
+<div class="claim">
+<p class="said">"We increased our cost by 50%... and we were a 35% gross margin company," with the market cap falling to about $1.5 billion. — to Lex Fridman, 2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=948s">[00:15:48]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>The filings do not show CUDA crushing margins on its own. Per the <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581008000011/fy2008annualreportonform10k.htm">fiscal 2008 10-K</a>, the first public CUDA SDK shipped that year, and gross margin actually rose from 42.4% to 45.6%. The drop to 34.3% came in fiscal 2009, and that <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581009000013/fy2009form10k.htm">report</a> blames mainly a $196 million warranty charge for a notebook chip packaging defect, worth about 6 points on its own. The stock's low of $5.75 came in the late-2008 to early-2009 quarter of the financial crisis; at roughly 540 million shares that is about $3.1 billion, above the one and 1.5 billion he cited and close to the "two or three" he told Rogan.</p>
+</div>
+<div class="claim">
+<p class="said">It took "probably 10 years" to start working. — to Patrick Collison, 2024 <a class="ts" href="https://www.youtube.com/watch?v=8Pfa8kPjUio&amp;t=1814s">[00:30:14]</a></p>
+<p class="verdict">Supported</p>
+<p>In the fiscal 2008–2010 annual reports, Tesla compute cards were just one product line inside the professional solutions segment, with no revenue figure of their own. Per the <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581017000027/nvda-2017x10k.htm">fiscal 2017 10-K</a>, datacenter revenue was $317 million in fiscal 2015, under 7% of the total; only in fiscal 2017, on demand for deep learning training, did it jump 145% to $830 million. Counting from the public SDK, that is almost exactly ten years.</p>
+</div>
+
+<h2>Crossing Over · Interdisciplinary Links</h2>
+<div class="crossx"><ul>
+<li><b>Computer architecture · Amdahl's law</b>: In 1967 Gene Amdahl pointed out that the part of a program you cannot speed up caps the overall speedup. Huang's "a small kernel eats almost all the runtime" is the optimistic face of that law: the more concentrated the hot spot, the better an accelerator pays. The difference is that Amdahl was throwing cold water on parallel computing, while CUDA's business is built on finding the applications whose hot spots are concentrated enough.</li>
+<li><b>Economics · Two-sided markets</b>: Rochet and Tirole's 2003 paper analyses how platforms subsidise one side to attract the other, as card networks court cardholders to win merchants. CUDA made the gamer side carry the hardware to attract the developer side. Unlike a card network, the gamers never knew whom they were subsidising, and the real payer was NVIDIA's compressed margin.</li>
+<li><b>Evolutionary biology · Cryptic genetic variation</b>: Populations accumulate genetic differences with no effect on fitness until the environment shifts and they suddenly become raw material for selection; Gibson and Dworkin's 2004 review calls this cryptic genetic variation. CUDA sitting unused in hundreds of millions of gaming cards was a cryptic variant of this kind, selected only when the new environment of deep learning arrived. Unlike natural cryptic variation, which costs almost nothing, NVIDIA paid to keep this one alive.</li>
+<li><b>Philosophy of science · Lakatos's research programmes</b>: Imre Lakatos held that a research programme has a "hard core" it will not give up, surrounded by a protective belt of auxiliary hypotheses; a programme that keeps predicting novel facts is progressive, one that only patches itself after the fact is degenerating. Huang's daily check on whether "the physics changed" looks like guarding a hard core, with CT reconstruction and seismic work serving as the protective belt. Lakatos also allowed that a programme can degenerate for years and then revive, which is why it is so hard to know in the moment whether to persist. That is exactly the line Huang admits is fuzzy; Lakatos simply never pretended it could be drawn in advance.</li>
+</ul></div>
+
+<h2>Ten Takeaways</h2>
+<ol class="takeaways">
+<li>Jensen Huang describes accelerated computing as two words in tension: NVIDIA must grow from a specialised accelerator into general computing without losing its specialty.</li>
+<li>In 2011 Jensen Huang still called CUDA "GPU computing", tracing it to researchers who used the Cg language on GeForce FX to recast science problems as graphics.</li>
+<li>Jensen Huang argues that installed base decides whether a computing architecture wins, citing x86, the most criticised architecture and still the winner.</li>
+<li>NVIDIA put CUDA on every GeForce card whether gamers used it or not, using gaming volume to cultivate an installed base for the new architecture.</li>
+<li>Jensen Huang's account of CUDA's cost varies from a 50% rise to a doubling, with the market-cap low ranging from one to three billion dollars.</li>
+<li>Jensen Huang's "zero billion dollar market" means something never done before; he prefers creating a market to taking share.</li>
+<li>At Stanford GSB Jensen Huang said gross margin is a result, not a KPI, and used solved problems as early indicators of future success.</li>
+<li>CUDA's early years were sustained by small applications such as CT reconstruction, seismic processing and molecular dynamics, which Jensen Huang says bought it time.</li>
+<li>Jensen Huang says that when AlexNet appeared, NVIDIA was frustrated trying to make CUDA good at computer vision, so it paid close attention to why AlexNet worked.</li>
+<li>Lakatos's account of research programmes shows why the line between persistence and stubbornness is often visible only in hindsight, the line Jensen Huang admits is fuzzy.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=vif8NQcjVf0">Lex Fridman Podcast #494: Jensen Huang</a></span><span class="d">March 2026. The tension in accelerated computing, the installed base, and the decision to put CUDA on GeForce; the first boundary quote comes from here.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=8Pfa8kPjUio">Stripe Sessions: A conversation with NVIDIA’s Jensen Huang</a></span><span class="d">May 2024. The "zero billion dollar market" and commitment versus stubbornness; the second boundary quote comes from here.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=y6NfxiemvHg">Acquired: NVIDIA CEO Jensen Huang</a> · <a href="https://www.youtube.com/watch?v=7ARBJQn6QkM">Cleo Abram: NVIDIA CEO Jensen Huang's Vision for the Future</a></span><span class="d">2023 and 2025. What NVIDIA was doing internally when AlexNet appeared; the two versions nearly match.</span></li>
+<li><span class="t"><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581009000013/fy2009form10k.htm">NVIDIA fiscal 2009 10-K</a> · <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581017000027/nvda-2017x10k.htm">fiscal 2017 10-K</a></span><span class="d">Reasons for the margin swing, stock price ranges, datacenter revenue. The basis for both boundary verdicts.</span></li>
+</ul>
+<footer>Jensen Huang Series · reading him topic by topic · written 2026-10-19</footer>
+</div>
+</body></html>
