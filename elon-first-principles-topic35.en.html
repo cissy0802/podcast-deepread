@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elon Musk Series · First Principles and the Five-Step Algorithm</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="elon-first-principles-topic35.html">中文 →</a></div>
+<header>
+<div class="kicker">Elon Musk Series · No. 2</div>
+<h1>First principles and the "five-step algorithm"</h1>
+<p class="sub">Physics is the only law you can't break; question the requirement, delete, and only then optimize. Plus the times he admits he ran the steps backwards</p>
+</header>
+<div class="meta-card"><b>Topic</b> First principles and the five-step algorithm · <b>Sources</b> 7 interview transcripts (2021–2026), Columbia Accident Investigation Board report, Vol. I (2003), FAA statement of September 2023 · <b>Interviews</b> Starbase tour, parts 1 and 2 (Everyday Astronaut, 2021) · Lex Fridman #252 (2021), #400 (2023) · TED (2022) · Ron Baron Investment Conference (2022) · Dwarkesh Patel (2026)</div>
+<h2>What he claims</h2>
+<p>"First principles" is probably the phrase most tightly welded to Musk, and in the version that circulates online it has shrunk to a slogan: don't reason by analogy, start from scratch. Read his long interviews side by side and the phrase turns out to have three layers. At the bottom is physics, which says what is possible and how cheap something could ever get. In the middle is a deletion procedure he calls the "five-step algorithm," which closes the gap between reality and that physical floor. On top is a risk budget, which decides how hard the procedure is allowed to cut. Here they are, one layer at a time.</p>
+<h3>1. Physics is the law; everything else is a recommendation</h3>
+<p>In late 2021 Lex Fridman asked him to describe how he thinks through problems. He opened with a line he would repeat almost word for word in 2023 and again in 2026: physics is the law, and everything else is a recommendation.</p>
+<blockquote><span class="en">I've met a lot of people who can break the law, but I haven't met anyone who could break physics.</span><cite>— Musk · Lex Fridman #252, 2021 <a class="ts" href="https://www.youtube.com/watch?v=DxREm3s1scA&amp;t=1037s">[00:17:17]</a></cite></blockquote>
+<p>Then he got specific. Boil a problem down to the few principles you are most confident are true, treat them as axioms, reason upward, and check the conclusion back against the axioms; the first gate is always whether you are violating conservation of energy or momentum. The second tool is "thinking in the limit." A part is expensive, and the usual excuse is low volume. His question: if you made a million a year, would it still be expensive? If yes, scale isn't the problem; the design is. The third tool is what he calls the "magic wand number": take the aluminum, steel, titanium and copper in a rocket, multiply each by its raw-material price, and the total is almost always small. That is the cost floor unless you change materials. The rest of the price goes into "how you put the atoms into the desired shape." A company that is truly good at manufacturing, he says, can make anything at volume for close to its raw-material value plus whatever intellectual property it has to license.</p>
+<p>The best example of this arithmetic applied to materials is Starship's switch from carbon fiber to stainless steel. In 2026 he walked Dwarkesh Patel through it. Carbon fiber was picked because it is light. But at volume everything approaches its material cost, and high-strength carbon fiber that can handle liquid oxygen runs about 50 times the price of steel; it also needs a curing autoclave bigger than the rocket, and the team couldn't make even a small barrel section without wrinkles. 300-series stainless at cryogenic temperature has a similar strength-to-weight ratio, can be welded outdoors, and melts at a far higher temperature, which saves a lot of heat shield. Net result: the steel rocket is lighter. His verdict was blunt:</p>
+<blockquote><span class="en">It was dumb not to do steel.</span><cite>— Musk · Dwarkesh Patel, 2026 <a class="ts" href="https://www.youtube.com/watch?v=BYXbuik3dgA&amp;t=7459s">[02:04:19]</a></cite></blockquote>
+<p>The story deserves a second look. Choosing carbon fiber and choosing steel were both "reasoning from physics"; the difference was which number each choice was staring at, weight in one case, cost and manufacturability at volume in the other. First principles can get the sums right, but it won't tell you which ledger to keep. The cost of the method shows up here too. In 2023 he said there are tens of thousands of electric motor designs in the world and none of them suits a humanoid robot; in 2026 he said every actuator in Optimus was designed from physics first principles, nothing comes out of a catalog, and so its production ramp will be slower than that of a product with an existing supply chain.</p>
+<h3>2. The five steps: the order matters more than the content</h3>
+<p>In the summer of 2021 at Starbase, Tim Dodd only asked whether the grid fins still fold. Musk used the question to lay out the five steps he wants his engineering teams to follow rigorously. Step one: make the requirements less dumb. Anyone's requirements can be wrong, and a smart person's are the most dangerous because you won't question them; every requirement must also come with a person's name, not a department's, or you may be executing something an intern said off the cuff two years ago. Step two: delete the part or process step. If you aren't occasionally adding things back, at least ten percent of the time, you aren't deleting enough. That is why the grid fins don't fold, and why the booster has no separate attitude-control thrusters: it steers by pointing the hot gas it would have to vent from its main tanks anyway. Only step three is simplify or optimize, and here is why:</p>
+<blockquote><span class="en">Possibly the most common error of a smart engineer is to optimize the thing that should not exist.</span><cite>— Musk · Starbase tour, part 1, 2021 <a class="ts" href="https://www.youtube.com/watch?v=t705r8ICkRw&amp;t=981s">[00:16:21]</a></cite></blockquote>
+<p>He blames school, which rewards answering the question and never questioning it. His example is the earliest Falcon 1 spreadsheet, whose upper stage burned nitrogen tetroxide and monomethylhydrazine, expensive and toxic; even a child of Edison and Tesla smarter than both combined, told to optimize it, would be stuck. Step four is to accelerate cycle time, but not before the first three are done, or you are just digging your own grave faster. Step five, finally, is automate. Then came the admission:</p>
+<blockquote><span class="en">I have personally made the mistake of going backwards on all five steps multiple times.</span><cite>— Musk · Starbase tour, part 1, 2021 <a class="ts" href="https://www.youtube.com/watch?v=t705r8ICkRw&amp;t=1287s">[00:21:27]</a></cite></blockquote>
+<p>The case was the Model 3 battery pack. Fiberglass mats were glued onto the top of the pack, and at one point that step was choking the whole line. He first fixed the robot, with a shorter path and faster fastening; then sped it up; then simplified, swapping a full spread of glue for a few dabs; and only then asked what the mats were for. The battery safety team said noise and vibration; the noise-and-vibration team said fire safety. So they built two cars, one with mats and one without, put a microphone in each, and nobody could hear the difference. The mats were deleted and a two-million-dollar robot cell was bypassed with them. In November 2022, at Ron Baron's investment conference, he retold the five steps almost verbatim and added a second case: the Model 3 body line once stalled on a laser-welding cell for a small cross-car beam in the front footwell. Production said the beam was for crash safety; the crash safety team said it did nothing and should be deleted, and had simply never told production. Moments like that, he said, feel like living in a Dilbert cartoon.</p>
+<h3>3. How hard you can cut depends on what you can afford to lose</h3>
+<p>Why can the same method cut so deep on Starship? In part 2 of the tour Dodd asked why he isn't afraid of failure, and the answer was that his three vehicles optimize for different things. Crewed Dragon may never fail and carries margin everywhere; Falcon 9 can tolerate a booster lost on landing; Starship sits at the opposite pole, with nobody aboard, so it can blow up. Mass also compounds: one extra ton of heat shield needs more propellant to reach orbit, to deorbit and to land, plus a stronger structure, and by their calculation each ton behaves like about 1.8. Hence:</p>
+<blockquote><span class="en">If you don't push the envelope, you cannot achieve the goal of a fully and rapidly reusable rocket.</span><cite>— Musk · Starbase tour, part 2, 2021 <a class="ts" href="https://www.youtube.com/watch?v=SA8ZBJWo73E&amp;t=1324s">[00:22:04]</a></cite></blockquote>
+<p>His counterexample is the Space Shuttle. With people aboard every flight it could barely iterate; a change that went wrong was punished hard and a change that went right earned little, so:</p>
+<blockquote><span class="en">People were too afraid to make change because the design froze.</span><cite>— Musk · Starbase tour, part 2, 2021 <a class="ts" href="https://www.youtube.com/watch?v=SA8ZBJWo73E&amp;t=415s">[00:06:55]</a></cite></blockquote>
+<p>By 2026 the logic had grown a time-management layer. He told Dwarkesh that he allocates his time by the "limiting factor": teams that are going well rarely see him, while whatever is holding back the whole company gets reviewed weekly or twice weekly. He takes drastic action only when he concludes that success is no longer in the set of possible outcomes, as with the Starlink team in 2018. Deadlines follow the same thinking:</p>
+<blockquote><span class="en">It's the most aggressive deadline I can think of that could be achieved with 50% probability.</span><cite>— Musk · Dwarkesh Patel, 2026 <a class="ts" href="https://www.youtube.com/watch?v=BYXbuik3dgA&amp;t=7912s">[02:11:52]</a></cite></blockquote>
+<p>Which, he added, means it will be late half the time. Compared with the "most aggressive schedule you can think of" discussed in <a href="elon-who-topic33.en.html">Before you read him, apply four discounts</a>, this adds an explicit probability, in effect publishing the discount rate outsiders should apply.</p>
+<h2>How the claims interlock</h2>
+<p>The three layers form a clean chain. Physics sets the floor: conservation laws say what can't be done, raw-material prices say how cheap it could get. The five steps close the distance between reality and that floor, and they delete before they optimize, because a part that doesn't exist needs no design, no manufacturing and never breaks. The risk budget decides how far deletion may go: Starship can cut, Dragon can't. The limiting factor then decides where his own attention lands. He later carried the same knife into government, treating regulations as code that only accumulates and DOGE as delete first, add back if wrong; that thread runs through <a href="elon-x-politics-topic25.en.html">X, Speech and Politics</a>.</p>
+<p>The weakest link is the error signal of "adding back." He measures whether he has deleted enough by whether at least a tenth comes back, but that rule counts the add-backs and ignores what each one costs. Pausing work on Starship's payload door and building it later when needed is cheap; when the deleted thing was protecting someone else, the cost lands where the person deleting it can't see. Step one's "every requirement needs a name" works well inside a company, but regulatory, environmental and public-safety requirements are backed by institutions, not by one person. And the carbon-fiber-to-steel story shows that choosing the axioms is itself a judgment; physics does not make that choice for you.</p>
+<h2>Limits</h2>
+<div class="claim">
+<p class="said">"The Shuttle's O-ring and foam problems had been seen before; once the design froze, people were too afraid to change it." — Starbase tour, part 2, 2021 <a class="ts" href="https://www.youtube.com/watch?v=SA8ZBJWo73E&amp;t=415s">[00:06:55]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>The facts hold: the Columbia accident report records foam shedding on 65 of the 79 missions with imagery. But its diagnosis isn't fear of change. Each time, engineers applied a temporary fix, accepted the risk and flew; anomalies were filed as "in-family," the "normalization of deviance," compounded by schedule pressure and a shoestring budget. Its remedy was an independent technical authority: more checks, not faster iteration.</p>
+</div>
+<div class="claim">
+<p class="said">"It's a thing we could add later." Cut hard, because a wrong cut can be undone. — Starbase tour, part 1, 2021 <a class="ts" href="https://www.youtube.com/watch?v=t705r8ICkRw&amp;t=892s">[00:14:52]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>Starship's first launch pad was a real add-back. Before the April 20, 2023 flight the water-cooled steel plate wasn't ready, and the team judged from static-fire data that the pad would survive one launch; it was destroyed. The FAA closed its investigation in September with 63 corrective actions, including a more robust pad; with the plate installed, the second flight came in November. It was added back, at the price of seven months and an outside investigation.</p>
+</div>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Management · Goldratt's Theory of Constraints</b>: In his 1984 novel <i>The Goal</i>, Eliyahu Goldratt laid out the Theory of Constraints, also in five steps: identify the constraint, exploit it, subordinate everything else to it, elevate it, and once it breaks, go back to step one and beware of inertia. The likeness: both bet all attention on a single bottleneck and both warn against optimizing what isn't one; Musk's step three and his "limiting factor" say almost exactly this. The difference: Goldratt squeezes the existing constraint before spending to expand it and doesn't start by deleting; Musk's first cut is at the requirement itself, while Goldratt takes the goal as given.</li>
+<li><b>Software engineering · YAGNI</b>: Extreme Programming's "You Aren't Gonna Need It" rejects writing code just in case, the same instinct as Musk's war on just-in-case parts. The difference is the cost of putting it back: reverting a commit is nearly free, while an add-back on a rocket or a launch pad is measured in months.</li>
+<li><b>Sociology · Diane Vaughan's "normalization of deviance"</b>: Vaughan studied the Challenger decision and coined normalization of deviance, a concept the Columbia report took up. Musk diagnoses fear of change; Vaughan describes slow habituation. The two failures point in opposite directions: one won't touch the design, the other quietly folds ever-larger deviations into normal.</li>
+<li><b>Machine learning · local optima</b>: At TED in 2022, Musk described self-driving progress as a series of log curves, each ending at a "local maximum" where you realize how dumb you had been. Step three's "optimizing the thing that should not exist" resembles gradient descent in the wrong basin: however accurate the gradient, you can't walk out. Deleting and rewriting the requirement amounts to changing the search space itself.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Musk's first principles have three layers: physics sets the floor, the five steps close the gap, and a risk budget sets how hard to cut.</li>
+<li>Musk has said for years that physics is the law and everything else a recommendation, so conclusions must be checked against basics like conservation of energy.</li>
+<li>Musk's "thinking in the limit" test: if a part is still expensive at a million units a year, the problem is the design, not the scale.</li>
+<li>Musk's "magic wand number" is the raw-material value, a cost floor; the rest of the price goes into arranging atoms into shape.</li>
+<li>Starship moved from carbon fiber to stainless steel because at volume cost approaches material price, and high-strength carbon fiber costs about 50 times as much as steel.</li>
+<li>Musk's five steps, in order: question the requirements, delete parts and steps, simplify and optimize, accelerate the cycle, automate.</li>
+<li>Musk wants every requirement tied to a person rather than a department, and says that if you aren't adding back at least a tenth of what you delete, you haven't deleted enough.</li>
+<li>Musk admits he ran the five steps backwards on the Model 3 battery line before discovering the fiberglass mats weren't needed.</li>
+<li>Musk says Starship can iterate boldly because no one is aboard, whereas crewed Dragon and the Shuttle could not afford failure.</li>
+<li>Goldratt's Theory of Constraints also has five steps and also targets the bottleneck, but unlike Musk it doesn't start by cutting the requirement itself.</li>
+</ol>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=t705r8ICkRw">Starbase Tour with Elon Musk, Part 1</a> · <a href="https://www.youtube.com/watch?v=SA8ZBJWo73E">Part 2</a> (Everyday Astronaut, 2021)</span><span class="d">His fullest account of the five steps, the Shuttle counterexample, and the wording behind both Limits boxes.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=DxREm3s1scA">Lex Fridman #252</a> · <a href="https://www.youtube.com/watch?v=BYXbuik3dgA">Dwarkesh Patel</a> (2021, 2026)</span><span class="d">Physics as law, thinking in the limit, the magic wand number; carbon fiber to steel, the limiting factor and the 50% deadline.</span></li>
+<li><span class="t"><a href="https://www.nasa.gov/wp-content/uploads/static/history/columbia/reports/CAIBreportv1.pdf">Columbia Accident Investigation Board Report, Vol. I (2003)</a></span><span class="d">The basis for the first verdict.</span></li>
+<li><span class="t"><a href="https://www.faa.gov/newsroom/faa-closes-spacex-starship-mishap-investigation">FAA: Starship mishap investigation closed (2023-09-08)</a> · <a href="https://www.space.com/spacex-starship-steel-plate-rocket-fire-video">Space.com: the water-cooled plate test</a></span><span class="d">The basis for the second verdict.</span></li>
+</ul>
+<footer>Elon Musk Series · Reading what he actually said, by theme · Written 2026-10-20</footer>
+</div>
+</body></html>
