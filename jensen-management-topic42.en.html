@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jensen Huang Series · The Flat Organization</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="jensen-management-topic42.html">中文 →</a></div>
+<header>
+<div class="kicker">Jensen Huang Series · No. 4</div>
+<h1>The Flat Organization: Sixty Direct Reports, No One-on-Ones</h1>
+<p class="sub">A CEO who moved his whole company into one big room. Would it work without him?</p>
+</header>
+<div class="meta-card"><b>Topic</b> The flat organization and how he manages · <b>Sources</b> 7 interview and speech transcripts (2011–2026), NVIDIA 10-Ks for fiscal 2023–2026, the 2026 proxy statement, Wulf (2012) · <b>Main venues</b> Stanford eCorner (2011) · Acquired (2023) · Stanford GSB (2024) · SIEPR Economic Summit (2024) · Stripe Sessions (2024) · BG2 (2024) · Lex Fridman #494 (2026)</div>
+<h2>His Claims</h2>
+<p>Two of Jensen Huang's management habits get talked about more than any others: about sixty executives report directly to him, and he holds one-on-ones with none of them. By the usual standard that is extreme. In Julie Wulf's tracking of large US companies, the average CEO had fewer than five direct reports in the late 1980s and still fewer than ten by the late 2000s. He is unbothered. On stage at Stripe in 2024, Patrick Collison noted that this is not considered best practice; Huang agreed it was unconventional and said he was certain it was the best practice anyway. This page puts his explanations from different venues side by side to see what problem the system solves, and which of its preconditions another company might not have.</p>
+<h3>1. The org chart should look like the product</h3>
+<p>His starting point is an engineer's sentence. In 2023 the Acquired hosts asked whether something special about NVIDIA let him run forty-plus direct reports. Nothing special, he said, just the courage to build a system like this. NVIDIA is not built like an army that passes orders and information down the ranks. It is built like a computing stack: architecture at the bottom, then chips and software, then modules on top. Each module is run by whoever is best at it, the "pilot in command," regardless of title.</p>
+<blockquote><span class="en">Your organization should be the architecture of the machinery of building the product, right? That's what a company is.</span><cite>— Jensen Huang · Acquired, 2023 <a class="ts" href="https://www.youtube.com/watch?v=y6NfxiemvHg&amp;t=1744s">[00:29:04]</a></cite></blockquote>
+<p>Hence his irritation that every company's org chart looks the same. Frying chicken, flipping burgers and making fried rice are different processes, so why would the machinery be identical? NVIDIA's product is a whole machine whose chips, systems, networking and algorithms are designed together, what he calls extreme co-design, so the organization has to put the memory, CPU and optics experts at one table. Cross-team work runs on a company phrase, "mission is the boss": decide what has to ship, then wire up the best people and resources from anywhere in the company.</p>
+<p>At Stanford GSB in 2024 he took the argument further. Old organizations were royal courts in which information thinned out at each level down, because a soldier's job was to die in battle without asking questions <a class="ts" href="https://www.youtube.com/watch?v=lXLBTBBil2U&amp;t=2499s">[00:41:39]</a>. He wants none of his 30,000 employees to die, he said, and he wants them to question everything. Before designing an organization, ask what forest the animal has to live in: a stable one where you squeeze out the last drop of water, or one that changes constantly and is under attack from every side.</p>
+<p>Compare the Huang of 2011. In a Stanford entrepreneurship class that year he treated "functional or business units?" as a question settled by trial and error, and said he spent most of his time thinking through strategy with the company's general managers. By 2023, when Acquired asked whether he had always thought of the company this way, he answered "pretty much." Organizational philosophy, too, can be smoothed out in hindsight.</p>
+<h3>2. Sixty people, one room, no one-on-ones</h3>
+<p>The number keeps growing. In 2023 the Acquired hosts said forty-plus. In March 2024 the Stanford GSB interviewer said fifty, and that same month at the SIEPR summit he said 55 himself. At Stripe it was sixty-plus; with Lex Fridman in 2026, sixty. Over the same stretch NVIDIA's headcount went from about 29,600 to about 42,000.</p>
+<p>His fullest explanation came at Stripe. The first reason is information. He does not think anyone's contribution should rest on privileged access to it:</p>
+<blockquote><span class="en">I don't really believe there's any information that I operate on that somehow only one or two people should hear about.</span><cite>— Jensen Huang · Stripe Sessions, 2024 <a class="ts" href="https://www.youtube.com/watch?v=8Pfa8kPjUio&amp;t=686s">[00:11:26]</a></cite></blockquote>
+<p>The company's problems, where he wants to go, what is working and what isn't: he says all of it to everyone at once. His staff meets every other week, and the agenda is nothing but open issues; he skips status-reporting meetings. Collison made the case for one-on-ones: isn't that where coaching, career goals and feedback about someone's recurring weak spots happen? Huang said he gives feedback right there, in front of everybody. Feedback is learning, and if you made the mistake, why should you be the only one who learns from it?</p>
+<p>At SIEPR he added stranger details. He writes no performance reviews for the 55, just gives constant feedback and gets it back; their pay is the bottom-right cell of a spreadsheet dragged down, and many executives earn the same amount to the dollar. NVIDIA's 2026 proxy statement shows a trace of this: on his recommendation, the compensation committee set the target pay of each of the other named executive officers at $16 million. He did leave himself an exception:</p>
+<blockquote><span class="en">I don't do one-on-ones with any of them unless they need me, then I'll drop everything for them.</span><cite>— Jensen Huang · SIEPR Economic Summit, 2024 <a class="ts" href="https://www.youtube.com/watch?v=cEg8cOx7UZk&amp;t=2305s">[00:38:25]</a></cite></blockquote>
+<p>To Lex in 2026 the reason was more practical: with sixty people on staff, one-on-ones are simply impossible <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=291s">[00:04:51]</a>. No conversation at NVIDIA concerns only one person; when cooling is on the table, the power and memory people are listening and can cut in. Whoever wants to tune out can tune out, but if you had something to contribute and stayed quiet, he will call you out.</p>
+<p>As for the much-repeated "Top 5 Things" emails (employees regularly sending him the five most important things on their plate, often shortened to T5T), in the material we read they come up once, in a question from the Stanford GSB interviewer, and he did not pick up that thread. So this page does not explain T5T on his behalf.</p>
+<h3>3. Reasoning in front of everyone</h3>
+<p>What ties all this together is his central management act: reasoning in public. At Stanford GSB he said that when people send him work to review, he shows them how he would break down an ambiguous problem or make a forecast, and that this is how he empowers people. He admitted it is draining; you have to get inside a smart person's head first, and he comes out exhausted. To Lex in 2026 he described laying out every step that led to a conclusion:</p>
+<blockquote><span class="en">And I reason through it. It gives everybody the opportunity to intercept and say, "I disagree with that part."</span><cite>— Jensen Huang · Lex Fridman #494, 2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=6406s">[01:46:46]</a></cite></blockquote>
+<p>People don't have to reject his conclusion, he went on; they can reject one step and pull him somewhere else. Applied to big decisions, the same method means shaping the board's and employees' views long before an announcement, which <a href="jensen-who-topic32.en.html"><em>Before Reading Him: Four Discounts</em></a> already covers. Applied to strategy, he said he deliberately underspecifies direction for 43,000 people: specific enough to act on, loose enough that they can make it better than he imagined.</p>
+<p>He uses the same method to answer the succession question. At Stanford in 2011 he called the practice of picking three people in advance, in case he got hit by a bus, "toxic," because everyone tries to figure out who was chosen <a class="ts" href="https://www.youtube.com/watch?v=Xn1EsFe7snQ&amp;t=3536s">[00:58:56]</a>. In 2026 Lex asked about mortality, and he said he is famous for not believing in succession planning, though not because he thinks he is immortal:</p>
+<blockquote><span class="en">The most important thing you should do today if you care about the future of your company post you is to pass on knowledge, information, insight, skills, experience as often and continuously as you can.</span><cite>— Jensen Huang · Lex Fridman #494, 2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=8262s">[02:17:42]</a></cite></blockquote>
+<p>That is why, he said, every meeting is a reasoning meeting, and nothing he learns sits on his desk for more than a fraction of a second. His hope for himself is to die on the job.</p>
+<h3>4. Not giving up on people</h3>
+<p>The flat organization has another side: he rarely fires anyone. When Collison raised it, Huang said firing someone amounts to saying the job can't be learned, and he went from cleaning bathrooms to CEO, so very few jobs can't be. Then came the half-joking line:</p>
+<blockquote><span class="en">I'd rather torture you into greatness because I believe in you.</span><cite>— Jensen Huang · Stripe Sessions, 2024 <a class="ts" href="https://www.youtube.com/watch?v=8Pfa8kPjUio&amp;t=978s">[00:16:18]</a></cite></blockquote>
+<p>His reasoning: greatness often clicks all at once, and you don't want someone to quit the moment before it does. Collison also brought up something Huang had said backstage, that operational excellence can come from process but craft only comes from tenure. Huang explained that he dislikes starting over with new people, because years of pain, joy and knowledge are deposited in the people he has worked with. On Acquired he rattled off the names of colleagues who have been with him for thirty years and said they never once gave up on him.</p>
+<h2>How the Claims Fit Together</h2>
+<p>The four claims form a chain. If information stops being a source of power, most of the reason for layers goes away; with fewer layers the CEO has to manage many people directly; with that many people one-on-ones become impossible and discussion moves into the big room; in the big room, judgment is transmitted by reasoning out loud; and for that to work, the listeners need to stay together long enough to share context, hence tenure. The idea behind "torture into greatness," that suffering forges character, is taken apart in <a href="jensen-pain-topic31.en.html"><em>Pain, Character and His Advice to the Young</em></a>.</p>
+<p>The chain also exposes its preconditions. First, the product. NVIDIA sells a machine designed as one piece, so nearly every decision touches everyone and sixty listeners pay off; in a conglomerate of independent businesses, making the insurance people sit through the car meeting is just waste. Second, the people. NVIDIA's 10-K says more than 80 percent of employees are in technical roles, and turnover in fiscal 2024 through 2026 ran between 2.5 and 3.7 percent. Third, Huang himself: he has to move between memory, optics and algorithms, and tolerate being wrong in front of everyone. Fourth, the stock. The 10-K itself warns that the retentive value of stock-based pay can fall when the share price swings. And he does not recommend copying anyone:</p>
+<blockquote><span class="en">You're supposed to first of all enjoy it, right? Enjoy it, be inspired by it, but not to adopt it.</span><cite>— Jensen Huang · Acquired, 2023 <a class="ts" href="https://www.youtube.com/watch?v=y6NfxiemvHg&amp;t=1909s">[00:31:49]</a></cite></blockquote>
+<p>He said that when Acquired asked which business books he had read. By his own forest metaphor, copying NVIDIA's org chart wholesale would violate the very principle NVIDIA's org chart was designed by. The weakest link sits in the middle: information is spread to everyone, but the reasoning is demonstrated by him and the shared context accumulates around him.</p>
+<h2>Boundaries</h2>
+<div class="claim">
+<p class="said">"If the CEO's direct staff is sixty people, you've probably removed something like seven layers." — Stripe, 2024 <a class="ts" href="https://www.youtube.com/watch?v=8Pfa8kPjUio&amp;t=778s">[00:12:58]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>Layers can be counted. With eight reports per manager, a 28,000-person pyramid needs only about five levels below the CEO; widening the top level to sixty saves about one, and he concedes the lower levels can't be widened the same way. "Flat means empowered" also needs a discount. <a href="https://www.hbs.edu/faculty/Publication%20Files/12-087_bc50bde2-3016-457a-9bee-dc988cb1056b.pdf">Wulf (2012)</a> found that as CEO spans widened at large US firms, decisions moved up, and CEOs spent more time in multi-person, cross-functional internal meetings. Information got flatter; decision-making got more central.</p>
+</div>
+<div class="claim">
+<p class="said">"I'm famous for not believing in succession planning; what matters is passing on knowledge." — to Lex Fridman, 2026, quoted above</p>
+<p class="verdict">Opinion, not fact</p>
+<p>No data can settle a philosophy of succession, but the company's own filings use different language. <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm">NVIDIA's 10-K</a> has said every year from fiscal 2023 through 2026 that the company is highly dependent on its longstanding executive team, and that failure to ensure effective succession planning, transfer of knowledge and smooth transitions could hinder its long-term success. CEOs interviewed by Wulf also said that eliminating the COO layer makes it harder to develop successors with general-management experience. Passing on knowledge is part of succession, not a substitute for it.</p>
+</div>
+<h2>Crossing Over · Interdisciplinary Links</h2>
+<div class="crossx"><ul>
+<li><b>Software engineering · Conway's law</b>: In a 1968 <a href="https://www.melconway.com/Home/Committees_Paper.html">paper</a>, Melvin Conway argued that organizations which design systems produce designs that copy their own communication structures. Huang runs the law in reverse: fix the product's architecture first, then make the organization copy it, which software people later named the "inverse Conway maneuver." The difference is that software teams often split along service lines and work apart, while NVIDIA's machine can't be split, so he keeps everyone in the same room.</li>
+<li><b>Neuroscience · Global workspace</b>: Bernard Baars proposed the <a href="https://en.wikipedia.org/wiki/Global_workspace_theory">global workspace theory</a> of consciousness in 1988: many specialized brain modules work outside awareness, and only information that reaches the "workspace" is broadcast to all of them, so whichever module can use it picks it up. A sixty-person staff meeting is much like that stage. The difference is that the workspace is tiny, so who decides what gets on stage becomes the key question; at NVIDIA, the gatekeeper is Huang.</li>
+<li><b>Management science · Contingency theory</b>: In <em>Organization and Environment</em> (1967), Paul Lawrence and Jay Lorsch compared firms across several industries and concluded there is no single best way to organize: the more uncertain the environment, the more an organization needs specialized units and the stronger the integration that pulls them together. Huang's "look at the forest before designing the animal" is nearly a spoken version of the theory. The difference is that contingency theory concludes there is no universal best practice, while he calls his own approach the best practice.</li>
+</ul></div>
+<h2>Ten Takeaways</h2>
+<ol class="takeaways">
+<li>Jensen Huang holds that an organization should be "the architecture of the machinery of building the product," so NVIDIA is organized like a computing stack, not a military hierarchy.</li>
+<li>NVIDIA runs on the phrase "mission is the boss": each project pulls the best people and resources from across the company, regardless of reporting lines.</li>
+<li>Huang's direct reports grew from forty-plus in 2023 to about sixty in 2026, while NVIDIA's headcount rose from about 30,000 to over 40,000.</li>
+<li>Huang holds no one-on-ones with his executives, arguing that no information should be heard by only one or two people and that feedback should be given in front of everyone.</li>
+<li>Huang said in 2024 that he writes no performance reviews for his direct reports and that many executives are paid exactly the same.</li>
+<li>Huang treats reasoning in public as his main management tool, laying out each step so anyone can object to any part of it.</li>
+<li>Huang rejects succession plans that name candidates in advance and argues for continuously passing knowledge, skills and experience to the team.</li>
+<li>Huang rarely fires people, says he would rather "torture them into greatness," and believes craft can only be built through tenure.</li>
+<li>Huang himself says business books should inspire rather than be copied, and that an organization should be designed for the environment the company lives in.</li>
+<li>Conway's law says organizations copy their communication structures into their products; Huang's approach reverses it by making the organization copy the product's architecture.</li>
+</ol>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=y6NfxiemvHg">Acquired: NVIDIA CEO Jensen Huang</a> · <a href="https://www.youtube.com/watch?v=vif8NQcjVf0">Lex Fridman Podcast #494</a></span><span class="d">2023, 2026. Organization as product architecture, "mission is the boss," reasoning in public and succession; the second boundary quote is from Lex.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=8Pfa8kPjUio">Stripe Sessions: A conversation with NVIDIA's Jensen Huang</a> · <a href="https://www.youtube.com/watch?v=cEg8cOx7UZk">2024 SIEPR Economic Summit</a> · <a href="https://www.youtube.com/watch?v=lXLBTBBil2U">Stanford GSB View From The Top</a></span><span class="d">2024. Sixty direct reports, no one-on-ones, reviews and pay; the first boundary quote is from Stripe.</span></li>
+<li><span class="t"><a href="https://www.hbs.edu/faculty/Publication%20Files/12-087_bc50bde2-3016-457a-9bee-dc988cb1056b.pdf">Julie Wulf, The Flattened Firm: Not as Advertised (2012)</a></span><span class="d">Data on CEO spans of control and the centralization of decisions at large US firms. Used in both boundary verdicts.</span></li>
+<li><span class="t"><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm">NVIDIA 10-K, fiscal 2026</a> · <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000036/nvda-20260512.htm">2026 proxy statement</a></span><span class="d">Headcount, turnover, succession risk and executive pay. Basis for the second boundary verdict.</span></li>
+</ul>
+<footer>Jensen Huang Series · reading him topic by topic · written 2026-10-19</footer>
+</div>
+</body></html>
