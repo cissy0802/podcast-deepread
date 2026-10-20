@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>黄仁勋专题 · 护城河：全栈、供应链与竞争</title>
 <style>
@@ -58,23 +59,23 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <div class="langbar"><a href="jensen-moat-topic44.en.html">English →</a></div>
 <header>
 <div class="kicker">黄仁勋专题 · 第 7 篇</div>
-<h1>护城河：他说那不是城墙，是一张网</h1>
+<h1 data-tts="4ab365595b7383b8">护城河：他说那不是城墙，是一张网</h1>
 <p class="sub">全栈、供应链与竞争：黄仁勋怎么定义 NVIDIA 的护城河，竞争者又从哪里下手</p>
 </header>
-<div class="meta-card"><b>主题</b> 护城河：全栈、供应链与竞争 · <b>材料</b> 访谈转写 5 份（2023–2026），NVIDIA 2026 财年 10-K，Google 与 Apple 的模型技术文档 · <b>访谈</b> Acquired（2023）· BG2（2024）· BG2（2025）· Lex Fridman #494（2026）· Dwarkesh Patel（2026）</div>
-<h2>他的主张</h2>
+<div class="meta-card" data-tts="5fd065ed530cb966"><b>主题</b> 护城河：全栈、供应链与竞争 · <b>材料</b> 访谈转写 5 份（2023–2026），NVIDIA 2026 财年 10-K，Google 与 Apple 的模型技术文档 · <b>访谈</b> Acquired（2023）· BG2（2024）· BG2（2025）· Lex Fridman #494（2026）· Dwarkesh Patel（2026）</div>
+<h2 data-tts="368640136549e498">他的主张</h2>
 <p>2026 年 4 月，Dwarkesh Patel 开场就抛给黄仁勋一个刻薄的问题。NVIDIA 把一份 GDS2 版图文件发给台积电，台积电造出逻辑芯片和交换芯片，再和 SK 海力士、美光、三星的 HBM 封装在一起，最后交给台湾的代工厂装成机柜。照这么看，NVIDIA 本质上是一家写软件、让别人去制造的公司。既然大家都在预期 AI 会让软件变得廉价，NVIDIA 会不会也被商品化？</p>
 <p>这个问题问的正是护城河。三年前在 Acquired，主持人问他领先十年之后怎样守住，他先对这个词表示了保留：</p>
 <blockquote><span class="en">I don't love thinking about it in the context of a moat, and the reason for that is because you're now focused on building stuff around your castle.</span><span class="zh">我不太喜欢用护城河的框架去想这件事，因为那样一来，你的心思就放在了往自己城堡周围修东西上。</span><cite>— 黄仁勋 · Acquired，2023 <a class="ts" href="https://www.youtube.com/watch?v=y6NfxiemvHg&amp;t=2960s">[00:49:20]</a></cite></blockquote>
 <p>他更愿意把它想成一张网，一张由开发者、客户和合作伙伴织成的「网络的网络」，让别人跟着你一起在终端市场上赚钱。这一篇顺着他自己的说法，把这张网拆成四股来看：装机量、全栈、供应链，以及他怎样把同一套逻辑搬到中国问题上。最后再看竞争者和数据从哪里戳它。</p>
-<h3>一、装机量：同样的 CUDA 换个名字，一文不值</h3>
+<h3 data-tts="7728e0db65e001c8">一、装机量：同样的 CUDA 换个名字，一文不值</h3>
 <p>2026 年 3 月，Lex Fridman 直接问他 NVIDIA 最大的护城河是什么。他的回答没有提任何一项技术指标，而是说公司最重要的资产是 CUDA 的装机量（installed base）。他接着做了一个思想实验：</p>
 <blockquote><span class="en">If somebody came up with a GUDA or a TUDA, it wouldn't make any difference at all. And the reason for that is because it's never been just about the technology.</span><span class="zh">就算有人做出一个 GUDA 或者 TUDA，也不会有任何区别。因为这件事从来就不只关乎技术。</span><cite>— 黄仁勋 · Lex Fridman #494，2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=4515s">[01:15:15]</a></cite></blockquote>
 <p>他说让 CUDA 成功的不是三个人，而是公司的四万三千人，加上几百万肯把自己的软件压上去的开发者。在他的讲法里，装机量背后是信任：开发者相信这个平台会一直在，相信 NVIDIA 会一直维护它、优化它的库。从他的角度看，这份信任一旦攒下，就不是换个名字能抢走的。CUDA 怎样靠「所有芯片架构兼容」的规矩搭上每一块 GeForce，攒起最初的装机量，<a href="jensen-cuda-topic41.html">《押注 CUDA》</a>一篇已经讲过。</p>
 <p>装机量护城河最直接的挑战，来自 NVIDIA 最大的那几位客户。Dwarkesh 的追问是，如果六成收入来自五家超大规模云厂商，而这些公司有能力自己写内核，OpenAI 有 Triton，Google 用自家的 TPU，Anthropic 主要跑 TPU 和 Trainium，那 CUDA 对它们还有多重要？黄仁勋的回答分两层。一层是他派驻各家实验室的工程师多到「疯狂」，他把自家 GPU 比作 F1 赛车，谁都能开到时速一百英里，开到极限却得靠最懂它的人，他们帮实验室优化一轮，模型常常快上一倍。另一层是 2024 年在 BG2 就讲过的「入口」论，对创业公司来说，选 CUDA 等于把别的决定往后推：</p>
 <blockquote><span class="en">The one choice that you don't have to make is which one of the ASICs do I support. If you just support a CUDA, you know, you could go everywhere; you could always change your mind later.</span><span class="zh">有一个选择你根本不用做，就是该支持哪一款专用芯片。只要支持 CUDA，你哪儿都能去，以后还随时可以改主意。</span><cite>— 黄仁勋 · BG2，2024 <a class="ts" href="https://www.youtube.com/watch?v=bUrCR4jQQg8&amp;t=1679s">[00:27:59]</a></cite></blockquote>
 <p>同一场里他还说，他把路线图提前几年交给各家云厂商，对方从不给他看自研芯片的路线图，他也不介意。照这个说法，装机量锁住的不是客户，而是客户日后改主意的成本。</p>
-<h3>二、全栈：对手造的是芯片，他造的是工厂</h3>
+<h3 data-tts="f8281d442d0c49da">二、全栈：对手造的是芯片，他造的是工厂</h3>
 <p>第二股是全栈。黄仁勋讲这一点时总从摩尔定律讲起。他对 Dwarkesh 说，从 Hopper 到 Blackwell 隔了三年，晶体管本身大约只进步了 75%，可 Blackwell 的能效是 Hopper 的 50 倍。他发布时说的是 35 倍，后来 SemiAnalysis 的 Dylan Patel 写文章说他「少报了」。差额来自他所说的极限协同设计（extreme co-design），CPU、GPU、网卡、NVLink 纵向扩展、Spectrum-X 横向扩展，加上上面的库和算法，每年同时改一遍。2025 年在 BG2，他把这层意思压成了一句话：</p>
 <blockquote><span class="en">It's not about building an ASIC, it's about building an AI factory.</span><span class="zh">问题不在造一颗专用芯片，而在造一座 AI 工厂。</span><cite>— 黄仁勋 · BG2，2025 <a class="ts" href="https://www.youtube.com/watch?v=pE6sw_E9Gh0&amp;t=2343s">[00:39:03]</a></cite></blockquote>
 <p>网络是这层逻辑里最早落下的一子。2023 年 Acquired 问他为什么那么早、那么坚决地收购 Mellanox，他说一台数据中心和一台台式机用的是差不多的处理器，把两者区分开的是网络、分布方式和安全。云计算是把很多用户塞进一台机器，AI 训练则是把一个训练任务切到数以百万计的处理器上，几乎是反过来的。NVIDIA 2026 财年的 10-K 印证了这股力量：数据中心网络收入增长 142%，年报把它归功于 GB200、GB300 系统里的 NVLink 互联，以及以太网和 InfiniBand 的增长。</p>
@@ -82,21 +83,21 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p>竞争者的回应是拿订单说话。Dwarkesh 指出，世界前三的模型里有两个，Claude 和 Gemini，是在 TPU 上训练的，Anthropic 刚和博通、Google 签下数吉瓦的 TPU 协议。黄仁勋的回答是：</p>
 <blockquote><span class="en">Without an Anthropic, why would there be any TPU growth at all? It's 100% Anthropic.</span><span class="zh">要是没有 Anthropic，TPU 哪来的增长？百分之百是 Anthropic。</span><cite>— 黄仁勋 · Dwarkesh Patel，2026 <a class="ts" href="https://www.youtube.com/watch?v=Hrbq66XqtCo&amp;t=2223s">[00:37:03]</a></cite></blockquote>
 <p>他把 Anthropic 归为「个案，不是趋势」，并把根源归到自己当年没看懂前沿实验室只能靠供应商投资起家，这段自我检讨<a href="jensen-who-topic32.html">《读他之前：四个折扣》</a>一篇已经讲过。这句话站不站得住，见下文「边界」。</p>
-<h3>三、供应链：没有合同的信任，和近千亿的承诺</h3>
+<h3 data-tts="bfdcf009f7b3ffef">三、供应链：没有合同的信任，和近千亿的承诺</h3>
 <p>第三股在上游。Dwarkesh 问，NVIDIA 财报里有近千亿美元的采购承诺，真正的护城河是不是锁住了未来几年稀缺的晶圆、内存和封装，让别人设计得出加速器也造不出来？黄仁勋承认这是「别人难做到的事情之一」，但他强调更大的一块是隐性的。上游肯为他扩产，是因为他亲自向那些 CEO 推演过产业会有多大，更因为他们知道 NVIDIA 下游的需求大到吃得下他们的产能。供应链也讲周转，没人会为一个周转慢的架构搭一条供应链。</p>
 <p>讲到台积电，他的说法几乎是一段人情故事：</p>
 <blockquote><span class="en">Nvidia and TSMC don't have a legal contract.</span><span class="zh">NVIDIA 和台积电之间没有法律合同。</span><cite>— 黄仁勋 · Dwarkesh Patel，2026 <a class="ts" href="https://www.youtube.com/watch?v=Hrbq66XqtCo&amp;t=3305s">[00:55:05]</a></cite></blockquote>
 <p>他说三十年来有时他占便宜，有时吃亏，总体上是一种「粗略的公道」，他完全信任对方。三个星期前对 Lex 他说过同样的话，三十年、几百上千亿美元的生意，没有合同。他把这份信任和 NVIDIA 自己的做派连在一起：报了价就不改，需求暴涨也不加价，缺货时按下单先后分配，不卖给出价最高的人。用他的话说，你可以信得过 NVIDIA。</p>
-<h3>四、中国：生态论的延伸</h3>
+<h3 data-tts="ff4aa1fd08d6a681">四、中国：生态论的延伸</h3>
 <p>护城河的逻辑在中国问题上走得最远。Dwarkesh 那期为出口管制争了半个多小时，前后矛盾的那一段交锋<a href="jensen-who-topic32.html">《读他之前：四个折扣》</a>已经拆过，这里只看他用的是哪套论证。他说，公司最重要的东西是开发者生态，而全世界一半的 AI 开发者在中国。Dwarkesh 反驳说，特斯拉和 iPhone 在中国卖了多年，也没换来锁定。他答：</p>
 <blockquote><span class="en">Computing is not like that. There's a reason why the x86 still exists.</span><span class="zh">计算不是这样的。x86 到今天还在，是有原因的。</span><cite>— 黄仁勋 · Dwarkesh Patel，2026 <a class="ts" href="https://www.youtube.com/watch?v=Hrbq66XqtCo&amp;t=4809s">[01:20:09]</a></cite></blockquote>
 <p>他的担忧也是从同一套逻辑倒推出来的。如果中国的开源模型围着华为的架构优化，再扩散到中东、东南亚和非洲，那么将来「开箱即用跑得最好」的就不再是 NVIDIA。2025 年在 BG2 他说，NVIDIA 在中国一度有 95% 的份额。这套论证和公司的收入方向一致，《读他之前》已经交代过，这里只指出一处张力。Dwarkesh 当场就问，美国的实验室同样有大批 CUDA 开发者，并不妨碍它们也用 TPU，为什么到了中国，生态就成了锁？</p>
-<h2>这些主张怎么咬合</h2>
+<h2 data-tts="8d96ced5ab596edb">这些主张怎么咬合</h2>
 <p>四股拧成一个飞轮。装机量吸引开发者，开发者让新架构一上市就有软件可跑，于是客户敢在刚流片的芯片上下五百亿美元的订单；下游订单大，上游才肯提前扩产，NVIDIA 才撑得住一年一代；一年一代又让旧卡留在装机量里，等新算法把它们再提速一次。他对 Dwarkesh 讲的「尽量少做」原则，是这个飞轮的边界：</p>
 <blockquote><span class="en">We should do as much as needed as little as possible.</span><span class="zh">该做的都做，能不做的就不做。</span><cite>— 黄仁勋 · Dwarkesh Patel，2026 <a class="ts" href="https://www.youtube.com/watch?v=Hrbq66XqtCo&amp;t=2655s">[00:44:15]</a></cite></blockquote>
 <p>所以他不做云，只扶持 CoreWeave 这类新云；不当金融家，只在 OpenAI 需要时投钱。平台留在中心，其余交给生态。每瓦 token 这笔账怎么算，见<a href="jensen-ai-factory-topic43.html">《AI 工厂与 token》</a>一篇。</p>
 <p>最弱的一环在客户结构上。飞轮假设的是成千上万家各自选平台的开发者，可眼下撑起收入的是几家能自研芯片、自写内核的巨头。这正是 Dwarkesh 一再回到的前提，黄仁勋则说这个前提「错了」。他的几种回答之间也不完全咬合。他说专用芯片的毛利有 65%，客户省不了什么；可 2025 年在 BG2，他自己讲过另一面：一款专用芯片的量做大以后，客户会改走客户自有工装（COT）的路子，像苹果的手机芯片那样，不再付五六成的毛利给别人。NVIDIA 自己的毛利率，2026 财年是 71.1%，上一年是 75.0%。他说 NVIDIA 是做市场的，不抢份额，也从不因客户自研芯片而介意；可他同样告诉 Dwarkesh 和 Lex，NVIDIA 的份额在上升。公司的年报则把 Alphabet、亚马逊、微软这些「拥有内部芯片团队的大型云公司」明明白白列为竞争者。</p>
-<h2>边界</h2>
+<h2 data-tts="2fce9e68a9733b6d">边界</h2>
 <div class="claim">
 <p class="said">「要是没有 Anthropic，TPU 哪来的增长？百分之百是 Anthropic。」——2026 年对 Dwarkesh Patel，见上文引语</p>
 <p class="verdict">有据，但说宽了</p>
@@ -107,14 +108,14 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p class="verdict">证据不足</p>
 <p>有没有一份总合同，外人无从核实；NVIDIA 2026 财年 10-K 也没点名交易对手。但年报写明，公司为锁定产能付过溢价和定金，签了长期供应协议和产能承诺、预付制造和产能协议；截至 2026 年 1 月，未履行的采购与长期供应、产能义务达 952 亿美元。这条供应链里的信任是真的，但它同时也有大笔真金白银的承诺托着。</p>
 </div>
-<h2>越界 · 跨学科的联想</h2>
+<h2 data-tts="af19e9d86637f9a1">越界 · 跨学科的联想</h2>
 <div class="crossx"><ul>
 <li><b>经济学 · 双边平台</b>：Rochet 与 Tirole 2003 年的《双边市场中的平台竞争》指出，平台要同时把两边拉上来，关键在价格结构，常常是补贴一边、向另一边收费。CUDA 免费给开发者，钱从买 GPU 的客户那边收回来，正是这种结构。不同在于，NVIDIA 卖的硬件本身就是开发者要的装机量，两边由同一块芯片连起来。</li>
 <li><b>计算机史 · IBM System/360</b>：1964 年 IBM 发布 System/360，大小不同的机型共用一套指令集，客户换大机器不必重写软件。NVIDIA「所有芯片架构兼容」的规矩如出一辙。不同的是，IBM 的锁定后来引来司法部的反垄断诉讼，1969 年它在压力下宣布把软件和硬件分开定价；CUDA 的软件从一开始就是免费的。</li>
 <li><b>生物进化 · 红皇后假说</b>：Leigh Van Valen 1973 年发现，一个类群灭绝的概率并不因它存在得久而下降。他借《爱丽丝镜中奇遇》里红皇后的话来解释，物种必须不停地跑，才能留在原地。黄仁勋说 NVIDIA 必须「持续赢得」现在的位置，一年一代是同一种处境。不同在于，生物的军备竞赛没有尽头，而他希望一年一代本身就成为对手跟不上的门槛。</li>
 <li><b>分布式系统 · 端到端原则</b>：Saltzer、Reed 与 Clark 1984 年的论文主张，一项功能只有在端点才能做对时，就别放进中间层，网络保持简单。「尽量少做」听上去是同一种克制，可 NVIDIA 的实际走向正相反，它把网卡、交换机乃至整座机柜都收进了自己这一层，成了越来越厚的中间。</li>
 </ul></div>
-<h2>十条要点</h2>
+<h2 data-tts="dc1be18a780b69db">十条要点</h2>
 <ol class="takeaways">
 <li>黄仁勋不喜欢「护城河」这个说法，认为它让人只顾修城墙，他更愿意把 NVIDIA 的优势看成一张开发者和伙伴织成的网。</li>
 <li>黄仁勋对 Lex Fridman 说，NVIDIA 最大的护城河是 CUDA 的装机量，别人就算做出同样的技术换个名字也无济于事。</li>
@@ -127,7 +128,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li>黄仁勋反对放弃中国市场的理由也来自生态论：一半 AI 开发者在中国，计算平台一旦形成生态就很难替换。</li>
 <li>端到端原则主张中间层越薄越好，而 NVIDIA 嘴上说「尽量少做」，实际却把网络和整座机柜都收进了自己的中间层。</li>
 </ol>
-<h2>出处</h2>
+<h2 data-tts="a2305d776c04329d">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=Hrbq66XqtCo">Dwarkesh Patel：Jensen Huang – Will Nvidia’s moat persist?</a></span><span class="d">2026 年 4 月。本页的主干，两条边界被核查的原话都出自这里。</span></li>
 <li><span class="t"><a href="https://www.youtube.com/watch?v=vif8NQcjVf0">Lex Fridman #494</a> · <a href="https://www.youtube.com/watch?v=bUrCR4jQQg8">BG2 Ep17</a> · <a href="https://www.youtube.com/watch?v=pE6sw_E9Gh0">BG2 2025</a> · <a href="https://www.youtube.com/watch?v=y6NfxiemvHg">Acquired</a></span><span class="d">2023–2026。装机量、全栈与专用芯片之争的另外几个版本。</span></li>
@@ -136,9 +137,9 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 </ul>
 <footer>黄仁勋专题 · 按主题读他的说法 · 写于 2026-10-19</footer>
 </div>
-<script src="https://hub.cissychen.com/comments.js" defer></script>
-<script src="https://hub.cissychen.com/search.js" defer></script>
-<script src="https://hub.cissychen.com/index-button.js" defer></script>
-<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
-<script src="https://hub.cissychen.com/lightbox.js" defer></script>
+<script defer="" src="https://hub.cissychen.com/comments.js"></script>
+<script defer="" src="https://hub.cissychen.com/search.js"></script>
+<script defer="" src="https://hub.cissychen.com/index-button.js"></script>
+<script defer="" src="https://hub.cissychen.com/i18n-tts.js"></script>
+<script defer="" src="https://hub.cissychen.com/lightbox.js"></script>
 </body></html>
