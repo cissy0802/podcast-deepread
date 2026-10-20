@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jensen Huang Series · The Moat: Full Stack, Supply Chain and Competition</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="jensen-moat-topic44.html">中文 →</a></div>
+<header>
+<div class="kicker">Jensen Huang Series · No. 7</div>
+<h1>The Moat: Not a Wall, He Says, but a Web</h1>
+<p class="sub">Full stack, supply chain and competition: how Jensen Huang defines NVIDIA's moat, and where competitors are pushing on it</p>
+</header>
+<div class="meta-card"><b>Topic</b> The moat: full stack, supply chain and competition · <b>Material</b> 5 interview transcripts (2023–2026), NVIDIA's fiscal 2026 10-K, model documentation from Google and Apple · <b>Interviews</b> Acquired (2023) · BG2 (2024) · BG2 (2025) · Lex Fridman #494 (2026) · Dwarkesh Patel (2026)</div>
+<h2>His claims</h2>
+<p>In April 2026, Dwarkesh Patel opened with a pointed question. NVIDIA sends a GDS2 layout file to TSMC; TSMC builds the logic dies and the switches, packages them with HBM from SK Hynix, Micron and Samsung, and an ODM in Taiwan assembles the racks. On that view NVIDIA is fundamentally a software company whose products other people manufacture. If AI is about to commoditize software, does NVIDIA get commoditized too?</p>
+<p>That is the moat question. Three years earlier, when Acquired asked how a company keeps a ten-year lead, he began by distancing himself from the word:</p>
+<blockquote><span class="en">I don't love thinking about it in the context of a moat, and the reason for that is because you're now focused on building stuff around your castle.</span><cite>— Jensen Huang · Acquired, 2023 <a class="ts" href="https://www.youtube.com/watch?v=y6NfxiemvHg&amp;t=2960s">[00:49:20]</a></cite></blockquote>
+<p>He prefers to think of a network, a "network of networks" of developers, customers and partners who share in the end market with you. This page follows his own account and splits that web into four strands: installed base, full stack, supply chain, and the way he carries the same logic into the China question. Then it looks at where competitors and the data push back.</p>
+<h3>1. Installed base: the same CUDA under another name is worth nothing</h3>
+<p>In March 2026 Lex Fridman asked him directly what NVIDIA's biggest moat is. His answer named no technical spec. The company's most important asset, he said, is the installed base of CUDA, and he followed with a thought experiment:</p>
+<blockquote><span class="en">If somebody came up with a GUDA or a TUDA, it wouldn't make any difference at all. And the reason for that is because it's never been just about the technology.</span><cite>— Jensen Huang · Lex Fridman #494, 2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=4515s">[01:15:15]</a></cite></blockquote>
+<p>What made CUDA succeed, he said, was not three people but the company's 43,000, plus several million developers who trusted NVIDIA to keep maintaining it and so ported their mountains of software onto it. Behind the installed base, in his telling, is trust: developers believe the platform will always be there and that NVIDIA will keep maintaining it and optimizing its libraries. Once that trust has accumulated, in his view, no rename can take it away. How CUDA rode the "every chip architecturally compatible" rule onto every GeForce to build its first installed base is covered in <a href="jensen-cuda-topic41.en.html">Betting on CUDA</a>.</p>
+<p>The most direct challenge to an installed-base moat comes from NVIDIA's biggest customers. Dwarkesh's version: if 60% of revenue comes from five hyperscalers who can write their own kernels, with OpenAI on Triton and Google on its own TPUs and Anthropic mostly on TPUs and Trainium, how much does CUDA matter to them? Huang answered on two levels. First, the number of NVIDIA engineers embedded in the labs is "insane." He compared his GPUs to F1 cars that anyone can drive at a hundred miles an hour but only experts can push to the limit; one round of optimization often doubles a lab's throughput. Second, the on-ramp argument he made at BG2 in 2024: for a startup, choosing CUDA defers every other decision.</p>
+<blockquote><span class="en">The one choice that you don't have to make is which one of the ASICs do I support. If you just support a CUDA, you know, you could go everywhere; you could always change your mind later.</span><cite>— Jensen Huang · BG2, 2024 <a class="ts" href="https://www.youtube.com/watch?v=bUrCR4jQQg8&amp;t=1679s">[00:27:59]</a></cite></blockquote>
+<p>In the same conversation he said he hands his roadmap to the cloud providers years in advance, they never show him their in-house chip roadmaps, and he doesn't mind. Framed this way, the installed base is a kind of insurance: what it locks in is not the customer but the cost of the customer changing its mind later.</p>
+<h3>2. Full stack: rivals build chips, he builds factories</h3>
+<p>The second strand is the full stack, and he always starts from Moore's law. Hopper to Blackwell took three years, he told Dwarkesh, and the transistors improved by roughly 75%; yet Blackwell is about 50 times as energy efficient as Hopper. He announced 35 times; SemiAnalysis's Dylan Patel later wrote that he had sandbagged it. The gap comes from what he calls extreme co-design: CPU, GPU, NICs, NVLink scale-up, Spectrum-X scale-out, and the libraries and algorithms above them, all changed together every year. At BG2 in 2025 he compressed the point into one line:</p>
+<blockquote><span class="en">It's not about building an ASIC, it's about building an AI factory.</span><cite>— Jensen Huang · BG2, 2025 <a class="ts" href="https://www.youtube.com/watch?v=pE6sw_E9Gh0&amp;t=2343s">[00:39:03]</a></cite></blockquote>
+<p>Networking was the first move in this logic. Asked by Acquired in 2023 why he bought Mellanox so early and so decisively, he said a data center and a desktop use much the same processors; what distinguishes them is networking, how computing is distributed, and security. Cloud computing virtualizes many users onto one machine, while AI training shards one job across millions of processors, almost the inverse. NVIDIA's fiscal 2026 10-K shows the strand at work: Data Center networking revenue grew 142%, which the filing attributes to NVLink fabric in GB200 and GB300 systems along with Ethernet and InfiniBand growth.</p>
+<p>From this he derives a claim that often surprises people. At BG2 the host restated his view that even if rivals gave their chips away, customers would still buy NVIDIA. His arithmetic: a customer's power is fixed, say two gigawatts, so tokens per watt determine the data center's revenue; if a rival ASIC is a Hopper and Blackwell is 30 times better, free chips cannot make up the lost revenue. With Dwarkesh in 2026 he added a margin argument. The host said an ASIC need not beat NVIDIA, only be less than 70% worse, since customers pay NVIDIA's 70% margins; Huang replied that ASIC design partners such as Broadcom earn around 65% themselves, so what are customers really saving?</p>
+<p>Competitors answer with orders. Dwarkesh noted that two of the top three models, Claude and Gemini, were trained on TPUs, and that Anthropic had just signed a multi-gigawatt TPU deal with Broadcom and Google. Huang's reply:</p>
+<blockquote><span class="en">Without an Anthropic, why would there be any TPU growth at all? It's 100% Anthropic.</span><cite>— Jensen Huang · Dwarkesh Patel, 2026 <a class="ts" href="https://www.youtube.com/watch?v=Hrbq66XqtCo&amp;t=2223s">[00:37:03]</a></cite></blockquote>
+<p>He called Anthropic "a unique instance and not a trend," and traced it to his own failure to see that frontier labs could only start with investment from suppliers, a mea culpa covered in <a href="jensen-who-topic32.en.html">Before Reading Him: Four Discounts</a>. Whether the line holds up is taken up under "Boundaries" below.</p>
+<h3>3. Supply chain: trust without contracts, and nearly $100 billion in commitments</h3>
+<p>The third strand is upstream. Dwarkesh asked whether the real moat is the nearly $100 billion in purchase commitments in NVIDIA's filings: years of scarce wafers, memory and packaging locked up, so that a rival with a good accelerator cannot get it built. Huang granted it is "one of the things that we can do that is hard for someone else to do," but stressed the larger, implicit part. Suppliers expand for him because he has personally walked their CEOs through how big the industry will be, and because they know NVIDIA's downstream demand can absorb their output. Supply chains have turns, too; nobody builds one for an architecture whose business turns slowly.</p>
+<p>On TSMC, his account is almost a story about a relationship:</p>
+<blockquote><span class="en">Nvidia and TSMC don't have a legal contract.</span><cite>— Jensen Huang · Dwarkesh Patel, 2026 <a class="ts" href="https://www.youtube.com/watch?v=Hrbq66XqtCo&amp;t=3305s">[00:55:05]</a></cite></blockquote>
+<p>Over thirty years, he said, sometimes he got the better deal and sometimes the worse; overall it is "rough justice," and he trusts them completely. Three weeks earlier he had told Lex the same: three decades, tens or hundreds of billions of dollars of business, no contract. He ties that trust to NVIDIA's own conduct. Once a price is quoted it stands; when demand spikes NVIDIA does not raise it; in a shortage allocation is first in, first out, never to the highest bidder. You can count on NVIDIA, as he put it.</p>
+<h3>4. China: the ecosystem argument extended</h3>
+<p>The moat logic travels furthest on China. The half-hour export-control exchange with Dwarkesh, including the apparent contradiction he was pressed on, is dissected in <a href="jensen-who-topic32.en.html">Before Reading Him: Four Discounts</a>. Here the question is only which argument he uses. The most important thing to the company, he said, is its developer ecosystem, and half the world's AI developers are in China. Dwarkesh countered that Tesla and the iPhone sold in China for years without creating lock-in. Huang:</p>
+<blockquote><span class="en">Computing is not like that. There's a reason why the x86 still exists.</span><cite>— Jensen Huang · Dwarkesh Patel, 2026 <a class="ts" href="https://www.youtube.com/watch?v=Hrbq66XqtCo&amp;t=4809s">[01:20:09]</a></cite></blockquote>
+<p>His fear is the same logic run backwards: if Chinese open models are optimized for Huawei's architecture and then diffuse to the Middle East, Southeast Asia and Africa, NVIDIA will no longer be what runs best out of the box. At BG2 in 2025 he said NVIDIA once had 95% share in China. The argument is debatable, and its alignment with NVIDIA's revenue is covered in that same page; this page notes one tension. Dwarkesh asked on the spot: American labs also have plenty of CUDA developers and still use TPUs, so why would the ecosystem be a lock in China?</p>
+<h2>How the claims interlock</h2>
+<p>The four strands form a flywheel. The installed base draws developers; developers mean a new architecture has software on day one, so customers will place a $50 billion order on a chip that just taped out; big downstream orders make suppliers expand ahead of time, which lets NVIDIA sustain an annual cadence; and the annual cadence leaves older GPUs in the installed base, where new algorithms speed them up again. The principle he gave Dwarkesh marks the flywheel's boundary:</p>
+<blockquote><span class="en">We should do as much as needed as little as possible.</span><cite>— Jensen Huang · Dwarkesh Patel, 2026 <a class="ts" href="https://www.youtube.com/watch?v=Hrbq66XqtCo&amp;t=2655s">[00:44:15]</a></cite></blockquote>
+<p>Hence no NVIDIA cloud, only support for neoclouds like CoreWeave; no financing business, only investments such as OpenAI's when they are needed. The platform stays at the center and the rest is left to the ecosystem. How the tokens-per-watt arithmetic works is the subject of <a href="jensen-ai-factory-topic43.en.html">AI Factories and Tokens</a>.</p>
+<p>The weakest link is customer structure. The flywheel assumes thousands of developers choosing platforms, but today's revenue rests on a few giants able to design their own chips and write their own kernels, the premise Dwarkesh kept returning to and Huang called "wrong." His answers do not fully mesh. He says ASIC margins are 65%, so customers save little; yet at BG2 in 2025 he made the other half of the argument himself: once an ASIC reaches volume, the customer moves to customer-owned tooling (COT), as Apple does with its phone chips, and stops paying 50 to 60 points of margin to anyone. NVIDIA's own gross margin was 71.1% in fiscal 2026, down from 75.0%. He says NVIDIA is a market maker, not a share taker, and is never offended by in-house chips; he also told Dwarkesh and Lex that NVIDIA's share is growing. The 10-K, for its part, lists Alphabet, Amazon and Microsoft among "large cloud services companies with internal teams designing hardware and software" as competitors.</p>
+<h2>Boundaries</h2>
+<div class="claim">
+<p class="said">"Without an Anthropic, why would there be any TPU growth at all? It's 100% Anthropic." — to Dwarkesh Patel, 2026, quoted above</p>
+<p class="verdict">Supported, but stated too broadly</p>
+<p>Anthropic is indeed one of the heaviest outside users of TPUs: in October 2025 it announced access to up to one million TPUs and well over a gigawatt of capacity. But Google trains its own flagship models on TPUs, as the Gemini 3 Pro model card states, and Apple's 2024 technical report says its server foundation model was trained on 8,192 TPUv4 chips. "100%" erases both Google's internal demand and other outside customers.</p>
+</div>
+<div class="claim">
+<p class="said">"Nvidia and TSMC don't have a legal contract." — to Dwarkesh Patel, 2026, quoted above; he said the same to Lex Fridman that year</p>
+<p class="verdict">Insufficient evidence</p>
+<p>Whether a master contract exists cannot be checked from outside, and NVIDIA's fiscal 2026 10-K does not name counterparties. But the filing says the company has paid premiums, provided deposits, and entered into long-term supply agreements, capacity commitments and prepaid manufacturing agreements; as of January 2026 its outstanding purchase and long-term supply and capacity obligations stood at $95.2 billion. The trust is real, but it rests on large, firm commitments as well.</p>
+</div>
+<h2>Crossing Over · Interdisciplinary Links</h2>
+<div class="crossx"><ul>
+<li><b>Economics · Two-sided platforms</b>: Rochet and Tirole's 2003 "Platform Competition in Two-Sided Markets" argues that a platform must get both sides on board, and the key is the price structure: subsidize one side, charge the other. CUDA is free to developers and paid for by GPU buyers, exactly that structure. The difference is that NVIDIA's hardware is itself the installed base developers want, so one chip binds both sides.</li>
+<li><b>Computing history · IBM System/360</b>: In 1964 IBM launched System/360, a family of machines of different sizes sharing one instruction set, so customers could move up without rewriting software; it made IBM dominant in mainframes for years. NVIDIA's compatibility rule is the same idea. The difference: IBM's lock-in drew a Justice Department antitrust suit, and in 1969 it announced it would price software separately from hardware; CUDA's software was free from the start.</li>
+<li><b>Evolution · The Red Queen</b>: In 1973 Leigh Van Valen found that a group's probability of extinction does not fall the longer it has survived, and explained it with the Red Queen of Through the Looking-Glass: you must keep running to stay in place. Huang's insistence that NVIDIA must "continuously earn" its position, one generation a year, is that predicament. The difference is that biological arms races have no end, whereas he hopes the annual cadence itself becomes a bar rivals cannot clear.</li>
+<li><b>Distributed systems · The end-to-end argument</b>: Saltzer, Reed and Clark argued in 1984 that if a function can only be done correctly at the endpoints, it should not be put in the middle; keep the network simple. "As little as possible" sounds like the same restraint. NVIDIA's actual trajectory runs the other way, absorbing NICs, switches and whole racks into its own layer and becoming an ever thicker middle.</li>
+</ul></div>
+<h2>Ten Takeaways</h2>
+<ol class="takeaways">
+<li>Jensen Huang dislikes the word "moat" because it focuses a company on walls; he prefers to see NVIDIA's advantage as a web of developers and partners.</li>
+<li>Jensen Huang told Lex Fridman that NVIDIA's biggest moat is CUDA's installed base, and that the same technology under another name would make no difference.</li>
+<li>Jensen Huang credits CUDA's success to NVIDIA's 43,000 employees and millions of developers who bet their software on NVIDIA maintaining it.</li>
+<li>At BG2, Jensen Huang argued that a startup choosing CUDA need not bet on any particular ASIC and can change its mind later, making CUDA the on-ramp to AI.</li>
+<li>Jensen Huang says Blackwell's transistors improved only about 75% over Hopper while performance and efficiency rose dozens of times, thanks to extreme co-design.</li>
+<li>Jensen Huang holds that a data center is defined by its networking rather than its processor, which is why NVIDIA bought Mellanox and built NVLink.</li>
+<li>Jensen Huang argues that when power is fixed, tokens per watt set revenue, so a rival ASIC would be a worse deal than NVIDIA even if given away.</li>
+<li>Jensen Huang says NVIDIA and TSMC have worked for thirty years without a legal contract, and that NVIDIA never raises quoted prices and allocates scarce supply first in, first out.</li>
+<li>Jensen Huang's case against conceding China comes from the same ecosystem logic: half the world's AI developers are there, and computing ecosystems are hard to replace.</li>
+<li>The end-to-end argument favors a thin middle layer, yet NVIDIA, while preaching "as little as possible," has absorbed networking and entire racks into its own layer.</li>
+</ol>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=Hrbq66XqtCo">Dwarkesh Patel: Jensen Huang – Will Nvidia’s moat persist?</a></span><span class="d">April 2026. The backbone of this page; both statements checked under Boundaries come from here.</span></li>
+<li><span class="t"><a href="https://www.youtube.com/watch?v=vif8NQcjVf0">Lex Fridman #494</a> · <a href="https://www.youtube.com/watch?v=bUrCR4jQQg8">BG2 Ep17</a> · <a href="https://www.youtube.com/watch?v=pE6sw_E9Gh0">BG2 2025</a> · <a href="https://www.youtube.com/watch?v=y6NfxiemvHg">Acquired</a></span><span class="d">2023–2026. Other versions of the installed-base, full-stack and ASIC arguments.</span></li>
+<li><span class="t"><a href="https://www.googlecloudpresscorner.com/2025-10-23-Anthropic-to-Expand-Use-of-Google-Cloud-TPUs-and-Services">Anthropic to Expand Use of Google Cloud TPUs</a> · <a href="https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Model-Card.pdf">Gemini 3 Pro model card</a> · <a href="https://arxiv.org/abs/2407.21075">Apple Intelligence Foundation Language Models</a></span><span class="d">Basis for the first verdict.</span></li>
+<li><span class="t"><a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm">NVIDIA fiscal 2026 10-K</a></span><span class="d">Supply and capacity obligations, networking revenue, gross margin and the competitor list. Basis for the second verdict.</span></li>
+</ul>
+<footer>Jensen Huang Series · Reading him topic by topic · Written 2026-10-19</footer>
+</div>
+</body></html>
