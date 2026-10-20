@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>黄仁勋专题 · 押注 CUDA</title>
 <style>
@@ -58,19 +59,17 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <div class="langbar"><a href="jensen-cuda-topic41.en.html">English →</a></div>
 <header>
 <div class="kicker">黄仁勋专题 · 第 3 篇</div>
-<h1>押注 CUDA：一个十年没人买单的平台</h1>
+<h1 data-tts="2fe8231c4708262a">押注 CUDA：一个十年没人买单的平台</h1>
 <p class="sub">他在台上讲的是先见之明，那几年的年报里是另一副样子</p>
 </header>
-<div class="meta-card"><b>主题</b> 加速计算、CUDA 与装机量的押注 · <b>材料</b> 访谈与演讲转写 9 份（2011–2026），NVIDIA 2008–2010 与 2017 财年 10-K，AlexNet 论文 · <b>主要场合</b> Stanford eCorner（2011）· Acquired（2023）· 斯坦福商学院（2024）· Stripe Sessions（2024）· 加州理工毕业演讲（2024）· Cleo Abram（2025）· Joe Rogan #2422（2025）· Lex Fridman #494（2026）· Dwarkesh Patel（2026）</div>
-<h2>他的主张</h2>
+<div class="meta-card" data-tts="83e25df9a4769dde"><b>主题</b> 加速计算、CUDA 与装机量的押注 · <b>材料</b> 访谈与演讲转写 9 份（2011–2026），NVIDIA 2008–2010 与 2017 财年 10-K，AlexNet 论文 · <b>主要场合</b> Stanford eCorner（2011）· Acquired（2023）· 斯坦福商学院（2024）· Stripe Sessions（2024）· 加州理工毕业演讲（2024）· Cleo Abram（2025）· Joe Rogan #2422（2025）· Lex Fridman #494（2026）· Dwarkesh Patel（2026）</div>
+<h2 data-tts="d82d7bac6d8aa2ea">他的主张</h2>
 <p>CUDA 是黄仁勋最爱讲的一次押注。在他的讲法里，故事很完整。NVIDIA 决定把一套通用计算架构塞进每一块游戏显卡，成本暴涨，市值跌掉大半，没有客户要它，他硬撑了十年，直到 2012 年 AlexNet 用两块 GeForce 训练出来，整个 AI 时代从这里开始。这一篇把这个故事拆成三段来读：他为什么要把一家图形公司变成计算公司，为什么非要把 CUDA 装进消费级显卡，以及那十年他靠什么熬过来。最后再翻一翻当年的年报，看这次押注在账上是什么样子。</p>
-
-<h3>一、从 Cg 到 CUDA：一个专才想变成通才</h3>
+<h3 data-tts="4e777a54661996bb">一、从 Cg 到 CUDA：一个专才想变成通才</h3>
 <p>2026 年对 Lex Fridman，他把 NVIDIA 的路线概括成一对故意连在一起的词，加速计算（accelerated computing）。加速器是专才，针对一类任务做到极致，代价是市场窄，市场又决定了研发预算能有多大；计算公司是通才，覆盖面广，却会丢掉专长。他说公司三十年做的事，就是在这两者之间找一条窄路，一步步扩大能加速的应用范围，又不放弃最拿手的那一项。他列的台阶是可编程像素着色器、符合 IEEE 标准的 FP32、给着色器加上 C 语言的 Cg，最后是 CUDA。</p>
 <p>2011 年他在斯坦福创业课上讲的是同一段路，只是那时 CUDA 才出来四五年，他嘴里还叫它「GPU 计算」。他说第一颗可编程着色的芯片 GeForce FX 差点压垮公司，图形性能并不出色，但研究者发现它有一门叫 Cg 的语言和 32 位浮点，就从 Fry's 买来显卡，绞尽脑汁把分子动力学、流体计算改写成图形问题，跑出了二十倍的加速。他由此推想，图形渲染本来就比 CPU 快上千倍，要是把这些并行处理器完全开放给 C 语言，能解决的问题会多得多。那堂课里他也讲了风险，做通用的东西就像瑞士军刀，会让公司偏离核心业务，营销课上都会教这一条，可他们觉得这件事太重要，不能不做。</p>
 <p>起点在哪里，他后来的说法越来越早。2024 年在斯坦福商学院和 2025 年对 Cleo Abram，他讲的是麻省总医院的医生拿 Cg 做 CT 重建、一位量子化学家用它跑算法，给了公司信心。2023 年在 Acquired，他说 NVIDIA 从第一天起就是平台公司，1993 年就有一套叫 UDA 的架构，「CUDA 里的 UDA」就是它；第二年在 Stripe 的台上，同一个 UDA 又成了 1993 年发明的「统一驱动架构」。也是在 Stripe，他把加速计算的原理讲得最直白。很多重要程序里，一小段核心代码吃掉了几乎全部运行时间，把这一小段加速到极致，整个程序就快了。</p>
-
-<h3>二、把 CUDA 装进每一块 GeForce</h3>
+<h3 data-tts="0a2ca544e6609071">二、把 CUDA 装进每一块 GeForce</h3>
 <p>有了 CUDA，下一个问题是谁来用。2026 年对 Lex，他的回答是整套押注的核心：</p>
 <blockquote><span class="en">They come to a computing platform because the install base is large. Because a developer like anybody else wants to develop software that reaches a lot of people.</span><span class="zh">开发者投奔一个计算平台，是因为它的装机量大。开发者和所有人一样，想写出能触达很多人的软件。</span><cite>— 黄仁勋 · Lex Fridman #494，2026 <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=687s">[00:11:27]</a></cite></blockquote>
 <p>他举的例子是 x86。没有哪种架构比 x86 挨的骂更多，那么多设计优美的 RISC 架构却大多失败了，在他看来，装机量决定架构，其余都是次要的。当时 GeForce 一年已经卖出几百万块，于是就有了那个决定：</p>
@@ -81,8 +80,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p>那一次他说市值跌到大约十亿美元。2025 年对 Joe Rogan，成本「翻了一倍」，市值从一百二十亿左右跌到二三十亿；2026 年对 Lex，成本涨了五成，市值从六七十亿或八十亿跌到十五亿。发布会上的场面，他对 Rogan 是这样描述的：</p>
 <blockquote><span class="en">When I launched CUDA, the audience was complete silence. No customer wanted it.</span><span class="zh">我发布 CUDA 的时候，台下一片寂静。没有一个客户想要它。</span><cite>— 黄仁勋 · Joe Rogan #2422，2025 <a class="ts" href="https://www.youtube.com/watch?v=3hptKYix4X8&amp;t=8376s">[02:19:36]</a></cite></blockquote>
 <p>这些数字和账本对不对得上，下文「边界」一节会拿年报核一核。</p>
-
-<h3>三、熬十年，直到 AlexNet 出现</h3>
+<h3 data-tts="262489219a915937">三、熬十年，直到 AlexNet 出现</h3>
 <p>没有市场，凭什么撑下去？他给过三种回答，彼此是连着的。第一种是「零十亿美元市场」。Collison 问他这个说法是什么意思，他说他宁可做市场的创造者，也不愿去抢份额；一件从没人做成、又极难做的事，市场规模当然是零。他讨厌电子表格，因为表格想画成什么样都行，他要听的是推理，用文字讲清楚为什么相信。问到 CUDA 多久才开始见效，他说大概十年。</p>
 <p>第二种回答是给团队看的路标。2024 年在斯坦福商学院，他说毛利率不是 KPI，而是结果；他在公司里用的说法叫「未来成功的早期指标」，拿解决了哪些难题来给大家打气。挑项目的标准也不是市场大小：</p>
 <blockquote><span class="en">Because the importance of the work is the early indicators of a future market.</span><span class="zh">因为工作的重要性，就是未来市场的早期迹象。</span><cite>— 黄仁勋 · 斯坦福商学院，2024 <a class="ts" href="https://www.youtube.com/watch?v=lXLBTBBil2U&amp;t=1336s">[00:22:16]</a></cite></blockquote>
@@ -95,12 +93,10 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p>2024 年在加州理工，他把这一切总结成一句逻辑：</p>
 <blockquote><span class="en">This is one of those if you build it will they come. Our logic is if we don't build it they can't come.</span><span class="zh">这就是那种「建好了他们会不会来」的事。我们的逻辑是，不建，他们就不可能来。</span><cite>— 黄仁勋 · 加州理工毕业演讲，2024 <a class="ts" href="https://www.youtube.com/watch?v=53iujxhGRsE&amp;t=888s">[00:14:48]</a></cite></blockquote>
 <p>值得对照的是 AlexNet 论文自己怎么写。Krizhevsky、Sutskever 和 Hinton 在 <a href="https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf">2012 年的论文</a>里说，网络在两块 3GB 的 GTX 580 上训练了五到六天，规模主要受显存限制，结果只要等更快的 GPU 和更大的数据集就能再提高。站在研究者那一边，GPU 是现成的、买得到的工具；站在黄仁勋这一边，那是他六年前就放在货架上的装机量。</p>
-
-<h2>这些主张怎么咬合</h2>
+<h2 data-tts="e2b2a82a6a6953db">这些主张怎么咬合</h2>
 <p>三段连起来是一条完整的链。加速计算给了方向，要从专才走向通才；装机量给了手段，借游戏卡的销量把新架构铺到每个研究者桌上；「零十亿美元市场」和「早期指标」给了耐心，让公司在没有收入的年份里还说得清自己在做什么。AlexNet 是链条末端那只落下的苹果，<a href="jensen-who-topic32.html">《读他之前：四个折扣》</a>一篇已经讲过，他看准的是加速计算，深度学习是后来才来的。这条链往外接到<a href="jensen-moat-topic44.html">《护城河》</a>，今天他说 CUDA 是 NVIDIA 最大的财富，靠的还是同一个装机量的论证；也接到<a href="jensen-origin-topic34.html">《丹尼餐厅与几次濒死》</a>里那种「先活下来」的耐心。</p>
 <p>最弱的一环在「熬」字上。他的三种回答都只能事后验证。坚持和固执的分界，他自己在 Stripe 承认是模糊的，办法是每天拿第一性原理检查一遍，问物理变了没有、别人是不是已经解决了这个问题。可同样的检查，一家押错了方向的公司也会做，而且会得出同样的结论。他讲 CUDA 时，很少把它和同样硬撑过、最后却退出的生意放在一起比，比如被挤出市场的手机芯片（见<a href="jensen-pain-topic31.html">《痛苦、品格与他给年轻人的话》</a>一篇），这条链里没有分母。再加上成本是五成还是一倍、市值跌到十亿还是三十亿、熬了十年还是二十年，每次讲法都不同，能确定的是故事的寓意，而不是它的刻度。</p>
-
-<h2>边界</h2>
+<h2 data-tts="683a40a37cc0ff77">边界</h2>
 <div class="claim">
 <p class="said">「我们把成本提高了 50%，而我们本来是一家毛利率 35% 的公司。」市值随之跌到约 15 亿美元。——2026 年对 Lex Fridman <a class="ts" href="https://www.youtube.com/watch?v=vif8NQcjVf0&amp;t=948s">[00:15:48]</a></p>
 <p class="verdict">有据，但说宽了</p>
@@ -111,16 +107,14 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p class="verdict">有据</p>
 <p>在 2008 到 2010 财年的年报里，Tesla 计算卡只是专业解决方案部门里的一条产品线，连单独的收入数字都没有。据 <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581017000027/nvda-2017x10k.htm">2017 财年 10-K</a>，数据中心业务 2015 财年收入 3.17 亿美元，占总收入不到 7%；到 2017 财年，因为深度学习训练的需求，才跳涨 145% 到 8.3 亿。从开发包公开算起，差不多正好十年。</p>
 </div>
-
-<h2>越界 · 跨学科的联想</h2>
+<h2 data-tts="fb1a2135c720fb6e">越界 · 跨学科的联想</h2>
 <div class="crossx"><ul>
 <li><b>计算机体系结构 · Amdahl 定律</b>：Gene Amdahl 1967 年指出，程序里不能加速的那部分决定了整体加速的上限。黄仁勋说「一小段代码吃掉几乎全部运行时间」，讲的是这条定律乐观的一面，热点越集中，加速器越划算。不像的地方是，Amdahl 原本是在给并行计算泼冷水，而 CUDA 的生意正建立在找出那些热点足够集中的应用上。</li>
 <li><b>经济学 · 双边市场</b>：Rochet 与 Tirole 在 2003 年的论文里分析平台怎样补贴一边的用户来吸引另一边，比如信用卡补贴持卡人来争取商户。CUDA 是让玩家这一边承担硬件成本，去吸引开发者那一边。不同在于，玩家并不知道自己在补贴谁，真正掏钱的是 NVIDIA 被压低的毛利。</li>
 <li><b>生物进化 · 隐性遗传变异</b>：种群里积累着大量平时对适应度没有影响的遗传差异，环境一变，它们突然显现出来，成为选择的原料，Gibson 与 Dworkin 2004 年的综述把它叫作隐性遗传变异（cryptic genetic variation）。装在几亿块游戏卡里、多数玩家从没用过的 CUDA，就像这样一份隐性变异，等到深度学习这个新环境出现才被选中。不像的是，自然界的隐性变异几乎没有成本，NVIDIA 的这一份是花钱养着的。</li>
 <li><b>科学哲学 · Lakatos 的研究纲领</b>：Imre Lakatos 认为一个科学纲领有不容放弃的「硬核」，外面围着可以修改的辅助假设；纲领能不断预言新事实就是进步的，只会事后打补丁就是退化的。黄仁勋每天拿第一性原理检查「物理变了没有」，很像在守护硬核，同时把 CT 重建、地震处理这些小应用当作保护带。Lakatos 也说过，一个纲领可能退化很多年后又重新进步，所以当下很难判断该坚持还是该放弃。这正是黄仁勋自己承认模糊的那条线，只是 Lakatos 没有假装事前就能分清。</li>
 </ul></div>
-
-<h2>十条要点</h2>
+<h2 data-tts="20f77246772c1e1d">十条要点</h2>
 <ol class="takeaways">
 <li>黄仁勋把加速计算描述为一对有张力的词，NVIDIA 要从专用加速器走向通用计算，又不能丢掉专长。</li>
 <li>黄仁勋 2011 年还把 CUDA 叫作「GPU 计算」，起点是研究者用 GeForce FX 的 Cg 语言把科学计算改写成图形问题。</li>
@@ -133,8 +127,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li>黄仁勋说 AlexNet 出现时，NVIDIA 内部正为让 CUDA 跑好计算机视觉而受挫，因此格外留意它为何有效。</li>
 <li>Lakatos 的研究纲领理论说明，坚持与固执的分界往往只能事后判断，这也是黄仁勋承认模糊的地方。</li>
 </ol>
-
-<h2>出处</h2>
+<h2 data-tts="717eb47104a7f508">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=vif8NQcjVf0">Lex Fridman Podcast #494：Jensen Huang</a></span><span class="d">2026 年 3 月。加速计算的张力、装机量与把 CUDA 装进 GeForce 的决定，第一条边界的原话出自这里。</span></li>
 <li><span class="t"><a href="https://www.youtube.com/watch?v=8Pfa8kPjUio">Stripe Sessions：A conversation with NVIDIA’s Jensen Huang</a></span><span class="d">2024 年 5 月。「零十亿美元市场」、坚持与固执，第二条边界的原话出自这里。</span></li>
