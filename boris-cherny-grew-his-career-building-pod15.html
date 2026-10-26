@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Peterman Pod × Boris Cherny — 只造人们已经在做的事</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="boris-cherny-grew-his-career-building-pod15.en.html">English →</a></div>
+<header>
+<div class="kicker">The Peterman Pod · 2025</div>
+<h1>只造人们已经在做的事：Claude Code 作者的职业路</h1>
+<p class="sub">Boris Cherny × Ryan Peterman ·《Boris Cherny (Creator of Claude Code) On What Grew His Career And Building at Anthropic》</p>
+</header>
+<div class="meta-card"><b>节目</b> The Peterman Pod · 2025-12-15 · <b>时长</b> 85 分钟 · <b>嘉宾</b> Boris Cherny · <b>主持</b> Ryan Peterman · <b>原片</b> <a href="https://www.youtube.com/watch?v=AmdLVWMdjOk">YouTube</a></div>
+
+<h2>那一段</h2>
+<p>Boris Cherny 在 Facebook 做的第一个像样的产品，是让 Facebook 群组里能直接开聊天室。团队很小，没有用户研究员，于是他想了个土办法：每到午饭时间，他就带着新功能去员工食堂，把手机递给食堂的工作人员，问一句「你能找到怎么开一个聊天吗」，然后闭上嘴，看对方在哪里卡住。<a class="ts" href="https://www.youtube.com/watch?v=AmdLVWMdjOk&amp;t=177s">[00:02:57]</a></p>
+<p>后来他把这个办法教给了整个组。到最后，组里的工程师每天中午都去食堂「骚扰」工作人员。他说那是一次没有经费的观察式用户研究，而他至今最想招的，仍然是这种既写代码、又肯自己去找用户的工程师。这一期八十多分钟，从 Meta 的四次晋升一直聊到 Claude Code，贯穿始终的就是这股劲：<strong>先看人们实际在做什么，再动手。</strong></p>
+
+<h2>谁在聊，和那一年</h2>
+<p>Cherny 大学读的是经济学，没读完就退学去做创业公司，十八岁时已经在经营自己的第一家公司。进 Facebook 前，他在一家对冲基金写过代码，还写了一本 O'Reilly 出版的《Programming TypeScript》。他在 Meta 从中级工程师一路升到 IC8（Principal），中途为了一段才谈了三个月的恋爱，跟着女友搬去日本乡下，从 Facebook 群组转到了 Instagram 东京办公室。他说调岗前自己连 Instagram 都没装过。</p>
+<p>主持人 Ryan Peterman 也出身 Meta，他的节目专访资深工程师，最爱一级一级地问「是什么让你升上去的」。这一期的前半段完全照这个套路走。从提到的事情看，节目录于 2025 年 10 月下旬：Claude Code 的插件功能「几周前」刚发布（10 月 9 日），Karpathy 的那期长访谈刚播出不久。这时离 Claude Code 以研究预览版发布（2025 年 2 月）过去了八个月，它已经成了 Anthropic 公司里人人在用的工具。节目在 12 月 15 日上线。</p>
+
+<h2>术语表 · Glossary</h2>
+<div class="glossary"><ul>
+<li><b>Meta 的工程师职级</b>：E4 是中级，E5 高级，E6 Staff，E7 Senior Staff，E8 Principal。IC 指不带人的个人贡献者。</li>
+<li><b>Better Engineering</b>：Meta 绩效考核里「工程卓越」这一维，指还技术债、改进开发基础设施这类不直接出产品的工作。</li>
+<li><b>Comet</b>：Facebook 桌面网站的整体重写，从拼凑式的 PHP 页面改成单页 JavaScript 应用。</li>
+</ul></div>
+
+<h2>这期聊透</h2>
+<h3>一、潜在需求：只造人们已经在做的事</h3>
+<p>Peterman 问他什么是「潜在需求」（latent demand），Cherny 说这是产品里最重要的一条原则。他的例子是 Facebook Marketplace：当年 Facebook 群组里大量的帖子都在买卖东西，群组并不是为交易设计的，用户却硬把它用成了集市，于是先有了买卖群组，再有了 Marketplace。</p>
+<blockquote><span class="en">I think the principle in product is you can never get people to do something they do not yet do.</span><span class="zh">我觉得做产品的原则是：你永远没法让人去做一件他们还没在做的事。</span><cite>— Boris Cherny · <a class="ts" href="https://www.youtube.com/watch?v=AmdLVWMdjOk&amp;t=340s">[00:05:40]</a></cite></blockquote>
+<p>你能做的，是找到人们已有的意图，把它引导到一个更顺手的出口。有意思的是，他在工程基础设施上用的也是同一套逻辑。他自己搞不懂 Redux，就写了一个更简单的状态管理库 Undux；进了 Facebook，他发现内部的 Redux 讨论组里，别人问的正是他当年的问题。他写脚本把组里报问题的人按团队统计出来，然后挨个给这些团队的负责人发消息，几周里骑着自行车在园区里讲了二三十甚至四十场专场技术分享。做代码评审时，他用一张表格记下自己反复提的同类意见，同一种意见出现过几次，就写一条 lint 规则把它自动化，最后大半评审都由这些规则替他完成了。</p>
+<p>这条线最后落回了 Claude Code。他说他走进办公室，看到隔壁的数据科学家自己装好 Node.js，用 Claude Code 写 SQL、做分析；现在 Anthropic 销售团队有一半人也在用它。<strong>这不是我们设计它的用途</strong>，他说。按他自己的原则，这正是下一个产品该长在哪里的信号。</p>
+
+<h3>二、信任要自己挣，头衔帮不上忙</h3>
+<p>第二条线是关于影响力从哪里来。Meta 当年不显示职级，再资深的工程师头衔也只是「软件工程师」；Anthropic 走得更远，工程师、产品经理、设计师统统叫「技术人员」（member of technical staff）。Peterman 追问：没有头衔，跨部门找人合作时别人怎么知道该多认真对待你？Cherny 承认这是代价，但认为好处更大。</p>
+<blockquote><span class="en">And in some ways, having a manager title makes it a little bit harder to earn this kind of trust.</span><span class="zh">某种程度上，挂着经理的头衔，反而更难挣到这种信任。</span><cite>— Boris Cherny · <a class="ts" href="https://www.youtube.com/watch?v=AmdLVWMdjOk&amp;t=1740s">[00:29:00]</a></cite></blockquote>
+<p>他升 IC7 的故事最能说明信任怎么挣。那时公开群组改成不用先加入也能参与，组里资历最深的工程师 Bob 坚持认为「关注者」和「成员」必须在数据模型里分开存，哪怕要迁移几百处调用。Cherny 不同意，但先照做了。花了半年到一年做完，审计下来才发现，每处调用不过多了一个 if-else，原来那个字段本来就够用。</p>
+<blockquote><span class="en">And so I pushed the same engineer that did this to then undo it.</span><span class="zh">于是我让做这次迁移的同一位工程师，再亲手把它撤回来。</span><cite>— Boris Cherny · <a class="ts" href="https://www.youtube.com/watch?v=AmdLVWMdjOk&amp;t=2398s">[00:39:58]</a></cite></blockquote>
+<p>Cherny 说，Bob 反而因此更信任他这个技术负责人。他的解释是先「不同意，但执行」，攒够信任，之后的反对才有分量。到了 Instagram 他又从头挣一遍：想把 Python 代码库迁到 Facebook 的 Hack 技术栈，他第一站去找的是最可能反对的那几位基础设施老将，在纽约请他们喝啤酒，先认识人，再谈技术。他也说自己是因为「入职时级别被定低了」才有空间到处折腾，这一点职业类节目的听众可以多想一层：这是一个升到 IC8 的人回头看的视角。</p>
+
+<h3>三、为六个月后的模型造产品</h3>
+<p>第三条线讲 Claude Code 本身。Cherny 说，当时人们想到 AI 写代码，想到的就是按 Tab 自动补全。是他当时的经理 Ben 逼他把目标放远。Ben 从 Anthropic 创立时就在，对模型进步的速度有切身的体会：</p>
+<blockquote><span class="en">he actually pushed me really hard to be like don't build for the model of today build for the model 6 months from now.</span><span class="zh">他使劲推我：别为今天的模型造东西，要为六个月后的模型造。</span><cite>— Boris Cherny · <a class="ts" href="https://www.youtube.com/watch?v=AmdLVWMdjOk&amp;t=4261s">[01:11:01]</a></cite></blockquote>
+<p>所以很长一段时间里，Claude Code 并不好用，他自己只用它写一成左右的代码。直到 Claude 4 发布（他记成了三月，实际是 2025 年 5 月），产品突然「能用了」，他一半的代码交给了它。押注的成本是半年做一个暂时不好用的产品，赌的是模型进步的斜率。</p>
+<p>Peterman 拿 Karpathy 对「氛围编程」（vibe coding）产出大量烂代码的批评来问他。Cherny 没有反驳，而是讲了他们的规矩：</p>
+<blockquote><span class="en">for the Claude Code team, we have the same exact bar regardless of whether the code was written by the model or by a human.</span><span class="zh">在 Claude Code 团队，不管代码是模型写的还是人写的，标准一模一样。</span><cite>— Boris Cherny · <a class="ts" href="https://www.youtube.com/watch?v=AmdLVWMdjOk&amp;t=4379s">[01:12:59]</a></cite></blockquote>
+<p>他分了三种用法：一次性的原型才放手让模型「氛围」着写；多数时候是先在计划模式里和模型对齐方案，再一起改代码；核心查询循环里那些他对参数名都有执念的地方，他仍然手写。他还补了一句不太像产品负责人会说的话：</p>
+<blockquote><span class="en">the models I think are still overall not great at coding. I think there's still so much room to improve and this is the worst it's ever going to be.</span><span class="zh">我觉得模型整体上写代码还不算好，进步空间还大得很，而现在已经是它最差的时候了。</span><cite>— Boris Cherny · <a class="ts" href="https://www.youtube.com/watch?v=AmdLVWMdjOk&amp;t=4448s">[01:14:08]</a></cite></blockquote>
+<p>他估计，当年 Facebook 群组迁到 Comet 用了二三十名工程师、大约两年，今天也许五个人半年就够，再过半年可能一个人就够。他现在的日常是早上在手机上开几个代理，到电脑前再检查进度。至于对手 Codex，他说自己基本不用别家的产品，盯着竞争对手是大公司常犯的毛病。</p>
+
+<h2>说法核查</h2>
+<div class="claim">
+<p class="said">Cherny 说，Anthropic 今年人数翻了三倍，而按 PR 数算，人均产出因为 Claude Code 涨了近 70%。<a class="ts" href="https://www.youtube.com/watch?v=AmdLVWMdjOk&amp;t=4303s">[01:11:43]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>Anthropic 自己的报告确有此数：全工程部门采用 Claude Code 后，人均每天合并的 PR 增加 67%。但这是前后对比，没有对照组；PR 数也不等于产出。报告本身提醒结论很可能不适用于别的公司。</p>
+</div>
+<div class="claim">
+<p class="said">Cherny 说，到了 Opus 4，风险陡然升高，模型可能被用来设计生物病毒这类真正危险的东西。<a class="ts" href="https://www.youtube.com/watch?v=AmdLVWMdjOk&amp;t=3988s">[01:06:28]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>2025 年 5 月 Anthropic 为 Opus 4 启用了 ASL-3 防护，重点防生物武器滥用。但公告原话是「尚未确定」它是否越过了需要这级防护的能力门槛，只是已无法排除。启用防护是预防，不是确认模型有这个能力。</p>
+</div>
+<div class="claim">
+<p class="said">Cherny 说，Marketplace 源于一个观察：当时 Facebook 群组里 40% 的帖子在买卖东西。<a class="ts" href="https://www.youtube.com/watch?v=AmdLVWMdjOk&amp;t=340s">[00:05:40]</a></p>
+<p class="verdict">证据不足</p>
+<p>起源本身有据：Facebook 2016 年发布 Marketplace 时写明交易「始于群组」，每月有 4.5 亿多人访问买卖群组。但公开材料里找不到 40% 这个帖子占比。</p>
+</div>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>城市规划 · 期望路径（desire path）</b>：草坪上被人踩出来的斜道，是行人用脚投票的捷径。有些规划者干脆等人先踩出路来，再沿着痕迹铺路。这和 Cherny 的潜在需求一模一样：不画路，先看人往哪里走。不像的是，草坪不会被「滥用」得更坏，而产品要先设计成能被用户「钻空子」的样子，需求才露得出来。</li>
+<li><b>机器学习 · 集成模型的分歧</b>：Cherny 为了合并群组和公共主页的数据模型，把各组技术负责人分成两队，各自在白板前设计三小时。出来的两个方案八成相同，剩下两成的分歧恰好标出了风险在哪。<a href="https://arxiv.org/abs/1612.01474">深度集成（deep ensembles）</a>估计不确定性用的也是这个办法：几个独立训练的模型都同意的地方可以放心，它们意见不一的地方就是模型没把握的地方。不像的是，模型的分歧只告诉你哪里没把握，两队工程师的分歧还各自带着一种解法，可以拿技术验证去逐一排除。</li>
+<li><b>神经科学 · 突触修剪（synaptic pruning）</b>：Instagram 的「下线」（unshipping）文化是给每个功能设一条使用门槛，不达标就删，因为屏幕空间有限，每个功能都在跟别的功能抢地方。大脑在发育期也大量修剪不常用的突触连接，用进废退。两者都是在资源有限时，用「有没有被用到」来做筛选。不像的是，大脑修剪是自动发生的，产品下线却总要面对一小撮被删掉功能、因此不满的用户。</li>
+<li><b>逻辑学 · Curry–Howard 对应</b>：Cherny 说写代码时最要紧的是类型签名，比代码本身还重要。Curry–Howard 对应给了这句话一个严格的版本：类型是命题，程序是证明。签名写对了，等于先把要证的定理写对了。</li>
+<li><b>AI · Sutton 的「苦涩的教训」</b>：<a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">Sutton 在 2019 年总结</a>，长期看，借助算力增长的通用方法总会胜过精心手工打造的技巧。「为六个月后的模型造产品」是这条教训的产品版：别围着今天模型的短板做补丁。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Boris Cherny 在 Facebook 没有用户研究员时，拿新功能去员工食堂请工作人员试用，做观察式用户研究。</li>
+<li>Boris Cherny 认为潜在需求是产品第一原则：你没法让人做他们还没在做的事，只能引导已有的意图。</li>
+<li>Boris Cherny 举的例子是 Facebook 群组被大量用来买卖东西，于是先有买卖群组，后有 Marketplace。</li>
+<li>Boris Cherny 推广状态管理库 Undux 时，先按团队统计谁在抱怨 Redux，再给每个团队办专场技术分享。</li>
+<li>Boris Cherny 把代码评审里反复出现的同类意见记进表格，出现几次就写成 lint 规则，把评审自动化。</li>
+<li>Boris Cherny 先执行了资深工程师 Bob 主张的数据迁移，证明多此一举后，又让同一位工程师亲手撤回。</li>
+<li>Boris Cherny 认为在没有头衔的公司里，信任必须靠做事去挣，经理头衔有时反而让信任更难挣。</li>
+<li>Boris Cherny 当时的经理 Ben 要求他为六个月后的模型、而不是今天的模型设计 Claude Code。</li>
+<li>Claude Code 团队对模型写的代码和人写的代码执行同一条合并标准，代码不好就让模型继续改。</li>
+<li>Boris Cherny 把两队工程师分头设计同一个系统，用两份方案的分歧定位风险，这和集成模型估计不确定性同构。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=AmdLVWMdjOk">Boris Cherny (Creator of Claude Code) On What Grew His Career And Building at Anthropic</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>
+<li><span class="t"><a href="https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic">Anthropic：How AI is transforming work at Anthropic（2025-12-02）</a></span><span class="d">第一条核查的依据。</span></li>
+<li><span class="t"><a href="https://www.anthropic.com/news/activating-asl3-protections">Anthropic：Activating AI Safety Level 3 Protections（2025-05-22）</a></span><span class="d">第二条核查的依据。</span></li>
+<li><span class="t"><a href="https://about.fb.com/news/2016/10/introducing-marketplace-buy-and-sell-with-your-local-community/">Facebook：Introducing Marketplace（2016-10-03）</a></span><span class="d">第三条核查的依据。</span></li>
+</ul>
+<footer>播客精读 · 一期长播客，挑出主线讲透 · 写于 2026-10-26</footer>
+</div>
+</body></html>
