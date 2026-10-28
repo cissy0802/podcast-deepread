@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Pragmatic Engineer × Martin Kleppmann — 把权衡讲给别人听，把难题留给自己</title>
 <style>
@@ -58,24 +59,21 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <div class="langbar"><a href="designing-data-intensive-applications-martin-kleppmann-pod17.en.html">English →</a></div>
 <header>
 <div class="kicker">The Pragmatic Engineer · 2026</div>
-<h1>把权衡讲给别人听，把难题留给自己</h1>
+<h1 data-tts="80aaee5cdd8641b0">把权衡讲给别人听，把难题留给自己</h1>
 <p class="sub">Martin Kleppmann × Gergely Orosz ·《Designing Data-intensive Applications with Martin Kleppmann》</p>
 </header>
-<div class="meta-card"><b>节目</b> The Pragmatic Engineer · 2026-04-22 · <b>时长</b> 86 分钟 · <b>嘉宾</b> Martin Kleppmann · <b>主持</b> Gergely Orosz · <b>原片</b> <a href="https://www.youtube.com/watch?v=SVOrURyOu_U">YouTube</a></div>
-
-<h2>那一段</h2>
+<div class="meta-card" data-tts="4f4e67bee904c3c8"><b>节目</b> The Pragmatic Engineer · 2026-04-22 · <b>时长</b> 86 分钟 · <b>嘉宾</b> Martin Kleppmann · <b>主持</b> Gergely Orosz · <b>原片</b> <a href="https://www.youtube.com/watch?v=SVOrURyOu_U">YouTube</a></div>
+<h2 data-tts="c3934f52eb93d8f8">那一段</h2>
 <p>节目进行到一个多小时，Gergely Orosz 请 Kleppmann 举一个本地优先软件里的工程难题。Kleppmann 挑了一个听上去最不像难题的例子：一份文档，你给合作者开了编辑权限，后来又想收回。在中心化的云服务里，这只是一次权限检查。可要是没有那台说了算的服务器呢？某个用户的权限刚被撤销，他几乎同时又改了一笔。有的设备先收到修改、后收到撤销，于是接受了这笔修改；有的设备先收到撤销，就把修改丢掉了。Kleppmann 说，这些设备从此会「永久地不一致」。<a class="ts" href="https://www.youtube.com/watch?v=SVOrURyOu_U&amp;t=3918s">[01:05:18]</a></p>
 <p>Orosz 顺着前面聊过的时钟问题想：如果所有设备的时钟都精确同步，按时间戳排个先后不就行了？Kleppmann 的回答把问题又推深了一层。</p>
 <blockquote><span class="en">So, relying on clocks is absolutely useless here because people can forge the timestamps from those clocks and thereby then potentially undermine the access control mechanism.</span><span class="zh">所以在这里依赖时钟完全没用，因为人可以伪造时钟给出的时间戳，从而破坏整个访问控制机制。</span><cite>— Martin Kleppmann · <a class="ts" href="https://www.youtube.com/watch?v=SVOrURyOu_U&amp;t=4059s">[01:07:39]</a></cite></blockquote>
 <p>被撤了权限的人想破坏文档，只要把自己那笔修改的日期往前改就行。这一问一答里有这期节目的两个底色：一个是他书里那章「分布式系统的麻烦」，另一个是他如今宁愿去解、而商业公司多半不会去解的那一类题。</p>
-
-<h2>谁在聊，和那一年</h2>
+<h2 data-tts="3d8227baf5d8990d">谁在聊，和那一年</h2>
 <p>Kleppmann 的第二家创业公司 Rapportive 是一个 Gmail 插件，在陌生来信旁边显示对方的头像、职位和最近的推文。公司进了 Y Combinator，搬到旧金山，2012 年卖给 LinkedIn 时只有五个人。他说那时钱快烧完了，下一轮也没融到，更尴尬的是连给自己降薪都不行，因为那会违反工作签证的条件。手里几乎没有筹码，能这样收场，他已经很满意。</p>
 <p>到了 LinkedIn，他转去做构建在 Kafka 之上的流处理框架 Samza。Jay Kreps 当时正在内部宣讲「日志」这个抽象，Kleppmann 说那是一次顿悟，他第一次看懂了各种数据系统是怎么拼在一起的。这段经历后来变成了《数据密集型应用系统设计》（Designing Data-Intensive Applications，简称 DDIA）。第一版写了大约四年，比截稿日期晚了两年半左右；写完后他转入学术界，现在在剑桥教分布式系统和操作系统。</p>
 <p>主持人 Gergely Orosz 以前在 Uber 当工程经理，现在写 The Pragmatic Engineer 通讯，最常问的是「这东西在真实的公司里怎么用」。这一期录在 DDIA 第二版问世之际，距第一版九年。新版由 Kleppmann 和 LinkedIn 时期的老同事 Chris Riccomini 合写，因为 Kleppmann 承认自己进了学术界以后和业界有些脱节，而 Riccomini 一直在追踪数据系统的新动向。前一年 12 月，Kleppmann 刚写过一篇博客，<a href="https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html">预言 AI 会让形式化验证走向主流</a>，节目后半段专门聊了它。</p>
-
-<h2>这期聊透</h2>
-<h3>一、书的哲学：懂一点内部就够了，但这一点很值钱</h3>
+<h2 data-tts="934e9e8b4324cc4c">这期聊透</h2>
+<h3 data-tts="bb5a7d135938470a">一、书的哲学：懂一点内部就够了，但这一点很值钱</h3>
 <p>Kleppmann 说，DDIA 正是他在 Rapportive 时最想要的那本书。那时数据库出了性能问题，几个人只能在黑暗里摸索，因为谁也不知道它内部在干什么。所以这本书不教某个工具怎么用，而是比较一大类工具之间的权衡。</p>
 <p>Orosz 追问：云服务已经把复制、扩容都包办了，工程师还有没有动力去理解底层？Kleppmann 拿垃圾回收打比方。用带垃圾回收的语言，你就不再考虑内存分配；做底层系统的人当然还得关心，可是：</p>
 <blockquote><span class="en">You're building higher-level business logic, actually I think it's just fine for people not to care about memory management.</span><span class="zh">如果你写的是上层业务逻辑，我觉得不关心内存管理完全没问题。</span><cite>— Martin Kleppmann · <a class="ts" href="https://www.youtube.com/watch?v=SVOrURyOu_U&amp;t=1883s">[00:31:23]</a></cite></blockquote>
@@ -84,27 +82,23 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p>这条线最后落在工程师的角色上。Orosz 说，书里「分布式系统的麻烦」那一章对 S3 团队是日常，对小公司却是十年一遇的大事。Kleppmann 不肯替任何人拍板：</p>
 <blockquote><span class="en">So, it's a trade-off between risk and cost, broadly speaking.</span><span class="zh">说到底，这是风险和成本之间的权衡。</span><cite>— Martin Kleppmann · <a class="ts" href="https://www.youtube.com/watch?v=SVOrURyOu_U&amp;t=2788s">[00:46:28]</a></cite></blockquote>
 <p>停在这条曲线的哪一点是业务的决定，工程师的本分是把风险和代价讲清楚。他认为 AI 写的代码越多，这件事就越会成为工程师工作的核心。</p>
-
-<h3>二、第二版改了什么：本地磁盘退场，对象存储成了地基</h3>
+<h3 data-tts="78a099bc01a694da">二、第二版改了什么：本地磁盘退场，对象存储成了地基</h3>
 <p>第一版默认每台机器带着本地磁盘，数据库把数据写进自己的盘，要复制就由数据库软件把数据发到另一台机器。如今越来越多的数据库直接建在对象存储上，复制发生在对象存储那一层。Kleppmann 特意把它和 EBS 这类云上的块设备分开：块设备提供的仍是单机操作系统那套抽象，对象存储则是一个全新的抽象，行为完全不同。所以第二版没有单独加一章讲云原生，而是把这个新前提改写进了全书。</p>
 <p>删掉的东西同样说明问题。第一版把 MapReduce 讲得很细，第二版只把它留作理解分片批处理的教学工具。新加的是为 AI 服务的数据系统，比如向量索引，在他看来它不过是又一种索引策略，于是被放进了存储引擎那一章。</p>
 <p>谈到扩展性，他给出了两个和流行印象不太一样的判断。一是分片没那么迫切了，但主要不是云的功劳，而是单台机器变得太强，越来越多的负载一台就跑得下。二是云真正带来新东西的地方在「缩」而不在「扩」：一个一天只处理三个请求的服务，在无服务器（serverless）平台上可以便宜到几乎为零。</p>
-
-<h3>三、本地优先：去解商业公司不会去解的题</h3>
+<h3 data-tts="fc8898f5c948c162">三、本地优先：去解商业公司不会去解的题</h3>
 <p>Kleppmann 说留在学术界的好处，是可以做违背商业激励的事。他做了将近十年的本地优先软件（local-first software），想像 Google Docs 那样多人协作，同时把数据的控制权从云运营商手里还给用户。说到订阅制软件为什么能收费，他的说法毫不客气：</p>
 <blockquote><span class="en">they are able to essentially hold a gun to the customer's head</span><span class="zh">他们实际上能拿枪顶着客户的脑袋。</span><cite>— Martin Kleppmann · <a class="ts" href="https://www.youtube.com/watch?v=SVOrURyOu_U&amp;t=3722s">[01:02:02]</a></cite></blockquote>
 <p>枪口那头的话是「不续费就删光你的数据」。他理解商业上的不得已，但一家收入靠锁定用户的公司，很难自己把枪放下。</p>
 <p>开场那道权限撤销题就是从这里来的。有中心服务器时，它说谁先就是谁先。去掉中心以后，一种办法是跑共识协议，可共识需要法定人数投票、需要节点在线，和离线编辑、点对点同步的初衷正好相反。他们选了更难的路，不用共识，同时保住高可用和离线能力。他说他参与开发的 CRDT 库 Automerge 已经接近解决这个问题。Orosz 说创业公司会直接接受「有一台中心服务器」这个约束，Kleppmann 同意，而且认为那正是创业公司该做的事；学术界的用处，是把更难的那块积木做出来，让后来的人不必从零发明。</p>
-
-<h3>四、形式化验证：LLM 一边让它变便宜，一边让它变必要</h3>
+<h3 data-tts="1f5dd4ed9ae82d09">四、形式化验证：LLM 一边让它变便宜，一边让它变必要</h3>
 <p>Kleppmann 在业界时从没用过形式化验证，因为太费时间。到了学术界，他才花几个月用 Isabelle 证明那些一旦出错就会损坏数据的微妙算法。他给 Orosz 举了最简单的例子：两个列表拼起来，长度等于两者之和。测试会试长度为零、为一、为五的几种情况，证明则用归纳法一次覆盖所有长度。</p>
 <p>他认为 LLM 从两头推着这件事往前走。一头是 LLM 越来越会写证明，以前不划算的场合变得可行；另一头是大家正在用 LLM 成批地生成代码，人工审查跟不上。</p>
 <blockquote><span class="en">If we have to manually review all of that code, then that will become the bottleneck.</span><span class="zh">要是这些代码都得靠人一行行审，审查就会变成瓶颈。</span><cite>— Martin Kleppmann · <a class="ts" href="https://www.youtube.com/watch?v=SVOrURyOu_U&amp;t=3524s">[00:58:44]</a></cite></blockquote>
 <p>有意思的是，他自己写书却不让 AI 碰，每个字都亲手写。他说这不是原则问题，而是因为：</p>
 <blockquote><span class="en">for myself, the process of writing is the way how I figure things out.</span><span class="zh">对我来说，写作的过程本身就是我想明白事情的方式。</span><cite>— Martin Kleppmann · <a class="ts" href="https://www.youtube.com/watch?v=SVOrURyOu_U&amp;t=4871s">[01:21:11]</a></cite></blockquote>
 <p>这和他在教学上的担心是一回事。他说学生交上来的论文本身不是目的，写论文时经历的那段思考才是。在业界，用 AI 更快拿到同样的结果就是赢；在教育里，被省掉的恰恰可能是最该留下的那部分。</p>
-
-<h2>说法核查</h2>
+<h2 data-tts="eac6d888ce936a64">说法核查</h2>
 <div class="claim">
 <p class="said">Kleppmann 解释第二版为何删减 MapReduce：「MapReduce is dead. Nobody uses it anymore.」（MapReduce 已死，没人再用了。）<a class="ts" href="https://www.youtube.com/watch?v=SVOrURyOu_U&amp;t=2827s">[00:47:07]</a></p>
 <p class="verdict">有据，但说宽了</p>
@@ -120,16 +114,14 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p class="verdict">有据</p>
 <p>2025 年 9 月的 vericoding 基准用一万两千多条形式化规约测试现成的大模型，写出程序并证明其正确的成功率在 Dafny 上是 82%，Verus/Rust 上 44%，Lean 上只有 27%。进步是真的，但离全自动还远，而且证明语言越难，差距越大。</p>
 </div>
-
-<h2>越界 · 跨学科的联想</h2>
+<h2 data-tts="a04e33c4c9729439">越界 · 跨学科的联想</h2>
 <div class="crossx"><ul>
 <li><b>法学 · 合同法的「邮箱规则」</b>：英美合同法很早就碰上过开场那道题。要约人寄信撤回要约，对方同时寄信表示承诺，两封信在路上交错，合同成立没有？普通法的回答是一条固定规则，承诺在投寄时生效（1818 年 Adams v Lindsell），撤回要等对方收到才生效（1880 年 Byrne v Van Tienhoven）。这和 CRDT 让各副本收敛的思路是同一种：不去追问谁「真的」在先，只约定一条每一方都能独立套用的规则。不像的是，合同纠纷最后有法院来裁判；Automerge 要在没有法官的情况下，让每台设备自己得出同一个结论。</li>
 <li><b>物理 · 狭义相对论里的「同时」</b>：两个类空间隔的事件谁先谁后取决于观察者，不存在全局的「现在」；Lamport 那篇《时间、时钟与分布式系统中的事件排序》正是受相对论启发。撤销和编辑就是这样一对事件，不同设备看到不同顺序，各自都没错。不像的是，物理不要求观察者最终意见一致，协作文档却必须收敛。</li>
 <li><b>神经科学 · 后测（postdiction）</b>：大脑也没有可靠的全局时钟。Eagleman 和 Sejnowski 2000 年在《科学》上用闪光滞后效应说明，我们觉得「闪光那一刻」看到的东西，其实取决于闪光之后约 80 毫秒里发生的事，是大脑事后拼出来的。像的是先缓冲、再定序；不像的是，大脑定序时没有人伪造时间戳。</li>
 <li><b>认知心理学 · 合意困难（desirable difficulties）</b>：Robert Bjork 发现，学习时加一点适度的困难，比如间隔练习、自我测验，当下表现变差，长期却记得更牢。Kleppmann 在节目里说，学东西有时得挣扎一下，但别挣扎过头，这和 Bjork 强调的「适度」是同一个结构。</li>
 </ul></div>
-
-<h2>十条要点</h2>
+<h2 data-tts="159fbce4d8fce792">十条要点</h2>
 <ol class="takeaways">
 <li>Martin Kleppmann 写《数据密集型应用系统设计》，是想补上当年在 Rapportive 摸黑排查数据库性能时缺的那本书。</li>
 <li>Kleppmann 在 LinkedIn 做流处理框架 Samza 时，Jay Kreps 把 Kafka 讲成「日志」抽象，让他看懂了各种数据系统怎么拼在一起。</li>
@@ -142,8 +134,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li>Kleppmann 预言 LLM 会让形式化验证走向主流：LLM 让证明变便宜，海量 AI 代码又让人工审查成为瓶颈。</li>
 <li>合同法的「邮箱规则」用一条固定规则裁决交错的撤回与承诺，和让各副本独立收敛的 CRDT 思路结构相同。</li>
 </ol>
-
-<h2>出处</h2>
+<h2 data-tts="68fef237b1e45b08">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=SVOrURyOu_U">Designing Data-intensive Applications with Martin Kleppmann</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>
 <li><span class="t"><a href="https://hadoop.apache.org/">Apache Hadoop 官网</a></span><span class="d">第一条核查的依据：模块列表与 3.5.0 版发布信息。</span></li>
