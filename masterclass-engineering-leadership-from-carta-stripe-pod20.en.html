@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>In Depth × Will Larson — Pull the CEO into the details</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="masterclass-engineering-leadership-from-carta-stripe-pod20.html">中文 →</a></div>
+<header>
+<div class="kicker">In Depth (First Round) · 2023</div>
+<h1>When the CEO asks for lines of code, don't shut the door — walk them into the details</h1>
+<p class="sub">Will Larson × Brett Berson · "A masterclass in engineering leadership from Carta, Stripe, and Uber"</p>
+</header>
+<div class="meta-card"><b>Show</b> In Depth (First Round) · 2023-11-16 · <b>Length</b> 79 min · <b>Guest</b> Will Larson (then CTO of Carta) · <b>Host</b> Brett Berson · <b>Video</b> <a href="https://www.youtube.com/watch?v=La2_IaV0icE">YouTube</a></div>
+
+<h2>The moment</h2>
+<p>A CEO once asked Will Larson for something every engineering leader dreads: a count of how many lines of code each engineer was writing. <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=2040s">[00:34:00]</a></p>
+<p>The reflex is to push back — lines of code is an absurd way to measure engineers. Larson admits he used to do exactly that, and all it did was make him look unwilling to give the CEO what the CEO needed. Now he says yes, pulls the data, and then walks through it with the CEO: some of those lines are external libraries being vendored in, some are tests (verbose but valuable), some get reverted later. By the end, the CEO can see for themselves where the metric breaks.</p>
+<blockquote><span class="en">"Trying to force people out of the details is never a good way to like actually build alignment. You want to pull them into the details, educate them there."</span><cite>— Will Larson · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=2099s">[00:34:59]</a></cite></blockquote>
+<p>The producers cut this line into the cold open, and it is the right choice. The move of going <em>into</em> the details keeps returning throughout the episode: with a new company, with metrics, and with management itself.</p>
+
+<h2>Who's talking, and when</h2>
+<p>Larson managed engineering at Yahoo, Digg, Uber and Stripe, was CTO of the meditation app Calm (taking engineering from roughly twenty people to about a hundred), and at the time of recording was CTO of the equity-management company Carta. He wrote <em>An Elegant Puzzle</em> and <em>Staff Engineer</em>; plenty of people in engineering management knew his blog before they knew his name. He has a habit, in this episode, of telling each story in two beats: first how he got it wrong, then how he changed his mind.</p>
+<p>The host, Brett Berson, is a partner at the venture firm First Round. His show is aimed at founders and startup operators and keeps pressing for the "how, exactly." In this one he asks the classic question: what separates the top 1% of engineering executives from the top 10% and the top 50%?</p>
+<p>The episode came out in November 2023, the year many companies' budgets flipped from open-ended to frozen and CEOs started asking engineering to go faster. Larson was finishing his third book, <em>The Engineering Executive's Primer</em>, which came out the following year. He has since written a book on engineering strategy, left Carta, and become CTO at Imprint (see his <a href="https://lethain.com/about/">about page</a>).</p>
+
+<h2>The episode, unpacked</h2>
+<h3>Old context has to be dug up before it's reused</h3>
+<p>New engineering leaders who make a mess, Larson says, almost always do it the same way: they assume the context of their last company still holds. He nearly did it himself.</p>
+<p>When he joined Uber's infrastructure group in 2014, teams were spinning up new services almost weekly and needed his team to provision them. In his first week they were two weeks behind; by his tenth week, four weeks behind. So they built self-service provisioning tooling that let anyone spin up a service, and it worked. At Stripe he saw the same problem and wanted the same fix — and ran into a senior engineer, Nelson, who hated the idea. Larson asked what he could say about the rollout that would make Nelson comfortable. The answer:</p>
+<blockquote><span class="en">"There's nothing you could tell me about any way you'd roll this out that would make me feel comfortable."</span><cite>— Nelson's reply, as Will Larson recounts it · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=565s">[00:09:25]</a></cite></blockquote>
+<p>His first read was that Nelson was being unreasonable. Later he understood that Stripe had an undocumented strategy — nearly everything in Ruby, in one monolith — and his plan cut against it. He was the one missing context. The rule he took away: don't move forward on a contested change until you can state the opposing view as clearly as your own.</p>
+<p>His method comes down to two habits. First, "mining for conflict": float a controversial idea with different people, especially those most invested in the status quo, and watch the reaction instead of just shipping it. Second, archaeology: companies tend to document small decisions, while the big ones — why we entered this business, why we're spending four or five years breaking up the monolith — often aren't written down anywhere. At Calm, a year-old services migration was going nowhere; after hearing people out, he stopped it. Two engineers insisted on continuing, and when pressed, their reason was that interesting technical work motivates engineers. Larson called that a valid value, just not the company he wanted to run. Both eventually left.</p>
+<h3>Strategy is everywhere — it just isn't written</h3>
+<p>Engineers complain there's no product strategy, product managers complain there's no business strategy, and everyone concludes the company has none. Larson sees it the other way round:</p>
+<blockquote><span class="en">"I've really come to believe that strategy is everywhere, it's just like rarely written."</span><cite>— Will Larson · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=908s">[00:15:08]</a></cite></blockquote>
+<p>Unwritten strategy can work, but no one can argue with it or revise it, and new hires have to reverse-engineer the rules like case law. For structure he points to Richard Rumelt's <em>Good Strategy Bad Strategy</em>: a diagnosis of the situation, guiding policies, and coherent action. His example is deliberately plain: ten million in the bank, two and a half million spent last year, flat revenue — so hold costs flat and review every expense with finance monthly. Rumelt's worry, as Larson tells it, is strategy that stays at the level of talk, which is why the third step matters most. That is the layer Larson takes: a written strategy has to show up in something you are doing today.</p>
+<p>Once it's written, who interprets it? Engineering strategy, Larson argues, is two things: how you allocate headcount and budget, and how you make the important calls as they come up. Many companies dodged the first for a decade by simply hiring more; the 2023 budget freeze ended that. For the second, Carta uses Navigators: one person per business unit who is the final technical decider for that area within the written strategy, free to make exceptions but accountable to Larson for them. The Navigator for fund administration (about sixty engineers) chose to minimize Kafka while other units leaned in hard, and Larson was fine with both. Every policy he writes ends with the same line: exceptions approved by the CTO. He concedes this clashes with the textbook view that no individual should be load-bearing. You can't keep a redundant copy of good judgment; you usually have exactly one.</p>
+<h3>The other half of a metric is teaching</h3>
+<p>The most common ask from CEOs is "make engineering faster." Larson says there's no lever for that — but if you run a couple hundred engineers costing a hundred million dollars a year and tell the CEO engineering is an art, they will reasonably conclude you're not serious. His way out splits measurement in two. Upward, you answer "how fast are we going": pick something, even the much-maligned story point, start reporting it, and walk the CEO through why it's flawed.</p>
+<blockquote><span class="en">"Half of metrics is showing the truth, the other half is educating people to inform their mental model about how the truth works."</span><cite>— Will Larson · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=1875s">[00:31:15]</a></cite></blockquote>
+<p>Downward, you answer "where should we invest to go faster," and here he uses research frameworks like DORA and SPACE to find bottlenecks. At Stripe they set targets on the number of high-severity incidents. There was an internal argument that counting incidents invites hiding them, and people were frustrated; they started there anyway and refined the measure later. Early in his career, he says, he held out for the perfect metric and ended up measuring nothing.</p>
+<p>The thread lands on management itself. New managers are told to step out of the details and away from the code. Larson thinks that advice helps a few controlling personalities, but over-applied, it leads many executives to undermine themselves:</p>
+<blockquote><span class="en">"As you get too far out of the details, you just become a bureaucrat."</span><cite>— Will Larson · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=2521s">[00:42:01]</a></cite></blockquote>
+<p>In the same spirit he has stopped acting as an umbrella that shields his team from bad news; better they absorb it bit by bit than receive one compressed package of truth a year later. And when presenting upward, he urges people to "extract the kernel": when an executive tosses out an idea that sounds terrible, it is often because they hold context you lack.</p>
+<blockquote><span class="en">"You're not there to like prove the executive wrong. You're there like, okay, they have a key idea that they're trying to get across, how do I pull that idea out?"</span><cite>— Will Larson · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=3565s">[00:59:25]</a></cite></blockquote>
+
+<h2>Fact check</h2>
+<div class="claim">
+<p class="said">"We have confidence from the survey data that companies that deploy quickly tend to be more productive." <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=1966s">[00:32:46]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>DORA has surveyed more than 39,000 professionals over a decade, and its model does link delivery performance to organizational performance — but these are self-reported, correlational data, and "productivity" is not what they measure. In the 2024 report the faster "high" cluster had a 20% change failure rate, double the "medium" cluster's 10%. The report itself says the metrics are for tracking your own improvement, not for comparing teams.</p>
+</div>
+<div class="claim">
+<p class="said">"Team should generally be one manager to like six to eight engineers." <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=2612s">[00:43:32]</a></p>
+<p class="verdict">Opinion, not fact</p>
+<p>It's a rule of thumb Larson published on his blog in 2018. Gallup's 2026 analysis puts the median manager's span at around six, close to his range — but Gallup argues there is no single optimal size; what matters more is the manager's talent and how much individual-contributor work the manager is still carrying.</p>
+</div>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Distributed systems · a leader per partition</b>: Navigators look like a sharded database that elects one leader per partition — instead of running full consensus on every decision, one node decides for its shard, which slashes coordination cost. The difference: a database makes every partition obey the same consistency protocol, while Larson lets Navigators diverge on Kafka; he wants alignment of direction, not of state. The real isomorphism is the failure mode: when a leader dies you must re-elect, and Larson admits good judgment has no replica.</li>
+<li><b>Cybernetics · Ashby's Law of Requisite Variety</b>: a regulator needs at least as much variety as the system it regulates. One uniform, low-context policy can't govern very different business units; placing a high-context person in each unit adds the variety the regulator was missing.</li>
+<li><b>Social science · Goodhart's law</b>: once a measure becomes a target, it stops being a good measure — exactly the risk with Stripe's incident counts. Larson's response is unusual: rather than hunting for an ungameable metric, he treats each metric as a teaching tool and swaps it out once it has done its job.</li>
+<li><b>Philosophy · Rapoport's rules, as popularized by Dennett</b>: before criticizing, restate the other side's position so well they say they wish they'd put it that way. That is what Larson did with Nelson — except that once he had restated it, he found he was the one who had lost.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Will Larson says the most common failure of new engineering leaders is importing their previous company's context unchanged.</li>
+<li>Larson's self-service provisioning worked at Uber but clashed with Stripe's unwritten strategy of running nearly everything in one Ruby monolith.</li>
+<li>Larson's rule is not to push a contested change until he can state the opposing view as clearly as his own.</li>
+<li>Larson tells new leaders to "mine for conflict" and do archaeology, because a company's biggest decisions often have no written rationale.</li>
+<li>Larson believes strategy is everywhere but rarely written, so unwritten strategy has to be inferred from precedent like case law.</li>
+<li>Larson borrows Rumelt's structure for strategy: a diagnosis, guiding policies, and coherent action you are taking today.</li>
+<li>Carta's Navigators give one person per business unit the final technical call, with exceptions allowed but accountable to the CTO.</li>
+<li>Larson sees half of reporting metrics to a CEO as teaching: measure something imperfect, then show where it breaks.</li>
+<li>Larson thinks "get out of the details" is over-applied management advice, and executives too far from the details become bureaucrats.</li>
+<li>Larson's "extracting the kernel" means finding, inside an executive's seemingly bad feedback, the context they have and you lack.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=La2_IaV0icE">A masterclass in engineering leadership from Carta, Stripe, and Uber | Will Larson</a></span><span class="d">The episode. Every timestamp on this page points here.</span></li>
+<li><span class="t"><a href="https://dora.dev/research/2024/dora-report/">DORA, Accelerate State of DevOps Report 2024</a></span><span class="d">Basis for the first check: sample, change failure rate by cluster, and the report's guidance on using the metrics.</span></li>
+<li><span class="t"><a href="https://www.gallup.com/workplace/700718/span-control-optimal-team-size-managers.aspx">Gallup, Span of Control: What's the Optimal Team Size for Managers? (2026)</a></span><span class="d">Basis for the second check: the distribution of manager spans and the factors beyond headcount.</span></li>
+<li><span class="t"><a href="https://lethain.com/sizing-engineering-teams/">Will Larson, Sizing engineering teams (2018)</a></span><span class="d">Basis for the second check: the original source of the six-to-eight rule.</span></li>
+</ul>
+<footer>Podcast Deep Read · one long episode, its main threads worked through · written 2026-10-31</footer>
+</div>
+</body></html>

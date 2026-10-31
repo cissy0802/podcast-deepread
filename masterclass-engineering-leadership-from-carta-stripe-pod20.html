@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>In Depth × Will Larson — 别把 CEO 挡在细节外面</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="masterclass-engineering-leadership-from-carta-stripe-pod20.en.html">English →</a></div>
+<header>
+<div class="kicker">In Depth (First Round) · 2023</div>
+<h1>CEO 要看代码行数时，别把他挡在门外，把他拉进细节里</h1>
+<p class="sub">Will Larson × Brett Berson ·《A masterclass in engineering leadership from Carta, Stripe, and Uber》</p>
+</header>
+<div class="meta-card"><b>节目</b> In Depth (First Round) · 2023-11-16 · <b>时长</b> 79 分钟 · <b>嘉宾</b> Will Larson（时任 Carta CTO）· <b>主持</b> Brett Berson · <b>原片</b> <a href="https://www.youtube.com/watch?v=La2_IaV0icE">YouTube</a></div>
+
+<h2>那一段</h2>
+<p>有一回，一位 CEO 向 Will Larson 提了个要求：想看看每个工程师各写了多少行代码。<a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=2040s">[00:34:00]</a></p>
+<p>几乎所有工程负责人听到这句话，第一反应都是顶回去：拿代码行数衡量工程师，这太荒唐了。Larson 承认，早年的他也是这么做的，结果只显得自己不肯配合 CEO 的需要。现在他会先答应下来，把数据拉出来，再陪 CEO 一行一行往下看：这些行里有的是新引进的外部库，有的是测试，写得啰嗦却很有价值，有的后来被回滚了。看到这里，这个指标在哪里失效，CEO 自己就看明白了。</p>
+<blockquote><span class="en">"Trying to force people out of the details is never a good way to like actually build alignment. You want to pull them into the details, educate them there."</span><span class="zh">想把人从细节里赶出去，从来都不是达成共识的好办法。你应该把他们拉进细节，就在细节里教会他们。</span><cite>— Will Larson · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=2099s">[00:34:59]</a></cite></blockquote>
+<p>节目方把这段话剪到了片头。整期聊下来，「进入细节」这个动作一再出现：对新公司是这样，对指标是这样，对管理本身也是这样。</p>
+
+<h2>谁在聊，和那一年</h2>
+<p>Will Larson 在 Yahoo、Digg、Uber、Stripe 做过工程管理，又在冥想应用 Calm 当过 CTO，把工程团队从二十来人带到一百人左右，录这期时是股权管理公司 Carta 的 CTO。他写过《An Elegant Puzzle》和《Staff Engineer》，在工程管理圈里，很多人是先读到他的博客，才知道这个名字的。他讲经历有个习惯：先讲自己当时怎么想错了，再讲后来怎么改过来。</p>
+<p>主持人 Brett Berson 是风投机构 First Round 的合伙人。他的节目面向创业公司的创始人和管理者，爱追问「具体怎么做」。这期他就问过：顶尖 1% 的工程高管，和前 10%、前 50% 的人差在哪里？</p>
+<p>这期发布于 2023 年 11 月。那一年，许多公司的预算从敞开变成了冻结，CEO 们开始追问工程团队「速度能不能再快一点」。Larson 当时正在写第三本书《The Engineering Executive's Primer》，第二年出版。之后他又写了一本专讲工程战略的书，如今已离开 Carta，在 Imprint 当 CTO（见他的<a href="https://lethain.com/about/">个人页</a>）。</p>
+
+<h2>这期聊透</h2>
+<h3>旧公司的经验，到新公司要先挖一挖</h3>
+<p>Larson 说，新上任的工程负责人把事情搞砸，几乎总是同一个原因：以为上一家公司的语境在这里照样成立。他自己就差点栽在这上面。</p>
+<p>2014 年他到 Uber 做基础设施，各个团队几乎每周都在开新服务，都要他的团队帮忙配置。第一周他们落后两周，到第十周已经落后四周。于是他们做了一套自助配置的工具，谁都能自己开服务，效果很好。到了 Stripe，他觉得问题一模一样，想照搬这套办法，却遇上了一位资深工程师 Nelson 的坚决反对。他问 Nelson，怎样推行你才能放心，对方的回答是：</p>
+<blockquote><span class="en">"There's nothing you could tell me about any way you'd roll this out that would make me feel comfortable."</span><span class="zh">不管你打算怎么推，你说什么都不会让我放心。</span><cite>— Will Larson 转述 Nelson 的回答 · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=565s">[00:09:25]</a></cite></blockquote>
+<p>他起初觉得这人不可理喻。后来才弄明白，Stripe 有一条没写在任何地方的战略：几乎所有东西都用 Ruby，跑在一个单体应用里，而他那套方案和这条路线是拧着的。缺语境的是他自己。从那以后他给自己定了一条规矩：在他能把反对者的观点讲得和自己的观点一样清楚之前，不往前推。</p>
+<p>他的办法可以概括成两件事。一是「挖冲突」：拿一个有争议的想法去和不同的人聊，尤其是最支持现状的人，看看反应，而不是直接动手推行。二是「做考古」：公司里小决定往往都有记录，真正重大的决定，比如为什么做这块业务、为什么要花四五年拆单体，反而常常没人写下来。他到 Calm 时，拆服务的迁移已经做了一年毫无进展，他听完各方意见后叫停了。有两位工程师坚持要做下去，追问之下，理由是做有意思的技术能激励工程师。Larson 说这是一种合理的价值观，但不是他想要的公司，那两位后来离开了。</p>
+<h3>战略到处都有，只是没写下来</h3>
+<p>工程师抱怨没有产品战略，产品经理抱怨没有业务战略，于是人人都觉得公司没有战略。Larson 的看法正相反：</p>
+<blockquote><span class="en">"I've really come to believe that strategy is everywhere, it's just like rarely written."</span><span class="zh">我越来越相信，战略其实无处不在，只是很少被写下来。</span><cite>— Will Larson · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=908s">[00:15:08]</a></cite></blockquote>
+<p>没写下来的战略也能管用，但没法讨论，也没法修改，新人只能像读判例一样，从一个个先例里去猜规则。他推荐的写法来自 Richard Rumelt 的《Good Strategy Bad Strategy》：先诊断现状，再定指导方针，最后落到连贯的行动上。他举的例子很朴素：账上一千万美元，去年花了两百五十万，收入持平，那就把开支锁死，每月和财务过一遍账。按 Larson 的说法，Rumelt 担心的是战略只停在嘴上，所以第三步最要紧。Larson 取的正是这一层：写下来的战略，要能落到今天就在做的某件事上。</p>
+<p>写下来之后，谁来解释它？Larson 认为工程战略说到底是两件事：钱和人怎么分，以及遇到重要决定时按什么规则拍板。前一件事过去十年常被回避，因为缺什么就招人；2023 年预算一冻结，就躲不开了。后一件事他在 Carta 交给了 Navigators：每个业务单元指定一个人，在战略框架内对本单元的技术决定说了算，可以破例，但要向他交代。比如负责基金管理（大约六十名工程师）的那位 Navigator 决定少用 Kafka，另一些单元却全力押注 Kafka，他觉得这样很好。他写的每条政策，最后一行都是「例外由 CTO 批准」。他也坦白这和「组织不能依赖任何个人」的教科书观点相冲突：判断力没法做冗余备份，你手里通常只有一个这样的人。</p>
+<h3>指标的另一半是教育</h3>
+<p>CEO 们最常提的要求是「把工程速度提上去」。Larson 说，工程没有一根拉了就见效的杠杆，可如果你一年花一亿美元养着几百个工程师，却对 CEO 说「工程是门艺术」，人家只会觉得你不靠谱。他的出路是把度量分成两件事。向上，是回答「我们走得多快」：随便挑一个指标，哪怕是人人都嫌弃的故事点，先量起来，再带着 CEO 看它为什么不准。</p>
+<blockquote><span class="en">"Half of metrics is showing the truth, the other half is educating people to inform their mental model about how the truth works."</span><span class="zh">指标有一半是在呈现事实，另一半是在教人，帮他们建立起「事实是怎么运作的」那套心智模型。</span><cite>— Will Larson · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=1875s">[00:31:15]</a></cite></blockquote>
+<p>向下，是回答「钱该投在哪里才能更快」，这里他用 DORA 和 SPACE 这类研究框架来找瓶颈。在 Stripe，他们给高严重度事故的数量定过目标。内部争论过按数量考核会诱人瞒报，不少人也不满，他们照样先上，再慢慢换成更精细的指标。他说自己年轻时追求完美的指标，后来发现那样什么都量不出来。</p>
+<p>这条线最后落回管理本身。新经理常被告诫「离开细节、别碰代码」，Larson 认为这句话对少数控制欲很强的人有用，被用得太广，反倒让许多高管削弱了自己：</p>
+<blockquote><span class="en">"As you get too far out of the details, you just become a bureaucrat."</span><span class="zh">离细节太远，你就只是个官僚。</span><cite>— Will Larson · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=2521s">[00:42:01]</a></cite></blockquote>
+<p>同样的道理，他也不再把团队和外面的坏消息隔开，宁可让大家一点点消化，也不要一年后一次性接住一大包真相。轮到向上汇报时，他劝人学会「提取内核」：高管随口抛出一个听上去很糟的主意，往往是因为他手里有你缺的语境。</p>
+<blockquote><span class="en">"You're not there to like prove the executive wrong. You're there like, okay, they have a key idea that they're trying to get across, how do I pull that idea out?"</span><span class="zh">你去那儿不是为了证明高管错了，而是要想：他有个关键的想法想表达，我怎么把它挖出来？</span><cite>— Will Larson · <a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=3565s">[00:59:25]</a></cite></blockquote>
+
+<h2>说法核查</h2>
+<div class="claim">
+<p class="said">「We have confidence from the survey data that companies that deploy quickly tend to be more productive.」（调查数据让我们有把握说，部署快的公司往往效率更高。）<a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=1966s">[00:32:46]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>DORA 十年来调查过三万九千多名从业者，它的模型确实把交付表现和组织绩效连在一起，但数据是问卷自报的相关，量的也不是「效率」。2024 年的报告里，部署更快的「高」档变更失败率是 20%，反而比「中」档的 10% 高一倍。报告本身也说，这些指标只适合看自己有没有进步，不该拿来比较团队。</p>
+</div>
+<div class="claim">
+<p class="said">「Team should generally be one manager to like six to eight engineers.」（一个团队一般应该是一名经理带六到八名工程师。）<a class="ts" href="https://www.youtube.com/watch?v=La2_IaV0icE&amp;t=2612s">[00:43:32]</a></p>
+<p class="verdict">这是观点，不是事实</p>
+<p>这是 Larson 2018 年就写进博客的经验法则。Gallup 2026 年的分析显示，经理下属人数的中位数在六人左右，和这个区间接近；但 Gallup 认为并不存在一个最优人数，起决定作用的是经理的能力，以及他自己还要干多少一线的活。</p>
+</div>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>分布式系统 · 分区主节点（leader per partition）</b>：Navigators 很像分片数据库给每个分区选一个主：不为每个决定跑一轮全体共识，而是每个分区由一个节点说了算，大大省掉协调成本。不像的地方是，数据库要求各分区遵守同一套一致性协议，Larson 却允许 Navigators 在 Kafka 上各走各的路，他要的只是方向一致，不是状态一致。真正的同构在于故障模式：主节点挂了要重新选主，而 Larson 也承认，好的判断力没有副本。</li>
+<li><b>控制论 · Ashby 的必要多样性定律（Law of Requisite Variety）</b>：调节者的变化要跟得上被调节系统的变化。一条统一的低语境政策，管不住几个差异很大的业务单元；在每个单元放一个有语境的人，等于给调节器补上了多样性。</li>
+<li><b>社会科学 · Goodhart 定律</b>：指标一旦成了目标，就不再是好指标。Stripe 的事故计数正是这个风险。Larson 的应对方式不同寻常：他不追求一个不会被钻空子的指标，而是把指标当成教学工具，用完就换。</li>
+<li><b>哲学 · Dennett 转述的 Rapoport 规则</b>：批评对方之前，先把对方的立场复述到对方本人都说「我希望自己能这样表达」。Larson 对 Nelson 做的正是这一步，只不过他复述完之后，发现输的是自己。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Will Larson 认为，新上任的工程负责人最常见的失败，是把上一家公司的语境原样搬到新公司。</li>
+<li>Larson 在 Uber 做的自助服务配置很成功，搬到 Stripe 却和那里「全用 Ruby 单体」这条没写下来的战略相冲突。</li>
+<li>Larson 的规矩是：在能把反对者的观点讲得和自己一样清楚之前，不推进有争议的改动。</li>
+<li>Larson 建议新领导先「挖冲突」和「做考古」，因为公司最重大的决定往往没有书面理由。</li>
+<li>Larson 认为战略无处不在却很少写下来，没写下来的战略只能像判例法一样靠先例去猜。</li>
+<li>Larson 借用 Rumelt 的框架写战略：诊断现状，定指导方针，再落到今天就在做的连贯行动上。</li>
+<li>Carta 的 Navigators 制度让每个业务单元由一个人对技术决定拍板，可以破例，但要向 CTO 交代。</li>
+<li>Larson 认为向 CEO 汇报指标有一半是教育：先量一个不完美的指标，再带对方看它在哪里失效。</li>
+<li>Larson 认为「离开细节」这条管理建议被过度推广，离细节太远的高管只会变成官僚。</li>
+<li>Larson 所说的「提取内核」，是在高管看似糟糕的反馈里，找出对方掌握而自己缺少的那部分语境。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=La2_IaV0icE">A masterclass in engineering leadership from Carta, Stripe, and Uber | Will Larson</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>
+<li><span class="t"><a href="https://dora.dev/research/2024/dora-report/">DORA, Accelerate State of DevOps Report 2024</a></span><span class="d">第一条核查的依据：调查样本、四档绩效的变更失败率，以及报告对指标用法的提醒。</span></li>
+<li><span class="t"><a href="https://www.gallup.com/workplace/700718/span-control-optimal-team-size-managers.aspx">Gallup, Span of Control: What's the Optimal Team Size for Managers?（2026）</a></span><span class="d">第二条核查的依据：经理下属人数的分布，以及人数之外起作用的因素。</span></li>
+<li><span class="t"><a href="https://lethain.com/sizing-engineering-teams/">Will Larson, Sizing engineering teams（2018）</a></span><span class="d">第二条核查的依据：「六到八人」这条法则的原始出处。</span></li>
+</ul>
+<footer>播客精读 · 一期长播客，挑出主线讲透 · 写于 2026-10-31</footer>
+</div>
+</body></html>
