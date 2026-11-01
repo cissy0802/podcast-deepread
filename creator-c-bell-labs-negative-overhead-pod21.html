@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Peterman Pod × Bjarne Stroustrup — 抽象可以是负开销，耍聪明的代码反倒会过期</title>
 <style>
@@ -58,28 +59,28 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <div class="langbar"><a href="creator-c-bell-labs-negative-overhead-pod21.en.html">English →</a></div>
 <header>
 <div class="kicker">The Peterman Pod · 2026</div>
-<h1>C++ 之父：抽象可以是负开销，耍聪明的代码反倒会过期</h1>
+<h1 data-tts="f0ff04d5ed942884">C++ 之父：抽象可以是负开销，耍聪明的代码反倒会过期</h1>
 <p class="sub">Bjarne Stroustrup × Ryan Peterman ·《Creator of C++: Bell Labs, Negative Overhead Abstraction, Mistakes》</p>
 </header>
-<div class="meta-card"><b>节目</b> The Peterman Pod · 2026-05-18 · <b>时长</b> 119 分钟 · <b>嘉宾</b> Bjarne Stroustrup · <b>主持</b> Ryan Peterman · <b>原片</b> <a href="https://www.youtube.com/watch?v=U46fJ2bJ-co">YouTube</a></div>
-<h2>那一段</h2>
+<div class="meta-card" data-tts="f427854de7635fb6"><b>节目</b> The Peterman Pod · 2026-05-18 · <b>时长</b> 119 分钟 · <b>嘉宾</b> Bjarne Stroustrup · <b>主持</b> Ryan Peterman · <b>原片</b> <a href="https://www.youtube.com/watch?v=U46fJ2bJ-co">YouTube</a></div>
+<h2 data-tts="7d733e16e3795e69">那一段</h2>
 <p>聊到一半，Ryan Peterman 问起 C++ 圈子里流传的一个警世故事，瓦萨号（Vasa）。Bjarne Stroustrup 一下子来了兴致。<a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=4401s">[01:13:21]</a></p>
 <p>那是 17 世纪瑞典国王订造的一艘战舰，既要能打仗，也要漂亮，好拿去办外交。龙骨已经铺下，国王听说对手的战舰有两层炮甲板，就下令也加一层；船变大了，又要添雕像。Stroustrup 说，下水前做过稳定性测试，让船员在甲板上从一侧跑到另一侧，本该跑十几个来回，跑到一半看着太危险就停了。船照样按期出港，号角齐鸣，船员的家属也在船上，走到港湾中间，一阵风过来，船就翻了。</p>
 <p>后来委员会在斯德哥尔摩开会，他把这个故事讲给委员们听，结论只有一句：</p>
 <blockquote><span class="en">"They built more features on top without improving the foundation."</span><span class="zh">他们在地基上不停地加功能，却从没加固地基。</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=4623s">[01:17:03]</a></cite></blockquote>
 <p>他自己也提醒，有些细节只是传闻。按<a href="https://en.wikipedia.org/wiki/Vasa_(ship)">史料</a>，船是 1628 年沉的，测试是三十个人跑了三趟就被叫停；而且考古至今没找到「中途加了一层炮甲板」的痕迹。不过当寓言用，它已经够了。这一整期，Stroustrup 讲的其实都是同一件事：一门有几百万用户的语言，怎样在不拆房子的前提下修地基。</p>
-<h2>谁在聊，和那一年</h2>
+<h2 data-tts="bf58ab6fc061ed1a">谁在聊，和那一年</h2>
 <p>Bjarne Stroustrup 是丹麦人，在剑桥读的计算机博士，毕业后进了贝尔实验室，C++ 就是在那里造出来的，他现在是<a href="https://www.stroustrup.com/">哥伦比亚大学</a>的计算机教授。他说读博时用 BCPL 重写一个模拟器，调试时掉了一半头发，另一半掉在了把 C++ 做出来的那些年里。</p>
 <p>主持人 Ryan Peterman 的节目专访资深工程师和系统的创造者，常问入行、成长，以及「回到过去会给自己什么建议」。这一期他做足了功课，不少问题来自 Stroustrup 为程序设计语言历史会议写的几篇长篇回顾。Stroustrup 则好几次不接问题本身，而是先把话题拉回到「你到底要解决什么问题」。</p>
 <p>这期发布于 2026 年 5 月。此前两三年，C++ 一直因为内存安全被架在火上烤，美国白宫国家网络总监办公室 2024 年的<a href="https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf">报告</a>就明确呼吁转向内存安全的语言。Stroustrup 的回应叫 profiles，也就是由编译器强制执行的编码规则。他在节目里说，C++26 已经带上了标准化的加固选项，更完整的 profiles 他正在争取放进 C++29。</p>
-<h2>这期聊透</h2>
-<h3>先有问题，才有语言</h3>
+<h2 data-tts="934e9e8b4324cc4c">这期聊透</h2>
+<h3 data-tts="3406b289dd25662a">先有问题，才有语言</h3>
 <p>Peterman 问，今天想造一门编程语言需要哪些部件。Stroustrup 说这个问题问错了，该先问的是你手上有没有现有语言解决不了的问题。他当年的问题很具体。刚进贝尔实验室时，他看着隔壁那些造出 Unix 和 C 的人，觉得自己得做件大事才配待在这里，于是想做一个分布式 Unix。这件事一头要碰进程调度和设备驱动，另一头要描述跨机器的模块和通信协议。可当时能写底层的语言写不了高层，能写高层的语言又太慢，而且碰不到硬件。</p>
 <p>这个判断背后有一段更早的教训。在剑桥读博时，他用 Simula 写了一个分布式系统模拟器，第一次全规模运行就占了系里主机很长时间，被赶了下来。他只好用 BCPL 把程序重写一遍。那是一门只有「字」这一种数据类型的语言，写得极其痛苦，但程序快了大约 50 倍。他从此发誓，再也不拿这么差的工具去碰问题。C++ 的起点，就是把 Simula 的类放进 C 里：既要 Simula 的表达力，也要 C 的速度。</p>
 <p>此后的每个关键决定，都在给这个问题让路。他发现光贝尔实验室内部就在用大约 25 种链接器，于是给自己定下规矩，绝不碰链接器。各家机器的优化器也各不相同，他不想变成优化器专家，就把 C 当成汇编语言来用，先把 C++ 翻译成 C。和 C 兼容，也是这么来的：</p>
 <blockquote><span class="en">"…we can have Dennis's mistakes which we know and we can have my mistakes which we don't know yet."</span><span class="zh">我们可以要 Dennis 那些大家都清楚的错误，也可以要我那些还没人发现的错误。</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=1868s">[00:31:08]</a></cite></blockquote>
 <p>他选了前者。同样的逻辑也解释了他为什么从不把 C++ 叫作「面向对象语言」。他不想要面向对象的复数，「2 加 z」就该写成 2 + z，数学用了三百年的记法很好用；不需要运行时分派的东西，就不该为它付出代价。选静态类型也是如此：电话交换机出了运行时错误，屏幕前并没有坐着程序员等着进调试器。</p>
-<h3>抽象不收税，耍聪明才收税</h3>
+<h3 data-tts="b801a66011de4c44">抽象不收税，耍聪明才收税</h3>
 <p>Peterman 说出了很多工程师的直觉：离机器越近就越快，多一层抽象总要付出点什么。Stroustrup 回答说，抽象会被编译掉。他过去一直讲「零开销抽象」（zero-overhead abstraction），现在反倒有人批评这个说法低估了 C++ 编译器：</p>
 <blockquote><span class="en">"We can do negative overhead abstraction."</span><span class="zh">我们能做到负开销的抽象。</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=5009s">[01:23:29]</a></cite></blockquote>
 <p>他的理由是，给优化器的信息越多，它做得越好；同样的代码，C++ 能在编译期多做很多事，所以他认为 C++ 多数情况下和 C 一样快，甚至更快。这个说法下文「说法核查」里会拿数据对一对。</p>
@@ -89,13 +90,13 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p>同一个逻辑让他对大模型写代码相当悲观，至少在性能和安全都要紧的那一两成代码里是这样。他认为模型只能拿旧代码来训练：</p>
 <blockquote><span class="en">"So I find that LLM based code is imitating old code and getting old performance and old bugs."</span><span class="zh">所以我发现，大模型写出来的代码是在模仿旧代码，得到的也是旧的性能和旧的 bug。</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=5558s">[01:32:38]</a></cite></blockquote>
 <p>他还担心验证：人改代码，改动是局部的；提示词稍一变，模型却可能换掉一大片代码，受监管的行业只能全部重验。他也承认，十年后回头看，有些话会被证明是错的。</p>
-<h3>一门不能推倒重来的语言</h3>
+<h3 data-tts="02f5252487cb9321">一门不能推倒重来的语言</h3>
 <p>Stroustrup 说，C++ 从来不是他一个人说了算的。1989 年，IBM、HP 等几家大公司的代表走进他的办公室，要他把 C++ 交给标准化。他说语言还在实验阶段，不行。对方说，我们不能用一门没有标准、又归一家可能和我们竞争的公司所有的语言，我们信得过你，但信不过你的老板。磨了一个小时，他让步了，然后问了一句：顺便问一下，ANSI 的标准化规则是什么？他相信，要是当时拒绝了，C++ 会变成一个小圈子喜爱的学院派语言，然后慢慢消失。</p>
 <p>标准化的代价是过程。他上次查的时候，委员会有 527 名成员，靠共识做决定。他希望看到九成赞成，只有八成时就开始担心。规则里没有写死的门槛。如果 95% 赞成，可反对的 5% 恰好是 Google、Apple、Microsoft 的编译器实现者，没有哪位召集人会把这叫作共识。</p>
 <blockquote><span class="en">"…that's painful and tedious and good."</span><span class="zh">这很痛苦，也很磨人，但这是好事。</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=3400s">[00:56:40]</a></cite></blockquote>
 <p>为 C++11 定内存模型时，IBM 和 Intel 两边的代表僵持了好几天，各守在大房间的一个角落，他在两个角落之间来回走了几个小时做「穿梭外交」，才谈出了方案。</p>
 <p>回头看，他说大部分设计是对的，每个细节都能改得更好，但改不得，因为总有人一边嫌 C++ 太复杂，一边要新功能，还叮嘱别弄坏他的一百万行代码。他坦白有三件事该做得不同：更用力地反对 C 内置类型之间的隐式窄化转换，当年他试过，被贝尔实验室更资深的人拦下了；推迟 C++ 的发布，等有了模板再做标准库，后来是 Alex Stepanov 的 STL 救了场，他说那纯属运气；还有，委员会应该由五六个经验丰富的人做决定，而不是让五百人投票。</p>
-<h2>说法核查</h2>
+<h2 data-tts="7a5933121dc2b461">说法核查</h2>
 <div class="claim">
 <p class="said">「I'm so tired of that.」（我真是听烦了。）Stroustrup 接着引 Herb Sutter 的数字说，缓冲区溢出这类问题九成以上出在不写现代 C++ 的人身上。<a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=2791s">[00:46:31]</a></p>
 <p class="verdict">证据不足</p>
@@ -111,14 +112,14 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p class="verdict">证据不足</p>
 <p>Dan Boneh 团队在 CCS 2023 上发表的对照实验（47 人，用的是 2022 年的 Codex）发现，用 AI 助手的人在五道题里有四道写出的代码更不安全，而且更自信。但唯一一道 C 语言题，结果好坏参半。方向上有支撑，落到他那个领域，证据还缺。</p>
 </div>
-<h2>越界 · 跨学科的联想</h2>
+<h2 data-tts="c93839becd466db4">越界 · 跨学科的联想</h2>
 <div class="crossx"><ul>
 <li><b>进化生物学 · François Jacob 的「修补」（tinkering）</b>：Jacob 1977 年在《Science》上写道，自然选择不像按图纸造东西的工程师，更像修补匠，手边有什么零件就拿什么来拼。C++ 兼容 C、把 C 当汇编、绕开 25 种链接器，都是修补匠的做法，「已知的旧错误」好过「未知的新错误」。不像的地方是，进化没法回头禁用旧零件，Stroustrup 却想用 profiles 把危险的旧零件封起来：零件留在仓库里，但不许再装上去。</li>
 <li><b>AI · Sutton 的「苦涩的教训」（<a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">The Bitter Lesson</a>）</b>：Sutton 2019 年指出，依靠算力的通用方法最终总会胜过人手写进去的领域知识。「别太聪明」是编译器版的同一个教训，手写的优化绑死在某一代硬件上，换代就过期。耐人寻味的是，Stroustrup 接受编译器胜过人，却不接受大模型胜过人。</li>
 <li><b>分布式系统 · Gifford 的加权投票（weighted voting）</b>：1979 年 Gifford 给不同副本分配不同的票数，法定人数按票数算而不按节点数算。委员会的「共识」是同一个思路，编译器实现者的 5% 分量重过其余的 95%，因为真正的状态，也就是编译器，在他们手里。</li>
 <li><b>社会学 · Diane Vaughan 的「偏差正常化」（normalization of deviance）</b>：Vaughan 研究挑战者号事故时发现，组织会把一次次没出事的异常当成新常态。瓦萨号测试跑了三趟就叫停，船照样出海，是同一种机制。Stroustrup 开的药方，是该说不的时候对上面说不。</li>
 </ul></div>
-<h2>十条要点</h2>
+<h2 data-tts="ca57c5cb8e8eda61">十条要点</h2>
 <ol class="takeaways">
 <li>Bjarne Stroustrup 认为「造一门语言需要哪些部件」是错的问题，应该先找到一个现有语言解决不了的问题。</li>
 <li>C++ 起于 Stroustrup 想做分布式 Unix：同一门语言既要能写设备驱动，又要能描述跨机器的模块和协议。</li>
@@ -131,7 +132,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li>Stroustrup 认为用旧代码训练出来的大模型会复制旧代码的性能和 bug，在安全和性能攸关的代码里尤其如此。</li>
 <li>Stroustrup 回顾时说，该更早反对隐式窄化转换、推迟发布等模板就绪，并让五六个人而非五百人做决定。</li>
 </ol>
-<h2>出处</h2>
+<h2 data-tts="b081fd12b23ac920">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=U46fJ2bJ-co">Creator of C++: Bell Labs, Negative Overhead Abstraction, Mistakes | Bjarne Stroustrup</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>
 <li><span class="t"><a href="https://herbsutter.com/2024/03/11/safety-in-context/">Herb Sutter, C++ safety, in context（2024）</a></span><span class="d">第一条核查的依据：七成 CVE 的口径，以及文中没有按代码风格拆分。</span></li>
