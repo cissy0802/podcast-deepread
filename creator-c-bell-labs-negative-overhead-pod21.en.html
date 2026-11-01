@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Peterman Pod × Bjarne Stroustrup — Abstraction can have negative overhead</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="creator-c-bell-labs-negative-overhead-pod21.html">中文 →</a></div>
+<header>
+<div class="kicker">The Peterman Pod · 2026</div>
+<h1>The creator of C++: abstraction can have negative overhead, and clever code goes stale</h1>
+<p class="sub">Bjarne Stroustrup × Ryan Peterman · "Creator of C++: Bell Labs, Negative Overhead Abstraction, Mistakes"</p>
+</header>
+<div class="meta-card"><b>Show</b> The Peterman Pod · 2026-05-18 · <b>Length</b> 119 min · <b>Guest</b> Bjarne Stroustrup · <b>Host</b> Ryan Peterman · <b>Video</b> <a href="https://www.youtube.com/watch?v=U46fJ2bJ-co">YouTube</a></div>
+<h2>The moment</h2>
+<p>About halfway through, Ryan Peterman asks about a cautionary tale that circulates in the C++ community: the Vasa. Bjarne Stroustrup brightens immediately. <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=4401s">[01:13:21]</a></p>
+<p>The Vasa was a 17th-century Swedish warship, ordered by the king to fight well and to look beautiful on diplomatic visits. The keel was already laid when the king heard that a likely enemy was building ships with two gun decks, so he ordered a second one. The ship grew, so he wanted more statues too. Before it sailed, Stroustrup says, they tested its stability by running the crew from one side of the deck to the other; it should have survived fourteen crossings, and they stopped at seven because it looked dangerous. It sailed on schedule anyway, trumpets blaring, crew families aboard. Halfway across the harbor a gust of wind came, and it was gone.</p>
+<p>When the standards committee met in Stockholm, he told them the story and drew one lesson from it:</p>
+<blockquote><span class="en">"They built more features on top without improving the foundation."</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=4623s">[01:17:03]</a></cite></blockquote>
+<p>He flags that some details are rumor himself. According to the <a href="https://en.wikipedia.org/wiki/Vasa_(ship)">historical record</a>, the ship sank in 1628, thirty men ran across the deck only three times before the test was halted, and archaeologists have found no trace of a second gun deck being added mid-build. As a parable, though, it does the job. The whole episode is about one problem: how a language with millions of users repairs its foundation without tearing the house down.</p>
+<h2>Who's talking, and when</h2>
+<p>Bjarne Stroustrup is Danish, did his computer science PhD at Cambridge, then joined Bell Labs, where he built C++. He is now a professor of computer science at <a href="https://www.stroustrup.com/">Columbia University</a>. He says he lost half his hair debugging a simulator he rewrote in BCPL during his PhD, and the other half getting C++ going.</p>
+<p>Ryan Peterman's show interviews senior engineers and the people who created foundational systems, and he tends to ask about getting hired, growing, and what advice you would give your younger self. He came prepared this time: many questions draw on the long retrospectives Stroustrup wrote for the History of Programming Languages conference. Stroustrup, for his part, several times declines the question as asked and pulls it back to "what problem are you actually solving?"</p>
+<p>The episode came out in May 2026. For two or three years before that, C++ had been under fire over memory safety; a 2024 <a href="https://bidenwhitehouse.archives.gov/wp-content/uploads/2024/02/Final-ONCD-Technical-Report.pdf">report</a> from the White House Office of the National Cyber Director explicitly called for a move to memory-safe languages. Stroustrup's answer is profiles: coding rules that the compiler enforces. He says C++26 already includes a standard hardening option, and he is pushing for fuller profiles in C++29.</p>
+<h2>The episode, unpacked</h2>
+<h3>The problem comes before the language</h3>
+<p>Peterman asks what pieces you would need to build a programming language today. Stroustrup calls it the wrong question: first ask whether you have a problem that existing languages cannot solve. His own problem was concrete. Arriving at Bell Labs and looking at the people down the hall who had built Unix and C, he felt he had to do something big to belong, so he set out to build a distributed Unix. One end of that job touched process scheduling and device drivers; the other had to describe modules on different machines and the protocols between them. The languages that could do the low level could not do the high level, and the high-level ones were too slow and could not touch hardware.</p>
+<p>Behind that judgment was an earlier lesson. During his PhD at Cambridge he wrote a distributed-systems simulator in Simula; its first full-scale run tied up the department mainframe for so long that he was kicked off. He rewrote the program in BCPL, a language with a single data type, the word. It was miserable, but the program ran roughly 50 times faster, and he vowed never again to attack a problem with tools that inadequate. C++ began as Simula's classes put into C: Simula's expressiveness at C's speed.</p>
+<p>Every key early decision served that problem. He found about 25 different linkers in use inside Bell Labs alone, so he made a rule never to touch the linker. Every machine had its own optimizer, and he did not want to become an optimizer specialist, so he used C as his assembler and translated C++ into C. C compatibility came the same way:</p>
+<blockquote><span class="en">"…we can have Dennis's mistakes which we know and we can have my mistakes which we don't know yet."</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=1868s">[00:31:08]</a></cite></blockquote>
+<p>He took the first option. The same logic explains why he never called C++ an object-oriented language. He did not want object-oriented complex numbers; "2 plus z" should be written 2 + z, because three centuries of mathematical notation work well, and nothing that needs no runtime dispatch should pay for it. Static typing follows too: when a telephone switch hits a runtime error, no programmer is sitting at a screen waiting to open a debugger.</p>
+<h3>Abstraction is free; cleverness is taxed</h3>
+<p>Peterman voices a common engineering intuition: the closer to the machine, the faster, and every layer of abstraction costs something. Stroustrup replies that abstraction gets compiled away. He used to talk about "zero-overhead abstraction," and now people criticize the phrase for underselling C++ compilers:</p>
+<blockquote><span class="en">"We can do negative overhead abstraction."</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=5009s">[01:23:29]</a></cite></blockquote>
+<p>His reasoning is that the more information an optimizer has, the better it does; for the same code, C++ can do much more at compile time, so he holds that C++ is as fast as C or faster in most cases. The fact-check below puts numbers against that.</p>
+<p>The more interesting half of this thread is its flip side. Last year he gave a talk to a group of performance-minded people from finance titled "Don't be (too) clever." His experience is that 1990s-style hand-tuned code, with nests of pointers and extra allocations, often runs slower on today's machines and compilers. So his standard first move when improving code is to throw the clever parts away and time it; usually it gets faster. In a paper with a friend in Spain who works on fluid dynamics, doing this on a performance test suite cut the code to about 80% of its size and made it 20% faster. He cites Knuth: only two or three percent of code is worth optimizing, and you time it rather than guess.</p>
+<p>The thread ends at memory safety. As soon as Peterman raises C++'s reputation for it, Stroustrup says he is tired of hearing it. In his view the problem was solved in theory long ago: use span instead of raw pointers, use vector, use the hardened standard libraries every vendor already ships. People keep writing old-style code and keep getting old-style bugs. He wants the compiler to forbid the dangerous patterns by default. When some on the committee argue that standards should only codify common industry practice, his answer is:</p>
+<blockquote><span class="en">"But when the bugs are common in industry, you should do something else."</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=2958s">[00:49:18]</a></cite></blockquote>
+<p>The same logic makes him pessimistic about models writing code, at least the ten or twenty percent of code where performance and safety are critical. Models, he argues, can only be trained on old code:</p>
+<blockquote><span class="en">"So I find that LLM based code is imitating old code and getting old performance and old bugs."</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=5558s">[01:32:38]</a></cite></blockquote>
+<p>He also worries about validation: a human's change is local, but a slightly different prompt can rewrite large swaths of code, and regulated industries then have to revalidate all of it. He concedes that in ten years some of what he says will turn out wrong.</p>
+<h3>A language that can't start over</h3>
+<p>C++ was never his to dictate, Stroustrup says. In 1989 representatives of IBM, HP and other giants walked into his office and asked him to standardize it. He said no, he was still experimenting. They said their organizations could not use a language that was unstandardized and owned by a corporation they sometimes competed with: we trust you, but not your employer. After an hour of arm-twisting he gave in, then asked: by the way, what are the ANSI rules for standardization? Had he refused, he believes, C++ would have become a cute academic language loved by a small community and faded out of the mainstream.</p>
+<p>The price of standardization is process. Last he checked, the committee had 527 members and worked by consensus. He wants to see 90% in favor and starts to worry at 80%. There is no threshold written into the rules. If 95% vote yes but the 5% against are the compiler implementers from Google, Apple and Microsoft, no convenor would call that consensus.</p>
+<blockquote><span class="en">"…that's painful and tedious and good."</span><cite>— Bjarne Stroustrup · <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=3400s">[00:56:40]</a></cite></blockquote>
+<p>When the C++11 memory model was being settled, the IBM and Intel representatives had been deadlocked for days, each in a corner of a large room. He spent a couple of hours walking between the corners doing "shuttle diplomacy" until they reached an agreement.</p>
+<p>Looking back, he says he got most of the design right and could improve every detail, but can't, because the same people who call C++ too complicated also demand two new features and warn him not to break their million lines of code. He admits three things he would do differently: fight harder against C's implicit narrowing conversions between built-in types, which he tried and was overruled on by more senior people at Bell Labs; delay the release of C++ until something template-like could support a good standard library, a gap Alex Stepanov's STL later filled, which he calls real luck; and have a group of five or six experienced people make decisions, rather than a vote among five hundred.</p>
+<h2>Fact check</h2>
+<div class="claim">
+<p class="said">"I'm so tired of that." Stroustrup goes on to cite Herb Sutter's numbers: more than 90% of buffer-overflow-type problems come from people not writing modern C++. <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=2791s">[00:46:31]</a></p>
+<p class="verdict">Insufficient evidence</p>
+<p>Sutter's 2024 essay confirms that about 70% of language-caused CVEs in C and C++ code are safety problems, but it does not split them by modern versus C-style code; one type-safety class he highlights is C++ code using static_cast where dynamic_cast was called for, not C-style code. We found no public source for the "90% from old-style code" figure.</p>
+</div>
+<div class="claim">
+<p class="said">Raw Python is about 70 times slower than raw C++; C++ is as fast as C or faster in most cases. <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=2655s">[00:44:15]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>A 2017 study comparing 27 languages on ten Benchmarks Game problems, normalized to C = 1, puts Python's run time at 71.9 and C++ at 1.56, so Python is about 46 times slower than C++: the right order of magnitude. But the same table has C++ taking over 50% longer than C, which does not support "as fast or faster."</p>
+</div>
+<div class="claim">
+<p class="said">In the domain he cares about, attempts to have AI generate code have not been successful, with more bugs and more security holes. <a class="ts" href="https://www.youtube.com/watch?v=U46fJ2bJ-co&amp;t=5374s">[01:29:34]</a></p>
+<p class="verdict">Insufficient evidence</p>
+<p>A controlled study from Dan Boneh's group at CCS 2023 (47 participants, 2022-era Codex) found that people with an AI assistant wrote less secure code on four of five tasks and were more confident about it. On the one C task, the results were mixed. The direction has support; for his domain, the evidence is missing.</p>
+</div>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Evolutionary biology · François Jacob's "tinkering"</b>: in a 1977 Science essay, Jacob argued that natural selection works less like an engineer with a blueprint and more like a tinkerer who builds from whatever parts are lying around. Keeping C compatibility, using C as an assembler, routing around 25 linkers: all tinkerer's moves, where known old mistakes beat unknown new ones. The difference is that evolution can never retire an old part, while Stroustrup wants profiles to seal off dangerous ones: the part stays in the warehouse, but you may no longer install it.</li>
+<li><b>AI · Sutton's <a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">The Bitter Lesson</a></b>: Sutton argued in 2019 that general methods that exploit computation eventually beat hand-coded domain knowledge. "Don't be clever" is the compiler version of the same lesson: hand optimizations are tied to one hardware generation and expire with it. The twist is that Stroustrup accepts compilers beating humans but not language models.</li>
+<li><b>Distributed systems · Gifford's weighted voting</b>: in 1979 Gifford gave replicas unequal numbers of votes, so a quorum is counted in votes rather than nodes. The committee's notion of consensus is the same idea: the implementers' 5% outweighs the other 95%, because the real state, the compilers, lives with them.</li>
+<li><b>Sociology · Diane Vaughan's "normalization of deviance"</b>: studying the Challenger disaster, Vaughan found that organizations come to treat repeated anomalies that didn't end in disaster as the new normal. A stability test halted after three runs, followed by sailing anyway, is the same mechanism. Stroustrup's prescription is to say no upward when no is the professional answer.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Bjarne Stroustrup thinks "what pieces do you need to build a language" is the wrong question; first find a problem existing languages cannot solve.</li>
+<li>C++ began with Stroustrup's plan for a distributed Unix, which needed one language for device drivers and for describing modules and protocols across machines.</li>
+<li>At Cambridge, Stroustrup rewrote a Simula simulator in BCPL and got roughly 50 times the speed, which led him to put Simula's classes into C.</li>
+<li>Stroustrup avoided touching linkers, used C as an assembler, and kept C compatibility, preferring Dennis Ritchie's known mistakes to his own unknown ones.</li>
+<li>Stroustrup never called C++ object-oriented; he wanted mathematical notation like 2 + z and no cost for runtime dispatch you don't use.</li>
+<li>Stroustrup claims C++ can deliver negative-overhead abstraction, because the more information a compiler has, the better code it generates.</li>
+<li>Stroustrup improves code by first discarding 1990s-style hand optimizations and timing it, since such code is often slower on today's hardware and compilers.</li>
+<li>Stroustrup attributes C++ memory-safety problems mainly to old-style code and wants profiles that make the compiler forbid dangerous patterns by default.</li>
+<li>Stroustrup argues that language models trained on old code reproduce its old performance and old bugs, especially in safety- and performance-critical code.</li>
+<li>Looking back, Stroustrup says he should have fought implicit narrowing conversions, delayed release until templates were ready, and had five or six people decide instead of five hundred.</li>
+</ol>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=U46fJ2bJ-co">Creator of C++: Bell Labs, Negative Overhead Abstraction, Mistakes | Bjarne Stroustrup</a></span><span class="d">The episode. All timestamps on this page point here.</span></li>
+<li><span class="t"><a href="https://herbsutter.com/2024/03/11/safety-in-context/">Herb Sutter, C++ safety, in context (2024)</a></span><span class="d">Basis for the first check: the 70% CVE figure and its lack of a code-style breakdown.</span></li>
+<li><span class="t"><a href="https://greenlab.di.uminho.pt/wp-content/uploads/2017/09/paperSLE.pdf">Pereira et al., Energy Efficiency across Programming Languages (SLE 2017)</a></span><span class="d">Basis for the second check: normalized run times for 27 languages.</span></li>
+<li><span class="t"><a href="https://arxiv.org/abs/2211.03622">Perry et al., Do Users Write More Insecure Code with AI Assistants? (CCS 2023)</a></span><span class="d">Basis for the third check: sample, model, and the result on the C task.</span></li>
+</ul>
+<footer>Podcast Deep Read · one long episode, its main threads worked through · written 2026-11-01</footer>
+</div>
+</body></html>
