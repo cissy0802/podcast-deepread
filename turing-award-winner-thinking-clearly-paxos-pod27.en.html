@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Peterman Pod × Leslie Lamport — Write It Down</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="turing-award-winner-thinking-clearly-paxos-pod27.html">中文 →</a></div>
+<header>
+<div class="kicker">The Peterman Pod · 2026</div>
+<h1>A rejection letter that found a bug, and a lifetime of "write it down or you don't know it"</h1>
+<p class="sub">Leslie Lamport × Ryan Peterman · "Turing Award Winner: Thinking Clearly, Paxos vs Raft, Working With Dijkstra"</p>
+</header>
+<div class="meta-card"><b>Show</b> The Peterman Pod · 2026-02-23 · <b>Length</b> 70 min · <b>Guest</b> Leslie Lamport · <b>Host</b> Ryan Peterman · <b>Video</b> <a href="https://www.youtube.com/watch?v=U719vQz-WFs">YouTube</a></div>
+
+<h2>The moment</h2>
+<p>In 1972 Leslie Lamport read an article in Communications of the ACM about Dijkstra's mutual exclusion problem: several processes share something like a printer, and you must guarantee that at most one of them is inside its "critical section" at a time. The published solution was fairly complicated. Lamport thought it shouldn't be that hard, dashed off a simple two-process algorithm and submitted it. A few weeks later the reply arrived.</p>
+<blockquote><span class="en">And a couple of weeks later, I received a letter from the editor pointing out the bug in my program.</span><cite>— Leslie Lamport · <a class="ts" href="https://www.youtube.com/watch?v=U719vQz-WFs&amp;t=251s">[00:04:11]</a></cite></blockquote>
+<p>He says the letter had two effects. He realized that concurrent programs are hard to get right and need a proof of correctness. And he decided he was going to solve that damn problem. The second effect became the bakery algorithm. The first one he has held to for more than fifty years.</p>
+
+<h2>Who's talking, and when</h2>
+<p>Lamport won the 2013 Turing Award; logical clocks, the Byzantine Generals and Paxos are his, and he wrote LaTeX on the side. Unlike most of his peers he never held a university post, working instead at SRI, DEC's Systems Research Center (SRC) and Microsoft Research. In the interview he explains that until about the mid-1980s it didn't seem to him that computer science was something you had to go to a university to learn, and later he simply didn't think teaching it would be fun.</p>
+<p>Ryan Peterman's show usually has senior engineers talk about promotion, growth and regrets. This time he changes tack. He has clearly read the notes Lamport wrote on his own website for each of his papers, says "I saw in your notes" again and again, and asks for the story behind one paper after another. The episode becomes a spoken version of that annotated bibliography.</p>
+<p>It went up in February 2026, when Lamport was 85. He speaks slowly and often pauses for a word, but on any technical judgment he is blunt. Set beside our <a href="turing-award-winner-disagreeing-google-postgres-pod8.en.html">Stonebraker episode</a> it is the opposite temperament: Stonebraker pulls everything toward the market, Lamport pulls everything toward the proof.</p>
+
+<h2>The episode, in depth</h2>
+<h3>Abstraction, not smartness</h3>
+<p>The bakery algorithm comes from a deli counter. Each customer takes a numbered ticket, and the lowest number is served next. The twist in Dijkstra's problem is that there is no central ticket machine, so each process has to choose its own number. The algorithm is simple. What surprised Lamport was something he found while writing its proof.</p>
+<p>People assumed that mutual exclusion required some lower-level mutual exclusion underneath, usually that reads and writes to shared registers are atomic. The bakery algorithm does not need that. Each shared variable is written by only one process, and if another process reads it in the middle of a write it may get any value at all and the algorithm still works. His colleague Anatol Holt could not find a flaw in the proof on the whiteboard, went home convinced there must be one, and never found it.</p>
+<p>His only collaboration with Dijkstra went the same way. Dijkstra and his students had written the first concurrent garbage collector, with a special process to manage the free list. Lamport pointed out that the free list could just be part of the ordinary data structure. It seemed obvious to him, yet Dijkstra made him a co-author, and years later remarked on his unusual gift for abstraction. Lamport says it was only around the Turing Award that he understood his success came not from being particularly smart but from that gift.</p>
+<p>Near the end, Peterman presses him: you say you never thought of yourself as smart, so how does that square with a Turing Award? Lamport cites what psychologists describe: people who are good at something don't realize how good, because it's easy for them, and the reverse holds too.</p>
+<blockquote><span class="en">Stupid people think they're smart because they're too stupid to realize they're not.</span><cite>— Leslie Lamport · <a class="ts" href="https://www.youtube.com/watch?v=U719vQz-WFs&amp;t=4068s">[01:07:48]</a></cite></blockquote>
+
+<h3>One problem, solved three times</h3>
+<p>Lamport's most cited paper is "Time, Clocks, and the Ordering of Events in a Distributed System" (1978). It began with a distributed database paper whose scheme ordered operations in a way that could differ from the order in which events actually happened. So what does "happened before" mean? He happened to know the space-time view of special relativity: one event precedes another if a signal, travelling no faster than light, could get from the first to the second. Replace light signals with messages actually sent in the system, and you have happens-before for distributed systems.</p>
+<p>That is the half everyone remembers. The other half: if you can produce a total order consistent with happens-before, every machine can execute the same commands in the same order, and any distributed system can be described as a state machine. He considers this the paper's most important practical idea, and almost nobody noticed it.</p>
+<blockquote><span class="en">As a matter of fact, twice I talked to people about that paper and they said there was nothing in that paper about state machines.</span><cite>— Leslie Lamport · <a class="ts" href="https://www.youtube.com/watch?v=U719vQz-WFs&amp;t=1130s">[00:18:50]</a></cite></blockquote>
+<p>State machines also matter because of how you understand a program. Midway through a run, the original input is ancient history; only the current state decides what happens next. So understanding a program means finding a property of the state that holds at every step and guarantees the answer is right: an invariant.</p>
+<blockquote><span class="en">And understanding the invariant is the way to understand the system.</span><cite>— Leslie Lamport · <a class="ts" href="https://www.youtube.com/watch?v=U719vQz-WFs&amp;t=1285s">[00:21:25]</a></cite></blockquote>
+<p>His argument is about complexity. The number of possible executions grows exponentially with the number of processes, so reasoning about them one by one makes it easy to miss cases, while an invariance proof grows only quadratically.</p>
+<p>He then solved the same problem twice more. First came the Byzantine Generals. The 1978 paper assumed no failures, but the point of multiple computers is to keep going when one fails. At SRI he found colleagues working on the same problem for SIFT. The oil crisis had made people want smaller control surfaces to save fuel, which made planes aerodynamically unstable, so computers would have to fly them. From Dijkstra's dining philosophers he had learned that a problem spreads if it has a good story, so he invented generals and traitors.</p>
+<p>Then came Paxos. At DEC SRC the failures industry cared about were machines that simply stop. His colleagues' distributed system had code to keep its shared storage consistent, and Lamport didn't believe it was possible. He set out to prove it impossible: an algorithm would have to do this, and to do this it would have to do that... until he stopped and realized it was not a proof but an algorithm. His verdict on his colleagues: they had code, not an algorithm.</p>
+<p>As a young researcher he looked for "the Turing machine of concurrency", never found it, and for a while felt like a failure. Now he thinks the answer is the state machine: a state plus a next-state relation. It can describe anything, including things that cannot be implemented, such as a variable ranging over all integers. He calls that a feature, since infinity was introduced to make things simpler. Hence his impatience with programmers' attachment to languages: for understanding concurrency, you can't beat math.</p>
+
+<h3>Understanding means you can write a proof</h3>
+<p>The Raft authors once sent him a draft. He told them to send it back when they had an algorithm, or a proof, he no longer remembers which. As he sees it, Paxos has two phases: the first establishes a leader, and as long as the leader stays the same you just repeat the second. Engineers like to explain it the other way round, running the second phase until the leader fails and then going back to the first, and that is how Raft tells it. Lamport thinks only his order shows why the algorithm is correct.</p>
+<p>The Raft paper reported a study in which students found Raft easier to understand. Lamport's reply is that a bug was later found in Raft, and that the version the students found more understandable was the one with the bug; the claim check below looks at whether that holds up. From this he draws a distinction.</p>
+<blockquote><span class="en">For me understanding means, you know, you can write a proof of it, but what understanding means for most people is warm fuzzy feeling.</span><cite>— Leslie Lamport · <a class="ts" href="https://www.youtube.com/watch?v=U719vQz-WFs&amp;t=3037s">[00:50:37]</a></cite></blockquote>
+<p>Paxos had the same fate. He told it as a parliament on an ancient Greek island and lectured in the persona of an Indiana Jones–style archaeologist, and nobody grasped the algorithm's significance except Butler Lampson, who began urging people to build systems on it. Referees thought the paper not very important, Lamport was in no hurry, and it sat from its 1990 submission until publication in 1998.</p>
+<p>His structured proofs were forced on him too. Once his algorithms got complicated, the proofs he wrote the way a math PhD learns to write them could no longer keep track of the details, so he borrowed the programmer's tool for complexity, hierarchy. A proof is a sequence of steps, each with its own proof, which is either a paragraph or another sequence of steps, and each step names the steps it follows from. He found it worked just as well for ordinary theorems and presented it at a seminar to about twenty mathematicians.</p>
+<blockquote><span class="en">They became angry. I really thought they might physically attack me.</span><cite>— Leslie Lamport · <a class="ts" href="https://www.youtube.com/watch?v=U719vQz-WFs&amp;t=15s">[00:00:15]</a></cite></blockquote>
+<p>He reads the reaction as fear: mathematicians worry they'll have to write proofs for a computer program, though he insists it needs no more formality than usual. The real cost is that the structure exposes the steps you thought obvious and never wrote down. LaTeX was improved the same way: while writing its manual, wherever something was hard to explain, he went back and changed LaTeX itself.</p>
+<blockquote><span class="en">If you think you know something but don't write it down, you only think you know it.</span><cite>— Leslie Lamport · <a class="ts" href="https://www.youtube.com/watch?v=U719vQz-WFs&amp;t=3560s">[00:59:20]</a></cite></blockquote>
+
+<h2>Claim check</h2>
+<div class="claim">
+<p class="said">"People thought three computers were enough to tolerate one fault; with arbitrary faults you need four, or three with digital signatures." <a class="ts" href="https://www.youtube.com/watch?v=U719vQz-WFs&amp;t=2179s">[00:36:19]</a></p>
+<p class="verdict">Supported</p>
+<p>Lamport's own note on the 1980 paper says it plainly: it was generally assumed that three processors could tolerate one fault; the paper showed Byzantine faults defeat any traditional three-processor algorithm, and in general 3n+1 are needed, or 2n+1 with signatures. The general formula he gives in passing on the show ("4n" and "3n") doesn't match, but his one-fault example is right.</p>
+</div>
+<div class="claim">
+<p class="said">"A bug was discovered in Raft and fixed, but I believe the version they found more understandable was the one with that bug." <a class="ts" href="https://www.youtube.com/watch?v=U719vQz-WFs&amp;t=39s">[00:00:39]</a></p>
+<p class="verdict">Insufficient evidence</p>
+<p>Raft's best-known safety bug, announced by Diego Ongaro in 2015, lies in the single-server membership-change algorithm from his dissertation, and he states it does not affect implementations using joint consensus. The Raft paper's study of 43 students taught the joint-consensus version. Lamport doesn't name the bug, and we found no public record supporting the claim.</p>
+</div>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Physics · Minkowski space-time</b>: the person whose name Lamport couldn't recall on the show is <a href="https://en.wikipedia.org/wiki/Hermann_Minkowski">Hermann Minkowski</a>, who recast special relativity as four-dimensional space-time. The light cone sorts events into "can affect me", "I can affect" and "out of each other's reach", exactly the before, after and concurrent of distributed systems. The difference: physics stops there, since spacelike-separated events have no order, while Lamport's logical clocks go one step further and impose a total order with an arbitrary tiebreak such as process IDs, because a state machine needs every replica to run commands in the same order. The partial order in physics is a fact; the total order in systems is a convention.</li>
+<li><b>Cognitive science · Illusion of explanatory depth</b>: in 2002 Rozenblit and Keil had Yale undergraduates rate their understanding of devices, write out a detailed explanation, then rate again, and the ratings went down. The <a href="https://en.wikipedia.org/wiki/Illusion_of_explanatory_depth">illusion of explanatory depth</a> is the lab version of "you only think you know it." The difference is that the experiment punctures laypeople's confidence, while Lamport is after the experts'.</li>
+<li><b>Mathematics · Terence Tao's blueprint</b>: in November 2023 Tao launched a Lean 4 formalization of the PFR conjecture's proof, paired with a human-readable <a href="https://terrytao.wordpress.com/2023/11/18/formalizing-the-proof-of-pfr-in-lean4-using-blueprint-a-short-tour/">blueprint</a> that draws the dependency graph of lemmas; within about three weeks the whole graph was green. That is close to Lamport's hierarchical proofs plus a machine checker. What his audience feared, writing proofs for a computer, some mathematicians now choose.</li>
+<li><b>Cryptography · Satoshi Nakamoto</b>: in November 2008 Nakamoto wrote on a cryptography mailing list that the proof-of-work chain is <a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014849.html">a solution to the Byzantine Generals' Problem</a>. Alike: mutually distrustful parties agreeing on one sequence. Unlike: Lamport's setting has a known set of participants, while Bitcoin faces an open network anyone can join, so it uses computing power as the vote and gets agreement only in a probabilistic sense.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Leslie Lamport's first mutual exclusion algorithm, submitted to CACM in 1972, had a bug; the editor's letter convinced him concurrent programs need correctness proofs.</li>
+<li>The bakery algorithm lets each process pick its own ticket, lowest number enters first, and it does not require atomic reads and writes of shared registers.</li>
+<li>Lamport credits his success not to raw intelligence but to a gift for abstraction, which Dijkstra recognized early.</li>
+<li>"Time, Clocks" brought relativity's happens-before into distributed systems, but Lamport says its more important state-machine idea went almost unnoticed.</li>
+<li>Lamport argues programs are understood through invariants: executions grow exponentially with processes, invariance proofs only quadratically.</li>
+<li>The Byzantine Generals problem came from SRI's SIFT flight-control project, and Lamport invented the story so the result would spread.</li>
+<li>Paxos was born when Lamport tried to prove his colleagues' fault-tolerant storage impossible and the proof turned into an algorithm.</li>
+<li>Lamport separates two kinds of understanding: being able to write a proof, and a warm fuzzy feeling; Raft wins on the second.</li>
+<li>Lamport's hierarchical proofs break each step into sub-steps with stated justifications; he reads mathematicians' anger at them as fear.</li>
+<li>The illusion-of-explanatory-depth experiment shows people lower their self-rated understanding after writing an explanation, the same structure as Lamport's "write it down" rule.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=U719vQz-WFs">Turing Award Winner: Thinking Clearly, Paxos vs Raft, Working With Dijkstra | Leslie Lamport</a></span><span class="d">The episode. All timestamps point here.</span></li>
+<li><span class="t"><a href="https://lamport.azurewebsites.net/pubs/pubs.html">Leslie Lamport · My Writings</a></span><span class="d">Lamport's notes on his papers; basis for the first claim check and the Paxos dates.</span></li>
+<li><span class="t"><a href="https://raft.github.io/raft.pdf">Ongaro &amp; Ousterhout · In Search of an Understandable Consensus Algorithm</a></span><span class="d">The Raft paper; scope of the user study in the second claim check.</span></li>
+<li><span class="t"><a href="https://groups.google.com/g/raft-dev/c/t4xj6dJTP6E/m/d2D9LrWRza8J">Diego Ongaro · bug in single-server membership changes (raft-dev, 2015)</a></span><span class="d">Origin and scope of the bug in the second claim check.</span></li>
+</ul>
+<footer>Podcast Deep Read · one long episode, its main threads read closely · written 2026-11-06</footer>
+</div>
+</body></html>
