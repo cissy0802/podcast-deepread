@@ -17,7 +17,7 @@ Making Sense 另加主题过滤：它的意识与哲学存货大半在付费墙�
 > - **本清单不写内容钩子**：钩子只能从标题猜，而猜出来的钩子会变成引擎的先入之见。
 >   引擎读到什么写什么。
 
-共 185 期。播放量为抓取当日数值（原清单 2026-09-19，Peterman Pod 与 Google I/II 2026-10-12）。
+共 190 期。播放量为抓取当日数值（原清单 2026-09-19，Peterman Pod 与 Google I/II 2026-10-12）。
 
 The Peterman Pod 不按播放量取，按嘉宾级别人工挑：图灵奖得主、编程语言与基础系统的创造者、业界最高职级（VP / Distinguished / IC9 / CTO / 总监）；
 职业发展类以高职级的人为主，另有 BigCat 逐期勾回的几期（IC7/IC8、M2 等）。
@@ -27,6 +27,8 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
 2026-10-16 加入 The Pragmatic Engineer 8 期、In Depth（First Round）6 期、A Life Engineered 7 期，BigCat 直接确认；未写的部分按频道比例重新穿插。
 
 2026-11-01 加入 The Diary of a CEO 39 期：先按主题筛掉健康恐慌、战争、UFO、阴谋论、两性和名人八卦，同一嘉宾只留一期，再按播放量排；BigCat 在选片面板里决定全部收下。未写的部分按频道比例重新穿插。
+
+2026-11-07 加入 The Joe Rogan Experience 5 期，BigCat 直接确认：沿用 Diary of a CEO 的筛法（去掉 UFO、阴谋论、健康恐慌、名人八卦），再去掉已在人物专题里用过的嘉宾（Musk、黄仁勋、Naval）和本站已有专门节目的嘉宾（Sean Carroll、Huberman、Lex），按读者兴趣挑说法最值得核查的几期。视频都在 PowerfulJRE 频道；时长和播放量等转写抓回来再补。转写到位前排在清单末尾。
 
 ---
 
@@ -1139,3 +1141,33 @@ Ethan Evans 的三期 Peterman 访谈（2026-10-15 起）归入「Ethan Evans �
   - source: <https://www.youtube.com/watch?v=zQ1POHiR8m8>
   - transcript: `transcripts/godfather-ai-have-years-before-everything.txt`
   - slug: `godfather-ai-have-years-before-everything`
+
+- **The Joe Rogan Experience** — Joe Rogan Experience #1368 - Edward Snowden
+  - 2019 · 时长、播放量待抓取 · 政治 / 社会
+  - source: <https://www.youtube.com/watch?v=efs3QRr8LWw>
+  - transcript: `transcripts/jre-1368-edward-snowden.txt`
+  - slug: `jre-1368-edward-snowden`
+
+- **The Joe Rogan Experience** — Joe Rogan Experience #1428 - Brian Greene
+  - 2020 · 时长、播放量待抓取 · 物理 / 宇宙学
+  - source: <https://www.youtube.com/watch?v=r4wQsmAtZoc>
+  - transcript: `transcripts/jre-1428-brian-greene.txt`
+  - slug: `jre-1428-brian-greene`
+
+- **The Joe Rogan Experience** — Joe Rogan Experience #2255 - Mark Zuckerberg
+  - 2025 · 时长、播放量待抓取 · 政治 / 社会
+  - source: <https://www.youtube.com/watch?v=7k1ehaE0bdU>
+  - transcript: `transcripts/jre-2255-mark-zuckerberg.txt`
+  - slug: `jre-2255-mark-zuckerberg`
+
+- **The Joe Rogan Experience** — Joe Rogan Experience #2136 - Graham Hancock & Flint Dibble
+  - 2024 · 时长、播放量待抓取 · 历史 / 考古
+  - source: <https://www.youtube.com/watch?v=-DL1_EMIw6w>
+  - transcript: `transcripts/jre-2136-graham-hancock-flint-dibble.txt`
+  - slug: `jre-2136-graham-hancock-flint-dibble`
+
+- **The Joe Rogan Experience** — Joe Rogan Experience #1349 - David Sinclair
+  - 2019 · 时长、播放量待抓取 · 健康 / 体能
+  - source: <https://www.youtube.com/watch?v=ZGLL77wYxe8>
+  - transcript: `transcripts/jre-1349-david-sinclair.txt`
+  - slug: `jre-1349-david-sinclair`
