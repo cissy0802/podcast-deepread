@@ -191,6 +191,7 @@
 - 文件放仓库根目录：`{slug}-pod{N}.html` + `{slug}-pod{N}.en.html`。
 - **index 按节目分组**：每个节目一个 `<div class="group" data-show="{节目名}">` 分区，分区里按 `TOPICS.md` 顺序排该节目的各期。每行都带 `data-show` 和 `data-slug`。分区标题里的「已写 N」由页尾脚本自动数，**不要手改**。
 - **index 最下面的各个人物专题分区（「Ethan Evans 专题」「Naval 专题」「Elon Musk 专题」「黄仁勋专题」）不归本引擎管**（分别由 `ETHAN.md`、`NAVAL.md`、`MUSK.md`、`JENSEN.md` 另行维护）：不要往里补灰行、不要改它们的行，也不要把它们的条目当成 `TOPICS.md` 的期数。
+  - **例外（2026-11 BigCat 定）：以 Musk 为主角的单期放进「Elon Musk 专题」分区**，`data-show="Elon Musk 专题"`，排在专题文章之后、按年份排：目前是 `elon-musk-spacex-mars-tesla-autopilot`（Lex #252）、`elon-musk-war-ai-aliens-politics`（Lex #400）、`walter-isaacson-elon-musk-s-father`（DOAC）、`kara-swisher-radicalization-elon-musk`（Ezra Klein）、`elon-musk-months-cheapest-place-put`（Dwarkesh）。它们仍是 `TOPICS.md` 的期数、仍由本引擎按清单写：对齐灰行时按 `data-slug` 找到它们就算已有、**不要在原节目分区再补一条**；发布时照常按 `data-slug` 原地转链接、`data-show` 保留为「Elon Musk 专题」。今后 `TOPICS.md` 新增以 Musk 为主角的单期，灰行也补进这个分区（节目分区标题里的期数不计它们）。
 - **每次运行开头先「对齐」灰行**：扫 `TOPICS.md`，凡是 slug 没有对应页、且 index 里没有灰行的，补一条 `<div class="entry todo" data-show="{节目名}" data-slug="{slug}">`，放进**该节目的分区**、按清单顺序插到对应位置。两个 index 都要补。
 - 发布前更新 `index.html`：找到本期的灰色占位行（`data-slug` 匹配），**原地**改成链接、去掉 `todo` 类，`data-show` 保留；**绝不移到别的分区、绝不在末尾 append**。`index.en.html` 同样处理。形状：
 
