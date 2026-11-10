@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Peterman Pod × Anders Hejlsberg — 不要向 AI 要答案，要它写一个算答案的程序</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="creator-typescript-10x-faster-typescript-ai-pod31.en.html">English →</a></div>
+<header>
+<div class="kicker">The Peterman Pod · 2026</div>
+<h1>TypeScript 之父：移植而不重写，修好 JavaScript 而不换掉它</h1>
+<p class="sub">Anders Hejlsberg × Ryan Peterman ·《Creator of TypeScript: 10x Faster Typescript, Why AI Won't Replace SWEs》</p>
+</header>
+<div class="meta-card"><b>节目</b> The Peterman Pod · 2026-08-17 · <b>时长</b> 66 分钟 · <b>嘉宾</b> Anders Hejlsberg · <b>主持</b> Ryan Peterman · <b>原片</b> <a href="https://www.youtube.com/watch?v=cywK3XYYJ2o">YouTube</a></div>
+
+<h2>那一段</h2>
+<p>聊到怎么用 AI 迁移代码时，Anders Hejlsberg 讲了一件和编译器毫不相干的小事。他和几个朋友一起出去旅行，有人付了酒店，有人付了别的，回来要算清谁欠谁多少。他们把所有开销丢给 AI，AI 很笃定地给出了一个答案，而那个答案是错的，因为它把中途已经结清的几笔账忘了。</p>
+<p>他说，要是当时让 AI 写一张电子表格，就会得到对的答案。电子表格其实就是一个程序，而 AI 很擅长写程序。</p>
+<blockquote><span class="en">"You ask it for a program that computes the answer."</span><span class="zh">你该向它要的，是一个能把答案算出来的程序。</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=1103s">[00:18:23]</a></cite></blockquote>
+<p>这句话放在这期里并不是闲笔。TypeScript 编译器刚从 JavaScript 搬到 Go，快了十倍左右，而他们搬家的办法正是这个思路：不让一个会出错的过程直接产出结果，而是先造一个确定的工具，再让工具去干活。这一期好几条主线，都和这个思路有关。</p>
+
+<h2>谁在聊，和那一年</h2>
+<p>Anders Hejlsberg 是丹麦人，做过 Turbo Pascal、Delphi、C#，2012 年起主导 TypeScript。他的第一个产品 Turbo Pascal 从编译器、编辑器到运行库全是 Z80 汇编。他回忆那时要把程序塞进 12K 的 EPROM，超了 20 个字节，就把一条长跳转改成两次短跳转，省下一个字节再接着找。他说那更像木工活。</p>
+<p>这期里最有画面的一段自白，是他在 C# 时期「飘进了平流层」。那时他的主要工作是做语言设计、写规格说明，代码写得越来越少，自称成了「架构宇航员」（architecture astronaut），却说不清自己为什么越来越不开心。直到 TypeScript 的机会出现，他重新动手写编译器，才发现自己说到底就是一个快乐的程序员。他有过很多当经理的机会，一直选择做个人贡献者（IC）。</p>
+<p>主持人 Ryan Peterman 的节目专访资深工程师和系统的创造者，之前也请过 C++ 的 <a href="creator-c-bell-labs-negative-overhead-pod21.html">Bjarne Stroustrup</a>。这一期他准备了一串网上流行的 AI 论断，逐条请 Hejlsberg 表态。</p>
+<p>背景是这样的：2025 年 3 月，Hejlsberg 亲自<a href="https://devblogs.microsoft.com/typescript/typescript-native-port/">宣布</a>把编译器移植到 Go；2026 年 4 月，基于 Go 的 <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-beta/">TypeScript 7.0 Beta</a> 发布；这期节目在 8 月上线。也就是说，十倍提速已经从演示变成了大家能装上的东西，而他在节目里谈的是这个项目做完之后的复盘。</p>
+
+<h2>这期聊透</h2>
+<h3>移植，不是重写</h3>
+<p>为什么要动这个编译器？Hejlsberg 的回答很简单：性能和规模。JavaScript 本来是给浏览器里几百行界面代码设计的，跑编译器这种计算密集的活，先要比原生代码慢两到三倍。更要命的是，JavaScript 天生是单线程语言，Web Worker 之间不能共享对象，只能把数据序列化成 JSON 再传过去。摩尔定律不再给我们更快的 CPU，只给更多的核，而一个用不了共享内存并发（shared-memory concurrency）的编译器，就是把钱留在了桌上。</p>
+<p>那为什么不早点做？他说 2012 年开工的时候，没人想到会有人用 TypeScript 写 VS Code 这种体量的项目，微软内部甚至有超过一千万行的代码库。与此同时，编译器每加一个特性，比如联合类型、控制流分析，类型检查就更聪明，也更慢一点。按他的说法，TypeScript 6 的速度大约只有 TypeScript 1.5 的一半，只是后者做的事少得多。</p>
+<p>决定新语言之前，他们先做了一个更重要的决定：<strong>移植，而不是重写</strong>。只有逐行移植，才能保住现有编译器的语义、算法和每一处行为。推倒重来，最后会得到一门「不同的语言」：在必须二选一的地方，它会报出不同的错误，做出不同的选择。</p>
+<blockquote><span class="en">"…rewrites are toxic often for ecosystems because they sacrifice compatibility…"</span><span class="zh">重写往往会毒害生态，因为它牺牲了兼容性。</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=1163s">[00:19:23]</a></cite></blockquote>
+<p>既然是移植，新语言就得容得下旧代码的假设：有垃圾回收，函数是一等公民、可以闭包。Go 都满足，还有成熟的多平台原生代码生成和出色的共享内存并发支持。Peterman 追问 Rust 缺什么，Hejlsberg 说缺的是垃圾回收，而借用检查器不允许环状数据结构，可这个编译器里到处都是环：带父指针的语法树、递归的类型、互相引用的符号。他们试过，行不通。</p>
+<p>AI 在这次移植里用得不多，因为项目两年前开始时模型还远不够好。他们手写了扫描器和解析器的原型，确认能拿到十倍提速，然后写了一个把 TypeScript 按语法翻译成 Go 的工具。翻出来的 Go 没有语法错误，但编译不过，类型和数据结构都要人一点点改。换到今天，他也不会把五十万到一百万行代码直接丢给 AI 去译，因为除非测试覆盖率是百分之百，每一行都得人工检查有没有幻觉。更好的做法是让 AI 写那个翻译工具，把随机性「停放」在程序里，之后每次运行都得到同样的结果。</p>
+
+<h3>修好它，而不是换掉它</h3>
+<p>TypeScript 的起源，Hejlsberg 讲得很具体。他记得是 Outlook.com 团队当年找到 C# 组，请他们把一个叫 Script# 的东西做成正式产品。Script# 把 C# 转译成 JavaScript，好让团队用上 Visual Studio 的类型检查、重构和代码导航。他的第一反应是：JavaScript 真有这么烂吗？你们解决问题的办法，是放弃 JavaScript，把它当成一种指令语言，再拿代码生成器去对准它？</p>
+<blockquote><span class="en">"I'm like, couldn't we like fix JavaScript? Wouldn't that be better?"</span><span class="zh">我就想，我们不能把 JavaScript 修好吗？那样不是更好吗？</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=2861s">[00:47:41]</a></cite></blockquote>
+<p>这个「修，不换」的立场贯穿了他对竞争者的评价。他说 CoffeeScript 只是换了一套语法，语义没变，也没带来新工具；Dart 想的是取代 JavaScript。Facebook 的 Flow 是更直接的对手，Hejlsberg 认为 TypeScript 赢在两点：一是自举（self-hosting），编译器用 TypeScript 自己写，社区不必为了贡献代码去学 OCaml，团队自己天天在用，哪里慢、哪里坏立刻就知道；二是从第一天起就把语言服务嵌进编辑器。他说他们写编译器从来不是为了生成机器码，而是为了更好的工具。TypeScript 的类型在编译时被擦掉，对运行时行为毫无影响，它们只为补全、红色波浪线和重构而存在，所以也可以只写一半，这就是渐进类型（gradual typing）。</p>
+<p>Peterman 问，既然 AI 能重写代码库，大家会不会转向「更理想」的语言？Hejlsberg 的看法正相反。模型最擅长训练集里见得最多的语言，一门新发明的小语言在训练集里一行也没有，你得在提示词里花不知多少 token 先教会它。</p>
+<blockquote><span class="en">"I do think the incumbent languages are actually if anything getting stronger."</span><span class="zh">我反倒觉得，老牌语言只会变得更强。</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=1431s">[00:23:51]</a></cite></blockquote>
+<p>他说 TypeScript 的采用曲线在 AI 出现时有一个明显的拐点，去年它还成了 GitHub 上使用最多的语言。这个说法下文「说法核查」里会对一对数字。</p>
+
+<h3>给 agent 用的编译器，和他不肯下车的地方</h3>
+<p>为什么工具链的速度在 AI 时代更要紧？Hejlsberg 说，现在的工作流越来越多由后台的 agent 主导，它们和人一样会犯错，但你想开多少个就开多少个。要是每写一段代码就得等两分钟类型检查，那是灾难。而且 agent 已经聪明到知道不能靠 grep 改名：想把某个对象的 version 属性改名，可别的对象也都有 version，文本替换会把一串接口一起改坏。</p>
+<blockquote><span class="en">"So you got to do semantic search and the only thing that can do semantic search is a compiler"</span><span class="zh">所以你得做语义搜索，而能做语义搜索的只有编译器。</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=3018s">[00:50:18]</a></cite></blockquote>
+<p>他也用同样的理由解释，为什么 AI 工具几乎都写 TypeScript 而不写 JavaScript：类型注解让模型少犯错，而且 AI 待在沙箱里，未必搭得起运行环境，但它可以先跑一遍编译器，在告诉任何人之前把自己的错误改掉。</p>
+<p>到了「网上流行的 AI 论断」环节，他的态度很一致：承认 AI 惊人，但拒绝走到百分之百。AI 会写九成代码吗？对于纯靠提示词写出来的应用，它已经写了全部代码，从总量上说这几乎是自我实现的预言；但对于前人没写过的高质量代码，他不这么看。</p>
+<blockquote><span class="en">"I know that AI could not write our compiler, the TypeScript compiler. It just can't."</span><span class="zh">我知道 AI 写不出我们的编译器，就是 TypeScript 这个编译器。它就是写不出来。</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=3164s">[00:52:44]</a></cite></blockquote>
+<p>他的解释是，模型本质上是一台记住了整个互联网、能在记忆之外稍作外推的随机机器，而这个编译器里的概念和做法，训练集里没有。不用读代码、不用 IDE 呢？他说，如果你的应用把用户的银行账户弄没了，被告上法庭的是你。</p>
+<blockquote><span class="en">"They're going to sue you, not the AI."</span><span class="zh">他们会告你，不会去告 AI。</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=3259s">[00:54:19]</a></cite></blockquote>
+<p>Peterman 追问，为什么他的看法和 Anthropic 的人差那么多。Hejlsberg 说分歧不在 AI 能做什么，而在于人们喜欢一路推到百分之百，他就在那里下车：总得有人明白发生了什么、和业务有什么关系。至于 AI 会不会取代初级工程师，他反问：</p>
+<blockquote><span class="en">"Well, if it does, then how do you ever get senior software engineers…"</span><span class="zh">要是真取代了，那资深工程师又从哪儿来呢？</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=3373s">[00:56:13]</a></cite></blockquote>
+<p>他承认金字塔的底部已经变窄，公司希望新人更快升到监督的角色上去；这门手艺正从敲代码变成审 agent 的代码。他对自己也很坦白：敲了四五十年代码，他仍然喜欢敲，测试那种按框架规矩写的东西他很乐意交给 AI，但审别人的代码一直是他更不擅长的事。</p>
+
+<h2>说法核查</h2>
+<div class="claim">
+<p class="said">原生移植让 TypeScript 快了十倍。Hejlsberg 还说 VS Code 有 230 万行代码。<a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=916s">[00:15:16]</a></p>
+<p class="verdict">有据</p>
+<p>2025 年 3 月微软的官方测试里，VS Code（按 150.5 万行计）的完整编译从 77.8 秒降到 7.5 秒，六个项目的提速在 9.1 到 13.5 倍之间。行数和节目里说的不一样，而且这是团队自己做的测试。</p>
+</div>
+<div class="claim">
+<p class="said">去年 TypeScript 成了 GitHub 上使用最多的语言，超过 JavaScript 和 Python，「GitHub 上一半以上」是 TypeScript。<a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=1499s">[00:24:59]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>GitHub Octoverse 2025 的口径是月活贡献者人数：2025 年 8 月 TypeScript 约 264 万，只比 Python 多约 4.2 万。人数第一推不出代码过半；报告也只说和 AI 普及「相关」，不说是 AI 造成的。</p>
+</div>
+<div class="claim">
+<p class="said">AI 工具都写 TypeScript，因为类型注解能让模型少犯错，编译器还能先替它查一遍。<a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=1541s">[00:25:41]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>2025 年 Mündler 等人的研究用 2B 到 34B 的开源模型写 TypeScript，发现编译错误平均 94% 是类型错误；用类型约束解码，编译错误能减半，但功能正确率只相对提高 3.5% 到 5.5%。研究没有拿 TypeScript 和 JavaScript 直接比。</p>
+</div>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>演化生物学 · François Jacob 的「修补匠」</b>：Jacob 在 1977 年的《<a href="https://pubmed.ncbi.nlm.nih.gov/860134/">Evolution and Tinkering</a>》里说，演化不像工程师按图纸造新东西，而像修补匠拿手边现成的零件改出新用途。TypeScript「修 JavaScript 而不换掉它」、移植时保住每一处旧行为，走的是同一条路：存量生态是最贵的资产，不能推倒。不像的地方在于，演化的修补是盲目的，而 TypeScript 的修补可以整层拆掉。类型注解在编译时被擦去，底下的 JavaScript 原封不动，这是生物没法做到的「可逆的修补」。</li>
+<li><b>复杂性经济学 · Brian Arthur 的报酬递增</b>：Arthur 研究过<a href="https://en.wikipedia.org/wiki/Increasing_returns">报酬递增</a>如何让先到者锁定市场。Hejlsberg 说 AI 让老牌语言更强，就是一个新的正反馈回路：代码越多，模型越会写，写出的代码又更多。和经典锁定不同的是，这次锁定的不是某个标准，而是训练数据的分布。</li>
+<li><b>AI · 程序辅助语言模型（PAL）</b>：2022 年 Gao 等人的 <a href="https://arxiv.org/abs/2211.10435">PAL</a> 让模型把题目写成 Python，由解释器算出答案，正是 Hejlsberg 算旅费的那个思路。不同在于，PAL 每道题都重新生成一个程序，而 Hejlsberg 要的是只生成一次、反复运行的工具，把随机性彻底关在一处。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Anders Hejlsberg 建议：与其让 AI 直接给答案，不如让 AI 写一个能算出答案的程序，结果可以复现。</li>
+<li>TypeScript 编译器换到原生代码，是为了避开 JavaScript 两到三倍的性能损失，并用上多核的共享内存并发。</li>
+<li>TypeScript 团队选择逐行移植而不是重写，因为重写会改变编译器的行为，牺牲整个生态依赖的兼容性。</li>
+<li>TypeScript 选 Go 而不选 Rust，是因为编译器依赖垃圾回收和闭包，而且充满 Rust 借用检查器不允许的环状数据结构。</li>
+<li>TypeScript 迁移到 Go 时，团队先写了一个按语法翻译的工具，再手工修改类型和数据结构，AI 只偶尔帮忙。</li>
+<li>TypeScript 起源于 Hejlsberg 对 Script# 的反问：与其把 JavaScript 当编译目标，不如把 JavaScript 本身修好。</li>
+<li>Hejlsberg 认为 TypeScript 胜过 Flow，靠的是编译器自举带来的社区贡献和从第一天起就有的编辑器语言服务。</li>
+<li>Hejlsberg 认为 AI 最擅长训练集里最多的语言，所以 AI 会让 JavaScript、TypeScript、Python 这些老牌语言更强。</li>
+<li>Hejlsberg 说编译器是 agent 做语义搜索的唯一可靠工具，所以类型检查的速度在 AI 时代更重要。</li>
+<li>生物学家 François Jacob 说演化是修补匠，TypeScript 修补 JavaScript 的方式与之相似，但它的修补可以整层擦掉。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=cywK3XYYJ2o">Creator of TypeScript: 10x Faster Typescript, Why AI Won't Replace SWEs | Anders Hejlsberg</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>
+<li><span class="t"><a href="https://devblogs.microsoft.com/typescript/typescript-native-port/">A 10x Faster TypeScript</a></span><span class="d">微软 TypeScript 博客，2025 年 3 月，第一条核查的依据。</span></li>
+<li><span class="t"><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/">Octoverse 2025</a></span><span class="d">GitHub 年度报告，第二条核查的依据。</span></li>
+<li><span class="t"><a href="https://arxiv.org/abs/2504.09246">Type-Constrained Code Generation with Language Models</a></span><span class="d">Mündler 等，2025，第三条核查的依据。</span></li>
+</ul>
+<footer>播客精读 · 一期长播客，挑出主线讲透 · 写于 2026-11-10</footer>
+</div>
+</body></html>

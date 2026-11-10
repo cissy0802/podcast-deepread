@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Peterman Pod × Anders Hejlsberg — Don't ask AI for the answer, ask it for a program</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="creator-typescript-10x-faster-typescript-ai-pod31.html">中文 →</a></div>
+<header>
+<div class="kicker">The Peterman Pod · 2026</div>
+<h1>The creator of TypeScript: port, don't rewrite; fix JavaScript, don't replace it</h1>
+<p class="sub">Anders Hejlsberg × Ryan Peterman · <i>Creator of TypeScript: 10x Faster Typescript, Why AI Won't Replace SWEs</i></p>
+</header>
+<div class="meta-card"><b>Show</b> The Peterman Pod · 2026-08-17 · <b>Length</b> 66 min · <b>Guest</b> Anders Hejlsberg · <b>Host</b> Ryan Peterman · <b>Video</b> <a href="https://www.youtube.com/watch?v=cywK3XYYJ2o">YouTube</a></div>
+
+<h2>The moment</h2>
+<p>While talking about using AI to migrate code, Anders Hejlsberg tells a story that has nothing to do with compilers. He went on a trip with friends; one paid for the hotel rooms, another for something else, and afterwards they needed to work out who owed whom. They handed all the costs to an AI, which very authoritatively produced an answer, and the answer was wrong, because it forgot some of the settlements made along the way.</p>
+<p>Had they asked it for a spreadsheet, he says, they would have got the right answer. A spreadsheet is just a program, and AI is very good at writing programs.</p>
+<blockquote><span class="en">"You ask it for a program that computes the answer."</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=1103s">[00:18:23]</a></cite></blockquote>
+<p>That is not an aside in this episode. The TypeScript compiler has just moved from JavaScript to Go and got roughly ten times faster, and the way the team moved it follows the same idea: do not let an error-prone process produce the result directly; build a deterministic tool first, and let the tool do the work. Several threads of the conversation run back to it.</p>
+
+<h2>Who's talking, and when</h2>
+<p>Anders Hejlsberg is Danish. He built Turbo Pascal, Delphi and C#, and has led TypeScript since 2012. His first product, Turbo Pascal, was Z80 assembly from top to bottom: compiler, editor, runtime library. He remembers squeezing it into a 12K EPROM, being 20 bytes over budget, and replacing a long jump with a short jump to another jump to save a single byte, then moving on to the next. It was, he says, almost like woodworking.</p>
+<p>His most vivid confession here is about the C# years, when he "drifted up into the stratosphere". His job was language design and writing the spec; he coded less and less, became, in his words, an "architecture astronaut", and grew unhappier without quite knowing why. Only when TypeScript came along and he went back to writing a compiler did he realize he is simply a happy coder. He had plenty of chances to become a manager and chose to stay an individual contributor.</p>
+<p>Host Ryan Peterman interviews senior engineers and the creators of systems; he has also had C++'s <a href="creator-c-bell-labs-negative-overhead-pod21.en.html">Bjarne Stroustrup</a> on. This time he brought a list of popular AI takes from the internet and asked Hejlsberg to rule on each.</p>
+<p>The timing: in March 2025 Hejlsberg himself <a href="https://devblogs.microsoft.com/typescript/typescript-native-port/">announced</a> the port to Go; in April 2026 the Go-based <a href="https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-beta/">TypeScript 7.0 Beta</a> shipped; this episode went up in August. The 10x had gone from demo to something people could install, and what he offers here is a look back at a finished project.</p>
+
+<h2>The episode, in depth</h2>
+<h3>Port, don't rewrite</h3>
+<p>Why touch the compiler at all? Performance and scalability, he says. JavaScript was designed for a few hundred lines of UI in a browser; running a compute-heavy workload like a compiler costs a 2–3x penalty against native code from the start. Worse, JavaScript is single-threaded by design: web workers cannot share objects, only serialize data to JSON and pass it along. Moore's law now gives us more cores rather than faster ones, and a compiler that cannot use shared-memory concurrency is leaving money on the table.</p>
+<p>Why not sooner? When the project began in 2012, nobody imagined people writing something the size of VS Code in TypeScript, let alone the in-house codebases of over ten million lines he mentions. Meanwhile every new feature, union types, control-flow analysis, made the checker smarter and a little slower. By his account TypeScript 6 runs at about half the speed of TypeScript 1.5, which did a great deal less.</p>
+<p>Before choosing a language, the team made a more important choice: <strong>port, not rewrite</strong>. Only a line-by-line port preserves the existing compiler's semantics, algorithms and exact behavior. Starting from scratch would yield a "different language", one that gives different errors and makes different choices wherever it has to pick between possibilities.</p>
+<blockquote><span class="en">"…rewrites are toxic often for ecosystems because they sacrifice compatibility…"</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=1163s">[00:19:23]</a></cite></blockquote>
+<p>A port means the new language must accommodate the old code's assumptions: garbage collection, first-class functions and closures. Go meets them, and adds mature native code generation on all major platforms and excellent shared-memory concurrency. Asked what Rust lacked, Hejlsberg names garbage collection, and the borrow checker, which does not allow circular data structures, while this compiler is full of them: trees with parent pointers, recursive types, symbols that refer to each other. They tried; it was not feasible.</p>
+<p>AI played only a small part, because the project started two years ago, when models were nowhere near good enough. The team hand-wrote prototypes of the scanner and parser, convinced themselves 10x was real, then wrote a tool that translates TypeScript into Go syntactically. The output had no syntax errors but did not compile; types and data structures had to be reworked by hand. Even today he would not hand half a million to a million lines to an AI to translate, because unless you have 100% test coverage you must check every line for hallucinations. Better to have AI write the translator, parking the stochasticness in a program that does the same thing every time you run it.</p>
+
+<h3>Fix it, don't replace it</h3>
+<p>Hejlsberg tells TypeScript's origin in detail. As he recalls, the Outlook.com team asked the C# group to productize something called Script#, which transpiled C# into JavaScript so the team could get Visual Studio's type checking, refactoring and navigation. His reaction: is JavaScript really that busted? Your fix is to abandon JavaScript, treat it as an instruction language and point a code generator at it?</p>
+<blockquote><span class="en">"I'm like, couldn't we like fix JavaScript? Wouldn't that be better?"</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=2861s">[00:47:41]</a></cite></blockquote>
+<p>That stance shapes how he judges the competition. CoffeeScript, he says, was just a different syntax, with the same semantics and no new tooling; Dart was about replacing JavaScript. Facebook's Flow was the direct rival, and he credits TypeScript's win to two things. First, self-hosting: the compiler is written in TypeScript, so contributors did not have to learn OCaml, and the team used its own tool daily and knew at once when something was slow or broken. Second, a language service built into editors from day one. They never wrote the compiler to generate machine code, he says, but to make better tooling. TypeScript's types are erased at compile time and have no effect on runtime behavior; they exist for completion, red squiggles and refactoring, so you can type half your code and leave the rest, which is gradual typing.</p>
+<p>Peterman asks whether, now that AI can rewrite codebases, people will migrate to the languages they would rather use. Hejlsberg thinks the opposite. Models are best at the languages they have seen most; a little language you just invented has none of it in the training set, so you burn untold tokens in the prompt teaching it first.</p>
+<blockquote><span class="en">"I do think the incumbent languages are actually if anything getting stronger."</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=1431s">[00:23:51]</a></cite></blockquote>
+<p>He points to a knee in TypeScript's adoption curve that coincides with AI, and says that last year it became the most used language on GitHub. The numbers are checked below.</p>
+
+<h3>A compiler for agents, and where he gets off the bus</h3>
+<p>Why does tool speed matter more now? More and more work, he says, is done by agents running in the background; they make mistakes just like we do, but you can have as many as you like. If every edit costs a two-minute type check, that is horrible. And agents are now smart enough to know that renaming by grep is a trap: rename a property called version, and every other object with a version property breaks too.</p>
+<blockquote><span class="en">"So you got to do semantic search and the only thing that can do semantic search is a compiler"</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=3018s">[00:50:18]</a></cite></blockquote>
+<p>The same logic explains, to him, why AI tools almost all write TypeScript rather than JavaScript: type annotations steer the model toward fewer mistakes, and an AI living in a sandbox may not be able to set up a runtime, but it can run the compiler and fix its own errors before telling anyone.</p>
+<p>In the round of internet AI takes his line is consistent: AI is impressive, but he will not go to 100%. Will AI write 90% of code? For vibe-coded apps it already writes all of it, which makes the claim almost self-fulfilling by volume; for high-quality code nobody has written before, he is not convinced.</p>
+<blockquote><span class="en">"I know that AI could not write our compiler, the TypeScript compiler. It just can't."</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=3164s">[00:52:44]</a></cite></blockquote>
+<p>A model, in his view, is a big stochastic machine that has memorized the internet and can extrapolate a little beyond it, and the concepts in this compiler are not in its training set. What about not reading the code, not using an IDE? If your app drains a user's bank account, he says, you are the one in court.</p>
+<blockquote><span class="en">"They're going to sue you, not the AI."</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=3259s">[00:54:19]</a></cite></blockquote>
+<p>Why does his view differ so much from what people at Anthropic say? Not over what AI can do, he answers, but because people love to take it all the way to 100%, and that is where he gets off the bus: someone still has to understand what is going on and how it connects to the business. As for AI replacing junior engineers, he asks back:</p>
+<blockquote><span class="en">"Well, if it does, then how do you ever get senior software engineers…"</span><cite>— Anders Hejlsberg · <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=3373s">[00:56:13]</a></cite></blockquote>
+<p>He grants that the pyramid has narrowed at the bottom, with companies wanting newcomers to rise faster into supervisory roles, and that the craft is shifting from typing code to reviewing agents' code. He is candid about himself: after forty or fifty years he still enjoys typing code, would happily hand tests to AI, and has always found reviewing other people's code the harder job.</p>
+
+<h2>Claim check</h2>
+<div class="claim">
+<p class="said">The native port made TypeScript ten times faster. Hejlsberg also says VS Code is 2.3 million lines. <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=916s">[00:15:16]</a></p>
+<p class="verdict">Supported</p>
+<p>Microsoft's March 2025 benchmark has VS Code (counted as 1,505,000 lines) going from 77.8s to 7.5s, with six projects sped up 9.1x to 13.5x. The line count differs from the episode's, and the benchmark is the team's own.</p>
+</div>
+<div class="claim">
+<p class="said">Last year TypeScript became the most used language on GitHub, ahead of JavaScript and Python, so "more than 50% on GitHub" is TypeScript. <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=1499s">[00:24:59]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>GitHub's Octoverse 2025 counts monthly contributors: about 2.64 million for TypeScript in August 2025, only about 42,000 ahead of Python. Ranking first by contributors does not mean half of all code; the report calls the link to AI a correlation, not a cause.</p>
+</div>
+<div class="claim">
+<p class="said">AI tools all write TypeScript because type annotations help models make fewer mistakes, and the compiler can check their work first. <a class="ts" href="https://www.youtube.com/watch?v=cywK3XYYJ2o&amp;t=1541s">[00:25:41]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>A 2025 study by Mündler et al. had open models of 2B–34B parameters write TypeScript: on average 94% of compile errors were type errors; type-constrained decoding halved compile errors but raised functional correctness by only 3.5–5.5% relative. It never compared TypeScript with JavaScript directly.</p>
+</div>
+
+<h2>Crossing over</h2>
+<div class="crossx"><ul>
+<li><b>Evolutionary biology · François Jacob's tinkerer</b>: In "<a href="https://pubmed.ncbi.nlm.nih.gov/860134/">Evolution and Tinkering</a>" (1977), Jacob argued that evolution works not like an engineer building from a blueprint but like a tinkerer repurposing whatever parts are at hand. TypeScript fixing JavaScript instead of replacing it, and the port preserving every old behavior, take the same road: the installed ecosystem is the most expensive asset and cannot be torn down. The difference is that evolution's tinkering is blind and permanent, while TypeScript's can be peeled off whole: types are erased at compile time and the JavaScript underneath is untouched, a reversible patch biology never gets.</li>
+<li><b>Complexity economics · Brian Arthur's increasing returns</b>: Arthur studied how <a href="https://en.wikipedia.org/wiki/Increasing_returns">increasing returns</a> let early arrivals lock in a market. Hejlsberg's claim that AI strengthens incumbent languages is a new positive-feedback loop: more code makes models better at a language, which yields still more code. Unlike classic lock-in, what gets locked is not a standard but the distribution of training data.</li>
+<li><b>AI · Program-aided language models (PAL)</b>: <a href="https://arxiv.org/abs/2211.10435">PAL</a> (Gao et al., 2022) has the model write the problem as Python and lets an interpreter compute the answer, exactly Hejlsberg's travel-bill idea. The difference: PAL generates a fresh program for every question, while Hejlsberg wants a tool generated once and run repeatedly, so the randomness is shut away in one place.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Anders Hejlsberg's advice: rather than asking AI for an answer, ask it to write a program that computes the answer, so the result is reproducible.</li>
+<li>The TypeScript compiler went native to escape JavaScript's 2–3x performance penalty and to use shared-memory concurrency across many cores.</li>
+<li>The TypeScript team chose a line-by-line port over a rewrite, because a rewrite changes compiler behavior and sacrifices the compatibility the ecosystem depends on.</li>
+<li>TypeScript chose Go over Rust because the compiler relies on garbage collection and closures and is full of circular data structures Rust's borrow checker disallows.</li>
+<li>For the move to Go, the TypeScript team first wrote a syntactic translation tool, then reworked types and data structures by hand, using AI only occasionally.</li>
+<li>TypeScript began with Hejlsberg's response to Script#: instead of treating JavaScript as a compilation target, fix JavaScript itself.</li>
+<li>Hejlsberg credits TypeScript's win over Flow to a self-hosted compiler that invited community contributions and to an editor language service from day one.</li>
+<li>Hejlsberg argues AI is best at the languages most common in its training data, so AI will make incumbents like JavaScript, TypeScript and Python stronger.</li>
+<li>Hejlsberg says the compiler is the only reliable tool for agents' semantic search, which makes type-checking speed matter more in the AI era.</li>
+<li>Biologist François Jacob called evolution a tinkerer; TypeScript tinkers with JavaScript the same way, except that its patch can be erased whole.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=cywK3XYYJ2o">Creator of TypeScript: 10x Faster Typescript, Why AI Won't Replace SWEs | Anders Hejlsberg</a></span><span class="d">The episode. Every timestamp on this page points here.</span></li>
+<li><span class="t"><a href="https://devblogs.microsoft.com/typescript/typescript-native-port/">A 10x Faster TypeScript</a></span><span class="d">Microsoft TypeScript blog, March 2025; basis for the first check.</span></li>
+<li><span class="t"><a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/">Octoverse 2025</a></span><span class="d">GitHub's annual report; basis for the second check.</span></li>
+<li><span class="t"><a href="https://arxiv.org/abs/2504.09246">Type-Constrained Code Generation with Language Models</a></span><span class="d">Mündler et al., 2025; basis for the third check.</span></li>
+</ul>
+<footer>Podcast Deep Read · one long episode, its main threads worked through · written 2026-11-10</footer>
+</div>
+</body></html>
