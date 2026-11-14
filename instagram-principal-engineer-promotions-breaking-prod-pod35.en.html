@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Peterman Pod × Jake Bolam — Don't call the hardest migration a migration</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="instagram-principal-engineer-promotions-breaking-prod-pod35.html">中文 →</a></div>
+<header>
+<div class="kicker">The Peterman Pod · 2025</div>
+<h1>Jake Bolam: don't call the hardest migration a migration, and spend review effort by blast radius</h1>
+<p class="sub">Jake Bolam × Ryan Peterman · "Instagram Principal Engineer (IC8): Promotions, Breaking Prod, Tech Leading"</p>
+</header>
+<div class="meta-card"><b>Show</b> The Peterman Pod · 2025-05-31 · <b>Length</b> 50 min · <b>Guest</b> Jake Bolam · <b>Host</b> Ryan Peterman · <b>Video</b> <a href="https://www.youtube.com/watch?v=QUhC5BDZt-E">YouTube</a></div>
+<h2>The moment</h2>
+<p>Thirty-two minutes in, the two are talking about code review. Peterman says he loves high-trust teams where people leave a few optional nits and approve. Bolam says he pushes that needle further:</p>
+<blockquote><span class="en">"Even if I see your diff is going to blow up production, I will comment on it and be like, "This is going to blow up production." And then accept it and be like, "Yeah, make sure you fix that first.""</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=1986s">[00:33:06]</a></cite></blockquote>
+<p>Peterman calls it wild. He pictures the incident review where someone pulls up the diff, finds a comment that literally says "this is going to blow up production," and it did. Bolam says that has never happened; 99% of the time he just accepts and moves on.</p>
+<p>It sounds like bravado, but over the full hour it turns out to be the edge case of a fairly sober algorithm: <strong>spend review effort where a mistake costs the most, and hand the rest to trust and feature gates</strong>. The episode title is about promotions. What is worth reading closely is this way of allocating attention, and the same patience applied to a migration nobody believed in.</p>
+<h2>Who's talking, and when</h2>
+<p>Jake Bolam is a Principal Engineer at Instagram, IC8 on Meta's ladder, promoted twice from Staff (IC6). He introduces himself as "a bit of a loose unit" who sometimes says dumb stuff, which is one reason he thinks he should not be a manager. He started coding young, always on the front end, and nearly every company he joined pulled him from front-end product into front-end infrastructure and then back-end infrastructure. Meta was no different: he joined Instagram to do web, was on the front-end infra team within months, and on back-end infra within a year.</p>
+<p>His start was slow. He joined Facebook Groups as an IC6 as COVID began in 2020, before Meta had figured out remote onboarding, and the team was too busy with the US election to ramp him up, so he spent about a year working mostly alone. He had led four teams at a previous company and got one at Meta; in his words, "Meta likes to down level you." Once he moved to Instagram web, his skills matched the work, and both promotions happened there.</p>
+<p>Host Ryan Peterman also came up at Meta and knows the project from the inside; the podcast is his hobby and has no sponsors. His habit is to climb the ladder one rung at a time: what got you promoted, how big is each level's scope, where does your time go. The episode came out in May 2025, in the third year of the back-end migration Bolam was running.</p>
+<h2>Glossary</h2>
+<div class="glossary"><ul>
+<li><b>IC6 / IC7 / IC8</b>: Meta's engineering levels. In Bolam's telling, IC6 leads one team of ten or so, IC7 spans several teams, and IC8 goes wider still.</li>
+<li><b>PSC</b>: Meta's half-yearly performance review, ending in a rating.</li>
+<li><b>Diff / stamp</b>: Meta's words for a code change and for approving it.</li>
+<li><b>Gated</b>: code that is merged but hidden behind a feature flag, so users cannot see it yet.</li>
+</ul></div>
+<h2>The episode, unpacked</h2>
+<h3>1. A migration you cannot announce</h3>
+<p>Bolam's IC7 came from an infrastructure migration scoped at two years. The team had been moving one page at a time until someone suggested doing a hundred at once. The first weeks hurt, then the shared work compounded, and most of the migration was done in six months. The freed-up 90% of the staff moved on to putting ads on Instagram web, a project a year behind schedule, which shipped in three months and turned a never-monetized surface into revenue.</p>
+<p>For IC8, leadership decided he was the person to throw at problems nobody wanted, or that the rest of the org thought were stupid. The assignment was to move Instagram's back end into Meta's main codebase (what he calls "dubdubdub," i.e. www). By his estimate, 95% of the engineering org thought it was a waste. More interesting, he admits he agreed with them at the time: most development and all the important surfaces lived in Instagram's own stack, and the cross-stack pain hit only 30 to 40% of the org, not enough to justify putting a hundred people on a move.</p>
+<p>So they never announced a migration. Year one was something nobody would argue with, the developer experience of calling between the two stacks:</p>
+<blockquote><span class="en">"All right, we're going to go and fix the devx between the two stacks. And we made a big deal about fixing the devx between the two stacks."</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=1050s">[00:17:30]</a></cite></blockquote>
+<p>Year two filled in what was missing from www so that building there felt like Instagram. Meanwhile cross-stack work kept growing, and some surfaces with a lot to gain moved over on their own. By year three people "see the writing on the wall" and ask how to get in as fast as possible, and only then is it a full migration. His promotion came partway along: 150 teams involved, and whatever had moved was about 20% faster to work on. The project was scoped at several IC8s or an IC9 and was being carried by a few IC7s.</p>
+<p>Feedback came through a group of about forty "server champions," mostly from product teams rather than infra. By the time something shows up in the 2,000-person feedback group, Bolam says, it is already bad; the champions tell them within an hour or two.</p>
+<h3>2. Review effort, allocated by blast radius</h3>
+<p>The opening line rests on a tiered judgment. Changes to the trunk of the system, or to anything already live in prod, get a thorough review. Gated changes to leaf components get a skim for security holes or "mining crypto on our servers," and then go in. Leaves are easier to unit test, blow up only a small area, and are cheap to rewrite if badly designed; a bad architecture in the trunk can take hundreds of people a long time to fix.</p>
+<p>His default question is not "what's wrong with this":</p>
+<blockquote><span class="en">"I do want to defer to like how do I accept this diff, not how do I reject this diff, which I think is an important philosophy to have."</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=1921s">[00:32:01]</a></cite></blockquote>
+<p>Two safeguards come with it. Trust is earned first: new teammates don't get this treatment for their first weeks, and someone he isn't sure will fix things properly gets "ping me again when it's ready." And authors can throw a stamped diff back into review, or write "need real review" in the summary, and he will honor it. Before he starts coding each day he clears every diff waiting on him, then checks again every hour, because a pending review is someone blocked on him.</p>
+<p>The same logic sets his rollout pace. At 1% with no bad signals, he moves to 10% the next day; others think that is reckless, he sees no reason to go slower:</p>
+<blockquote><span class="en">"You want to be moving at like the fastest speed you can without ruining things."</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=2085s">[00:34:45]</a></cite></blockquote>
+<p>Peterman adds his own story: early in his career he took down prod, and his tech lead told him that you generally shouldn't, but if you never do, you are probably moving too slowly. Bolam finishes the thought: break it every day and you are going way too fast.</p>
+<h3>3. Protected time, and uncredited time</h3>
+<p>Peterman asks how an IC8 keeps roughly to forty-hour weeks (he will run sixty or seventy when excited, then claw it back with thirty-five-hour weeks in summer). The answer is a calendar policy: no meetings in the mornings, none at all on Wednesdays and Fridays, one-on-ones batched on Monday afternoons, project meetings on Tuesday and Thursday afternoons, which leaves close to half the week as focus time. The 150-team project he runs has no central sync; its fifteen or so tech leads don't even have a group chat. Only individual workstreams have a meeting.</p>
+<p>Less intuitive than the calendar is the time he sets aside for work nobody will credit. He cites an essay on Meta's internal Workplace by an IC10, whose point he paraphrases as:</p>
+<blockquote><span class="en">"If you spend 100% of your time working on stuff that you get credited for, you're probably dropping a lot of stuff, right?"</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=2418s">[00:40:18]</a></cite></blockquote>
+<p>He gives 20 to 30% of his time to that kind of work: helping people, org-wide chores, a bit of coding each week. Before he had a good sense of what mattered, his heuristic was to ask what he thought was really important that no one else was willing to do, and go do that. His notes have the same temperament: ten years of them in a second VS Code window, one flat folder, no hierarchy, tens of thousands of files found only by filename search and links, his diary included.</p>
+<p>At the end, Peterman asks what he would tell himself fresh out of college. The first line:</p>
+<blockquote><span class="en">"Go where you're valued."</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=2834s">[00:47:14]</a></cite></blockquote>
+<p>His example is someone who loves framework work sitting on a product team, landing 500 diffs and still getting a bad rating at year end. The advice is not to change the team but to recognize it and leave. It matches his own arc: the year on Groups didn't fit, and his career took off after the move to Instagram web.</p>
+<h2>Fact check</h2>
+<div class="claim">
+<p class="said">Bolam: un-launched, gated leaf code needs only a rough look before it goes in, and doing so has never caused trouble. <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=1749s">[00:29:09]</a></p>
+<p class="verdict">Insufficient evidence</p>
+<p>The closest evidence is McIntosh et al.'s 2014 study of Qt, VTK and ITK: components with a higher share of changes approved without discussion, or reviewed faster than 200 lines an hour, had more post-release defects. But it does not separate trunk from leaf or account for gating, so it cannot say whether tiering offsets that cost. Bolam's evidence is his own record.</p>
+</div>
+<div class="claim">
+<p class="said">Bolam: as long as there are no bad signals, keep speeding up, as fast as you can without ruining things. <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=2043s">[00:34:03]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>Savor et al. (2016) show Facebook's monthly deployments rising steeply while critical incidents stayed almost flat. The same paper records a 2009–2010 productivity surge with more hotfixes, and warns of "death by a thousand cuts": each change adds 0.05% CPU, no single one raises a signal, and together they add up. No signal is not the same as no cost.</p>
+</div>
+<div class="claim">
+<p class="said">Bolam: helping people has value, but nobody credits it at performance-review time. <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=2361s">[00:39:21]</a></p>
+<p class="verdict">Supported</p>
+<p>In Babcock et al. (AER 2017), a large public university emailed 3,271 faculty asking for committee volunteers; only 3.7% volunteered, and women did so at nearly three times the rate of men (7.0% vs 2.6%). Work that helps the organization but not the individual's promotion is measurable, and the study adds that it does not fall evenly.</p>
+</div>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Biology · the strangler fig</b>: it sprouts in a host tree's branches, lives off the host, sends roots to the ground, and stands on its own, sometimes after the host dies. Martin Fowler named a <a href="https://martinfowler.com/bliki/StranglerFigApplication.html">pattern for gradually replacing legacy systems</a> after it. Bolam's migration grows the new tree without cutting the old; unlike the fig, he never wrapped the old system, he paved the road between the two trees first.</li>
+<li><b>Networking · TCP's additive increase, multiplicative decrease</b>: TCP doesn't know the network's capacity, so it speeds up until it sees loss and then backs off hard. "No bad signals, keep pushing" is the same way of probing an edge, though Bolam's steps are tenfold. The deeper difference is feedback: TCP sees loss almost at once, while production's costliest damage often arrives late, or as many small costs nobody notices, and then "no signal" stops being reliable.</li>
+<li><b>Game theory · repeated games</b>: in Axelrod's computer tournaments, tit-for-tat worked because the players would meet again. Bolam's "accept now, fix first" is offered only to people with a track record, and newcomers earn it, the same structure. The difference: he says he has never been defected on, so the punishment half has never been tested.</li>
+<li><b>Sociology · Luhmann's slip box</b>: the sociologist Niklas Luhmann kept around <a href="https://niklas-luhmann-archiv.de/nachlass/zettelkasten">90,000 cross-referenced cards</a> over decades of writing. Bolam's folderless, link-and-search note pile follows the same idea; unlike it, Luhmann gave cards fixed branching numbers, so structure lived in the IDs.</li>
+<li><b>Organizational psychology · citizenship behavior</b>: Dennis Organ named "organizational citizenship behavior" the discretionary work that the formal reward system doesn't recognize but that helps the organization run. Bolam's 20 to 30% is close to the textbook definition.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Jake Bolam joined Meta as an IC6 and spent a year mostly alone before moving to Instagram web, where he was promoted to IC7 and IC8.</li>
+<li>Bolam's IC7 migration was scoped at two years; moving a hundred pages at a time instead of one got most of it done in six months.</li>
+<li>The staff freed by that migration shipped ads on Instagram web in three months, monetizing a surface that had never made money.</li>
+<li>To move Instagram's back end into Meta's main codebase, Bolam spent the first year only improving cross-stack developer experience, never announcing a migration.</li>
+<li>That migration's second year filled gaps in Meta's main codebase; by the third, teams asked to move, and about 150 teams were involved.</li>
+<li>Bolam allocates review effort by blast radius: trunk and live code get a thorough review, gated leaf code gets a skim.</li>
+<li>Bolam reviews by asking how to accept a diff rather than how to reject it, and extends that only to colleagues who have earned trust.</li>
+<li>Bolam's rollout rule is to keep speeding up while no bad signals appear; never breaking prod suggests moving too slowly.</li>
+<li>Bolam keeps close to half his week as focus time and sets aside 20 to 30% for work no performance review will credit.</li>
+<li>Bolam's first advice to new graduates is to join a team that values their strengths, and to leave once it clearly doesn't.</li>
+</ol>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=QUhC5BDZt-E">Instagram Principal Engineer (IC8): Promotions, Breaking Prod, Tech Leading | Jake Bolam</a></span><span class="d">The episode. Every timestamp on this page points here.</span></li>
+<li><span class="t"><a href="https://rebels.cs.uwaterloo.ca/papers/msr2014_mcintosh.pdf">McIntosh et al., The Impact of Code Review Coverage and Code Review Participation on Software Quality (MSR 2014)</a></span><span class="d">Basis for the first check.</span></li>
+<li><span class="t"><a href="https://www.eecg.toronto.edu/~stumm/Papers/Savor-ICSE16.pdf">Savor et al., Continuous Deployment at Facebook and OANDA (ICSE 2016)</a></span><span class="d">Basis for the second check.</span></li>
+<li><span class="t"><a href="https://sites.pitt.edu/~vester/aer_promotability.pdf">Babcock et al., Gender Differences in Accepting and Receiving Requests for Tasks with Low Promotability (AER 2017)</a></span><span class="d">Basis for the third check.</span></li>
+</ul>
+<footer>Podcast Deep Read · one long episode, its main threads worked through · written 2026-11-14</footer>
+</div>
+</body></html>
