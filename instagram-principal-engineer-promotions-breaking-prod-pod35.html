@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Peterman Pod × Jake Bolam — 最难推的迁移，先别叫它迁移</title>
 <style>
@@ -58,35 +59,35 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <div class="langbar"><a href="instagram-principal-engineer-promotions-breaking-prod-pod35.en.html">English →</a></div>
 <header>
 <div class="kicker">The Peterman Pod · 2025</div>
-<h1>Jake Bolam：最难推的迁移，先别叫它迁移；审查的力气，按爆炸半径分配</h1>
+<h1 data-tts="1bb0760ac17b7efe">Jake Bolam：最难推的迁移，先别叫它迁移；审查的力气，按爆炸半径分配</h1>
 <p class="sub">Jake Bolam × Ryan Peterman ·《Instagram Principal Engineer (IC8): Promotions, Breaking Prod, Tech Leading》</p>
 </header>
-<div class="meta-card"><b>节目</b> The Peterman Pod · 2025-05-31 · <b>时长</b> 50 分钟 · <b>嘉宾</b> Jake Bolam · <b>主持</b> Ryan Peterman · <b>原片</b> <a href="https://www.youtube.com/watch?v=QUhC5BDZt-E">YouTube</a></div>
-<h2>那一段</h2>
+<div class="meta-card" data-tts="e1f7f2727a446787"><b>节目</b> The Peterman Pod · 2025-05-31 · <b>时长</b> 50 分钟 · <b>嘉宾</b> Jake Bolam · <b>主持</b> Ryan Peterman · <b>原片</b> <a href="https://www.youtube.com/watch?v=QUhC5BDZt-E">YouTube</a></div>
+<h2 data-tts="79552715fe961f4b">那一段</h2>
 <p>节目进行到三十二分钟，两人在聊代码审查。Peterman 说他喜欢高信任的团队，大家留几条无关紧要的意见，然后直接批准。Bolam 说，他在这一点上走得更远：</p>
 <blockquote><span class="en">"Even if I see your diff is going to blow up production, I will comment on it and be like, "This is going to blow up production." And then accept it and be like, "Yeah, make sure you fix that first.""</span><span class="zh">就算我看出你这份改动会把线上炸掉，我也只是留一句「这会把线上炸掉」，然后照样批准，再补一句「先把这个修了啊」。</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=1986s">[00:33:06]</a></cite></blockquote>
 <p>Peterman 的反应是「这也太离谱了」。他想象的是事故复盘会上，有人翻出那份改动，上面明明白白写着「这会把线上炸掉」，结果它真的炸了。Bolam 说这种事从来没发生过，99% 的时候他就是批准、然后往下走。</p>
 <p>这句话听上去像是在炫耀胆大，但整期节目听下来，它其实是一套很冷静的算法的边缘情形：<strong>审查的力气要花在出错代价最大的地方，其余的地方交给信任和开关</strong>。这期的标题写的是升职，真正值得精读的是这套分配注意力的方法，以及他用同一种耐心推完的一场谁都不看好的迁移。</p>
-<h2>谁在聊，和那一年</h2>
+<h2 data-tts="9c4cdcf088a326c2">谁在聊，和那一年</h2>
 <p>Jake Bolam 是 Instagram 的首席工程师（Principal Engineer），在 Meta 的职级里是 IC8，从 Staff（IC6）连升了两级。他自我介绍时说自己是个「有点不着调的家伙」，偶尔会说蠢话，所以最好别让他当经理。他从很小就开始写前端，几乎每家公司都把他从前端产品一路拉到后端基础设施，到了 Meta 也一样：进 Instagram 做 Web，几个月后进了前端基础设施组，一年内又进了后端基础设施组。</p>
 <p>他的开局并不顺。2020 年疫情刚开始时他以 IC6 加入 Facebook Groups，公司还没摸索出远程入职的办法，团队又忙着应付美国大选，没人顾得上带他，他差不多独自摸索了一年。之前他在别的公司带过四个团队，进 Meta 时只给他一个团队，他的说法是「Meta 喜欢给人降级」。转到 Instagram Web 以后，他的技能正好对口，升 IC7 和 IC8 都发生在这里。</p>
 <p>主持人 Ryan Peterman 也出身 Meta，对这个项目的内情并不陌生；这档节目是他的业余爱好，没有赞助。他的固定问法是一级一级追问：凭什么升、每一级的范围多大、时间怎么分。这一期上线于 2025 年 5 月，Bolam 负责的那场后端迁移当时正处在第三年。</p>
-<h2>术语表 · Glossary</h2>
+<h2 data-tts="81c97bfd680292eb">术语表 · Glossary</h2>
 <div class="glossary"><ul>
 <li><b>IC6 / IC7 / IC8</b>：Meta 的工程师职级。按 Bolam 的说法，IC6 大致是一个十来人团队的技术负责人，IC7 跨几个团队，IC8 的影响面再往上走。</li>
 <li><b>PSC</b>：Meta 每半年一次的绩效评估，最后落成一个评级。</li>
 <li><b>diff / 盖章（stamp）</b>：Meta 内部对一份代码改动和「批准它」的叫法。</li>
 <li><b>开关（gated）</b>：代码已经合进主干，但被功能开关关着，用户还看不到。</li>
 </ul></div>
-<h2>这期聊透</h2>
-<h3>一、一场不能说出口的迁移</h3>
+<h2 data-tts="934e9e8b4324cc4c">这期聊透</h2>
+<h3 data-tts="65c7bbfae78fff33">一、一场不能说出口的迁移</h3>
 <p>Bolam 升 IC7 靠的是一场被排期两年的基础设施迁移。团队原先一页一页地搬，后来有人提议一次搬一百页，头几周很痛苦，之后各种复用叠加起来，越搬越快，结果半年就完成了大部分。省下来的九成人手转去给 Instagram Web 上广告，这件事本来落后了一年，三个月就上线了，一个从没赚过钱的界面开始产生收入。</p>
 <p>到了 IC8，领导层的判断是，这个人适合扔到那些别人不想碰、或者整个组织都觉得很蠢的项目上去。给他的任务是把 Instagram 的后端整体搬进 Meta 的主代码库（他口中的 dubdubdub，也就是 www）。按他的估计，工程组织里 95% 的人觉得这是浪费资源。更有意思的是，他承认自己当时也同意这些人：大部分开发和最重要的界面都在 Instagram 自己的栈里，受两套栈来回切换困扰的只有三到四成的人，还不值得投一百个人去搬。</p>
 <p>所以他们没有宣布迁移。第一年，团队只做一件谁也不会反对的事，就是改善两套栈之间互相调用的开发体验：</p>
 <blockquote><span class="en">"All right, we're going to go and fix the devx between the two stacks. And we made a big deal about fixing the devx between the two stacks."</span><span class="zh">好，那我们就去把两套栈之间的开发体验修好。而且我们把这件事大张旗鼓地做了一整年。</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=1050s">[00:17:30]</a></cite></blockquote>
 <p>第二年，他们往主代码库里补齐 Instagram 开发者习惯的那些东西，让人在那边写代码「感觉像在 Instagram」。这两年里，跨栈的工作自然越来越多，一些能得到更大好处的界面自己搬了过去。到第三年，大家「看到了墙上的字」，开始主动问怎么才能尽快搬过去，项目这才进入全面迁移。他的升职发生在这条路的中途：一百五十个团队卷了进来，搬过去的部分开发快了约两成。项目本来要好几个 IC8 甚至一个 IC9 的量级，当时却只有几位 IC7 在扛。</p>
 <p>这一路的反馈来自一个约四十人的「服务端代表」群，成员大多来自产品团队而不是基础设施团队。Bolam 说，等问题出现在两千人的反馈大群里，往往已经很严重了，而这个小群能在出问题后一两个小时内让他们知道。</p>
-<h3>二、审查的力气，按爆炸半径分配</h3>
+<h3 data-tts="e875c80cd0f3266a">二、审查的力气，按爆炸半径分配</h3>
 <p>开场那句话背后是一个分级的判断。改的是系统主干，或者是已经在线上跑的代码，审得很仔细。改的是被开关关着的叶子模块，他只扫一眼，确认没有安全漏洞、没有「在我们的服务器上挖矿」，就放行。理由是叶子模块容易单测，坏了只炸一小块，架构写烂了几个人花点时间就能重写；主干的架构一旦写错，可能要几百个人花很长时间去修。</p>
 <p>他的出发点不是「挑出所有问题」，而是：</p>
 <blockquote><span class="en">"I do want to defer to like how do I accept this diff, not how do I reject this diff, which I think is an important philosophy to have."</span><span class="zh">我的默认问题是「怎样才能批准这份改动」，而不是「怎样才能驳回它」。我觉得这是很重要的一种态度。</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=1921s">[00:32:01]</a></cite></blockquote>
@@ -94,7 +95,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p>同样的逻辑他也用在上线节奏上。灰度放到 1%，没有坏信号，第二天就推到 10%，别人觉得太快，他觉得没有理由慢：</p>
 <blockquote><span class="en">"You want to be moving at like the fastest speed you can without ruining things."</span><span class="zh">你要做的，是在不把事情搞砸的前提下，用你能做到的最快速度往前走。</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=2085s">[00:34:45]</a></cite></blockquote>
 <p>Peterman 在这里补了一个自己的故事：他早年弄挂过一次线上，当时的技术负责人告诉他，一般来说不该弄挂线上，但如果从来没弄挂过，多半说明走得太慢。两人随即把话说全了：天天弄挂是太快，从不弄挂是太慢，Bolam 连声附和。</p>
-<h3>三、护住的时间，和不记功的时间</h3>
+<h3 data-tts="9b98eebad4abd009">三、护住的时间，和不记功的时间</h3>
 <p>Peterman 问他，IC8 的工作量那么大，怎么还能把每周工时大体控制在四十小时左右（兴奋起来也会干到六七十小时，之后再用夏天的三十五小时补回来）。Bolam 的回答是一套排日程的规矩：上午不开会，周三和周五整天不开会，一对一集中在周一下午，项目会挤在周二和周四下午，算下来接近一半的时间是专注时段。他带的那个牵涉一百五十个团队的项目没有总的例会，十五位左右的技术负责人连一个聊天群都没有，只有具体的工作流各自有一个同步会。</p>
 <p>比时间表更反直觉的，是他刻意留出的一块「没人会记功」的时间。他提到 Meta 内部 Workplace 上一篇 IC10 写的文章，大意是一个人如果只做能被记功的事，就会漏掉很多东西：</p>
 <blockquote><span class="en">"If you spend 100% of your time working on stuff that you get credited for, you're probably dropping a lot of stuff, right?"</span><span class="zh">如果你百分之百的时间都花在能被记功的事上，你多半在漏掉很多东西，对吧？</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=2418s">[00:40:18]</a></cite></blockquote>
@@ -102,7 +103,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p>节目最后，Peterman 问他会给刚毕业的自己什么建议，他的第一句是：</p>
 <blockquote><span class="en">"Go where you're valued."</span><span class="zh">去那个看重你的地方。</span><cite>— Jake Bolam · <a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=2834s">[00:47:14]</a></cite></blockquote>
 <p>他举的例子是，一个擅长写框架的人待在产品团队里，一年合了五百份改动，年底照样拿到很差的评级。他的建议不是去改变团队，而是认清这一点，然后离开。这条线和他自己的开局是对上的：在 Groups 的那一年他不对口，换到 Instagram Web 之后才起飞。</p>
-<h2>说法核查</h2>
+<h2 data-tts="a24e5b073b085c30">说法核查</h2>
 <div class="claim">
 <p class="said">Bolam：没上线、被开关关着的叶子代码，只需粗略审一眼就可以放行，这样做没出过事。<a class="ts" href="https://www.youtube.com/watch?v=QUhC5BDZt-E&amp;t=1749s">[00:29:09]</a></p>
 <p class="verdict">证据不足</p>
@@ -118,7 +119,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <p class="verdict">有据</p>
 <p>Babcock 等人 2017 年在 AER 发表的研究里，一所大型公立大学向 3,271 名教职员发邮件征集委员会成员，只有 3.7% 报名，而且女性报名率是男性的近三倍（7.0% 对 2.6%）。这类事对组织有益、对个人晋升帮助小，是有数据的；研究还提醒，它落在谁身上并不平均。</p>
 </div>
-<h2>越界 · 跨学科的联想</h2>
+<h2 data-tts="f15604a5dc4b6bc2">越界 · 跨学科的联想</h2>
 <div class="crossx"><ul>
 <li><b>生物学 · 绞杀榕</b>：绞杀榕从宿主树的枝杈间发芽，靠宿主活下来，再把根扎到地面，最后自己立住，宿主可能就此死去。Martin Fowler 用它给<a href="https://martinfowler.com/bliki/StranglerFigApplication.html">逐步替换旧系统的模式</a>起了名。Bolam 的迁移像在先养新树、后不砍旧树；不像在于，他没有包住旧系统，而是先修两棵树之间的路。</li>
 <li><b>网络协议 · TCP 的加性增、乘性减</b>：TCP 不知道网络容量，只能一点点加速，直到丢包再猛退一步。Bolam 的「没有坏信号就继续推」是同一种探边界的办法，只是他加速是一跳十倍。更深的不同在于反馈：TCP 的丢包几乎立刻可见，而线上系统最贵的损伤往往延迟出现，或者分散成谁也察觉不到的小代价，这时候「没信号」就不再可靠。</li>
@@ -126,7 +127,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li><b>社会学 · Luhmann 的卡片盒</b>：社会学家 Niklas Luhmann 用约<a href="https://niklas-luhmann-archiv.de/nachlass/zettelkasten">九万张卡片</a>互相引用，几十年里写出大量著作。Bolam 那个不分目录、只靠链接和搜索的笔记库是同一思路；不同的是 Luhmann 给卡片编了分叉的固定编号，结构本身就在编号里。</li>
 <li><b>组织心理学 · 组织公民行为</b>：Dennis Organ 把员工自愿去做、正式奖励制度不承认、却让组织运转得更好的行为叫做组织公民行为（organizational citizenship behavior）。Bolam 那两到三成的时间几乎就是这个定义。</li>
 </ul></div>
-<h2>十条要点</h2>
+<h2 data-tts="56700921a0beee7e">十条要点</h2>
 <ol class="takeaways">
 <li>Jake Bolam 以 IC6 加入 Meta 后独自摸索了一年，转到对口的 Instagram Web 之后才连升 IC7 和 IC8。</li>
 <li>Bolam 升 IC7 的迁移原定两年，团队从一次搬一页改成一次搬一百页，半年完成大部分。</li>
@@ -139,7 +140,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 <li>Bolam 每周近一半时间是专注时段，并刻意留出两到三成时间做绩效评估不会记功的事。</li>
 <li>Bolam 给新人的第一条建议是去看重你长处的团队，发现自己不被看重就离开。</li>
 </ol>
-<h2>出处</h2>
+<h2 data-tts="6ae330d52dc84dc0">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.youtube.com/watch?v=QUhC5BDZt-E">Instagram Principal Engineer (IC8): Promotions, Breaking Prod, Tech Leading | Jake Bolam</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>
 <li><span class="t"><a href="https://rebels.cs.uwaterloo.ca/papers/msr2014_mcintosh.pdf">McIntosh et al., The Impact of Code Review Coverage and Code Review Participation on Software Quality (MSR 2014)</a></span><span class="d">第一条核查的依据。</span></li>
@@ -148,9 +149,9 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.1
 </ul>
 <footer>播客精读 · 一期长播客，挑出主线讲透 · 写于 2026-11-14</footer>
 </div>
-<script src="https://hub.cissychen.com/comments.js" defer></script>
-<script src="https://hub.cissychen.com/search.js" defer></script>
-<script src="https://hub.cissychen.com/index-button.js" defer></script>
-<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
-<script src="https://hub.cissychen.com/lightbox.js" defer></script>
+<script defer="" src="https://hub.cissychen.com/comments.js"></script>
+<script defer="" src="https://hub.cissychen.com/search.js"></script>
+<script defer="" src="https://hub.cissychen.com/index-button.js"></script>
+<script defer="" src="https://hub.cissychen.com/i18n-tts.js"></script>
+<script defer="" src="https://hub.cissychen.com/lightbox.js"></script>
 </body></html>
