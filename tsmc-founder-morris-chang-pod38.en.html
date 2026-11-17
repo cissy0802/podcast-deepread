@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Acquired × Morris Chang — Take Apple, but only half</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="tsmc-founder-morris-chang-pod38.html">中文 →</a></div>
+<header>
+<div class="kicker">Acquired · 2025</div>
+<h1>Take Apple, but only half: Morris Chang, at 93, on three bets that made TSMC</h1>
+<p class="sub">Morris Chang × Ben Gilbert, David Rosenthal · "TSMC founder Morris Chang"</p>
+</header>
+<div class="meta-card"><b>Show</b> Acquired · Spring 2025 season opener · 2025-01-27 · <b>Length</b> 175 min (interview about 140 min) · <b>Guest</b> Morris Chang · <b>Hosts</b> Ben Gilbert, David Rosenthal · <b>Video</b> <a href="https://www.youtube.com/watch?v=FZItbr4ZJnc">YouTube</a></div>
+<h2>The moment</h2>
+<p>Taipei, spring 2009, six in the morning. Morris Chang's wife, Sophie, has barely slept; all night she kept getting up to look out the window. A block away, in a small park, twenty-five laid-off TSMC employees are sleeping rough. They came to protest outside the chairman's home. At dawn she takes one of the bodyguards to the neighborhood market, buys enough Chinese breakfast for twenty-five or thirty people, fried dough sticks and buns, and hands it out in the park. <a class="ts" href="https://www.youtube.com/watch?v=FZItbr4ZJnc&amp;t=1295s">[00:21:35]</a></p>
+<p>The protesters thanked her and told her they would not march on the Presidential Office that day. Chang says this chain of events is what pushed him to take the CEO job back. Looking back on a whole career at 93, the first story he tells in detail is a layoff he had explicitly opposed.</p>
+<h2>Who's talking, and when</h2>
+<p>Chang founded TSMC in 1987 at 56, after rising to run Texas Instruments' worldwide semiconductor business. The interview was recorded in his Taipei office, and it was Jensen Huang who made the introduction. At the end Chang remarks that it is the first time in a long, long time he has talked this long.</p>
+<p>Acquired is usually Ben Gilbert and David Rosenthal taking turns telling a company's history. Here they barely interrupt; afterward they explain that it felt like recording history. Their prep was the second volume of Chang's autobiography, published 26 years after the first, in traditional Chinese only. They read an unpublished English translation, and most of the stories come from it.</p>
+<p>This was January 2025. The hosts point out that TSMC is essentially the only trillion-dollar company not on the US West Coast, and its 2-nanometer fab is getting ready to ramp in the second half of the year.</p>
+<h2>Glossary</h2>
+<div class="glossary"><ul>
+<li><b>Foundry</b>: a factory that manufactures chips for others and designs none of its own. TSMC pioneered the model.</li>
+<li><b>Fabless</b>: a chip company that designs but owns no factory: Nvidia, Qualcomm, Apple's silicon group.</li>
+<li><b>Process node</b>: a generation of manufacturing technology, labeled "28 nm", "16 nm" and so on; smaller is more advanced.</li>
+<li><b>Yield</b>: the share of chips on a wafer that actually work.</li>
+</ul></div>
+<h2>The episode, unpacked</h2>
+<h3>Back as CEO in 2009: undo the layoff, then settle the Nvidia bill</h3>
+<p>In 2005 Chang handed the CEO job to Rick Tsai and stayed on as chairman. Then the 2008 financial crisis hit and revenue fell hard. Chang had told Tsai in advance: if you want a layoff, bring it to the board, and he knew he would ask the board to say no. Tsai went around that. He did not call it a layoff; he called it performance management, and let go the six or seven hundred people with the worst reviews.</p>
+<p>Chang's objection to laying people off by rating goes back to TI. When TI had to cut staff in the early 1970s, every senior manager's first instinct was to go by performance, and he was the only one who said no. Ratings are given by each person's own supervisor, so they are subjective:</p>
+<blockquote><span class="en">So 700 worst performing people in the company, and who gave the 700 people the bad ratings? 700 supervisors.</span><cite>— Morris Chang · <a class="ts" href="https://www.youtube.com/watch?v=FZItbr4ZJnc&amp;t=1135s">[00:18:55]</a></cite></blockquote>
+<p>He also has a rule you can do arithmetic with. Severance usually runs about half a year of pay, and training a new person takes at least half a year. So:</p>
+<blockquote><span class="en">If in a year you have to hire people back, you have to hire the laid off people back, then you shouldn't lay off.</span><cite>— Morris Chang · <a class="ts" href="https://www.youtube.com/watch?v=FZItbr4ZJnc&amp;t=1135s">[00:18:55]</a></cite></blockquote>
+<p>In semiconductors, with Moore's law behind you, demand always comes back. So he took back the CEO role and invited the laid-off staff to return. Tsai kept his grade and pay and moved to run the new businesses, solar cells and LEDs. Neither worked out; solar, Chang says, was crushed by Chinese subsidies. Tsai is now CEO of MediaTek.</p>
+<p>There was an older bill to settle too. Yields on the 40-nanometer node would not come up, and Nvidia bore the brunt. The previous CEO had concluded TSMC was not at fault and never offered a number; Nvidia had proposed arbitration. In his first weeks back, Chang spent nearly half his time on this and worked out a figure himself.</p>
+<p>He emailed Jensen: I'll be at your home at six next week, let's just have salad and pizza, as they had many times before. Jensen wrote back asking when they would discuss business. Pizza at six-thirty, the study at eight, and it was Chang who looked at his watch. He offered more than 100 million dollars, good for 48 hours, no bargaining; otherwise, arbitration. Jensen accepted within two days.</p>
+<p>The two episodes run on one logic: employees and big customers are relationships you will need for decades, and whatever a crisis saves you in cash is less than what it costs in the relationship.</p>
+<h3>Betting on nodes: a fixed 8% for R&amp;D, triple the capex, and half of Apple</h3>
+<p>At TI, Chang had asked again and again to raise R&amp;D from 4.8% to 5.5% of revenue and was turned down every time. Back at TSMC he simply fixed R&amp;D at 8% of revenue, recession or not, ending the annual negotiation. With their budget secure, the R&amp;D people started having big ideas: 28 nanometers, they told him, would be the sweet spot, like the spot on a tennis racket where the ball feels right.</p>
+<p>He believed them and roughly tripled capital spending. This time the independent directors did not wait for the pre-board dinner; they phoned to say they did not like the idea. Chang walked them through the market forecast and the R&amp;D case, and they still were not convinced. In the end he said:</p>
+<blockquote><span class="en">Well, look, I heard you, but I am still the guy that's responsible for the operation of the company, so you need to let me go ahead with this one.</span><cite>— Morris Chang · <a class="ts" href="https://www.youtube.com/watch?v=FZItbr4ZJnc&amp;t=2955s">[00:49:15]</a></cite></blockquote>
+<p>28 nanometers coincided with the smartphone era. Asked whether he had seen that coming, he admits he had not; he only hoped his head of business development, C.C. Wei, now TSMC's chairman and CEO, saw it more clearly than he did.</p>
+<p>Then Apple arrived. In November 2010, Terry Gou of Foxconn, Sophie's second cousin, brought Jeff Williams to dinner at the Changs' home. Chang remembers Williams as Apple's chief operating officer (he was then senior vice president of operations and was <a href="https://www.apple.com/newsroom/2015/12/17Apple-Names-Jeff-Williams-Chief-Operating-Officer/">named COO in 2015</a>). Williams said Apple would let TSMC have a 40% gross margin; TSMC was already at 45%. Chang let that pass, because the node was the harder problem. Apple did not want the natural next step, 16 nanometers. It wanted 20, a half-step. TSMC's R&amp;D could not run two nodes at once, so taking 20 meant pushing 16 back.</p>
+<p>He decided to take only half of the volume Apple asked for, financed with corporate bonds: no dividend cut, no new shares. Apple's purchasing people thought TSMC was crazy. Williams made just one suggestion, to eliminate the dividend. Chang said no; he had checked, and about a third of TSMC's shareholders cared a great deal about the dividend.</p>
+<p>The hosts' post-game analysis explains the "half" well. The learning curve says take the whole order: the more volume, the faster costs fall. But taking all of it means betting the company on one customer's sales forecast, and if you are off by 5 or 10%, the whole node's profitability is gone. Half is the compromise between those two forces.</p>
+<p>The cost did arrive. Samsung, which had not done 20 nanometers, went straight to the next generation and won Apple's first orders.</p>
+<blockquote><span class="en">I got a shock, I mean, it was a real shock when I heard that Apple had placed the first orders of 16 with Samsung.</span><cite>— Morris Chang · <a class="ts" href="https://www.youtube.com/watch?v=FZItbr4ZJnc&amp;t=6711s">[01:51:51]</a></cite></blockquote>
+<p>Williams flew to Hsinchu the next week and promised that once TSMC's 16 was ready, Apple would buy all its needs there. Chang says that half a year later TSMC had its 16 nanometers and most of Apple's demand was still theirs. Samsung's node was actually called 14 nm, and <a href="https://www.anandtech.com/show/9686/the-apple-iphone-6s-and-iphone-6s-plus-review/3">the iPhone 6s shipped A9 chips from both foundries</a>.</p>
+<h3>Sitting in a foundry, you see other people's fate early</h3>
+<p>Midway through the Apple talks, Williams called to pause for two months: Intel's top level had approached Tim Cook. Chang says he was not very worried, though he admits that in the 1990s the name carried a different weight:</p>
+<blockquote><span class="en">If you hear that they're in competition with you, you know, my goodness, you'll be trembling with fear.</span><cite>— Morris Chang · <a class="ts" href="https://www.youtube.com/watch?v=FZItbr4ZJnc&amp;t=5945s">[01:39:05]</a></cite></blockquote>
+<p>A month later he visited Apple. Tim Cook took him through the cafeteria, trays in hand, back to his office, and told him not to worry, because Intel just did not know how to be a foundry. The hosts read that as a conflict of interest: Intel designs chips too, and competes with its customers. Chang disagrees. He thinks Cook meant service. Customers ask for all kinds of things, some of them irrational, and TSMC learned to answer each one courteously; Intel never did. Of the many Taiwanese PC makers he knew, all Intel customers, none liked Intel.</p>
+<p>Sitting in a foundry, he says, you often see things before they happen. In the late 1990s Qualcomm's orders to TSMC suddenly jumped, and he knew at once that Qualcomm's main foundry, IBM, was in trouble. So when IBM proposed co-developing the 0.13-micron process in 1999, he declined without a second thought: co-development meant sending engineers to IBM and losing TSMC's ability to develop its own process. IBM went to UMC, and UMC came to regret it badly.</p>
+<p>The thinking tool behind all of this is the learning curve, which Chang refined at TI together with the Boston Consulting Group. BCG founder Bruce Henderson came to TI with Bill Bain to pitch the theory; Bain then spent three days a week at TI as Chang's partner for about two years, before leaving to found his own firm. Chang warns against reducing it to "make more, pay less":</p>
+<blockquote><span class="en">Explaining learning curve theory is simple, but one will be foolish if one just takes the simple explanation, you know, and thinks that that's all it is.</span><cite>— Morris Chang · <a class="ts" href="https://www.youtube.com/watch?v=FZItbr4ZJnc&amp;t=7260s">[02:01:00]</a></cite></blockquote>
+<p>The hosts later fill in a layer: learning-curve pricing means estimating a node's total demand at maturity and pricing toward that end state from day one, even at a loss, to pull every customer in.</p>
+<h2>Fact check</h2>
+<div class="claim">
+<p class="said">Chang says that to bet on 28 nm he roughly tripled capital spending, which drew pushback from the board. <a class="ts" href="https://www.youtube.com/watch?v=FZItbr4ZJnc&amp;t=2779s">[00:46:19]</a></p>
+<p class="verdict">Supported</p>
+<p>TSMC's 2010 Form 20-F lists capex of NT$59.2 billion, NT$87.8 billion and NT$186.9 billion for 2008, 2009 and 2010 (US$5.94 billion in 2010). That is 3.2 times 2008 and 2.1 times 2009. "Triple" holds against a 2008 base; the magnitude is not exaggerated.</p>
+</div>
+<div class="claim">
+<p class="said">Chang says R&amp;D was then fixed at 8% of revenue, recession or not, and has stayed that way since. <a class="ts" href="https://www.youtube.com/watch?v=FZItbr4ZJnc&amp;t=2452s">[00:40:52]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>Filings show 6.5%, 7.3% and 7.1% for 2008 to 2010, matching his "already 6 or 7%", and 2013 was indeed 8%. But the 2022 annual report says 7.2%, and the 2025 budget is about 7% of revenue. In boom years the dollars kept rising; the ratio did not hold at 8%.</p>
+</div>
+<div class="claim">
+<p class="said">Chang says the previous CEO used performance reviews to lay off the six or seven hundred worst performers. <a class="ts" href="https://www.youtube.com/watch?v=FZItbr4ZJnc&amp;t=821s">[00:13:41]</a></p>
+<p class="verdict">Supported</p>
+<p>The Taipei Times reported in March 2009 that as many as 1,000 employees had been cut since January under a program called "survival of the fittest"; its May report said "several hundred" and covered the recall. Counts vary by source, but performance-based cuts followed by a rehire both check out.</p>
+</div>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Distributed systems · scale-down cooldown (hysteresis)</b>: Chang's "don't lay off if you'll rehire within a year" is an autoscaler's cooldown. Scaling down has a cost: severance of about half a year's pay, like releasing capacity, and at least half a year of training, like a cold start. If demand returns within a year, scaling down and back up is just flapping, and you lose both ways. Where it breaks: servers hold no grudges; people do. The laid-off staff slept in a park by the chairman's house, and that loss of trust appears in no autoscaling ledger.</li>
+<li><b>Economics · Wright's law</b>: in 1936 Theodore Wright, studying aircraft production, found that each doubling of cumulative output cut unit cost by a roughly fixed percentage, the ancestor of BCG's experience curve. The irony: solar, the business Chang abandoned, became one of the most complete learning-curve stories in industry, and the ones who rode it down were the subsidized Chinese makers he blames for ruining it.</li>
+<li><b>Economics · Coase, "The Nature of the Firm"</b>: Ronald Coase argued in 1937 that a firm's boundary is set by transaction costs. Once the interface between design and manufacturing standardizes, the case for vertical integration weakens, and you get companies that only design and a TSMC that only manufactures, the same way services split only after their interfaces stabilize.</li>
+<li><b>Game theory · Axelrod's "shadow of the future"</b>: Robert Axelrod's work on the repeated prisoner's dilemma shows cooperation holds when both sides expect to keep dealing. Chang's "48 hours, no bargaining" looks like a one-shot ultimatum but sits inside a decades-long repeated game; all those pizza dinners are the shadow of the future.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>In 2009 TSMC's then-CEO Rick Tsai cut six or seven hundred low-rated staff, and Morris Chang took back the CEO job and invited them to return.</li>
+<li>Morris Chang opposes layoffs by performance rating: 700 bad ratings come from 700 supervisors, so they are subjective.</li>
+<li>Morris Chang's layoff rule: severance is about half a year's pay and training at least half a year, so if you'll rehire within a year, don't cut.</li>
+<li>After 40 nm yield problems, Morris Chang offered Nvidia over 100 million dollars over pizza at Jensen Huang's home, 48 hours and no bargaining; Nvidia accepted in two days.</li>
+<li>Back as CEO, Morris Chang fixed TSMC's R&amp;D budget at 8% of revenue, ending the yearly budget fight between the R&amp;D head and the CEO.</li>
+<li>TSMC's 28 nm bet sharply raised capex over independent directors' objections, and it happened to coincide with the smartphone era.</li>
+<li>Apple wanted the 20 nm half-node; TSMC took only half the requested volume, funded it with bonds, and refused Apple's suggestion to drop the dividend.</li>
+<li>Taking 20 nm delayed TSMC's 16 nm and let Samsung win Apple's first orders, though Morris Chang says TSMC won back most of the demand half a year later.</li>
+<li>Tim Cook said Intel did not know how to be a foundry; Morris Chang read it as customer service and trust, not only a conflict of interest.</li>
+<li>Wright's law and BCG's learning curve push a foundry to chase maximum volume, yet taking a whole order means betting the company on a customer's forecast.</li>
+</ol>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=FZItbr4ZJnc">Acquired · TSMC founder Morris Chang</a></span><span class="d">The episode. Every timestamp on this page points here.</span></li>
+<li><span class="t"><a href="https://www.sec.gov/Archives/edgar/data/1046179/000095012311035858/h05002e20vf.htm">TSMC · Form 20-F for fiscal 2010 (SEC)</a></span><span class="d">Basis for the first two checks: 2008–2010 capex and R&amp;D ratios.</span></li>
+<li><span class="t">TSMC annual reports · <a href="https://investor.tsmc.com/static/annualReports/2013/english/c_5_2.html">2013</a>, <a href="https://investor.tsmc.com/static/annualReports/2022/english/ebook/files/basic-html/page98.html">2022</a>, <a href="https://investor.tsmc.com/static/annualReports/2024/english/ebook/files/basic-html/page107.html">2024</a></span><span class="d">Later R&amp;D ratios and the 2025 budget in the second check.</span></li>
+<li><span class="t">Taipei Times · <a href="https://www.taipeitimes.com/News/taiwan/archives/2009/03/25/2003439332">TSMC employees protest lay-offs</a>, <a href="https://www.taipeitimes.com/News/biz/archives/2009/05/21/2003444171">TSMC to rehire laid-off workers</a></span><span class="d">Basis for the third check: layoff counts and the rehire.</span></li>
+</ul>
+<footer>Podcast Deep Read · one long podcast, its main threads read closely · written 2026-11-17</footer>
+</div>
+</body></html>
