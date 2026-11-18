@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dwarkesh Podcast × Ilya Sutskever — 会刷题的模型修不好 bug：规模的时代过去了</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="ilya-sutskever-re-moving-from-age-pod39.en.html">English →</a></div>
+<header>
+<div class="kicker">Dwarkesh Podcast · 2025</div>
+<h1>会刷题的模型修不好 bug：Ilya Sutskever 说规模的时代过去了，卡住的是泛化</h1>
+<p class="sub">Ilya Sutskever × Dwarkesh Patel ·《We're moving from the age of scaling to the age of research》</p>
+</header>
+<div class="meta-card"><b>节目</b> Dwarkesh Podcast · 2025-11-25 · <b>时长</b> 96 分钟 · <b>嘉宾</b> Ilya Sutskever（SSI 联合创始人） · <b>主持</b> Dwarkesh Patel · <b>原片</b> <a href="https://www.youtube.com/watch?v=aR20FWCCjAs">YouTube</a></div>
+<h2>那一段</h2>
+<p>访谈开始不到三分钟，Ilya Sutskever 描述了一个每个用 AI 写过代码的人都见过的场面。你让模型修一个 bug，它连声道歉，修好了，同时引入第二个 bug。你指出第二个，它又一次惊呼「你说得太对了」，然后把第一个 bug 原样请了回来。你可以这样在两个 bug 之间来回切换，一直切下去。</p>
+<blockquote><span class="en">And the model says, "Oh my god, you're so right. I have a bug. Let me go fix that." And it introduces a second bug.</span><span class="zh">模型说：「天哪，你说得太对了，我写了个 bug，这就去修。」然后它引入了第二个 bug。</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=149s">[00:02:29]</a></cite></blockquote>
+<p>这不是吐槽，而是整期节目的问题本身：同一个模型在很难的评测上拿高分，却在这么简单的事上打转，它的经济价值也远远落在分数后面。这两件事怎么同时成立？接下来一个半小时，Ilya 给出的答案，几乎都绕回同一个词：泛化（generalization）。</p>
+<h2>谁在聊，和那一年</h2>
+<p>Ilya Sutskever 是 AlexNet 的作者之一，后来参与创办 OpenAI 并担任首席科学家，GPT-3 的作者名单里也有他。2023 年他上过一次这档节目，当时还是 OpenAI 的人。2024 年他离开 OpenAI，创办 Safe Superintelligence（SSI），官网写着这是「世界上第一个<a href="https://ssi.inc/">直奔超级智能（straight-shot SSI）</a>的实验室」，只有一个目标，也只有一个产品。</p>
+<p>Dwarkesh Patel 以准备得深著称，爱追问 AI 的经济影响和「智能爆炸」会不会发生。这一次连他也犯了难。他在节目中间的口播里坦白，没人知道 SSI 在做什么，他只能从第一性原理去猜 Ilya 会在哪些瓶颈上用力。</p>
+<p>节目在 2025 年 11 月上线。照 Ilya 自己在节目里的说法，SSI 已经融资 30 亿美元，估值 320 亿时 Meta 提出收购，他拒绝了，而联合创始人兼前任 CEO 接受了 Meta 的邀请，成了 SSI 唯一去 Meta 的人。开场两人就感慨，AI 投资已经接近 GDP 的 1%，可除了新闻里的数字，几乎没人感觉得到。这期节目的背景，是业界开始怀疑「继续堆规模」还能走多远。</p>
+<h2>这期聊透</h2>
+<h3>分数和本事之间的那道缝</h3>
+<p>Ilya 对开头那个 bug 给了两种解释。比较玄的一种是，强化学习（RL）训练可能让模型变得太专注、太一根筋。他更认真对待的是第二种。预训练（pre-training）时不用挑数据，答案就是「全部」；到了 RL，各家都有团队专门造训练环境，造什么、不造什么全凭人定，而人很自然地会参照发布时要亮相的那几张评测榜。Dwarkesh 接了一句很妙的话：真正在「奖励作弊（reward hacking）」的，是那些太盯着评测的人类研究员。</p>
+<p>Ilya 用两个学生来比方。第一个学生想当最强的竞赛选手，练了一万小时，所有题都刷过，所有证明技巧都背熟；第二个只练了一百小时，成绩也很好。哪个后来的职业生涯更好？Dwarkesh 答第二个。Ilya 说现在的模型就是第一个学生，而且更极端：把史上所有竞赛题拿来，再做数据增强造出更多题来练。练成这样，换个场景不灵，就不奇怪了。</p>
+<p>由此他把问题收拢到一句话上：</p>
+<blockquote><span class="en">The thing which I think is the most fundamental is that these models somehow just generalize dramatically worse than people.</span><span class="zh">我认为最根本的一点是，这些模型的泛化能力不知为何就是比人差得多。</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=1500s">[00:25:00]</a></cite></blockquote>
+<p>一个常见的反驳是：人有进化给的先验，当然学得快。Ilya 承认，视觉、听觉和运动很可能是这样。他说自己五岁时迷汽车，那时认车的本事大概已经够自动驾驶用了，而一个整天待在父母家里的五岁小孩，见过的数据少得可怜。可数学和编程是最近才出现的东西，进化来不及为它们写进先验。人在这些领域照样学得又快又稳，说明人身上有一种更根本的、更好的学习机制。Dwarkesh 追问这种机制在机器学习里对应什么，Ilya 说他有很多想法，可惜如今并不是所有机器学习的想法都能公开讨论。</p>
+<h3>情绪是一张进化写死的价值函数</h3>
+<p>那么，一个学开车的少年没有老师打分，凭什么在十个小时里就学会？Ilya 的答案是价值函数（value function）。现在的 RL 往往要等整条轨迹跑完才打分，一个要想很久的任务，在给出答案之前什么也学不到。价值函数则像下棋时丢了一个子，你不用下完整盘就知道刚才那步错了。推理了一千步才发现方向不对，这个信号可以立刻回传到一千步之前的那个选择上。</p>
+<p>人的价值函数是什么？他讲了一个读到的病例：一个人因脑损伤失去了情绪，测验照样过关，却变得几乎无法做决定。Ilya 由此推测，人的价值函数在某种重要的方式上受情绪调节，而情绪是进化写死的。他还补了一层：情绪之所以在今天仍然好用，恰恰因为它简单。简单的东西在很宽的情境里都管用，当然也会失灵，比如饥饿感在食物过剩的世界里就带错了路。</p>
+<p>最让他困惑的，是进化怎么把「在乎别人怎么看我」这种高层欲望写进基因。闻到香味就想吃，好理解，气味是化学信号；可社会地位要靠大脑做大量运算才拼得出来，没有任何传感器直接测它。</p>
+<blockquote><span class="en">I think it's actually really mysterious how the brain encodes high level desires. Sorry, how evolution encodes high level desires.</span><span class="zh">我觉得大脑怎么编码高层欲望，其实非常神秘。不对，应该说，进化怎么编码高层欲望。</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=4291s">[01:11:31]</a></cite></blockquote>
+<p>他提出一个猜想，又当场把它推翻。猜想是，皮层分区在每个人脑中的位置大体固定，进化也许直接写死了一个「坐标」，那里一放电你就该在乎。Dwarkesh 举出先天失明者视觉皮层被别的感官占用的例子来反驳；Ilya 说还有更强的反例，有人童年时被切除了半个大脑，各个功能区照样挤进了剩下的那一半。所以这仍是个谜。这条反例站得有多稳，下文「说法核查」里会讲到。</p>
+<h3>从规模回到研究，和一个十五岁的超级智能</h3>
+<p>Ilya 给这十几年分了期：2012 到 2020 年是研究的时代，2020 到 2025 年左右是规模的时代。「规模（scaling）」这一个词告诉所有人该干什么，公司也爱它，因为加数据、加算力是低风险的投资。可数据终究有限，再把规模放大一百倍，未必就脱胎换骨。他的结论是：我们回到了研究的时代，只是手里的计算机大了很多。副作用是大家都在做同一件事：</p>
+<blockquote><span class="en">We got to the point where we are in a world where there are more companies than ideas by quite a bit.</span><span class="zh">我们走到了这样一个地步：公司的数量远远多于想法的数量。</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=2209s">[00:36:49]</a></cite></blockquote>
+<p>这正是 SSI 敢跟巨头竞争的理由。Ilya 说，验证一个新想法并不需要最大的算力，AlexNet 只用了两块 GPU；而别家的大笔预算多半要花在推理、产品和销售上，真正留给研究的差距没那么大。Dwarkesh 追问：有公开估算说 OpenAI 一年光实验就花五六十亿美元，比 SSI 的全部融资还多。Ilya 答，问题在于钱怎么用，人家要兼顾的模态和工作流太多，算力被切碎了。</p>
+<p>他又拆了另一个词「AGI」。在他看来，这个词主要是对「窄 AI」的反弹，再加上预训练「什么都一起变好」的特性，人们就想象出一个什么都已经会的成品。可是：</p>
+<blockquote><span class="en">you will realize that a human being is not an AGI</span><span class="zh">你会意识到，人本身就不是 AGI。</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=2961s">[00:49:21]</a></cite></blockquote>
+<p>人缺大量知识，靠的是持续学习（continual learning）。所以他设想的超级智能更像一个极其聪明、极其好学的十五岁少年，部署出去之后在岗位上边干边学。他也承认自己这一年改了主意，更看重 AI 渐进地、提前地部署出去，因为人很难想象还没出现的东西，只有亲眼看到它，政府和公司才会认真对待。至于这种学习者何时出现，他给的估计是五到二十年。</p>
+<p>节目最后，Dwarkesh 问什么是研究品味。Ilya 说，他追求的是美、简洁、优雅，加上来自大脑的正确启发，几样同时成立时，就有理由相信一个自上而下的判断：</p>
+<blockquote><span class="en">And then the top down belief is the thing that sustains you when the experiments contradict you.</span><span class="zh">当实验结果和你作对时，撑住你的，就是这个自上而下的信念。</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=5687s">[01:34:47]</a></cite></blockquote>
+<p>因为实验可能只是有 bug。这句话和开头那个在两个 bug 之间打转的模型，恰好首尾呼应。</p>
+<h2>说法核查</h2>
+<div class="claim">
+<p class="said">「AlexNet 只用了两块 GPU；Transformer 论文里没有哪个实验用超过 64 块 GPU。」<a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=2287s">[00:38:07]</a></p>
+<p class="verdict">有据</p>
+<p><a href="https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">AlexNet 论文</a>写明在两块 GTX 580 上训练了五到六天；Transformer 论文更省，全部模型在一台装 8 块 P100 的机器上训练，大模型跑了 3.5 天。要补一句：论文报告的是最终训练，不含前期的调参和失败的尝试。</p>
+</div>
+<div class="claim">
+<p class="said">失去情绪的脑损伤病人测验正常，却花几个小时选袜子、做很糟的财务决定。<a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=685s">[00:11:25]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>Ilya 没说出处，经典病例是 Damasio 团队报告的 EVR：病因是手术切除了双侧额叶眶部和内侧下部的皮层，不是中风或意外；智商测验优异，生活却一塌糊涂。但「缺了情绪就不会决策」这一解释，即躯体标记假说，<a href="https://pubmed.ncbi.nlm.nih.gov/16197997/">2006 年的批判性综述</a>认为还需要更多实证支撑。</p>
+</div>
+<div class="claim">
+<p class="said">童年被切除半个大脑的人，各个功能区都挪到了剩下的那一半。<a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=4574s">[01:16:14]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>2019 年的研究扫描了 6 位童年做过半脑切除的成年人，剩下那一半里，各个功能网络的内部连接和常人相当，智商平均约 91。但样本只有 6 人，作者自己说认知方面的分析只能算探索；而半脑切除后常留下的运动和视野缺损说明，并非所有功能都能挪过去。</p>
+</div>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>经济学 · Goodhart 定律</b>：一个指标一旦被当成目标，就不再是好指标。研究员照着评测榜造 RL 环境，就是这条定律在训练流水线上的翻版。不同的是，经济学里钻空子的是被考核的人，这里钻空子的是出题的人。</li>
+<li><b>演化生物学 · Baldwin 效应</b>：Hinton 和 Nowlan 1987 年的论文《<a href="https://www.cs.toronto.edu/~hinton/absps/baldwin.pdf">学习如何引导进化</a>》用一个小模拟说明，个体一生中的学习能把进化引向原本几乎找不到的解，久而久之，原本要靠学的部分会变成天生的。这正好落在 Ilya 那道题上：哪些本事是进化写死的先验，哪些靠一辈子学来。巧的是 Hinton 正是 Ilya 的博士导师。不同之处在于，Baldwin 效应讲的是学习如何变成先验；Ilya 关心的是反方向，进化留给我们的那个学习算法本身长什么样。</li>
+<li><b>软件可靠性 · N 版本编程</b>：让几支团队独立写同一个程序，指望它们不会在同一处出错。Knight 和 Leveson 1986 年的实验发现，独立团队的错误照样高度相关。这和 Ilya 解释各家大模型为何彼此相似是同一个结构：大家吃的是同一份预训练数据，表面独立，其实同源。</li>
+<li><b>复杂性科学 · 高度优化容错（HOT）</b>：Carlson 和 Doyle 指出，为已知扰动精心优化的系统往往「稳健却脆弱」，对没见过的扰动格外不堪一击。刷了一万小时题的第一个学生正是这样。Ilya 说简单的情绪反而稳健，可以看成同一枚硬币的另一面。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Ilya Sutskever 认为，大模型评测分数很高、经济影响却远远落后，根源在于它们的泛化能力比人差得多。</li>
+<li>Ilya 推测，各家参照评测榜去造 RL 训练环境，Dwarkesh 据此说真正「奖励作弊」的是盯着评测的研究员。</li>
+<li>两个学生的比方：苦练一万小时的竞赛选手，往往不如只练一百小时却有灵气的人走得远，现在的模型像前者。</li>
+<li>视觉和运动或许靠进化先验，但数学和编程出现得太晚，人照样学得快，说明人有更好的学习机制。</li>
+<li>价值函数让 RL 不必等任务结束才拿到信号，就像下棋丢子立刻知道走错了。</li>
+<li>Ilya 推测人的价值函数受情绪调节，情绪由进化写死，简单所以稳健，但也会像饥饿感那样在新环境里失灵。</li>
+<li>进化如何把「在乎社会评价」这种高层欲望写进基因，Ilya 认为至今没有令人满意的解释。</li>
+<li>Ilya 把 2012–2020 年叫研究的时代、2020–2025 年叫规模的时代，如今是「带着大计算机回到研究」。</li>
+<li>Ilya 认为人不是 AGI，人靠持续学习；他设想的超级智能像一个在岗位上边干边学的十五岁少年。</li>
+<li>N 版本编程的教训：同源的系统看似独立，错误却高度相关，各家大模型吃同一份预训练数据也是如此。</li>
+</ol>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=aR20FWCCjAs">Ilya Sutskever – We're moving from the age of scaling to the age of research</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>
+<li><span class="t"><a href="https://arxiv.org/abs/1706.03762">Vaswani et al., Attention Is All You Need (2017)</a></span><span class="d">第一条核查：Transformer 的训练硬件与时长。</span></li>
+<li><span class="t"><a href="https://pubmed.ncbi.nlm.nih.gov/4069365/">Eslinger &amp; Damasio, Patient EVR, Neurology (1985)</a></span><span class="d">第二条核查：病例的病因与测验结果。</span></li>
+<li><span class="t"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6914265/">Kliemann et al., Cell Reports (2019)</a></span><span class="d">第三条核查：半脑切除者的功能网络。</span></li>
+</ul>
+<footer>播客精读 · 一期长播客，挑出主线讲透 · 写于 2026-11-18</footer>
+</div>
+</body></html>

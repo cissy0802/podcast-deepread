@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dwarkesh Podcast × Ilya Sutskever — The model that aces contests can't fix a bug: the age of scaling is over</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="ilya-sutskever-re-moving-from-age-pod39.html">中文 →</a></div>
+<header>
+<div class="kicker">Dwarkesh Podcast · 2025</div>
+<h1>The model that aces contests can't fix a bug: Ilya Sutskever says the age of scaling is over, and generalization is the wall</h1>
+<p class="sub">Ilya Sutskever × Dwarkesh Patel · "We're moving from the age of scaling to the age of research"</p>
+</header>
+<div class="meta-card"><b>Show</b> Dwarkesh Podcast · 2025-11-25 · <b>Length</b> 96 min · <b>Guest</b> Ilya Sutskever (co-founder, SSI) · <b>Host</b> Dwarkesh Patel · <b>Video</b> <a href="https://www.youtube.com/watch?v=aR20FWCCjAs">YouTube</a></div>
+<h2>The moment</h2>
+<p>Less than three minutes in, Ilya Sutskever describes a scene anyone who has coded with an AI will recognize. You ask the model to fix a bug. It apologizes, fixes it, and introduces a second bug. You point out the second one; it is again amazed at how right you are, and brings the first bug straight back. You can alternate between the two indefinitely.</p>
+<blockquote><span class="en">And the model says, "Oh my god, you're so right. I have a bug. Let me go fix that." And it introduces a second bug.</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=149s">[00:02:29]</a></cite></blockquote>
+<p>This isn't a gripe; it is the question the whole episode is about. The same model scores well on very hard evals, loops on something this simple, and has an economic impact far below what the scores suggest. How can both be true? For the next ninety minutes, nearly every answer Ilya gives circles back to one word: generalization.</p>
+<h2>Who's talking, and when</h2>
+<p>Ilya Sutskever is one of the authors of AlexNet. He went on to co-found OpenAI and serve as its chief scientist, and he is on the author list of GPT-3. He appeared on this show once before, in 2023, while still at OpenAI. In 2024 he left and founded Safe Superintelligence (SSI), whose website calls it <a href="https://ssi.inc/">"the world's first straight-shot SSI lab"</a>, with one goal and one product.</p>
+<p>Dwarkesh Patel is known for preparing deeply and for pressing guests on AI's economic impact and whether an "intelligence explosion" will happen. This time even he was stuck. In a mid-episode ad read he admits that nobody knows what SSI is working on, so he could only reason from first principles about which bottlenecks Ilya must be attacking.</p>
+<p>The episode went out in November 2025. By Ilya's own account in it, SSI had raised $3 billion; while it was fundraising at a $32 billion valuation, Meta offered to acquire it. He said no; his co-founder and former CEO said yes in effect, and was the only SSI person to join Meta. In the opening minutes both men marvel that AI investment is approaching 1% of GDP and yet, beyond dollar figures in the news, almost nobody feels it. The backdrop is an industry starting to doubt how far "just scale it" can go.</p>
+<h2>The episode, unpacked</h2>
+<h3>The gap between scores and skill</h3>
+<p>Ilya offers two explanations for the bug loop. The whimsical one: RL training may make models too single-minded and narrowly focused. The one he takes more seriously: in pre-training nobody has to choose the data, because the answer is "everything." In RL, every company has teams building training environments, and humans choose which ones. Naturally they take inspiration from the evals they want to look good on at launch. Dwarkesh offers a neat line: the real reward hacking is done by human researchers who are too focused on the evals.</p>
+<p>Ilya's analogy is two students. One wants to be the best competitive programmer, practices ten thousand hours, solves every problem and memorizes every proof technique. The other practices a hundred hours and also does well. Who has the better career? Dwarkesh says the second. Ilya says today's models are the first student, only more so: take every contest problem ever written, augment the data to make more, and train on all of it. That such a student doesn't transfer is unsurprising.</p>
+<p>He then distills the issue into one sentence:</p>
+<blockquote><span class="en">The thing which I think is the most fundamental is that these models somehow just generalize dramatically worse than people.</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=1500s">[00:25:00]</a></cite></blockquote>
+<p>The standard rebuttal is that humans have evolutionary priors. Ilya grants this for vision, hearing and locomotion. As a five-year-old obsessed with cars, he says, his car recognition was probably already good enough for self-driving, on very little and very undiverse data. But math and coding are recent; evolution had no time to build priors for them. That people still learn them quickly and robustly suggests humans simply have a better learning mechanism. When Dwarkesh asks what that mechanism is in ML terms, Ilya says he has many opinions, but these days not all machine-learning ideas can be discussed freely.</p>
+<h3>Emotions as a value function evolution hard-coded</h3>
+<p>So how does a teenager learn to drive in ten hours with no one scoring them? Ilya's answer is the value function. Today's RL often scores only at the end of a trajectory, so a long task teaches nothing until a solution appears. A value function is like losing a piece in chess: you know the move was bad without playing out the game. If a thousand steps of reasoning reveal a dead end, that signal can flow straight back to the choice made a thousand steps earlier.</p>
+<p>What is the human value function? He recounts a case he once read about: a man whose brain damage wiped out his emotions, who still did fine on tests but became nearly unable to decide anything. Ilya's inference is that the human value function is modulated by emotions in some important way, and emotions are hard-coded by evolution. He adds that emotions still work today precisely because they are simple, and simple things hold up across a wide range of situations. They also misfire: hunger steers us badly in a world of abundant food.</p>
+<p>What puzzles him most is how evolution wrote a high-level desire like "care how others see me" into the genome. Wanting food that smells good is easy: smell is a chemical. Social standing has no sensor; the brain must do a great deal of computation to piece it together.</p>
+<blockquote><span class="en">I think it's actually really mysterious how the brain encodes high level desires. Sorry, how evolution encodes high level desires.</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=4291s">[01:11:31]</a></cite></blockquote>
+<p>He floats a hypothesis and knocks it down on the spot. Cortical regions sit in roughly the same place in everyone, so maybe evolution hard-coded a coordinate: when that spot fires, care. Dwarkesh counters with people born blind, whose visual cortex is taken over by other senses. Ilya says there is a stronger counterexample: people who had half the brain removed in childhood, whose functional regions all crowded into the remaining half. So it stays a mystery. How solid that counterexample is comes up in the fact check below.</p>
+<h3>From scaling back to research, and a superintelligent fifteen-year-old</h3>
+<p>Ilya periodizes the last decade and more: 2012 to 2020 was the age of research, roughly 2020 to 2025 the age of scaling. The single word "scaling" told everyone what to do, and companies loved it because more data and more compute is a low-risk investment. But data is finite, and another 100x of scale may not transform everything. His conclusion: we are back in the age of research, just with big computers. A side effect is that everyone is doing the same thing:</p>
+<blockquote><span class="en">We got to the point where we are in a world where there are more companies than ideas by quite a bit.</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=2209s">[00:36:49]</a></cite></blockquote>
+<p>That is SSI's case for competing with giants. Proving a new idea doesn't need the biggest cluster, Ilya says; AlexNet used two GPUs. Rivals' huge budgets go largely to inference, product and sales, so the gap in research compute is smaller than it looks. Dwarkesh pushes: public estimates put OpenAI's experiment spending alone at five to six billion dollars a year, more than SSI's total funding. Ilya replies that it's about what you do with it: they serve many modalities and workstreams, so their compute gets fragmented.</p>
+<p>He also takes apart the word "AGI." In his view it began mostly as a reaction to "narrow AI," and pre-training, which makes models better at everything at once, encouraged people to imagine a finished product that already knows everything. Yet:</p>
+<blockquote><span class="en">you will realize that a human being is not an AGI</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=2961s">[00:49:21]</a></cite></blockquote>
+<p>Humans lack vast amounts of knowledge and rely on continual learning. So the superintelligence he imagines is more like a brilliant, eager fifteen-year-old who is deployed and learns on the job. He admits he has changed his mind this past year toward deploying AI incrementally and in advance, because people find it very hard to imagine systems that don't exist yet; only seeing the thing will make governments and companies take it seriously. His estimate for when such a learner arrives: five to twenty years.</p>
+<p>At the end Dwarkesh asks what research taste is. Ilya says he looks for beauty, simplicity, elegance and correct inspiration from the brain; when they are all present, you can trust a top-down conviction:</p>
+<blockquote><span class="en">And then the top down belief is the thing that sustains you when the experiments contradict you.</span><cite>— Ilya Sutskever · <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=5687s">[01:34:47]</a></cite></blockquote>
+<p>Because the experiment may just have a bug. It is a fitting bookend to the model looping between two bugs at the start.</p>
+<h2>Fact check</h2>
+<div class="claim">
+<p class="said">"AlexNet was built on two GPUs; no Transformer-paper experiment used more than 64 GPUs." <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=2287s">[00:38:07]</a></p>
+<p class="verdict">Supported</p>
+<p>The <a href="https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html">AlexNet paper</a> says five to six days on two GTX 580s. The Transformer paper is leaner still: all models trained on one machine with 8 P100s, the big model for 3.5 days. One caveat: papers report the final runs, not tuning and failed attempts.</p>
+</div>
+<div class="claim">
+<p class="said">A patient who lost his emotions to brain damage tested normally but took hours to choose socks and made terrible financial decisions. <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=685s">[00:11:25]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>Ilya gives no source; the classic case is Damasio's patient EVR: surgical ablation of orbital and lower mesial frontal cortex, not a stroke or accident, with superior IQ scores and a collapsed life. But the "no emotion, no decisions" reading, the somatic marker hypothesis, still needs more empirical support per a <a href="https://pubmed.ncbi.nlm.nih.gov/16197997/">2006 critical review</a>.</p>
+</div>
+<div class="claim">
+<p class="said">People who had half the brain removed in childhood have all their functional regions moved into the remaining half. <a class="ts" href="https://www.youtube.com/watch?v=aR20FWCCjAs&amp;t=4574s">[01:16:14]</a></p>
+<p class="verdict">Supported, but overstated</p>
+<p>A 2019 study scanned 6 adults with childhood hemispherectomy: within-network connectivity in the remaining hemisphere matched controls, mean IQ about 91. But n = 6, the authors call the cognitive analysis exploratory, and the motor and visual-field deficits that often follow surgery show not every function relocates.</p>
+</div>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Economics · Goodhart's law</b>: when a measure becomes a target, it stops being a good measure. Researchers building RL environments modeled on eval leaderboards are this law inside a training pipeline. The difference: in economics the gamer is the person being measured; here it is the person writing the test.</li>
+<li><b>Evolutionary biology · the Baldwin effect</b>: Hinton and Nowlan's 1987 paper "<a href="https://www.cs.toronto.edu/~hinton/absps/baldwin.pdf">How Learning Can Guide Evolution</a>" used a small simulation to show that lifetime learning can steer evolution to solutions it would almost never find alone, and that over time what had to be learned becomes innate. That lands squarely on Ilya's question of which abilities are evolutionary priors and which are learned in a lifetime. Hinton was, fittingly, Ilya's doctoral advisor. The difference: the Baldwin effect is about learning turning into priors; Ilya cares about the reverse, what the learning algorithm evolution left us actually looks like.</li>
+<li><b>Software reliability · N-version programming</b>: have independent teams write the same program and hope they won't fail in the same place. Knight and Leveson's 1986 experiment found that independent teams' failures were still strongly correlated. It is the same structure as Ilya's explanation of why LLMs from different labs feel alike: they eat the same pre-training data, independent on the surface and common in origin.</li>
+<li><b>Complexity science · highly optimized tolerance (HOT)</b>: Carlson and Doyle showed that systems carefully optimized for known disturbances tend to be "robust yet fragile," collapsing under ones they weren't designed for. The ten-thousand-hour student is exactly that. Ilya's point that simple emotions are robust is the other side of the same coin.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Ilya Sutskever argues that LLMs score high on evals yet lag in economic impact because they generalize far worse than people.</li>
+<li>Ilya suspects labs design RL environments with eval leaderboards in mind; Dwarkesh calls the eval-focused researchers the real reward hackers.</li>
+<li>The two-students analogy: a ten-thousand-hour contest grinder often goes less far than a gifted hundred-hour student, and today's models resemble the grinder.</li>
+<li>Vision and locomotion may rest on evolutionary priors, but people also learn recent skills like math and coding quickly, implying a better learning mechanism.</li>
+<li>A value function lets RL get signal before a task ends, the way losing a chess piece tells you instantly the move was bad.</li>
+<li>Ilya speculates that emotions, hard-coded by evolution, modulate the human value function: simple and therefore robust, yet prone to misfire like hunger amid abundance.</li>
+<li>Ilya says there is still no satisfying account of how evolution wrote high-level desires such as caring about social standing into the genome.</li>
+<li>Ilya calls 2012–2020 the age of research and 2020–2025 the age of scaling; now it is back to research, with big computers.</li>
+<li>Ilya argues a human is not an AGI but a continual learner, and pictures superintelligence as a fifteen-year-old who learns on the job.</li>
+<li>The N-version programming lesson: systems with a common origin fail together, as do LLMs trained on the same pre-training data.</li>
+</ol>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=aR20FWCCjAs">Ilya Sutskever – We're moving from the age of scaling to the age of research</a></span><span class="d">The episode. All timestamps on this page point here.</span></li>
+<li><span class="t"><a href="https://arxiv.org/abs/1706.03762">Vaswani et al., Attention Is All You Need (2017)</a></span><span class="d">First claim: Transformer training hardware and time.</span></li>
+<li><span class="t"><a href="https://pubmed.ncbi.nlm.nih.gov/4069365/">Eslinger &amp; Damasio, Patient EVR, Neurology (1985)</a></span><span class="d">Second claim: the lesion and test results.</span></li>
+<li><span class="t"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6914265/">Kliemann et al., Cell Reports (2019)</a></span><span class="d">Third claim: functional networks after hemispherectomy.</span></li>
+</ul>
+<footer>Podcast Deep Read · one long podcast, its main threads read closely · written 2026-11-18</footer>
+</div>
+</body></html>
