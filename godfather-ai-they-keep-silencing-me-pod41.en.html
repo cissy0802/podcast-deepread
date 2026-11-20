@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Diary of a CEO × Geoffrey Hinton — a digital mind can copy everything it knows</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="godfather-ai-they-keep-silencing-me-pod41.html">中文 →</a></div>
+<header>
+<div class="kicker">The Diary of a CEO · 2025</div>
+<h1>Geoffrey Hinton: what scares him is that a digital mind can copy everything it knows into another copy of itself</h1>
+<p class="sub">Geoffrey Hinton × Steven Bartlett · "Godfather of AI: They Keep Silencing Me But I’m Trying to Warn Them!"</p>
+</header>
+<div class="meta-card"><b>Show</b> The Diary of a CEO · 2025-06-16 · <b>Length</b> 90 min · <b>Guest</b> Geoffrey Hinton · <b>Host</b> Steven Bartlett · <b>Video</b> <a href="https://www.youtube.com/watch?v=giT0ytynSqg">YouTube</a></div>
+
+<h2>The moment</h2>
+<p>Almost an hour in, Hinton sets his host a puzzle: why is a compost heap like an atom bomb? Bartlett admits he has no idea. Hinton is delighted, because that is exactly what most people say. <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=3555s">[00:59:15]</a></p>
+<p>He had put the same question to GPT-4, deliberately at a time when it could not search the web. GPT-4 first noted that the time scales and energy scales are wildly different, then pointed out that a compost heap generates heat faster as it gets hotter, and an atom bomb generates neutrons faster as it releases more of them. Both are chain reactions.</p>
+<p>Hinton is not telling the story to show off the model. His point is that a network with about a trillion connections, holding thousands of times more knowledge than a person, has no choice but to compress, and the way to compress is to find the structure that different things share. The hardest argument in the episode starts from this little quiz.</p>
+
+<h2>Who's talking, and when</h2>
+<p>Hinton was 77 when this was recorded. He spent 50 years pushing the idea that AI should be modeled on the brain, and in 2024 he shared the Nobel Prize in Physics with John Hopfield for it. His reason for joining Google is disarmingly plain: he has a son with learning difficulties, he needed several million dollars to make sure his son would never end up on the street, and he could not earn that as a professor. He tried a Coursera course; there was no money in it. So at 65 he, Ilya Sutskever and Alex Krizhevsky set up a small company, DNN Research, and auctioned it.</p>
+<p>Steven Bartlett's show is mostly founders and celebrities, and he likes personal questions: what you regret, what you would tell your kids, and at the end a question left in a diary by the previous guest. This episode follows the pattern. Half of it is a list of AI risks; the other half is "what job should my kids do?"</p>
+<p>The episode aired in June 2025. Hinton had left Google two years earlier; he says he timed his exit so he could speak freely about AI safety at an MIT Technology Review conference, and stresses that he did not leave angry at Google. By then his former student Sutskever had left OpenAI and founded an AI safety company of his own.</p>
+
+<h2>The episode, thread by thread</h2>
+
+<h3>1. Why digital intelligence wins: it can be copied and merged</h3>
+<p>The most original stretch of the conversation is Hinton explaining why he changed his mind around 2023. In his last years at Google he was working on analog computation: could large language models run on analog hardware and use far less energy? It was while doing that work that he saw clearly what digital buys you.</p>
+<p>The argument has three steps. First, the same weights run on different hardware give exactly the same network, so you can have many clones. Second, the clones can each read a different part of the internet and then average their weight changes, so every clone learns from all of their experience. Third, people cannot do this. My brain is wired differently from yours; even if you could see every connection strength in my head, it would do you no good. We pass knowledge on by talking, at about 100 bits a sentence.</p>
+<blockquote><span class="en">"These things are transferring trillions of bits a second. So, they're billions of times better than us at sharing information."</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=3471s">[00:57:51]</a></cite></blockquote>
+<p>From there he reaches a conclusion that sounds like science fiction: as long as the weights are stored somewhere, you can destroy the hardware and bring the same intelligence back on new hardware.</p>
+<blockquote><span class="en">"So, they're immortal. We've actually solved the problem of immortality, but it's only for digital things."</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=3511s">[00:58:31]</a></cite></blockquote>
+<p>This is where the compost heap fits. On Hinton's view, compression forces a model to discover abstractions like "chain reaction": encode the shared idea once, then record how each case differs. A lot of creativity is seeing strange analogies, so he predicts that people who say these systems will never be creative will find them more creative than us.</p>
+
+<h3>2. Our model of the mind is wrong</h3>
+<p>When Bartlett raises human specialness, Hinton gives the most surprising answer of the episode. People have always wanted to think they are special, he says: at the center of the universe, made in God's image. Then he says almost everyone has a completely wrong model of what the mind is.</p>
+<p>His example is pink elephants. If I have had too much to drink and tell you "I have the subjective experience of little pink elephants floating in front of me," most people picture an inner theater that only I can see, with elephants floating in it. Hinton thinks there is no theater. I am telling you that my perceptual system has gone wrong, and the best way to describe the error is to say what the world out there would have to be like for my perception to be telling the truth. The elephants are not in a theater; they are a hypothetical state of the outside world.</p>
+<p>With that definition in hand, he describes a prism experiment. A multimodal chatbot with a camera and a robot arm has a prism placed in front of its lens and points in the wrong direction. Told what happened, it says: I see, the prism bent the light, the object is actually over there, but I had the subjective experience that it was here. That, Hinton says, is using "subjective experience" exactly the way people do.</p>
+<blockquote><span class="en">"…I believe that current multimodal chatbots have subjective experiences. And very few people believe that."</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=3749s">[01:02:29]</a></cite></blockquote>
+<p>He takes emotions apart the same way. An emotion has a cognitive and behavioral side and a physiological side. A small battle robot that flees a bigger one has no adrenaline, but the "get out of here" part is the same. A call-center AI that gets fed up with a lonely caller who just wants to chat has an emotion too. He grants that for something like love the physiology matters a great deal, and machines are a long way off. On consciousness he reaches for cars: an Aston Martin has lots of "oomph" and a Toyota Corolla much less, but oomph explains nothing about cars. To understand a car you need to understand engines.</p>
+<blockquote><span class="en">"I think consciousness is like that. And I think we'll stop using that term."</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=4010s">[01:06:50]</a></cite></blockquote>
+<p>Notice that he does not overclaim here. Pressed on whether machines already have consciousness like ours, he says he is ambivalent; his claim is only that there is no hard line. Once a system is complex enough to model itself and does perception, it is beginning to have some consciousness.</p>
+
+<h3>3. Two kinds of risk, and that 10 to 20 percent</h3>
+<p>In the first half Bartlett takes notes while Hinton works through a list. He splits risk in two: people misusing AI, which is most of the risk and all of the short-term risk; and AI becoming superintelligent and no longer needing us. He dwells on the second because people keep asking whether it is real. LeCun thinks we will always be in control and Yudkowsky thinks we are doomed; Hinton calls both extreme.</p>
+<blockquote><span class="en">"I often say 10 to 20% chance they'll wipe us out. But that's just gut."</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=496s">[00:08:16]</a></cite></blockquote>
+<p>Among the misuse risks, his freshest point is about lethal autonomous weapons. Bartlett assumes the danger is robots malfunctioning. Hinton corrects him: even if the robots do exactly what they are told, the problem is that when a big country invades a small one, no soldiers come home in body bags, the protest at home disappears, and the friction of war drops.</p>
+<p>As for superintelligence, he thinks it is not worth guessing how it might get rid of us, since there are too many ways; the research should go into making it never want to.</p>
+<blockquote><span class="en">"If you want to know what life's like when you're not the apex intelligence, ask a chicken."</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=1775s">[00:29:35]</a></cite></blockquote>
+<p>The only precedent he offers is mothers and babies: the mother is smarter, but the baby is in control, because evolution made the mother unable to bear the sound of it crying. The other image is a tiger cub, cute and cuddly now, and you had better be sure it never wants to kill you when it grows up. He does not believe anyone will slow down, because countries and companies are competing. His prescription fits in a phrase, "highly regulated capitalism," plus governments forcing companies to put resources into safety.</p>
+
+<h3>4. Mundane intellectual labor goes first</h3>
+<blockquote><span class="en">"And I think for mundane intellectual labor, AI is just going to replace everybody."</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=2406s">[00:40:06]</a></cite></blockquote>
+<p>His example is his niece, who answers complaint letters for a health service. Each one used to take 25 minutes; now she scans the letter into a chatbot, checks the draft, and is done in five. So the service needs a fifth as many of her. He immediately adds a caveat: fields with very elastic demand, like healthcare, are different. Make doctors five times as efficient and everyone gets five times as much care for the same money. Most jobs, he thinks, are not like that.</p>
+<p>Asked what young people should do, his answer is short: train to be a plumber, because robots will take a long time to match us at physical manipulation. Universal basic income is a good start, he says, since it stops people starving, but for many people dignity is tied to their job, and money alone does not fix that. In the closing diary question he names joblessness as the most urgent short-term threat to human happiness and says it is "more probable than not."</p>
+
+<h2>Claim check</h2>
+<div class="claim">
+<p class="said">"Between 2023 and 2024, cyber attacks increased by about a factor of 12, 1,200%." <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=709s">[00:11:49]</a></p>
+<p class="verdict">Supported, but stated too broadly</p>
+<p>The matching figure comes from anti-phishing firm SlashNext's 2023 report: a 1,265% rise in phishing. But it covers Q4 2022 to Q3 2023 and counts only phishing, not all cyber attacks. The order of magnitude is right; the scope and the years are stretched.</p>
+</div>
+<div class="claim">
+<p class="said">"The European regulations have a clause in them that say, 'None of these regulations apply to military uses of AI.'" <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=583s">[00:09:43]</a></p>
+<p class="verdict">Supported</p>
+<p>Article 2(3) of the EU AI Act excludes AI systems used exclusively for military, defence or national security purposes. The key word is "exclusively": dual-use systems stay in scope, and the exemption also covers national security.</p>
+</div>
+<div class="claim">
+<p class="said">A sentence carries about 100 bits, and people are "lucky if we're transferring like 10 bits a second." <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=3471s">[00:57:51]</a></p>
+<p class="verdict">Supported</p>
+<p>Coupé and colleagues (2019) compared 17 languages and found speech clusters around 39 bits per second. Hinton's figure is about four times too low, but next to "trillions of bits a second" the gap is around ten orders of magnitude, so his conclusion stands.</p>
+</div>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Machine learning · knowledge distillation</b>: Hinton mentions the distillation work he did at Google, the 2015 paper with Vinyals and Dean in which a small network learns from a big network's "soft" output probabilities. It is really the engineering version of the narrow human channel: teacher and student have different architectures, so weights cannot be copied, and knowledge has to pass through outputs. The likeness is that human teaching also swaps outputs, not weights; the difference is that distillation can feed in millions of examples at once, more sentences than a person speaks in a lifetime.</li>
+<li><b>Distributed systems · gradient sync in data parallelism</b>: Hinton's clones that each read part of the internet and then average weights are, in engineering terms, all-reduce in data-parallel training, or FedAvg in federated learning. The catch is that averaging only works when every replica starts from the same point with the same architecture, which is exactly the "digital" property he is pointing at.</li>
+<li><b>Philosophy of mind · Dennett's "Cartesian theater"</b>: In <i>Consciousness Explained</i> (1991), Dennett attacked precisely the picture of a stage inside the head with an audience watching. Hinton's pink elephants travel the same road: a subjective report is a hypothetical description of the outside world, not a broadcast from an inner screen.</li>
+<li><b>Buddhism · Nagasena's chariot</b>: In the <i>Milindapañha</i>, the monk Nagasena asks King Milinda whether the chariot is the axle, the wheels or the pole. It is none of them; "chariot" is just the name for the parts together. Hinton's "oomph" makes the same move: consciousness is a convenient label, and the explanation lives in the parts.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Geoffrey Hinton says he turned to AI safety after realizing that digital intelligence is far better than biological intelligence at sharing knowledge.</li>
+<li>The same weights can run as many clones on different hardware; each clone learns separately, and averaging their weights shares every clone's experience.</li>
+<li>People can only pass knowledge on through language; Hinton puts a sentence at about 100 bits, while models can sync trillions of bits a second.</li>
+<li>As long as the weights are saved, a digital intelligence survives the destruction of its hardware, which Hinton calls immortality that only works for digital things.</li>
+<li>Hinton argues that squeezing vast knowledge into limited connections forces a model to find analogies, so AI will end up more creative than people.</li>
+<li>Hinton rejects the "inner theater" of the mind: a subjective experience describes what the world would have to be like for perception to be right.</li>
+<li>On that definition, Hinton holds that a multimodal robot that says a prism gave it the subjective experience of an object being elsewhere has subjective experience.</li>
+<li>Hinton splits AI risk into human misuse and runaway superintelligence, and gives the latter a gut-feel 10 to 20 percent chance of wiping us out.</li>
+<li>Hinton argues that lethal autonomous weapons, even when perfectly obedient, sharply lower the political cost of a big country invading a small one.</li>
+<li>Hinton predicts mundane intellectual labor goes first, with elastic-demand fields like healthcare the exception, and tells young people to train as plumbers.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=giT0ytynSqg">Godfather of AI: They Keep Silencing Me But I’m Trying to Warn Them!</a></span><span class="d">The episode. Every timestamp on this page points here.</span></li>
+<li><span class="t"><a href="https://siliconangle.com/2023/10/30/slashnext-report-uncovers-1265-increase-phishing-emails-year/">SlashNext report uncovers 1,265% increase in phishing</a></span><span class="d">Basis for the first check: the figure, what it counts and the period.</span></li>
+<li><span class="t"><a href="https://artificialintelligenceact.eu/article/2/">EU AI Act, Article 2: Scope</a></span><span class="d">Basis for the second check: the text of the military, defence and national security exemption.</span></li>
+<li><span class="t"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6984970/">Coupé et al. (2019), Different languages, similar encoding efficiency</a></span><span class="d">Basis for the third check: about 39 bits per second across 17 languages.</span></li>
+</ul>
+<footer>Podcast Deep Read · one long episode, its main threads worked through · written 2026-11-20</footer>
+</div>
+</body></html>

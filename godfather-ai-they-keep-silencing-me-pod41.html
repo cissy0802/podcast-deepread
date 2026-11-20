@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Diary of a CEO × Geoffrey Hinton — 数字智能能把一身本事原样拷贝给另一份自己</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#120e11;color:#c7bcc2;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#ff8a65;text-decoration:none;border:1px solid rgba(255,138,101,.3);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#d96ba8;color:#d96ba8}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(255,138,101,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#d96ba8;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#ff8a65 0%,#d96ba8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#8c7f87;font-size:.92rem}
+h2{font-size:1.24rem;color:#ecdfe6;margin:44px 0 14px;padding-left:13px;border-left:3px solid #ff8a65;line-height:1.45}
+h3{font-size:1.04rem;color:#d96ba8;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#f3e8ee}
+a{color:#ff8a65;text-decoration:none;border-bottom:1px solid rgba(255,138,101,.3)}
+a:hover{color:#d96ba8;border-color:#d96ba8}
+a.ts{font-family:"SF Mono",Menlo,monospace;font-size:.8em;white-space:nowrap}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #d96ba8;border-radius:0 8px 8px 0;color:#d6cbd1}
+blockquote .en{display:block;font-style:italic;color:#a3959d;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#8c7f87;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(217,107,168,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(217,107,168,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#d96ba8}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#a3959d;border:1px solid rgba(255,138,101,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(255,138,101,.04)}
+.meta-card b{color:#d96ba8;font-weight:600}
+.claim{border:1px solid rgba(255,138,101,.32);border-radius:10px;padding:4px 20px 6px;margin:22px 0;background:rgba(255,138,101,.04)}
+.claim .said{font-size:.95rem;color:#d6cbd1}
+.claim .verdict{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#ff8a65;letter-spacing:1px;border:1px solid rgba(255,138,101,.4);border-radius:12px;padding:1px 10px;margin-top:12px}
+.crossx{border:1px solid rgba(160,128,232,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(160,128,232,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#b9a2f0}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#8c7f87;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(217,107,168,.3);border-radius:12px;background:rgba(217,107,168,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(217,107,168,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#d96ba8}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#ecdfe6}
+.reads .d{font-size:.9rem;color:#a89aa2;display:block;margin-top:3px}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(255,138,101,.14);font-size:.82rem;color:#6d6068;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="godfather-ai-they-keep-silencing-me-pod41.en.html">English →</a></div>
+<header>
+<div class="kicker">The Diary of a CEO · 2025</div>
+<h1>Geoffrey Hinton：让他害怕的，是数字智能能把一身本事原样拷贝给另一份自己</h1>
+<p class="sub">Geoffrey Hinton × Steven Bartlett ·《Godfather of AI: They Keep Silencing Me But I’m Trying to Warn Them!》</p>
+</header>
+<div class="meta-card"><b>节目</b> The Diary of a CEO · 2025-06-16 · <b>时长</b> 90 分钟 · <b>嘉宾</b> Geoffrey Hinton · <b>主持</b> Steven Bartlett · <b>原片</b> <a href="https://www.youtube.com/watch?v=giT0ytynSqg">YouTube</a></div>
+
+<h2>那一段</h2>
+<p>节目进行到快一个小时，Hinton 忽然考了主持人一道题：堆肥为什么像原子弹？Bartlett 老实说不知道。Hinton 很满意，说大多数人都会这么回答。<a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=3555s">[00:59:15]</a></p>
+<p>这道题他以前问过 GPT-4，而且特意挑在它还不能上网搜索的时候。GPT-4 先说两者的时间尺度和能量尺度差得很远，接着指出：堆肥越热，产热就越快；原子弹放出的中子越多，产生中子也就越快。两者都是链式反应（chain reaction）。</p>
+<p>Hinton 讲这个故事，并不是为了夸模型聪明。他想说的是，一个只有大约一万亿个连接的网络，要装下比人多几千倍的知识，就只能压缩；而压缩的办法，就是看出不同事物之间共同的结构。这期节目里最硬的那条论证，就是从这个小测验开始的。</p>
+
+<h2>谁在聊，和那一年</h2>
+<p>录制这期时 Hinton 77 岁，把「让 AI 模仿大脑」这条路推了 50 年，2024 年因此和 John Hopfield 分享了诺贝尔物理学奖。他讲自己为什么去 Google，理由很朴素：他有一个有学习障碍的儿子，他需要攒下几百万美元，保证儿子将来不会流落街头，而当教授挣不到这笔钱。他试过开 Coursera 课，发现也赚不到钱。于是 65 岁那年，他和学生 Ilya Sutskever、Alex Krizhevsky 开了一家小公司 DNN Research，拿去拍卖。</p>
+<p>主持人 Steven Bartlett 的节目以创业者和名人访谈为主，爱问私人的问题：后悔什么，给孩子什么建议，结尾还会念上一位嘉宾留在日记本里的问题。这期也是这样，一半时间在列 AI 的风险清单，另一半在问「你会让孩子去做什么工作」。</p>
+<p>这期播出于 2025 年 6 月。Hinton 离开 Google 已经两年，他说离职的时间点是为了能在 MIT Technology Review 的会议上放开讲 AI 安全；他也强调不是跟 Google 闹翻。这时他的学生 Sutskever 已经离开 OpenAI，自己创办了一家 AI 安全公司。</p>
+
+<h2>这期聊透</h2>
+
+<h3>一、数字智能为什么更强：能拷贝，能合并</h3>
+<p>整期节目里，Hinton 讲得最有原创性的一段，是解释自己为什么在 2023 年前后突然转向。他在 Google 的最后几年在研究模拟计算（analog computation）：能不能把大语言模型放到模拟硬件上，省下大量电力。正是在做这件事的时候，他反过来看清了数字的好处。</p>
+<p>他的论证分三步。第一步，同一套权重可以在不同的硬件上跑出完全一样的网络，所以可以有很多个克隆体。第二步，这些克隆体各自去读互联网的不同部分，然后把权重的变化平均一下，就等于每一个都学到了所有克隆体的经验。第三步，人和人之间做不到这一点。我的大脑和你的大脑接线不同，你就算看得到我所有神经元的连接强度，对你也毫无用处。我们只能靠说话传递知识，一句话大约 100 比特。</p>
+<blockquote><span class="en">"These things are transferring trillions of bits a second. So, they're billions of times better than us at sharing information."</span><span class="zh">这些东西每秒传递的是万亿比特。所以在分享信息这件事上，它们比我们强几十亿倍。</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=3471s">[00:57:51]</a></cite></blockquote>
+<p>由此他推出一个听上去像科幻的结论：只要权重存在某个地方，硬件毁了也能在新硬件上原样复活。</p>
+<blockquote><span class="en">"So, they're immortal. We've actually solved the problem of immortality, but it's only for digital things."</span><span class="zh">所以它们是不死的。我们其实已经解决了永生的问题，只不过只对数字的东西管用。</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=3511s">[00:58:31]</a></cite></blockquote>
+<p>开场的堆肥题就接在这里。在 Hinton 看来，压缩逼着模型去发现「链式反应」这类抽象，先把共同的部分编码一次，再记下各自的差别。很多创造力本来就是看出奇怪的类比，所以他断言，说机器永远不会有创造力的人，会发现它们比我们更有创造力。</p>
+
+<h3>二、我们对「心灵」的模型错了</h3>
+<p>Bartlett 问到人类的特殊性，Hinton 的回答是全期最出人意料的一段。他先说，人类一向喜欢认为自己特殊：以为自己是宇宙中心，以为自己是照着上帝的样子造的。然后他说，几乎所有人对「心灵」的理解都是错的。</p>
+<p>他的例子是粉色小象。假如我喝多了，说「我有一种看见粉色小象在眼前飘的主观体验」，大多数人会理解为：我脑子里有一个只有我能看的内心剧场，小象在里面飘。Hinton 认为根本没有这个剧场。我其实是在告诉你，我的知觉系统出了错，而描述这个错误最好的办法，就是说出「外面的世界得是什么样，我的知觉才算没骗我」。小象不是剧场里的东西，而是假想中的外部世界。</p>
+<p>按照这个定义，他接着讲了一个棱镜实验。一个带摄像头和机械臂的多模态聊天机器人，镜头前被放了一块棱镜，它指错了方向。你告诉它真相之后，它说：「我明白了，棱镜折射了光线，物体其实在那边，只是我有一种它在这边的主观体验。」Hinton 说，它用「主观体验」这个词的方式和人一模一样。</p>
+<blockquote><span class="en">"…I believe that current multimodal chatbots have subjective experiences. And very few people believe that."</span><span class="zh">我相信，现在的多模态聊天机器人有主观体验。相信这一点的人很少。</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=3749s">[01:02:29]</a></cite></blockquote>
+<p>情绪他也这样拆开讲。情绪有认知和行为的一面，也有生理的一面。一个会被大机器人吓得逃跑的小战斗机器人，没有肾上腺素，但「赶紧离开这里」这部分认知是一样的。一个会对闲聊的来电者不耐烦的客服 AI，也就有了情绪。他承认像爱这样的情绪，生理成分很重，机器离那还远。至于意识，他用了一个汽车的比喻：阿斯顿·马丁「劲儿大」，丰田卡罗拉「劲儿小」，可「劲儿」（oomph）解释不了汽车，要懂汽车得去懂发动机。</p>
+<blockquote><span class="en">"I think consciousness is like that. And I think we'll stop using that term."</span><span class="zh">我觉得意识就是这样的东西。我想我们以后会不再用这个词。</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=4010s">[01:06:50]</a></cite></blockquote>
+<p>值得注意的是，他在这里并没有说得很满。被追问机器是否已经有和人一样的意识时，他说自己目前态度矛盾，只是认为两者之间没有一条硬线：一个系统复杂到能给自己建模，又能做知觉，就开始有一点意识了。</p>
+
+<h3>三、两类风险，和那个 10% 到 20%</h3>
+<p>节目前半段，Bartlett 拿着本子记，Hinton 一条条列风险。他先把风险分成两类：人滥用 AI，这是大多数风险，也是全部的短期风险；以及 AI 变得超级聪明、不再需要我们。后一类他讲得最多，因为总有人问「这是真的吗」。他说 LeCun 认为我们永远能控制，Yudkowsky 认为必死无疑，两头都太极端。</p>
+<blockquote><span class="en">"I often say 10 to 20% chance they'll wipe us out. But that's just gut."</span><span class="zh">我常说，它们把我们灭掉的概率是 10% 到 20%。但那只是直觉。</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=496s">[00:08:16]</a></cite></blockquote>
+<p>滥用那一类，他讲得最有新意的是致命自主武器。Bartlett 以为风险在于机器人出故障，Hinton 纠正他：就算机器人完全听话，问题也在于大国入侵小国不再有士兵装在尸袋里运回家，国内的反战压力没了，战争的摩擦力就降下来了。</p>
+<p>至于超级智能，他认为如何除掉人类根本不值得猜，因为办法太多；该研究的是让它永远不想这么做。</p>
+<blockquote><span class="en">"If you want to know what life's like when you're not the apex intelligence, ask a chicken."</span><span class="zh">想知道不再是最高智能是什么滋味，去问问鸡。</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=1775s">[00:29:35]</a></cite></blockquote>
+<p>他给出的唯一先例是母亲和婴儿：母亲比婴儿聪明，可掌控局面的是婴儿，因为演化让母亲受不了婴儿的哭声。另一个比喻是小老虎，现在毛茸茸很可爱，你得确保它长大以后永远不想杀你。他也不相信能放慢速度，因为国家之间、公司之间都在竞争；他开出的药方只有一句话，「严格监管的资本主义」，以及让政府逼公司把资源投到安全研究上。</p>
+
+<h3>四、平凡的脑力劳动会先被替换</h3>
+<blockquote><span class="en">"And I think for mundane intellectual labor, AI is just going to replace everybody."</span><span class="zh">我认为，在平凡的脑力劳动上，AI 会把所有人都替换掉。</span><cite>— Geoffrey Hinton · <a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=2406s">[00:40:06]</a></cite></blockquote>
+<p>他用自己外甥女举例。她在一家医疗服务机构回复投诉信，以前一封要 25 分钟，现在把信扫进聊天机器人，自己只做检查，5 分钟搞定。于是机构只需要原来五分之一的她。但他马上给出一个限定：医疗这类需求弹性很大的行业不一样，医生效率提高五倍，大家就能用同样的钱得到五倍的医疗。他的判断是，大多数工作不属于这一类。</p>
+<p>Bartlett 问年轻人该怎么办，他的回答很短：去当水管工，因为机器人在物理操作上追上人还要很久。他认为全民基本收入（UBI）是个好的开始，至少能让人不挨饿，但很多人的尊严和自己的工作绑在一起，光发钱解决不了。在结尾那个日记本问题里，他把失业列为对人类幸福最紧迫的短期威胁，并说这件事「发生的可能性大于不发生」。</p>
+
+<h2>说法核查</h2>
+<div class="claim">
+<p class="said">「网络攻击在 2023 到 2024 年间增长了约 12 倍，即 1200%。」<a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=709s">[00:11:49]</a></p>
+<p class="verdict">有据，但说宽了</p>
+<p>能对上的数字出自反钓鱼公司 SlashNext 的 2023 年报告：钓鱼邮件增长 1265%。但它统计的是 2022 年第四季度到 2023 年第三季度，对象也只是钓鱼，不是全部网络攻击。数量级没错，范围和年份都被放宽了。</p>
+</div>
+<div class="claim">
+<p class="said">「欧洲的 AI 法规里有一条：这些规定都不适用于 AI 的军事用途。」<a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=583s">[00:09:43]</a></p>
+<p class="verdict">有据</p>
+<p>欧盟《人工智能法》第 2 条第 3 款写明，专门用于军事、国防或国家安全目的的 AI 系统不适用本法。豁免的关键词是「专门」，军民两用的系统仍受约束；豁免范围还多出了「国家安全」。</p>
+</div>
+<div class="claim">
+<p class="said">「一句话大约 100 比特，人和人传递信息，每秒能到 10 比特就算幸运。」<a class="ts" href="https://www.youtube.com/watch?v=giT0ytynSqg&amp;t=3471s">[00:57:51]</a></p>
+<p class="verdict">有据</p>
+<p>Coupé 等人 2019 年比较了 17 种语言，发现说话的信息率都聚在每秒约 39 比特。Hinton 的数字偏低约四倍，但跟「每秒万亿比特」相比，差了约十个数量级，他的结论不受影响。</p>
+</div>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>机器学习 · 知识蒸馏</b>：Hinton 提到自己在 Google 做的知识蒸馏（distillation），即 2015 年与 Vinyals、Dean 合写的那篇论文：让小网络去学大网络输出的「软概率」。它其实就是人类那条窄通道的工程版本：师生网络结构不同，权重没法直接拷贝，只能靠输出来传授。像的是，人类教学也是在交换输出、不交换权重；不像的是，蒸馏一次能喂进几百万个样本，人一辈子也说不了那么多句话。</li>
+<li><b>分布式系统 · 数据并行的梯度同步</b>：Hinton 说的「克隆体各读一部分互联网再平均权重」，在工程上就是数据并行训练里的 all-reduce，以及联邦学习里的 FedAvg。不同的是，这种平均要求所有副本从同一个起点出发、结构完全一致，这正好对应他说的「数字」那一面。</li>
+<li><b>心灵哲学 · Dennett 的「笛卡尔剧场」</b>：Dennett 在《意识的解释》（1991）里批评的正是「脑内有个舞台、有个观众」的图景。Hinton 的粉色小象和他同路，都把主观报告当成对外部世界的假设性描述，而不是对内部屏幕的转播。</li>
+<li><b>佛学 · 那先比丘的车喻</b>：《那先比丘经》里，那先问弥兰王，车是车轴、车轮还是车辕？哪个都不是，「车」只是这些部件合在一起时的称呼。Hinton 的「劲儿」比喻是同一个思路：意识像一个方便的名称，真正的解释在部件里。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Geoffrey Hinton 说，他转向关注 AI 安全，是因为想通了数字智能比生物智能更擅长分享知识。</li>
+<li>同一套权重能在不同硬件上复制成许多克隆体，各自学习后平均权重，就能共享所有克隆体的经验。</li>
+<li>人与人只能靠语言传递知识，Hinton 估计一句话约 100 比特，而模型之间每秒能同步万亿比特。</li>
+<li>只要权重保存下来，数字智能在硬件毁坏后仍能原样复活，Hinton 称之为「只对数字的东西管用的永生」。</li>
+<li>Hinton 认为模型要把海量知识压进有限的连接，只能靠发现类比，所以 AI 会比人更有创造力。</li>
+<li>Hinton 否认存在「内心剧场」，主张主观体验是在描述「外部世界得是什么样，知觉才没出错」。</li>
+<li>按照这一定义，Hinton 认为会说「棱镜让我有了物体在那边的主观体验」的多模态机器人已有主观体验。</li>
+<li>Hinton 把 AI 风险分为人类滥用和超级智能失控两类，对后者给出 10% 到 20% 的直觉概率。</li>
+<li>Hinton 认为致命自主武器即便完全听话，也会让大国入侵小国的政治代价大幅下降。</li>
+<li>Hinton 预测平凡的脑力劳动会先被替换，需求弹性大的医疗例外；对年轻人的建议是去当水管工。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.youtube.com/watch?v=giT0ytynSqg">Godfather of AI: They Keep Silencing Me But I’m Trying to Warn Them!</a></span><span class="d">原片。本页的时间戳都指向这里。</span></li>
+<li><span class="t"><a href="https://siliconangle.com/2023/10/30/slashnext-report-uncovers-1265-increase-phishing-emails-year/">SlashNext report uncovers 1,265% increase in phishing</a></span><span class="d">第一条核查的依据：报告的数字、口径与统计时段。</span></li>
+<li><span class="t"><a href="https://artificialintelligenceact.eu/article/2/">EU AI Act, Article 2: Scope</a></span><span class="d">第二条核查的依据：军事、国防与国家安全豁免条款原文。</span></li>
+<li><span class="t"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6984970/">Coupé et al. (2019), Different languages, similar encoding efficiency</a></span><span class="d">第三条核查的依据：17 种语言约 39 比特/秒的信息率。</span></li>
+</ul>
+<footer>播客精读 · 一期长播客，挑出主线讲透 · 写于 2026-11-20</footer>
+</div>
+</body></html>
